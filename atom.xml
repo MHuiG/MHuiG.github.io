@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://MHuiG.github.io/"/>
-  <updated>2020-02-26T02:24:17.599Z</updated>
+  <updated>2020-02-26T04:22:52.315Z</updated>
   <id>https://MHuiG.github.io/</id>
   
   <author>
@@ -17,55 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Npm更换源</title>
-    <link href="https://MHuiG.github.io/posts/ba036091.html"/>
-    <id>https://MHuiG.github.io/posts/ba036091.html</id>
-    <published>2020-02-23T11:02:43.000Z</published>
-    <updated>2020-02-26T02:24:17.599Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由于npm的源在国外，所以国内用户使用起来有很多不方便，比如拖慢下载速度。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="npm" scheme="https://MHuiG.github.io/categories/npm/"/>
-    
-    
-      <category term="npm" scheme="https://MHuiG.github.io/tags/npm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LBS 球面距离公式</title>
-    <link href="https://MHuiG.github.io/posts/5e7ad437.html"/>
-    <id>https://MHuiG.github.io/posts/5e7ad437.html</id>
-    <published>2020-02-23T01:40:32.000Z</published>
-    <updated>2020-02-26T02:24:17.599Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;维基百科推荐使用Haversine公式，理由是Great-circle distance公式用到了大量余弦函数， 而两点间距离很短时（比如地球表面上相距几百米的两点），余弦函数会得出0.999…的结果， 会导致较大的舍入误差。而Haversine公式采用了正弦函数，即使距离很小，也能保持足够的有效数字。 以前采用三角函数表计算时的确会有这个问题，但经过实际验证，采用计算机来计算时，两个公式的区别不大。 稳妥起见，这里还是采用Haversine公式。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Math" scheme="https://MHuiG.github.io/categories/Math/"/>
-    
-    
-      <category term="Python" scheme="https://MHuiG.github.io/tags/Python/"/>
-    
-      <category term="Math" scheme="https://MHuiG.github.io/tags/Math/"/>
-    
-      <category term="距离" scheme="https://MHuiG.github.io/tags/%E8%B7%9D%E7%A6%BB/"/>
-    
-  </entry>
-  
-  <entry>
     <title>NoSQL-Neo4j</title>
     <link href="https://MHuiG.github.io/posts/9b624d43.html"/>
     <id>https://MHuiG.github.io/posts/9b624d43.html</id>
     <published>2020-02-09T02:41:51.000Z</published>
-    <updated>2020-02-26T02:24:16.564Z</updated>
+    <updated>2020-02-26T04:22:52.315Z</updated>
     
     <summary type="html">
     
@@ -93,7 +49,7 @@
     <link href="https://MHuiG.github.io/posts/ec477027.html"/>
     <id>https://MHuiG.github.io/posts/ec477027.html</id>
     <published>2020-02-09T02:41:50.000Z</published>
-    <updated>2020-02-26T02:24:11.662Z</updated>
+    <updated>2020-02-26T04:22:50.482Z</updated>
     
     <summary type="html">
     
@@ -121,7 +77,7 @@
     <link href="https://MHuiG.github.io/posts/cdec63d.html"/>
     <id>https://MHuiG.github.io/posts/cdec63d.html</id>
     <published>2020-02-09T02:41:49.000Z</published>
-    <updated>2020-02-26T02:24:11.658Z</updated>
+    <updated>2020-02-26T04:22:50.478Z</updated>
     
     <summary type="html">
     
@@ -149,7 +105,7 @@
     <link href="https://MHuiG.github.io/posts/e3dcc811.html"/>
     <id>https://MHuiG.github.io/posts/e3dcc811.html</id>
     <published>2020-02-09T02:41:48.000Z</published>
-    <updated>2020-02-26T02:24:16.564Z</updated>
+    <updated>2020-02-26T04:22:52.315Z</updated>
     
     <summary type="html">
     
@@ -177,7 +133,7 @@
     <link href="https://MHuiG.github.io/posts/f0940727.html"/>
     <id>https://MHuiG.github.io/posts/f0940727.html</id>
     <published>2020-02-09T02:41:47.000Z</published>
-    <updated>2020-02-26T02:23:54.483Z</updated>
+    <updated>2020-02-26T04:22:41.486Z</updated>
     
     <summary type="html">
     
@@ -203,7 +159,7 @@
     <link href="https://MHuiG.github.io/posts/b6ffaac2.html"/>
     <id>https://MHuiG.github.io/posts/b6ffaac2.html</id>
     <published>2020-02-06T07:45:30.000Z</published>
-    <updated>2020-02-26T02:24:09.467Z</updated>
+    <updated>2020-02-26T04:22:49.810Z</updated>
     
     <summary type="html">
     
@@ -223,7 +179,7 @@
     <link href="https://MHuiG.github.io/posts/e6f6b883.html"/>
     <id>https://MHuiG.github.io/posts/e6f6b883.html</id>
     <published>2020-02-05T04:57:02.000Z</published>
-    <updated>2020-02-26T02:23:50.829Z</updated>
+    <updated>2020-02-26T04:22:39.777Z</updated>
     
     <summary type="html">
     
@@ -247,7 +203,7 @@
     <link href="https://MHuiG.github.io/posts/357dc334.html"/>
     <id>https://MHuiG.github.io/posts/357dc334.html</id>
     <published>2020-02-03T05:14:17.000Z</published>
-    <updated>2020-02-26T02:24:11.662Z</updated>
+    <updated>2020-02-26T04:22:50.482Z</updated>
     
     <summary type="html">
     
@@ -273,7 +229,7 @@
     <link href="https://MHuiG.github.io/posts/4a71123b.html"/>
     <id>https://MHuiG.github.io/posts/4a71123b.html</id>
     <published>2020-01-12T05:59:18.000Z</published>
-    <updated>2020-02-26T02:24:09.463Z</updated>
+    <updated>2020-02-26T04:22:49.806Z</updated>
     
     <summary type="html">
     
@@ -299,7 +255,7 @@
     <link href="https://MHuiG.github.io/posts/4a71133b.html"/>
     <id>https://MHuiG.github.io/posts/4a71133b.html</id>
     <published>2020-01-12T05:59:17.000Z</published>
-    <updated>2020-02-26T02:23:28.528Z</updated>
+    <updated>2020-02-26T04:22:27.295Z</updated>
     
     <summary type="html">
     
@@ -325,7 +281,7 @@
     <link href="https://MHuiG.github.io/posts/714668f9.html"/>
     <id>https://MHuiG.github.io/posts/714668f9.html</id>
     <published>2020-01-11T06:12:29.000Z</published>
-    <updated>2020-02-26T02:24:15.920Z</updated>
+    <updated>2020-02-26T04:22:51.987Z</updated>
     
     <summary type="html">
     
@@ -347,7 +303,7 @@
     <link href="https://MHuiG.github.io/posts/38a07d35.html"/>
     <id>https://MHuiG.github.io/posts/38a07d35.html</id>
     <published>2020-01-11T01:12:29.000Z</published>
-    <updated>2020-02-26T02:24:09.463Z</updated>
+    <updated>2020-02-26T04:22:49.806Z</updated>
     
     <summary type="html">
     
@@ -369,7 +325,7 @@
     <link href="https://MHuiG.github.io/posts/5cc46d49.html"/>
     <id>https://MHuiG.github.io/posts/5cc46d49.html</id>
     <published>2020-01-10T12:12:29.000Z</published>
-    <updated>2020-02-26T02:24:11.662Z</updated>
+    <updated>2020-02-26T04:22:50.482Z</updated>
     
     <summary type="html">
     
@@ -393,7 +349,7 @@
     <link href="https://MHuiG.github.io/posts/594433a.html"/>
     <id>https://MHuiG.github.io/posts/594433a.html</id>
     <published>2020-01-10T07:12:29.000Z</published>
-    <updated>2020-02-26T02:24:11.658Z</updated>
+    <updated>2020-02-26T04:22:50.478Z</updated>
     
     <summary type="html">
     
@@ -415,7 +371,7 @@
     <link href="https://MHuiG.github.io/posts/d70eaced.html"/>
     <id>https://MHuiG.github.io/posts/d70eaced.html</id>
     <published>2020-01-10T02:10:47.000Z</published>
-    <updated>2020-02-26T02:24:16.564Z</updated>
+    <updated>2020-02-26T04:22:52.315Z</updated>
     
     <summary type="html">
     
@@ -439,7 +395,7 @@
     <link href="https://MHuiG.github.io/posts/fc610c2d.html"/>
     <id>https://MHuiG.github.io/posts/fc610c2d.html</id>
     <published>2020-01-10T01:53:11.000Z</published>
-    <updated>2020-02-26T02:23:44.172Z</updated>
+    <updated>2020-02-26T04:22:37.188Z</updated>
     
     <summary type="html">
     
@@ -461,7 +417,7 @@
     <link href="https://MHuiG.github.io/posts/4920f048.html"/>
     <id>https://MHuiG.github.io/posts/4920f048.html</id>
     <published>2020-01-10T01:19:47.000Z</published>
-    <updated>2020-02-26T02:23:54.479Z</updated>
+    <updated>2020-02-26T04:22:41.486Z</updated>
     
     <summary type="html">
     
@@ -483,7 +439,7 @@
     <link href="https://MHuiG.github.io/posts/72cd4c87.html"/>
     <id>https://MHuiG.github.io/posts/72cd4c87.html</id>
     <published>2020-01-09T06:58:17.000Z</published>
-    <updated>2020-02-26T02:24:04.114Z</updated>
+    <updated>2020-02-26T04:22:46.472Z</updated>
     
     <summary type="html">
     
@@ -497,6 +453,50 @@
     
     
       <category term="Flink" scheme="https://MHuiG.github.io/tags/Flink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除注释自动化</title>
+    <link href="https://MHuiG.github.io/posts/53d0a404.html"/>
+    <id>https://MHuiG.github.io/posts/53d0a404.html</id>
+    <published>2019-12-29T03:14:41.000Z</published>
+    <updated>2020-02-26T04:22:27.295Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实现批量删除 python java C CPP JS CSS html xml php sql 注释&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://MHuiG.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://MHuiG.github.io/tags/Python/"/>
+    
+      <category term="删除注释" scheme="https://MHuiG.github.io/tags/%E5%88%A0%E9%99%A4%E6%B3%A8%E9%87%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>适用于Linux的windows子系统</title>
+    <link href="https://MHuiG.github.io/posts/f70539ce.html"/>
+    <id>https://MHuiG.github.io/posts/f70539ce.html</id>
+    <published>2019-11-23T01:23:29.000Z</published>
+    <updated>2020-02-26T04:22:46.472Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;适用于Linux的windows子系统方法案例&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://MHuiG.github.io/categories/Linux/"/>
+    
+      <category term="kali" scheme="https://MHuiG.github.io/categories/Linux/kali/"/>
+    
+    
+      <category term="kali" scheme="https://MHuiG.github.io/tags/kali/"/>
     
   </entry>
   
