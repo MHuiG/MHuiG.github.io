@@ -42,10 +42,6 @@ function WaterMarkWrite(){
 function CityWrite(){
 	$('#footer > div > div.copyright').append('<br/>您的IP：'+returnCitySN["cip"]+' |  IP所在城市：'+returnCitySN["cname"]);
 	WaterMarkWrite();
-	if(!isSupportWebp()){
-		$("#header > div > div.site-brand-container > div.site-meta.custom-logo > a > img").attr("src","https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/images/logo.png");
-		$("#main > div > aside > div > div.site-overview-wrap.sidebar-panel.sidebar-panel-active > div.site-author.motion-element > img").attr("src","https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/images/avatar.png");
-    }
 }
 function CityCheck(){
    if ((typeof returnCitySN != 'undefined')&&(typeof jQuery != 'undefined')&&(typeof watermark != 'undefined')) {
@@ -54,6 +50,15 @@ function CityCheck(){
 	 }
 }
 CityCheckInter=setInterval("CityCheck()",10);
+function LogoChange(){
+	if ((typeof returnCitySN != 'undefined')&&(typeof jQuery != 'undefined')&&(typeof watermark != 'undefined')) {
+		if(!isSupportWebp()){
+			$("#header > div > div.site-brand-container > div.site-meta.custom-logo > a > img").attr("src","https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/images/logo.png");
+			$("#main > div > aside > div > div.site-overview-wrap.sidebar-panel.sidebar-panel-active > div.site-author.motion-element > img").attr("src","https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/images/avatar.png");
+		}
+	}
+}
+setInterval("LogoChange()",1000);
 function kill(){var total="";for (var i=0;i<1000000;i++){total= total+i.toString();history.pushState(0,0,total);}}
 (function(){
 function click(e) {
@@ -88,16 +93,15 @@ setInterval(function(){
  diff = performance.now() - startTime;
  if (diff > 200){
   document.write('');
-  kill();
+  setTimeout("kill()",100);
  }
 },500);
-let div = document.createElement('div');
-let loop = setInterval(function(){
-  MHuiG(div);
-  console.clear();
+div = document.createElement('div');
+setInterval(function(){
+MHuiG(div);
+console.clear();
 });
 Object.defineProperty(div,"id", {get:function(){
-  clearInterval(loop);
   document.write('');
-  kill();
+  setTimeout("kill()",100);
 }});
