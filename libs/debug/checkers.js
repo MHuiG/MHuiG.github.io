@@ -1,3 +1,17 @@
+(function(){
+var nightInter=setInterval(function(){
+		if (typeof jQuery != 'undefined'){
+			if(new Date().getHours() > 18 || new Date().getHours() < 6){
+				var link = document.createElement("link");
+				link.setAttribute("rel", "stylesheet");
+				link.setAttribute("type", "text/css");
+				link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/night.css");
+				document.querySelector("head").appendChild(link);
+				clearInterval(nightInter);
+			}
+		}
+	},100);
+})();
 var isSupportWebp = function () {
   try {
     return document.createElement('canvas').toDataURL('image/webp', 0.5).indexOf('data:image/webp') === 0;
