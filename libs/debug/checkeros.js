@@ -1,17 +1,82 @@
-(function(){
-var nightInter=setInterval(function(){
-		if (typeof jQuery != 'undefined'){
-			if(new Date().getHours() > 18 || new Date().getHours() < 6){
-				var link = document.createElement("link");
-				link.setAttribute("rel", "stylesheet");
-				link.setAttribute("type", "text/css");
-				link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/night.css");
-				document.querySelector("head").appendChild(link);
-				clearInterval(nightInter);
-			}
+function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function setNightYES() {
+	setCookie("night","1",0.5);
+	var link = document.createElement("link");
+	link.setAttribute("rel", "stylesheet");
+	link.setAttribute("type", "text/css");
+	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/nights.css");
+	document.querySelector("head").appendChild(link);
+}
+function setNightNO() {
+	setCookie("night","0",0.5);
+	var link = document.createElement("link");
+	link.setAttribute("rel", "stylesheet");
+	link.setAttribute("type", "text/css");
+	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/days.css");
+	document.querySelector("head").appendChild(link);
+}
+var NightInter=setInterval(function(){
+	if (typeof jQuery == 'undefined'){return;}
+	clearInterval(NightInter);
+	if(getCookie("night")=="0"){
+		setNightNO();
+	}else if(getCookie("night")=="1"){
+		setNightYES();
+	}else{
+		if(new Date().getHours() > 18 || new Date().getHours() < 6){
+			setNightYES();
+		}else{
+			setNightNO();
 		}
-	},100);
-})();
+		var c=document.getElementById("toggle--daynight");
+		if(getCookie("night")=="0"){
+			c.checked=true
+		}else if(getCookie("night")=="1"){
+			c.checked=false
+		}
+	}	
+},100);
+var NightBoxInter=setInterval(function(){
+if (typeof jQuery == 'undefined'){return;}
+var c=document.getElementById("toggle--daynight");
+if(!c){return;}
+if(getCookie("night")=="0"){
+	c.checked=true
+}else if(getCookie("night")=="1"){
+	c.checked=false
+}
+$("#toggle--daynight").change(function(){
+	var c=document.getElementById("toggle--daynight");
+    if (c.checked){
+	    setNightNO();
+    }else{
+		setNightYES();
+	}
+})
+},100);
+if(top.location!=self.location){
+	top.location=self.location;
+}
 var isSupportWebp = function () {
   try {
     return document.createElement('canvas').toDataURL('image/webp', 0.5).indexOf('data:image/webp') === 0;
@@ -92,6 +157,7 @@ document.onkeydown = document.onkeyup = document.onkeypress = function() {
     if (123 == window.event.keyCode || 73 == window.event.keyCode || 121 == window.event.keyCode) return window.event.returnValue = !1
 }
 })();
+
 var MHuiG = window['console']['log'];
 var fake = function() {
   MHuiG("%cWelcome to The Blog of MHuiG"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
