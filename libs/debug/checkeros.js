@@ -20,7 +20,7 @@ function getCookie(cname) {
   return "";
 }
 function setNightYES() {
-	setCookie("night","1",0.5);
+	setCookie("night","1",2/24);
 	var link = document.createElement("link");
 	link.setAttribute("rel", "stylesheet");
 	link.setAttribute("type", "text/css");
@@ -28,7 +28,7 @@ function setNightYES() {
 	document.querySelector("head").appendChild(link);
 }
 function setNightNO() {
-	setCookie("night","0",0.5);
+	setCookie("night","0",2/24);
 	var link = document.createElement("link");
 	link.setAttribute("rel", "stylesheet");
 	link.setAttribute("type", "text/css");
