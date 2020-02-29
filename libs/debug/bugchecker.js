@@ -164,6 +164,7 @@ var fake = function() {
 }
 window['console']['log']= fake;
 console.log(1);
+/*
 setInterval(function(){
  var startTime = performance.now(), check,diff;
  for (check = 0; check < 1000; check++){
@@ -175,7 +176,7 @@ setInterval(function(){
   document.write('');
   setTimeout("kill()",100);
  }
-},500);
+},500);*/
 div = document.createElement('div');
 setInterval(function(){
 MHuiG(div);
