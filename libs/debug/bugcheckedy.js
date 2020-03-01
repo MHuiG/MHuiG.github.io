@@ -37,7 +37,7 @@ function setNightYES() {
 	var link = document.createElement("link");
 	link.setAttribute("rel", "stylesheet");
 	link.setAttribute("type", "text/css");
-	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/nightsy.css");
+	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/nightdy.css");
 	document.querySelector("head").appendChild(link);
 }
 function setNightNO() {
@@ -45,7 +45,7 @@ function setNightNO() {
 	var link = document.createElement("link");
 	link.setAttribute("rel", "stylesheet");
 	link.setAttribute("type", "text/css");
-	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/daysy.css");
+	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/daydy.css");
 	document.querySelector("head").appendChild(link);
 }
 var NightInter=setInterval(function(){
