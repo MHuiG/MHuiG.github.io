@@ -1,3 +1,16 @@
+if(window.location.hash){
+	var checkExist = setInterval(function() {
+	   if (typeof jQuery == 'undefined'){return;}
+       $("a.btn.comment-button.gitalk").removeClass('active');
+       $("a.btn.comment-button.valine").addClass('active');
+	   $("div.comment-position.gitalk").removeClass('active');
+       $("div.comment-position.valine").addClass('active');
+	   if ($("#"+window.location.hash.split("#")[1]).length) {
+		  $('html, body').animate({scrollTop: $("#"+window.location.hash.split("#")[1]).offset().top-90}, 1000);
+		  clearInterval(checkExist);
+	   }
+	}, 100);
+}
 function setCookie(cname,cvalue,exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -24,7 +37,7 @@ function setNightYES() {
 	var link = document.createElement("link");
 	link.setAttribute("rel", "stylesheet");
 	link.setAttribute("type", "text/css");
-	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/nights.css");
+	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/nightsy.css");
 	document.querySelector("head").appendChild(link);
 }
 function setNightNO() {
@@ -32,7 +45,7 @@ function setNightNO() {
 	var link = document.createElement("link");
 	link.setAttribute("rel", "stylesheet");
 	link.setAttribute("type", "text/css");
-	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/days.css");
+	link.setAttribute("href", "https://cdn.jsdelivr.net/gh/MHuiG/mhuig.github.io/css/daysy.css");
 	document.querySelector("head").appendChild(link);
 }
 var NightInter=setInterval(function(){
