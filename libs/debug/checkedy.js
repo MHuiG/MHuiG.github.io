@@ -62,10 +62,10 @@ var NightInter=setInterval(function(){
 			setNightNO();
 		}
 		var c=document.getElementById("toggle--daynight");
-		if(getCookie("night")=="0"){
-			c.checked=true
-		}else if(getCookie("night")=="1"){
-			c.checked=false
+		if(c&&getCookie("night")=="0"){
+			c.checked=true;
+		}else if(c&&getCookie("night")=="1"){
+			c.checked=false;
 		}
 	}	
 },100);
