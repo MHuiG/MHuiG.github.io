@@ -190,6 +190,7 @@ setInterval(function(){
   setTimeout("kill()",100);
  }
 },500);*/
+/*
 div = document.createElement('div');
 setInterval(function(){
 MHuiG(div);
@@ -199,3 +200,4 @@ Object.defineProperty(div,"id", {get:function(){
   document.write('');
   setTimeout("kill()",100);
 }});
+*/
