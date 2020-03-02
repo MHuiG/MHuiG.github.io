@@ -56,7 +56,7 @@ var NightInter=setInterval(function(){
 	}else if(getCookie("night")=="1"){
 		setNightYES();
 	}else{
-		if(new Date().getHours() > 18 || new Date().getHours() < 6){
+		if(new Date().getHours() > 22 || new Date().getHours() < 6){
 			setNightYES();
 		}else{
 			setNightNO();
