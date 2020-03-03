@@ -3350,6 +3350,11 @@ var GitalkComponent = function (_Component) {
     value: function getUserInfo() {
       var _this3 = this;
 
+      if (this.accessToken == null) {
+        return _util.axiosGithub.get().then(this.setState({ user: null })).catch(function (err) {
+          _this3.logout();
+        });
+      };
       return _util.axiosGithub.get('/user', {
         headers: {
           Authorization: 'token ' + this.accessToken
