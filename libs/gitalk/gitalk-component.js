@@ -2281,6 +2281,12 @@ var formatErrorMsg = exports.formatErrorMsg = function formatErrorMsg(err) {
   } else {
     msg += err.message;
   }
+  try {
+    $("a.btn.comment-button.gitalk").removeClass('active');
+    $("a.btn.comment-button.valine").addClass('active');
+    $("div.comment-position.gitalk").removeClass('active');
+    $("div.comment-position.valine").addClass('active');
+  } catch (err) {}
   return msg;
 };
 
@@ -3847,20 +3853,6 @@ var GitalkComponent = function (_Component) {
             'a',
             { className: 'gt-action gt-action-login', onMouseDown: this.handleLogin },
             this.i18n.t('login-with-github')
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'gt-copyright' },
-            _react2.default.createElement(
-              'a',
-              { className: 'gt-link gt-link-project', href: 'https://github.com/gitalk/gitalk', target: '_blank' },
-              'Gitalk'
-            ),
-            _react2.default.createElement(
-              'span',
-              { className: 'gt-version' },
-              _const.GT_VERSION
-            )
           )
         ),
         _react2.default.createElement(
