@@ -1,1 +1,127 @@
-var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?"symbol":typeof a};!function(a){window.watermarkdivs=[];function e(a){var e={watermark_txt:"text",watermark_x:20,watermark_y:20,watermark_rows:0,watermark_cols:0,watermark_x_space:100,watermark_y_space:50,watermark_color:"#000000",watermark_alpha:.05,watermark_fontsize:"18px",watermark_font:"微软雅黑",watermark_width:150,watermark_height:100,watermark_angle:15,watermark_bg_alpha:.5};if(1===arguments.length&&"object"===_typeof(a)){var t=a||{};for(key in t)t[key]&&e[key]&&t[key]===e[key]||t[key]&&(e[key]=t[key])}window.watermarkdivs&&0<window.watermarkdivs.length&&(document.body.removeChild(document.getElementById("otdivid")),window.watermarkdivs=[]);var r,o,m=Math.max(document.body.scrollWidth,document.body.clientWidth)-50,w=Math.max(document.body.scrollHeight,document.body.clientHeight),n=document.createDocumentFragment(),k=document.getElementById("otdivid");k||((k=document.createElement("div")).id="otdivid",k.style.pointerEvents="none",document.body.appendChild(k)),(0==e.watermark_cols||parseInt(e.watermark_x+e.watermark_width*e.watermark_cols+e.watermark_x_space*(e.watermark_cols-1))>m)&&(e.watermark_cols=parseInt((m-e.watermark_x+e.watermark_x_space)/(e.watermark_width+e.watermark_x_space)),e.watermark_x_space=parseInt((m-e.watermark_x-e.watermark_width*e.watermark_cols)/(e.watermark_cols-1))),(0==e.watermark_rows||parseInt(e.watermark_y+e.watermark_height*e.watermark_rows+e.watermark_y_space*(e.watermark_rows-1))>w)&&(e.watermark_rows=parseInt((e.watermark_y_space+w-e.watermark_y)/(e.watermark_height+e.watermark_y_space)),e.watermark_y_space=parseInt((w-e.watermark_y-e.watermark_height*e.watermark_rows)/(e.watermark_rows-1)));for(var _=0;_<e.watermark_rows;_++){o=e.watermark_y+(e.watermark_y_space+e.watermark_height)*_;for(var i=0;i<e.watermark_cols;i++){r=e.watermark_x+(e.watermark_width+e.watermark_x_space)*i;var s=document.createElement("div"),d=document.createTextNode(e.watermark_txt);s.appendChild(d),s.id="mask_div"+_+i,s.style.webkitTransform="rotate(-"+e.watermark_angle+"deg)",s.style.MozTransform="rotate(-"+e.watermark_angle+"deg)",s.style.msTransform="rotate(-"+e.watermark_angle+"deg)",s.style.OTransform="rotate(-"+e.watermark_angle+"deg)",s.style.transform="rotate(-"+e.watermark_angle+"deg)",s.style.visibility="",s.style.position="absolute",s.style.left=r+"px",s.style.top=o+"px",s.style.overflow="hidden",s.style.zIndex="9999",s.style.opacity=e.watermark_alpha,s.style.fontSize=e.watermark_fontsize,s.style.fontFamily=e.watermark_font,s.style.color=e.watermark_color,s.style.textAlign="center",s.style.width=e.watermark_width+"px",s.style.height=e.watermark_height+"px",s.style.display="block",k.appendChild(s),window.watermarkdivs.push(k)}}document.body.appendChild(n)}a.load=function(a){window.onload=function(){e(a)},window.onresize=function(){e(a)}}}(window.watermark={}),watermark.load({watermark_txt:"CopyRight MHuiG",watermark_width:200,watermark_alpha:.005,watermark_color:"black"});
+(function(watermark){
+	window.watermarkdivs = [];
+	// 加载水印
+	var loadMark = function(settings) {
+			var defaultSettings={
+				watermark_txt:"text",
+				watermark_x:20,//水印起始位置x轴坐标
+				watermark_y:20,//水印起始位置Y轴坐标
+				watermark_rows:0,//水印行数
+				watermark_cols:0,//水印列数
+				watermark_x_space:100,//水印x轴间隔
+				watermark_y_space:50,//水印y轴间隔
+				watermark_color:'#000000',//水印字体颜色
+				watermark_alpha:0.05,//水印透明度，要求设置在大于等于0.005
+				watermark_fontsize:'18px',//水印字体大小
+				watermark_font:'微软雅黑',//水印字体
+				watermark_width:150,//水印宽度
+				watermark_height:100,//水印长度
+				watermark_angle:15,//水印倾斜度数
+				watermark_bg_alpha:0.5 //加透明度导致隐形水印无法读取
+			};
+			//采用配置项替换默认值，作用类似jquery.extend
+			if(arguments.length===1&&typeof arguments[0] ==="object" )
+			{
+				var src=arguments[0]||{};
+				for(key in src)
+				{
+					if(src[key]&&defaultSettings[key]&&src[key]===defaultSettings[key])
+						continue;
+					else if(src[key])
+						defaultSettings[key]=src[key];
+				}
+			}
+
+			if (window.watermarkdivs && window.watermarkdivs.length > 0) {
+				document.body.removeChild(document.getElementById("otdivid"));
+				window.watermarkdivs = [];
+			}
+
+			//获取页面最大宽度
+			var page_width = Math.max(document.body.scrollWidth,document.body.clientWidth)-50;
+			//获取页面最大长度
+			var page_height = Math.max(document.body.scrollHeight,document.body.clientHeight);
+
+        	// 创建文档碎片
+        	var oTemp = document.createDocumentFragment();
+            //创建水印外壳div
+			var otdiv = document.getElementById("otdivid");
+			if(!otdiv){
+				otdiv =document.createElement('div');
+				otdiv.id="otdivid";
+                otdiv.style.pointerEvents = "none";
+				document.body.appendChild(otdiv);
+			}
+
+			//如果将水印列数设置为0，或水印列数设置过大，超过页面最大宽度，则重新计算水印列数和水印x轴间隔
+			if (defaultSettings.watermark_cols == 0 || (parseInt(defaultSettings.watermark_x + defaultSettings.watermark_width *defaultSettings.watermark_cols + defaultSettings.watermark_x_space * (defaultSettings.watermark_cols - 1)) > page_width)) {
+				defaultSettings.watermark_cols = parseInt((page_width - defaultSettings.watermark_x + defaultSettings.watermark_x_space) / (defaultSettings.watermark_width + defaultSettings.watermark_x_space));
+				defaultSettings.watermark_x_space = parseInt((page_width - defaultSettings.watermark_x - defaultSettings.watermark_width * defaultSettings.watermark_cols) / (defaultSettings.watermark_cols - 1));
+			}
+			//如果将水印行数设置为0，或水印行数设置过大，超过页面最大长度，则重新计算水印行数和水印y轴间隔
+			if (defaultSettings.watermark_rows == 0 || (parseInt(defaultSettings.watermark_y + defaultSettings.watermark_height * defaultSettings.watermark_rows + defaultSettings.watermark_y_space * (defaultSettings.watermark_rows - 1)) > page_height)) {
+				defaultSettings.watermark_rows = parseInt((defaultSettings.watermark_y_space + page_height - defaultSettings.watermark_y) / (defaultSettings.watermark_height + defaultSettings.watermark_y_space));
+				defaultSettings.watermark_y_space = parseInt(((page_height - defaultSettings.watermark_y) - defaultSettings.watermark_height * defaultSettings.watermark_rows) / (defaultSettings.watermark_rows - 1));
+			}
+			
+			var x;
+			var y;
+			for (var i = 0; i < defaultSettings.watermark_rows; i++) {
+				y = defaultSettings.watermark_y + (defaultSettings.watermark_y_space + defaultSettings.watermark_height) * i;
+				for (var j = 0; j < defaultSettings.watermark_cols; j++) {
+					x = defaultSettings.watermark_x + (defaultSettings.watermark_width + defaultSettings.watermark_x_space) * j;
+
+					var mask_div = document.createElement('div');
+					var oText=document.createTextNode(defaultSettings.watermark_txt);
+					mask_div.appendChild(oText);
+             // 设置一张水印相关属性start
+                    mask_div.id = 'mask_div' + i + j;
+					//设置水印div倾斜显示
+					mask_div.style.webkitTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+					mask_div.style.MozTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+					mask_div.style.msTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+					mask_div.style.OTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+					mask_div.style.transform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+					mask_div.style.visibility = "";
+					mask_div.style.position = "absolute";
+					//选不中
+					mask_div.style.left = x + 'px';
+					mask_div.style.top = y + 'px';
+					mask_div.style.overflow = "hidden";
+					mask_div.style.zIndex = "9999";
+					//mask_div.style.border="solid #eee 1px";
+					mask_div.style.opacity = defaultSettings.watermark_alpha;
+					mask_div.style.fontSize = defaultSettings.watermark_fontsize;
+					mask_div.style.fontFamily = defaultSettings.watermark_font;
+					mask_div.style.color = defaultSettings.watermark_color;
+					mask_div.style.textAlign = "center";
+					mask_div.style.width = defaultSettings.watermark_width + 'px';
+					mask_div.style.height = defaultSettings.watermark_height + 'px';
+					mask_div.style.display = "block";
+             //设置一张水印相关属性end
+                    //附加到文档碎片中
+                    otdiv.appendChild(mask_div);
+
+                    window.watermarkdivs.push(otdiv); //控制页面大小变化时水印字体
+				};
+			};
+			//一次性添加到document中
+			document.body.appendChild(oTemp);
+		};
+	
+	watermark.load = function(settings) {
+		window.onload = function() {
+			loadMark(settings);
+		};
+		window.onresize = function() {
+			loadMark(settings);
+		};
+	};
+	
+})(window.watermark = {});
+watermark.load({ 
+watermark_txt: "CopyRight MHuiG",
+watermark_width: 200,
+watermark_alpha:0.005,
+watermark_color:'black',
+});
