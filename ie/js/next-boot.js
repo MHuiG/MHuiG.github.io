@@ -1,0 +1,1 @@
+document.write('<script src="/ie/js/next-boot_ie.js"><\/script>');
