@@ -1,1 +1,0 @@
-function bug(){a = new Date(); debugger;return bug();}setInterval(function(){a = new Date();debugger;bug();return new Date()-a>100;},100);

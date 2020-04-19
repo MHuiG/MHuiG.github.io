@@ -1,13 +1,9 @@
 User-agent: *
 Allow: /
-Allow: /home/
 Allow: /posts/
-Disallow: /about/
+Allow: /about/
 Disallow: /archives/
-Disallow: /categories/
-Disallow: /guestbook/
-Disallow: /tags/
-Disallow: /schedule/
 Disallow: /page/
 
 Sitemap: https://MHuiG.github.io/sitemap.xml
+Sitemap: https://MHuiG.github.io/NoteBook/sitemap.xml

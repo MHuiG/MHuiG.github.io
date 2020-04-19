@@ -1,1 +1,0 @@
-document.write('<script src="/ie/js/utils_ie.js"><\/script>');
