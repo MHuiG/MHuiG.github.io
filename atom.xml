@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-04-19T04:58:00.540Z</updated>
+  <updated>2020-04-19T06:35:22.080Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -17,23 +17,23 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Test</title>
-    <link href="https://mhuig.github.io/posts/784dd132.html"/>
-    <id>https://mhuig.github.io/posts/784dd132.html</id>
-    <published>2020-02-23T11:02:43.000Z</published>
-    <updated>2020-04-19T04:58:00.540Z</updated>
+    <title>Hello World</title>
+    <link href="https://mhuig.github.io/posts/4a17b156.html"/>
+    <id>https://mhuig.github.io/posts/4a17b156.html</id>
+    <published>2020-04-23T06:24:29.000Z</published>
+    <updated>2020-04-19T06:35:22.080Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;br&gt;测试&lt;/p&gt;
+      &lt;p&gt;&lt;br&gt;你好，世界！&lt;/p&gt;
     
     </summary>
     
     
-      <category term="Test" scheme="https://MHuiG.github.io/categories/test/"/>
+      <category term="Hello" scheme="https://MHuiG.github.io/categories/hello/"/>
     
     
-      <category term="Test" scheme="https://MHuiG.github.io/tags/test/"/>
+      <category term="Hello" scheme="https://MHuiG.github.io/tags/hello/"/>
     
   </entry>
   
