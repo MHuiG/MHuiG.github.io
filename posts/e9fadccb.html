@@ -19,6 +19,8 @@
     <title>图片墙 - The Blog of MHuiG</title>
   
   
+    <meta name="description" content="流量警告<br>Flow warning">
+  
 
   <!-- feed -->
   
@@ -102,15 +104,13 @@
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
-<header class="l_header shadow floatable blur">
+<header class="l_header no_sidebar shadow floatable blur">
   <div class="container">
   <div class="wrapper">
     <div class="nav-sub">
       <p class="title"></p>
       <ul class="switcher nav-list-h">
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li>
-        
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li>
         
       </ul>
     </div>
@@ -622,7 +622,7 @@
     <div class="body-wrapper">
       
 
-<div class="l_main">
+<div class="l_main no_sidebar">
   
 
   
@@ -680,7 +680,7 @@
   <div class="new-meta-item wordcount">
     <a class="notlink">
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：107字</p>
+      <p>字数：91字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -710,12 +710,54 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>sidebar: []<br>comments: false<br>description: 流量警告<br>Flow warning<br>abbrlink: e9fadccb<br>date: ‘2020-4-28 12:05:43’</p>
-<hr>
-<p><br><style><br />* { margin: 0; padding: 0;}<br />.list { width: 100%; margin: 0 auto; overflow: hidden; zoom: 1;}<br />.list .ul { float: left; width: calc((100% - 100px)/4); margin: 0 10px;}<br />.list .li { margin-bottom: 20px;}<br />.list img { width: 100%; border-radius: 5px; vertical-align: top;}<br /></style><br></p>
-<div class="list"><br>
-</div><br>
-<script src="https://cdn.jsdelivr.net/npm/jquery"></script><br><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><br><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script><br><script><br />function URL(d){<br /> d+=new Date().getTime()<br /> var s = "https://picsum.photos/seed/"+d+"/200/300"<br /> return s<br />}<br />var i=0;<br />function WriteHtml(){<br />    document.getElementsByClassName('list')[0].innerHTML+=`<br /> <div class="ul"><br />     <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div><br /> </div><br /> <div class="ul"><br />     <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div><br /> </div><br /> <div class="ul"><br />     <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div><br /> </div><br /> <div class="ul"><br />     <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div><br /> </div><br />    `<br />}<br />WriteHtml();<br />$(window).scroll(function(){<br /> var scrollTop = $(this).scrollTop();<br /> var scrollHeight = $(document).height();<br /> var windowHeight = $(this).height();<br /> if(scrollTop + windowHeight > scrollHeight - 2000){<br />       WriteHtml()<br /> }<br />});<br /></script><br>
+          <style>
+* { margin: 0; padding: 0;}
+.list { width: 100%; margin: 0 auto; overflow: hidden; zoom: 1;}
+.list .ul { float: left; width: calc((100% - 100px)/4); margin: 0 10px;}
+.list .li { margin-bottom: 20px;}
+.list img { width: 100%; border-radius: 5px; vertical-align: top;}
+</style>
+
+<div class="list">
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+<script>
+function URL(d){
+  d+=new Date().getTime()
+  var s = "https://picsum.photos/seed/"+d+"/200/300"
+  return s
+}
+var i=0;
+function WriteHtml(){
+    document.getElementsByClassName('list')[0].innerHTML+=`
+        <div class="ul">
+            <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div>
+        </div>
+        <div class="ul">
+            <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div>
+        </div>
+        <div class="ul">
+            <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div>
+        </div>
+        <div class="ul">
+            <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div>
+        </div>
+    `
+}
+WriteHtml();
+$(window).scroll(function(){
+　　var scrollTop = $(this).scrollTop();
+　　var scrollHeight = $(document).height();
+　　var windowHeight = $(this).height();
+　　if(scrollTop + windowHeight > scrollHeight - 2000){
+        WriteHtml()
+　　}
+});
+</script>
 
 
 
@@ -791,7 +833,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-28T12:25:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-28T12:37:11+08:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年4月28日</p>
@@ -871,23 +913,7 @@
 
 
 
-  <article class="post white-box reveal comments shadow floatable blur">
-    <section class="article typo">
-      <p ct><i class="fas fa-comments"></i> 评论</p>
-      
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-          </div>
-        </section>
-      
-      
-    </section>
-  </article>
+  
 
 
   
@@ -910,119 +936,6 @@
 </div>
 <aside class="l_side">
   
-  
-    
-    
-
-<section class="widget blogger shadow floatable blur desktop mobile">
-  <div class="content">
-    
-      
-        <a class="avatar flat-box" href="/about/">
-          <img no-lazy src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png">
-        </a>
-      
-    
-    
-      <div class="text">
-        
-        
-        
-          <p><span id="jinrishici-sentence">The Blog of MHuiG</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:thepie@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow floatable blur desktop">
-    
-  <header>
-    
-      <a href="/categories/"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class="name">文章分类</span></a>
-    
-  </header>
-
-
-    <div class="content">
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box" title="/categories/hello/" href="/categories/hello/" id="categorieshello"><div class="name">Hello</div><div class="badge">(1)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/time/" href="/categories/time/" id="categoriestime"><div class="name">Time</div><div class="badge">(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow floatable blur desktop mobile">
-    
-  <header>
-    
-      <a href="/tags/"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
-    
-  </header>
-
-
-    <div class="content">
-      <a href="/tags/hello/" style="font-size: 14px; color: #999">Hello</a> <a href="/tags/time/" style="font-size: 14px; color: #999">Time</a>
-    </div>
-  </section>
-
-
-  
-
-  
-
 
 </aside>
 
@@ -1208,60 +1121,6 @@
 
 
 
-
-  
-    
-<script src="https://unpkg.com/valine@latest/dist/Valine.min.js"></script>
-
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var meta = 'nick,mail,link'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick','mail','link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function(item){
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-  var valine = new Valine();
-  function emoji(path, idx, ext) {
-      return path + "/" + path + "-" + idx + "." + ext;
-  }
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-  valine.init({
-    el: '#valine_container',
-    meta: meta,
-    
-    appId: "s1UXuqJzhVJMt6uMz5bKD6qW-gzGzoHsz",
-    appKey: "TwjpsjDesTnAK4Ot8y6k9wpw",
-    placeholder: "快来评论吧~",
-    pageSize:'10',
-    avatar:'robohash',
-    lang:'zh-cn',
-    visitor: 'true',
-    highlight: 'true',
-    mathJax: 'false',
-    enableQQ: 'true',
-    requiredFields: requiredFields,
-    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
-    emojiMaps: emojiMaps
-  })
-  </script>
 
 
 
