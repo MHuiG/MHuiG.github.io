@@ -974,7 +974,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-29T10:32:29+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-29T11:04:30+08:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年4月29日</p>
@@ -1410,8 +1410,10 @@
 
   
     
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@master/js/valine.js"></script>
 
+  
+  
   
   <script>
   var GUEST_INFO = ['nick','mail','link'];
@@ -1454,11 +1456,16 @@
     lang:'zh-cn',
     visitor: 'true',
     highlight: 'true',
-    mathJax: 'false',
+    mathJax: 'true',
     enableQQ: 'true',
     requiredFields: requiredFields,
     emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
-    emojiMaps: emojiMaps
+    emojiMaps: emojiMaps,
+    metaPlaceholder: { "nick": "昵称 / QQ 号", "mail": "邮箱(必填)" },
+    meta: ["nick", "mail", "link"],
+    tagMeta: ["管理员", "小伙伴", "访客"],
+    master: ["de8a7aa53d07e6b6bceb45c64027763d"],
+    friends: ["b5bd5d836c7a0091aa8473e79ed4c25e"]
   })
   </script>
 
