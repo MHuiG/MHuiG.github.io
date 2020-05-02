@@ -438,11 +438,11 @@ function buildFragmentString(pdfParams) {
 };
 function log(msg) {
 	if (typeof console !== "undefined" && console.log) {
-		console.log("[PDFObject] " + msg);
+		//console.log("[PDFObject] " + msg);
 	}
 };
 function embedError(msg) {
-	log(msg);
+	//log(msg);
 	return false;
 };
 function getTargetElement(targetSelector) {
@@ -529,7 +529,7 @@ function ShowPDF(){
 			  pagemode: 'thumbs',
 			  view: 'FitH'
 			},
-			PDFJS_URL: 'https://mhuig.github.io/blog-cdn/libs/pdf.js/es5/web/viewer.html',
+			PDFJS_URL: 'https://source.mhuig.top/libs/pdf.js/es5/web/viewer.html',
 			height: '500px'
 		  });
 		});
