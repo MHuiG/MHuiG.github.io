@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme="https://volantis.js.org/#2.6.5">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>JavaScript反调试 - The Blog of MHuiG</title>
+  
+    <meta name="keywords" content="JavaScript,反调试">
+  
+  
+    <meta name="description" content="总结一下关于JavaScript反调试技巧方面的内容。本文的目的是收集与JavaScript中的反调试有关的小窍门（其中一些已经被恶意软件或商业产品使用）。">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="The Blog of MHuiG">
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="theme-color" content="skyblue">
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="/assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/favicon/favicon_180.png">
+  <link rel="mask-icon" color="#1BC3FB" href="/assets/favicon/favicon_180.png">
+  <link rel="manifest" href="/manifest.json">
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+  <div class="container">
+  <div class="wrapper">
+    <div class="nav-sub">
+      <p class="title"></p>
+      <ul class="switcher nav-list-h">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href="/">
+          
+          
+          
+            MHuiG's Blog
+          
+          
+        </a>
+      
+
+			<div class="menu navigation">
+				<ul class="nav-list-h">
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-rss fa-fw"></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/friends/" id="friends">
+                  <i class="fas fa-link fa-fw"></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://comment.mhuig.top" id="https:commentmhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-file-code fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-cog fa-spin fa-fw"></i>博客构建
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              
+                <li>
+                  <a class="flat-box">
+                    <i class="fas fa-compact-disc fa-fw music"></i>Music
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="playlist" id="3175833810" list-folded="true">
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                </li><li>
+              
+            
+          
+                    
+                      
+            
+              </li><li>
+                <a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fas fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search...">
+        </form>
+      </div>
+
+			<ul class="switcher nav-list-h">
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-rss fa-fw"></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/friends/" id="friends">
+                  <i class="fas fa-link fa-fw"></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://comment.mhuig.top" id="https:commentmhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-file-code fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-cog fa-spin fa-fw"></i>博客构建
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fas fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class="body-wrapper">
+      
+
+<div class="l_main">
+  
+
+  
+    <article id="post" class="post white-box reveal shadow floatable blur article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/posts/bfe2ff2a.html">
+      JavaScript反调试
+    </a>
+  </h1>
+
+
+        
+        <div class="new-meta-box">
+          
+            
+          
+            
+              
+<div class="new-meta-item author">
+  <a href="https://MHuiG.github.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png">
+    <p>MHuiG</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class="new-meta-item category">
+    <a href="/categories/javascript/" rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>JavaScript</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年2月26日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class="notlink">
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：3.8k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class="notlink">
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：15分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>总结一下关于JavaScript反调试技巧方面的内容。本文的目的是收集与JavaScript中的反调试有关的小窍门（其中一些已经被恶意软件或商业产品使用）。<br><a id="more"></a></p>
+<p>对于JavaScript来说，你只需要花一点时间进行调试和分析，你就能够了解到JavaScript代码段的功能逻辑。而我们所要讨论的内容，可以给那些想要分析你JavaScript代码的人增加一定的难度。不过我们的技术跟代码混淆无关，我们主要针对的是如何给代码主动调试增加困难。<br>本文所要介绍的技术方法大致如下：</p>
+<ul>
+<li><ol>
+<li>检测未知的执行环境（我们的代码只想在浏览器中被执行）；</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>检测调试工具（例如DevTools）；</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>代码完整性控制；</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>流完整性控制；</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>反模拟；</li>
+</ol>
+</li>
+</ul>
+<p>简而言之，如果我们检测到了“不正常”的情况，程序的运行流程将会改变，并跳转到伪造的代码块，并“隐藏”真正的功能代码。</p>
+<h2 id="函数重定义"><a href="#函数重定义" class="headerlink" title="函数重定义"></a><strong>函数重定义</strong></h2><p>这是一种最基本也是最常用的代码反调试技术了。在JavaScript中，我们可以对用于收集信息的函数进行重定义。比如说，<strong>console.log()</strong>函数可以用来收集函数和变量等信息，并将其显示在控制台中。如果我们重新定义了这个函数，我们就可以修改它的行为，并隐藏特定信息或显示伪造的信息。<br>我们可以直接在DevTools中运行这个函数来了解其功能：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"HelloWorld"</span>);</span><br><span class="line"><span class="keyword">var</span> fake = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="built_in">window</span>[<span class="string">'console'</span>][<span class="string">'log'</span>]= fake;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Youcan't see me!"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>运行后我们将会看到：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VM127:<span class="number">1</span> HelloWorld</span><br></pre></td></tr></table></figure>
+
+<p>你会发现第二条信息并没有显示，因为我们重新定义了这个函数，即“禁用”了它原本的功能。但是我们也可以让它显示伪造的信息。比如说这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Normalfunction"</span>);</span><br><span class="line"><span class="comment">//First we save a reference to the original console.log function</span></span><br><span class="line"><span class="keyword">var</span> original = <span class="built_in">window</span>[<span class="string">'console'</span>][<span class="string">'log'</span>];</span><br><span class="line"><span class="comment">//Next we create our fake function</span></span><br><span class="line"><span class="comment">//Basicly we check the argument and if match we call original function with otherparam.</span></span><br><span class="line"><span class="comment">// If there is no match pass the argument to the original function</span></span><br><span class="line"><span class="keyword">var</span> fake = <span class="function"><span class="keyword">function</span>(<span class="params">argument</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (argument === <span class="string">"Ka0labs"</span>) &#123;</span><br><span class="line">    original(<span class="string">"Spoofed!"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    original(argument);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// We redefine now console.log as our fake function</span></span><br><span class="line"><span class="built_in">window</span>[<span class="string">'console'</span>][<span class="string">'log'</span>]= fake;</span><br><span class="line"><span class="comment">//Then we call console.log with any argument</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Thisis unaltered"</span>);</span><br><span class="line"><span class="comment">//Now we should see other text in console different to "Ka0labs"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Ka0labs"</span>);</span><br><span class="line"><span class="comment">//Aaaand everything still OK</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Byebye!"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>如果一切正常的话：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">VM84:<span class="number">1</span> Normalfunction</span><br><span class="line">VM84:<span class="number">11</span> Thisis unaltered</span><br><span class="line">VM84:<span class="number">9</span> Spoofed!</span><br><span class="line">VM84:<span class="number">11</span> Byebye!</span><br></pre></td></tr></table></figure>
+<p>实际上，为了控制代码的执行方式，我们还能够以更加聪明的方式来修改函数的功能。比如说，我们可以基于上述代码来构建一个代码段，并重定义<strong>eval</strong>函数。我们可以把JavaScript代码传递给<strong>eval</strong>函数，接下来代码将会被计算并执行。如果我们重定义了这个函数，我们就可以运行不同的代码了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Just a normal eval</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"console.log('1337')"</span>);</span><br><span class="line"><span class="comment">//Now we repat the process...</span></span><br><span class="line"><span class="keyword">var</span> original = <span class="built_in">eval</span>;</span><br><span class="line"><span class="keyword">var</span> fake = <span class="function"><span class="keyword">function</span>(<span class="params">argument</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// If the code to be evaluated contains1337...</span></span><br><span class="line">  <span class="keyword">if</span> (argument.indexOf(<span class="string">"1337"</span>) !==<span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="comment">// ... we just execute a different code</span></span><br><span class="line">    original(<span class="string">"for (i = 0; i &lt; 10;i++) &#123; console.log(i);&#125;"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    original(argument);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">eval</span>= fake;</span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"console.log('Weshould see this...')"</span>);</span><br><span class="line"><span class="comment">//Now we should see the execution of a for loop instead of what is expected</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"console.log('Too1337 for you!')"</span>);</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">VM171:<span class="number">1</span> <span class="number">1337</span></span><br><span class="line">VM172:<span class="number">1</span> Weshould see <span class="keyword">this</span>...</span><br><span class="line">VM173:<span class="number">1</span> <span class="number">0</span></span><br><span class="line">VM173:<span class="number">1</span> <span class="number">1</span></span><br><span class="line">VM173:<span class="number">1</span> <span class="number">2</span></span><br><span class="line">VM173:<span class="number">1</span> <span class="number">3</span></span><br><span class="line">VM173:<span class="number">1</span> <span class="number">4</span></span><br><span class="line">VM173:<span class="number">1</span> <span class="number">5</span></span><br><span class="line">VM173:<span class="number">1</span> <span class="number">6</span></span><br><span class="line">VM173:<span class="number">1</span> <span class="number">7</span></span><br><span class="line">VM173:<span class="number">1</span> <span class="number">8</span></span><br><span class="line">VM173:<span class="number">1</span> <span class="number">9</span></span><br></pre></td></tr></table></figure>
+<p>  通过这种方式修改程序流是一个很酷的技巧，但是正如我们在一开始所说的那样，它是最基本的技巧，很容易被发现并被击败。这是因为在JavaScript中，每个函数都有一个方法<strong>toString</strong>（或Firefox中的toSource）返回其自己的代码。因此，仅需要检查所需函数的代码是否已更改。当然，我们可以重新定义方法toString / toSource，但是我们陷入了同样的情况：<strong>function.toString.toString()</strong>。</p>
+<h2 id="断点"><a href="#断点" class="headerlink" title="断点"></a><strong>断点</strong></h2><p>为了帮助我们了解代码的功能，JavaScript调试工具（例如DevTools）都可以通过设置断点的方式阻止脚本代码执行，而断点也是代码调试中最基本的了。<br>如果你研究过调试器或者x86架构，你可能会比较熟悉0xCC指令。在JavaScript中，我们有一个名叫debugger的类似指令。当我们在代码中声明了debugger函数后，脚本代码将会在debugger指令这里停止运行。比如说：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Seeme!"</span>);</span><br><span class="line"><span class="keyword">debugger</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Seeme!"</span>);</span><br></pre></td></tr></table></figure>
+<p>很多商业产品会在代码中定义一个无限循环的debugger指令，不过某些浏览器会屏蔽这种代码，而有些则不会。这种方法的主要目的就是让那些想要调试你代码的人感到厌烦，因为无限循环意味着代码会不断地弹出窗口来询问你是否要继续运行脚本代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">while</span> (<span class="literal">true</span>) &#123;<span class="built_in">eval</span>(<span class="string">"debugger"</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="keyword">debugger</span>; <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>() - a &gt; <span class="number">100</span>;&#125;, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="时间差异"><a href="#时间差异" class="headerlink" title="时间差异"></a>时间差异</h2><p>这是一种从传统反逆向技术那里借鉴过来的基于时间的反调试技巧。当脚本在DevTools等工具环境下执行时，运行速度会非常慢（时间久），所以我们就可以根据运行时间来判断脚本当前是否正在被调试。比如说，我们可以通过测量代码中两个设置点之间的运行时间，然后用这个值作为参考，如果运行时间超过这个值，说明脚本当前在调试器中运行。<br>演示代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">var</span> startTime = performance.now(), check,diff;</span><br><span class="line"> <span class="keyword">for</span> (check = <span class="number">0</span>; check &lt; <span class="number">1000</span>; check++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(check);</span><br><span class="line">  <span class="built_in">console</span>.clear();</span><br><span class="line"> &#125;</span><br><span class="line"> diff = performance.now() - startTime;</span><br><span class="line"> <span class="keyword">if</span> (diff &gt; <span class="number">200</span>)&#123;</span><br><span class="line">  alert(<span class="string">"Debugger detected!"</span>);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;,<span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="DevTools检测（I）-Chrome-：getter"><a href="#DevTools检测（I）-Chrome-：getter" class="headerlink" title="DevTools检测（I）[Chrome]：getter"></a>DevTools检测（I）[Chrome]：getter</h2><p>这项技术利用的是div元素中的id属性，当div元素被发送至控制台（例如<strong>console.log(div)</strong>）时，浏览器会自动尝试获取其中的元素id。如果代码在调用了<strong>console.log</strong>之后又调用了<strong>getter</strong>方法，说明控制台当前正在运行。<br>简单的概念验证代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line"><span class="keyword">let</span> loop = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(div);</span><br><span class="line">  <span class="built_in">console</span>.clear();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(div,<span class="string">"id"</span>, &#123;<span class="attr">get</span>: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  clearInterval(loop);</span><br><span class="line">  alert(<span class="string">"Dev Tools detected!"</span>);</span><br><span class="line">&#125;&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="DevTools检测（II）-Chrome-：大小更改"><a href="#DevTools检测（II）-Chrome-：大小更改" class="headerlink" title="DevTools检测（II）[Chrome]：大小更改"></a>DevTools检测（II）[Chrome]：大小更改</h2><p>如果打开了DevTools（除非将其取消对接打开），则<strong>window.outerWidth / Height</strong>和<strong>window.innerWidth / Height</strong>之间的差异将发生变化，因此可以循环检测。<a href="https://github.com/sindresorhus/devtools-detect" target="_blank" rel="external nofollow noopener noreferrer">Devtools-detect</a>使用此技巧：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> widthThreshold = <span class="built_in">window</span>.outerWidth - <span class="built_in">window</span>.innerWidth &gt; threshold;</span><br><span class="line"><span class="keyword">const</span> heightThreshold = <span class="built_in">window</span>.outerHeight - <span class="built_in">window</span>.innerHeight &gt; threshold;</span><br><span class="line"><span class="keyword">const</span> orientation = widthThreshold ? <span class="string">'vertical'</span> : <span class="string">'horizontal'</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="隐式流完整性控制"><a href="#隐式流完整性控制" class="headerlink" title="隐式流完整性控制"></a><strong>隐式流完整性控制</strong></h2><p>当我们尝试对JavaScript代码段进行模糊处理时，第一步就是开始重命名一些变量和函数，以阐明源代码。您只需将代码拆分为较小的代码块，然后开始在此处和此处重命名。在JavaScript中，我们可以检查函数名称是否已更改或保持相同的名称。或更准确地说，我们可以检查堆栈跟踪是否包含原始名称和原始顺序。<br>使用arguments.callee.caller，我们可以创建堆栈跟踪，以保存先前执行的函数。我们可以使用此信息来生成一个哈希，该哈希将成为用于生成用于解密JavaScript其他部分的密钥的种子。这样，我们就可以对流的完整性进行隐式控制，因为如果重命名功能或要执行的功能顺序稍有不同，则创建的哈希将完全不同。如果哈希不同，则生成的密钥也将不同。如果密钥不同，则无法解密代码。为了更好地理解它，请参见下一个示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCallStack</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> stack = <span class="string">"#"</span>, total = <span class="number">0</span>, fn =<span class="built_in">arguments</span>.callee;</span><br><span class="line">  <span class="keyword">while</span> ( (fn = fn.caller) ) &#123;</span><br><span class="line">    stack = stack + <span class="string">""</span> +fn.name;</span><br><span class="line">    total++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> stack</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(getCallStack());</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  test1();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  test2();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  test3();</span><br><span class="line">&#125;</span><br><span class="line">test4();</span><br></pre></td></tr></table></figure>
+
+<p>执行此代码时，您将看到字符串<strong>#test1test2test3test4</strong>。如果我们修改（我邀请您这样做）任何函数的名称，返回的字符串也将不同。我们可以使用该字符串计算安全哈希，然后将其用作种子，以得出用于解密其他代码块的密钥。有趣的是，如果由于密钥无效（分析人员更改了函数名称）而无法解密下一个代码块，则可以捕获异常并将执行流重定向到伪路径。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VM50:10 #test1test2test3test4</span><br></pre></td></tr></table></figure>
+<p>请记住，此技巧需要与强大的混淆功能结合在一起才能使用。</p>
+<h2 id="隐式代码完整性控制"><a href="#隐式代码完整性控制" class="headerlink" title="隐式代码完整性控制"></a><strong>隐式代码完整性控制</strong></h2><p>  在“ 函数重新定义”部分的结尾，我们提到可以使用toString（）方法检索JavaScript中函数的代码。就像我们说过的那样，这对于检查函数是否已重新定义很有用，实际上，可以使用相同的想法来知道函数的代码是否被修改。</p>
+<p>效果较差的方法是计算函数或代码块的哈希并将其与已知表进行比较。但是这种方法确实很愚蠢。一种更现实，更有效的方法可以重复使用我们之前在堆栈跟踪中使用的相同策略。我们可以计算代码块的哈希值，并将其用作解密其他代码块的密钥。</p>
+<p>创建隐式完整性控件的最漂亮方法是在md5中使用冲突。基本上，我们可以创建在自己的函数中测试其自己的md5的函数。为了在功能内执行检查，我们需要进行碰撞处理（我们想创建类似的东西<strong>function(){ if (md5(arguments.callee.toString() === ‘<md5>‘) code_function;</md5></strong> }。</p>
+<p>该技术背后的概念与用于生成图像文件的概念相同，在自己的图片中显示了md5校验和。这是一个经典示例：显示自己的md5校验和的gif。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/NoteBook@master/images/1587348824.2532935.gif#align=left&display=inline&height=203&name=md5.gif&originHeight=203&originWidth=855&size=85606&status=done&style=none&width=855" alt></p>
+<p>(注:本站的图片处理策略更改了图片md5值,点击查看原图=&gt; <a href="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/md5.gif" target="_blank" rel="external nofollow noopener noreferrer">显示自己的md5校验和的gif</a>)</p>
+<p>关于如何产生这种冲突，有大量的文章（甚至在PoC || GTFO中出现了一些示例），但是我阅读并可以复制的第一个文章是<a href="https://natmchugh.blogspot.com.es/2014/10/how-i-made-two-php-files-with-same-md5.html" target="_blank" rel="external nofollow noopener noreferrer">使用PHP编写的</a>。您可以非常快速地预先计算生成碰撞所需的块。实际上，<a href="https://gist.github.com/cgvwzq/c70901dc46aeb8a3d70dc70177428a30" target="_blank" rel="external nofollow noopener noreferrer">这</a>是<a href="https://twitter.com/cgvwzq" target="_blank" rel="external nofollow noopener noreferrer">@cgvwzq</a>创建的示例，通过这种方式检查了函数内容的完整性。</p>
+<p>如前所述，我们需要对这种技术进行强力混淆。</p>
+<h2 id="代理对象-old-已弃用"><a href="#代理对象-old-已弃用" class="headerlink" title="代理对象(old,已弃用)"></a><strong>代理对象(old,已弃用)</strong></h2><p>代理对象是目前JavaScript中最有用的一个工具，这种对象可以帮助我们了解代码中的其他对象，包括修改其行为以及触发特定环境下的对象活动。比如说，我们可以创建一个嗲哩对象并跟踪每一次<code>document.createElement</code>调用，然后记录下相关信息：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = &#123; <span class="comment">// Our hook to keep the track</span></span><br><span class="line">  apply: <span class="function"><span class="keyword">function</span> (<span class="params">target, thisArg, args</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Intercepted a call tocreateElement with args: "</span> + args);</span><br><span class="line">    <span class="keyword">return</span> target.apply(thisArg, args)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="built_in">document</span>.createElement= <span class="keyword">new</span> <span class="built_in">Proxy</span>(<span class="built_in">document</span>.createElement, handler) <span class="comment">// Create our proxy object withour hook ready to intercept</span></span><br><span class="line"><span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br></pre></td></tr></table></figure>
+<p>接下来，我们可以在控制台中记录下相关参数和信息：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VM216:<span class="number">3</span> Intercepted a call tocreateElement <span class="keyword">with</span> args: div</span><br></pre></td></tr></table></figure>
+<p>我们可以利用这些信息并通过拦截某些特定函数来调试代码，但是本文的主要目的是为了介绍反调试技术，那么我们如何检测“对方”是否使用了代理对象呢？其实这就是一场“猫抓老鼠”的游戏，比如说，我们可以使用相同的代码段，然后尝试调用toString方法并捕获异常：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Call a "virgin" createElement:</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.createElement.toString();</span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"I saw your proxy!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>信息如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"function createElement() &#123; [native code] &#125;"</span></span><br></pre></td></tr></table></figure>
+<p>但是当我们使用了代理之后：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Then apply the hook</span></span><br><span class="line"><span class="keyword">const</span> handler = &#123;</span><br><span class="line">  apply: <span class="function"><span class="keyword">function</span> (<span class="params">target, thisArg, args</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Intercepted a call tocreateElement with args: "</span> + args);</span><br><span class="line">    <span class="keyword">return</span> target.apply(thisArg, args)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.createElement= <span class="keyword">new</span> <span class="built_in">Proxy</span>(<span class="built_in">document</span>.createElement, handler);</span><br><span class="line">  </span><br><span class="line"><span class="comment">//Callour not-so-virgin-after-that-party createElement</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.createElement.toString();</span><br><span class="line">&#125;<span class="keyword">catch</span>(e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"I saw your proxy!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>没错，我们确实可以检测到代理：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VM391:<span class="number">13</span> I saw your proxy!</span><br></pre></td></tr></table></figure>
+<p>我们还可以添加toString方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = &#123;</span><br><span class="line">  apply: <span class="function"><span class="keyword">function</span> (<span class="params">target, thisArg, args</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Intercepted a call tocreateElement with args: "</span> + args);</span><br><span class="line">    <span class="keyword">return</span> target.apply(thisArg, args)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.createElement= <span class="keyword">new</span> <span class="built_in">Proxy</span>(<span class="built_in">document</span>.createElement, handler);</span><br><span class="line"><span class="built_in">document</span>.createElement= <span class="built_in">Function</span>.prototype.toString.bind(<span class="built_in">document</span>.createElement); <span class="comment">//Add toString</span></span><br><span class="line"><span class="comment">//Callour not-so-virgin-after-that-party createElement</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.createElement.toString();</span><br><span class="line">&#125;<span class="keyword">catch</span>(e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"I saw your proxy!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在我们就没办法检测到了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"function createElement() &#123; [native code] &#125;"</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="代理对象"><a href="#代理对象" class="headerlink" title="代理对象"></a>代理对象</h2><p>异常把戏不能再使用了。幸运的是，我们仍然可以通过<strong>toString</strong>长度检测代理对象的使用。例如，<code>document.createElement</code>的大小为42（Chrome）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.createElement.toString().length</span><br><span class="line"><span class="number">42</span></span><br></pre></td></tr></table></figure>
+
+<p>另一方面，当我们创建代理时，此值将更改：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = &#123;</span><br><span class="line">    apply: <span class="function"><span class="keyword">function</span>(<span class="params">target, thisArg, args</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Intercepted call"</span>);</span><br><span class="line">        <span class="keyword">return</span> target.apply(thisArg, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.createElement = <span class="keyword">new</span> <span class="built_in">Proxy</span>(<span class="built_in">document</span>.createElement, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.createElement.toString().length</span><br><span class="line"><span class="number">29</span></span><br></pre></td></tr></table></figure>
+<p>因此，我们可以执行以下操作：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.createElement.toString().length &lt; <span class="number">30</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"I saw your proxy"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Not a proxy"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此技巧不能在windoww对象中使用，但仍然有用。</p>
+<h2 id="限制环境"><a href="#限制环境" class="headerlink" title="限制环境"></a>限制环境</h2><p>如引言中所述，我们想要做的一件事就是尝试检测代码是否在正确的环境中执行。<br>我们所谓的“正确的环境”是：</p>
+<ul>
+<li>该代码正在浏览器（不是仿真器，不是NodeJS等）中执行。</li>
+<li>该代码正在指定给它的域/资源中执行（不是本地服务器）</li>
+</ul>
+<p>例如，我们可以用来证明代码是否在本地执行的简单检查是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Pretty stupid idea found in commercial software</span></span><br><span class="line"><span class="keyword">if</span> (location.hostname === <span class="string">"localhost"</span> || location.hostname === <span class="string">"127.0.0.1"</span> || location.hostname === <span class="string">""</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Don't run me here!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果我们在本地html中运行此JavaScript代码段，则会看到以下消息：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VM28:<span class="number">3</span> Don<span class="string">'t run me here!</span></span><br></pre></td></tr></table></figure>
+<p>按照这个想法，另一个检查选项是用于打开文档的处理程序（类似if (location.protocol == ‘file:’){…}），或者尝试通过HTTP请求进行测试，以确定是否有其他资源（图像，css等）可用。当然，所有这些方法都非常容易被绕过。<br> 如果代码是在NodeJS中执行的（或者正如我们在本文中提到的：将流更改为伪造的路径），则可以避免执行代码。这很危险，但是我在野外看到使用NodeJS来<a href="https://www.tarlogic.com/blog/automatizando-desafios-javascript-nodejs-python/" target="_blank" rel="external nofollow noopener noreferrer">解决JavaScript挑战并绕过反暴力缓解措施</a>。<br>我们可以尝试检测仅存在于浏览器上下文中的对象的存在：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Under NodeJS</span></span><br><span class="line">   <span class="keyword">try</span> &#123; </span><br><span class="line">   <span class="built_in">console</span>.log(<span class="built_in">window</span>); </span><br><span class="line">   &#125; <span class="keyword">catch</span>(e)&#123; </span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"NodeJS detected!!!!"</span>); </span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">NodeJS detected!!!!</span><br></pre></td></tr></table></figure>
+<p>反之亦然：在NodeJS中，我们具有浏览器上下文中不存在的对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Under the browser</span></span><br><span class="line"><span class="built_in">console</span>.log(global)</span><br><span class="line">VM104:<span class="number">1</span> Uncaught <span class="built_in">ReferenceError</span>: global is not defined</span><br><span class="line">    at &lt;anonymous&gt;:<span class="number">1</span>:<span class="number">13</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Under NodeJS</span></span><br><span class="line">  <span class="built_in">console</span>.log(global)</span><br><span class="line">&#123; <span class="attr">console</span>: </span><br><span class="line">   Console &#123;</span><br><span class="line">     log: [<span class="built_in">Function</span>: bound log],...</span><br><span class="line">     ...</span><br></pre></td></tr></table></figure>
+<p>我们可以搜索仅存在于浏览器中的大量元数据。我们可以检索到的一些此类想法可以在<a href="https://panopticlick.eff.org/" target="_blank" rel="external nofollow noopener noreferrer">Panopticlick Project中</a>看到。</p>
+<h2 id="相关文献"><a href="#相关文献" class="headerlink" title="相关文献"></a>相关文献</h2><p><a href="https://x-c3ll.github.io/posts/javascript-antidebugging/" target="_blank" rel="external nofollow noopener noreferrer">javascript-antidebugging</a></p>
+
+          
+            <div class="article_footer">
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class="content">
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href="https://mhuig.github.io/posts/bfe2ff2a.html">https://mhuig.github.io/posts/bfe2ff2a.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class="content article-entry">
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-03T09:28:38+08:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年5月3日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javascript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>JavaScript</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%8D%E8%B0%83%E8%AF%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>反调试</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mhuig.github.io/posts/bfe2ff2a.html&title=JavaScript反调试 - The Blog of MHuiG&summary=总结一下关于JavaScript反调试技巧方面的内容。本文的目的是收集与JavaScript中的反调试有关的小窍门（其中一些已经被恶意软件或商业产品使用）。" target="_blank">
+          
+            <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mhuig.github.io/posts/bfe2ff2a.html&title=JavaScript反调试 - The Blog of MHuiG&summary=总结一下关于JavaScript反调试技巧方面的内容。本文的目的是收集与JavaScript中的反调试有关的小窍门（其中一些已经被恶意软件或商业产品使用）。" target="_blank">
+          
+            <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://mhuig.github.io/posts/bfe2ff2a.html&title=JavaScript反调试 - The Blog of MHuiG&summary=总结一下关于JavaScript反调试技巧方面的内容。本文的目的是收集与JavaScript中的反调试有关的小窍门（其中一些已经被恶意软件或商业产品使用）。" target="_blank">
+          
+            <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class="prev" href="/posts/xa6297acc.html">
+                <p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>理解卷积</p>
+                <p class="content">本文的目的是深入的理解卷积,通过一些示例,卷积将会成为一个非常简单的想法.
+抛球的经验想象一下，我们将一个球从某个高度掉落到地面上，球在该地面只能在一个方向上运动,如果您将球放下然后从其着陆点上...</p>
+              </a>
+            
+            
+              <a class="next" href="/posts/ba036091.html">
+                <p class="title">Npm更换源<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class="content">由于npm的源在国外，所以国内用户使用起来有很多不方便，比如拖慢下载速度。
+如何使用有很多方法来配置npm registry地址，下面根据不同情境列出几种比较常用的方法。以淘宝npm为例
+临时使...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow floatable blur">
+    <section class="article typo">
+      <p ct><i class="fas fa-comments"></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'JavaScript反调试',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class="l_side">
+  
+  
+    
+    
+
+<section class="widget blogger shadow floatable blur desktop mobile">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box" href="/about/">
+          <img no-lazy src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+        
+        
+          <p><span id="jinrishici-sentence">The Blog of MHuiG</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:thepie@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数重定义"><span class="toc-text">函数重定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#断点"><span class="toc-text">断点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间差异"><span class="toc-text">时间差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DevTools检测（I）-Chrome-：getter"><span class="toc-text">DevTools检测（I）[Chrome]：getter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DevTools检测（II）-Chrome-：大小更改"><span class="toc-text">DevTools检测（II）[Chrome]：大小更改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#隐式流完整性控制"><span class="toc-text">隐式流完整性控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#隐式代码完整性控制"><span class="toc-text">隐式代码完整性控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代理对象-old-已弃用"><span class="toc-text">代理对象(old,已弃用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代理对象"><span class="toc-text">代理对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#限制环境"><span class="toc-text">限制环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关文献"><span class="toc-text">相关文献</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow floatable blur desktop">
+    
+  <header>
+    
+      <a href="/categories/"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class="name">文章分类</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box" title="/categories/51/" href="/categories/51/" id="categories51"><div class="name">51</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/bigdata/" href="/categories/bigdata/" id="categoriesbigdata"><div class="name">BigData</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/hello/" href="/categories/hello/" id="categorieshello"><div class="name">Hello</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/javascript/" href="/categories/javascript/" id="categoriesjavascript"><div class="name">JavaScript</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/linux/" href="/categories/linux/" id="categorieslinux"><div class="name">Linux</div><div class="badge">(12)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/linux/centos7/" href="/categories/linux/centos7/" id="categorieslinuxcentos7"><div class="name">CentOS7</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/linux/centos7/python/" href="/categories/linux/centos7/python/" id="categorieslinuxcentos7python"><div class="name">Python</div><div class="badge">(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/linux/kali/" href="/categories/linux/kali/" id="categorieslinuxkali"><div class="name">kali</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/linux/shell/" href="/categories/linux/shell/" id="categorieslinuxshell"><div class="name">shell</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/math/" href="/categories/math/" id="categoriesmath"><div class="name">Math</div><div class="badge">(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/math/latex/" href="/categories/math/latex/" id="categoriesmathlatex"><div class="name">LaTeX</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/math/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" href="/categories/math/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" id="categoriesmathE695B0E5ADA6E5BBBAE6A8A1"><div class="name">数学建模</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/math/%E6%A6%82%E7%8E%87/" href="/categories/math/%E6%A6%82%E7%8E%87/" id="categoriesmathE6A682E78E87"><div class="name">概率</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/math/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" href="/categories/math/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" id="categoriesmathE7BABFE680A7E4BBA3E695B0"><div class="name">线性代数</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/npm/" href="/categories/npm/" id="categoriesnpm"><div class="name">npm</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/python/" href="/categories/python/" id="categoriespython"><div class="name">Python</div><div class="badge">(15)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/python/%E5%8F%8D%E7%BC%96%E8%AF%91/" href="/categories/python/%E5%8F%8D%E7%BC%96%E8%AF%91/" id="categoriespythonE58F8DE7BC96E8AF91"><div class="name">反编译</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/python/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/python/%E5%AF%86%E7%A0%81%E5%AD%A6/" id="categoriespythonE5AF86E7A081E5ADA6"><div class="name">密码学</div><div class="badge">(11)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/python/%E8%A7%A3%E9%87%8A%E5%99%A8/" href="/categories/python/%E8%A7%A3%E9%87%8A%E5%99%A8/" id="categoriespythonE8A7A3E9878AE599A8"><div class="name">解释器</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/time/" href="/categories/time/" id="categoriestime"><div class="name">Time</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/web/" href="/categories/web/" id="categoriesweb"><div class="name">Web</div><div class="badge">(12)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/web/django/" href="/categories/web/django/" id="categorieswebdjango"><div class="name">Django</div><div class="badge">(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/web/hexo/" href="/categories/web/hexo/" id="categorieswebhexo"><div class="name">hexo</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/web/nginx/" href="/categories/web/nginx/" id="categorieswebnginx"><div class="name">Nginx</div><div class="badge">(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/web/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" href="/categories/web/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" id="categorieswebE58685E7BD91E7A9BFE9808F"><div class="name">内网穿透</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/windows/" href="/categories/windows/" id="categorieswindows"><div class="name">windows</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/windows/gcc/" href="/categories/windows/gcc/" id="categorieswindowsgcc"><div class="name">gcc</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/windows/netcat/" href="/categories/windows/netcat/" id="categorieswindowsnetcat"><div class="name">netcat</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E4%BC%9A%E8%AE%AE%E6%8A%A5%E5%91%8A/" href="/categories/%E4%BC%9A%E8%AE%AE%E6%8A%A5%E5%91%8A/" id="categoriesE4BC9AE8AEAEE68AA5E5918A"><div class="name">会议报告</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" id="categoriesE5A4A7E695B0E68DAE"><div class="name">大数据</div><div class="badge">(72)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/flink/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/flink/" id="categoriesE5A4A7E695B0E68DAEflink"><div class="name">Flink</div><div class="badge">(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/hadoop/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/hadoop/" id="categoriesE5A4A7E695B0E68DAEhadoop"><div class="name">Hadoop</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/" id="categoriesE5A4A7E695B0E68DAEnosql"><div class="name">NoSQL</div><div class="badge">(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAF"><div class="name">大数据处理技术</div><div class="badge">(58)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/azkaban/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/azkaban/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFazkaban"><div class="name">Azkaban</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/echarts/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/echarts/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFecharts"><div class="name">Echarts</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/flume/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/flume/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFflume"><div class="name">Flume</div><div class="badge">(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hadoop/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hadoop/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFhadoop"><div class="name">Hadoop</div><div class="badge">(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hdfs/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hdfs/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFhdfs"><div class="name">HDFS</div><div class="badge">(9)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hive/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hive/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFhive"><div class="name">Hive</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/kafka/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/kafka/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFkafka"><div class="name">Kafka</div><div class="badge">(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/mapreduce/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/mapreduce/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFmapreduce"><div class="name">MapReduce</div><div class="badge">(11)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/sqoop/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/sqoop/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFsqoop"><div class="name">Sqoop</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/yarn/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/yarn/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFyarn"><div class="name">Yarn</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/zookeeper/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/zookeeper/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFzookeeper"><div class="name">Zookeeper</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFE5A4A7E695B0E68DAEE99B86E7BEA4E78EAFE5A283E58786E5A487"><div class="name">大数据集群环境准备</div><div class="badge">(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" id="categoriesE5A4A7E695B0E68DAEE695B0E68DAEE58FAFE8A786E58C96"><div class="name">数据可视化</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" id="categoriesE5A4A7E695B0E68DAEE695B0E68DAEE68C96E68E98"><div class="name">数据挖掘</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/" href="/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/" id="categoriesE5AE9EE9AA8CE680A7"><div class="name">实验性</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" id="categoriesE6938DE4BD9CE7B3BBE7BB9F"><div class="name">操作系统</div><div class="badge">(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" id="categoriesE69CBAE599A8E5ADA6E4B9A0"><div class="name">机器学习</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" id="categoriesE69CBAE599A8E5ADA6E4B9A0E69CBAE599A8E8A786E8A789"><div class="name">机器视觉</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%A8%A1%E6%9D%BF/" href="/categories/%E6%A8%A1%E6%9D%BF/" id="categoriesE6A8A1E69DBF"><div class="name">模板</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%A8%A1%E6%9D%BF/maven/" href="/categories/%E6%A8%A1%E6%9D%BF/maven/" id="categoriesE6A8A1E69DBFmaven"><div class="name">maven</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/" href="/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/" id="categoriesE99499E8AFAFE99B86E994A6"><div class="name">错误集锦</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/centos7/" href="/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/centos7/" id="categoriesE99499E8AFAFE99B86E994A6centos7"><div class="name">CentOS7</div><div class="badge">(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow floatable blur desktop mobile">
+    
+  <header>
+    
+      <a href="/tags/"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      <a href="/tags/51/" style="font-size: 16.14px; color: #8a8a8a">51</a> <a href="/tags/aes/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/azkaban/" style="font-size: 14px; color: #999">Azkaban</a> <a href="/tags/bigdata/" style="font-size: 14px; color: #999">BigData</a> <a href="/tags/cassandra/" style="font-size: 14px; color: #999">Cassandra</a> <a href="/tags/centos7/" style="font-size: 16.86px; color: #868686">CentOS7</a> <a href="/tags/django/" style="font-size: 18.29px; color: #7c7c7c">Django</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">Echarts</a> <a href="/tags/flink/" style="font-size: 17.57px; color: #818181">Flink</a> <a href="/tags/flume/" style="font-size: 19px; color: #777">Flume</a> <a href="/tags/frp/" style="font-size: 14px; color: #999">Frp</a> <a href="/tags/github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/hbase/" style="font-size: 14px; color: #999">HBase</a> <a href="/tags/hdfs/" style="font-size: 19px; color: #777">HDFS</a> <a href="/tags/hadoop/" style="font-size: 21.14px; color: #686868">Hadoop</a> <a href="/tags/hello/" style="font-size: 14px; color: #999">Hello</a> <a href="/tags/hive/" style="font-size: 16.14px; color: #8a8a8a">Hive</a> <a href="/tags/javaapi/" style="font-size: 14px; color: #999">JavaAPI</a> <a href="/tags/javascript/" style="font-size: 14px; color: #999">JavaScript</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">Jupyter</a> <a href="/tags/kafka/" style="font-size: 19px; color: #777">Kafka</a> <a href="/tags/latex/" style="font-size: 14px; color: #999">LaTeX</a> <a href="/tags/linux/" style="font-size: 19.71px; color: #727272">Linux</a> <a href="/tags/mapreduce/" style="font-size: 19.71px; color: #727272">MapReduce</a> <a href="/tags/markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/math/" style="font-size: 16.86px; color: #868686">Math</a> <a href="/tags/mongodb/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/neo4j/" style="font-size: 14px; color: #999">Neo4j</a> <a href="/tags/nginx/" style="font-size: 15.43px; color: #8f8f8f">Nginx</a> <a href="/tags/nosql/" style="font-size: 16.86px; color: #868686">NoSQL</a> <a href="/tags/pdf/" style="font-size: 24px; color: #555">PDF</a> <a href="/tags/python/" style="font-size: 21.86px; color: #646464">Python</a> <a href="/tags/ssm/" style="font-size: 14px; color: #999">SSM</a> <a href="/tags/sqoop/" style="font-size: 14px; color: #999">Sqoop</a> <a href="/tags/time/" style="font-size: 14px; color: #999">Time</a> <a href="/tags/web/" style="font-size: 14px; color: #999">Web</a> <a href="/tags/websocket/" style="font-size: 14px; color: #999">WebSocket</a> <a href="/tags/web%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">Web安全</a> <a href="/tags/yarn/" style="font-size: 14.71px; color: #949494">Yarn</a> <a href="/tags/zookeeper/" style="font-size: 14px; color: #999">Zookeeper</a> <a href="/tags/cloud/" style="font-size: 14px; color: #999">cloud</a> <a href="/tags/gcc/" style="font-size: 14px; color: #999">gcc</a> <a href="/tags/glob%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 14px; color: #999">glob表达式</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/https/" style="font-size: 14px; color: #999">https</a> <a href="/tags/kali/" style="font-size: 14px; color: #999">kali</a> <a href="/tags/maven/" style="font-size: 14.71px; color: #949494">maven</a> <a href="/tags/mysql/" style="font-size: 14.71px; color: #949494">mysql</a> <a href="/tags/netcat/" style="font-size: 14px; color: #999">netcat</a> <a href="/tags/network/" style="font-size: 14px; color: #999">network</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/php/" style="font-size: 14px; color: #999">php</a> <a href="/tags/shell/" style="font-size: 14px; color: #999">shell</a> <a href="/tags/windows/" style="font-size: 14.71px; color: #949494">windows</a> <a href="/tags/xrdp/" style="font-size: 14px; color: #999">xrdp</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 14px; color: #999">人工智能</a> <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 14px; color: #999">内网穿透</a> <a href="/tags/%E5%88%86%E7%B1%BB%E5%99%A8/" style="font-size: 14px; color: #999">分类器</a> <a href="/tags/%E5%88%A0%E9%99%A4%E6%B3%A8%E9%87%8A/" style="font-size: 14px; color: #999">删除注释</a> <a href="/tags/%E5%89%8D%E9%A9%B1%E5%9B%BE/" style="font-size: 14px; color: #999">前驱图</a> <a href="/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/" style="font-size: 20.43px; color: #6d6d6d">加解密</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 14px; color: #999">历史</a> <a href="/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/" style="font-size: 14px; color: #999">反编译</a> <a href="/tags/%E5%8F%8D%E8%B0%83%E8%AF%95/" style="font-size: 14px; color: #999">反调试</a> <a href="/tags/%E5%9B%BE%E5%83%8F/" style="font-size: 14px; color: #999">图像</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 23.29px; color: #5a5a5a">大数据</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/" style="font-size: 22.57px; color: #5f5f5f">大数据处理技术</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/" style="font-size: 15.43px; color: #8f8f8f">大数据集群环境准备</a> <a href="/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/" style="font-size: 14.71px; color: #949494">实验性</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 19.71px; color: #727272">密码学</a> <a href="/tags/%E6%8C%89%E9%94%AE%E6%97%B6%E9%92%9F/" style="font-size: 14px; color: #999">按键时钟</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 17.57px; color: #818181">操作系统</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">数学建模</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">数学模型</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 14px; color: #999">数据可视化</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #999">数据挖掘</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14.71px; color: #949494">机器学习</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" style="font-size: 14.71px; color: #949494">机器视觉</a> <a href="/tags/%E6%A6%82%E7%8E%87/" style="font-size: 14px; color: #999">概率</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14.71px; color: #949494">模板</a> <a href="/tags/%E6%AD%BB%E9%94%81/" style="font-size: 14px; color: #999">死锁</a> <a href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6/" style="font-size: 14px; color: #999">温湿度</a> <a href="/tags/%E6%BA%90%E7%A0%81%E4%BF%9D%E6%8A%A4/" style="font-size: 14px; color: #999">源码保护</a> <a href="/tags/%E7%89%B9%E5%BE%81/" style="font-size: 14px; color: #999">特征</a> <a href="/tags/%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" style="font-size: 14px; color: #999">特征向量</a> <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">神经网络</a> <a href="/tags/%E7%A7%92%E8%A1%A8/" style="font-size: 14px; color: #999">秒表</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/%E8%84%91%E7%A7%91%E5%AD%A6/" style="font-size: 14px; color: #999">脑科学</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" style="font-size: 14px; color: #999">虚拟内存</a> <a href="/tags/%E8%A7%86%E7%9F%A5%E8%A7%89/" style="font-size: 14.71px; color: #949494">视知觉</a> <a href="/tags/%E8%A7%A3%E9%87%8A%E5%99%A8/" style="font-size: 14px; color: #999">解释器</a> <a href="/tags/%E8%B6%85%E5%A3%B0%E6%B3%A2/" style="font-size: 14px; color: #999">超声波</a> <a href="/tags/%E8%B7%9D%E7%A6%BB/" style="font-size: 14px; color: #999">距离</a> <a href="/tags/%E8%BF%9B%E7%A8%8B/" style="font-size: 14px; color: #999">进程</a> <a href="/tags/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/" style="font-size: 14px; color: #999">进程同步</a> <a href="/tags/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/" style="font-size: 14px; color: #999">进程调度</a> <a href="/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/" style="font-size: 14px; color: #999">通配符</a>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="playlist" id="3175833810" list-folded="true">
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:thepie@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="external nofollow noopener noreferrer">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename" rel="external nofollow noopener noreferrer">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class="copyright">
+        <p><a href="https://MHuiG.github.io">Copyright © 2018-2020 MHuiG</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://source.unsplash.com/1600x900/?nature,water,sky,blue,sea"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@master/js/valine-no-math.js"></script>
+
+  
+  
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "HIAOvtfdfuIaz1EnjsuflKrm-MdYXbMMI",
+    appKey: "VKo9lpLdViqS2rs2cg51r3ol",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps,
+    metaPlaceholder: { "nick": "昵称 / QQ 号", "mail": "邮箱(必填)" },
+    meta: ["nick", "mail", "link"],
+    tagMeta: ["管理员", "小伙伴", "访客"],
+    master: ["de8a7aa53d07e6b6bceb45c64027763d"],
+    friends: ["b5bd5d836c7a0091aa8473e79ed4c25e", "adb7d1cd192658a55c0ad22a3309cecf", "dc99f0dbf8bf2e93a9774befccdbd112"]
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>
