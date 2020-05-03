@@ -357,7 +357,7 @@
                         
 
   
-    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="playlist" id="3175833810" list-folded="true">
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="playlist" id="447362502" list-folded="true">
     </meting-js>
   
 
@@ -697,6 +697,7 @@
 <script>
     var now = new Date(); 
     function createtime() { 
+      try{
         var grt= new Date("08/19/2019 21:23:12");
         now.setTime(now.getTime()+250); 
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
@@ -707,8 +708,11 @@
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
         document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
         document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+     }catch(e){
+       clearInterval(TimeInterval);
+     }
     } 
-setInterval("createtime()",250);
+var TimeInterval=setInterval("createtime()",250);
 </script></div></div></div>
 
 
@@ -949,7 +953,7 @@ ShowPDF();
           
 
   
-    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="playlist" id="3175833810" list-folded="true">
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="playlist" id="447362502" list-folded="true">
     </meting-js>
   
 
