@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-05-02T23:21:36.616Z</updated>
+  <updated>2020-05-03T01:12:45.048Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://mhuig.github.io/posts/323ed1b8.html"/>
     <id>https://mhuig.github.io/posts/323ed1b8.html</id>
     <published>2020-05-02T13:02:43.000Z</published>
-    <updated>2020-05-02T23:21:36.616Z</updated>
+    <updated>2020-05-03T01:12:45.048Z</updated>
     
     <summary type="html">
     
@@ -42,7 +42,7 @@
     <link href="https://mhuig.github.io/posts/376025fe.html"/>
     <id>https://mhuig.github.io/posts/376025fe.html</id>
     <published>2020-05-01T00:02:39.000Z</published>
-    <updated>2020-05-02T23:21:36.616Z</updated>
+    <updated>2020-05-03T01:12:45.048Z</updated>
     
     <summary type="html">
     
@@ -63,7 +63,7 @@
     <link href="https://mhuig.github.io/posts/91953e39.html"/>
     <id>https://mhuig.github.io/posts/91953e39.html</id>
     <published>2020-04-30T06:06:43.000Z</published>
-    <updated>2020-05-02T23:21:36.616Z</updated>
+    <updated>2020-05-03T01:12:45.048Z</updated>
     
     <summary type="html">
     
@@ -84,7 +84,7 @@
     <link href="https://mhuig.github.io/posts/e9fadccb.html"/>
     <id>https://mhuig.github.io/posts/e9fadccb.html</id>
     <published>2020-04-28T04:05:43.000Z</published>
-    <updated>2020-05-02T23:21:36.616Z</updated>
+    <updated>2020-05-03T01:12:45.048Z</updated>
     
     <summary type="html">
     
@@ -101,7 +101,7 @@
     <link href="https://mhuig.github.io/posts/564714f9.html"/>
     <id>https://mhuig.github.io/posts/564714f9.html</id>
     <published>2020-04-22T01:42:43.000Z</published>
-    <updated>2020-05-02T23:22:25.784Z</updated>
+    <updated>2020-05-03T01:13:26.192Z</updated>
     
     <summary type="html">
     
@@ -122,7 +122,7 @@
     <link href="https://mhuig.github.io/posts/4a17b156.html"/>
     <id>https://mhuig.github.io/posts/4a17b156.html</id>
     <published>2020-04-19T06:24:29.000Z</published>
-    <updated>2020-05-02T23:22:25.788Z</updated>
+    <updated>2020-05-03T01:13:26.192Z</updated>
     
     <summary type="html">
     
@@ -135,6 +135,379 @@
     
     
       <category term="Hello" scheme="https://MHuiG.github.io/tags/hello/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NoSQL-Neo4j</title>
+    <link href="https://mhuig.github.io/posts/9b624d43.html"/>
+    <id>https://mhuig.github.io/posts/9b624d43.html</id>
+    <published>2020-02-09T02:41:51.000Z</published>
+    <updated>2020-05-03T01:12:45.048Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;NoSQL Neo4j PDF &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/"/>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="PDF" scheme="https://MHuiG.github.io/tags/pdf/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/tags/nosql/"/>
+    
+      <category term="Neo4j" scheme="https://MHuiG.github.io/tags/neo4j/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NoSQL-MongoDB</title>
+    <link href="https://mhuig.github.io/posts/ec477027.html"/>
+    <id>https://mhuig.github.io/posts/ec477027.html</id>
+    <published>2020-02-09T02:41:50.000Z</published>
+    <updated>2020-05-03T01:12:45.048Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;NoSQL MongoDB PDF &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/"/>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="PDF" scheme="https://MHuiG.github.io/tags/pdf/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/tags/nosql/"/>
+    
+      <category term="MongoDB" scheme="https://MHuiG.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NoSQL-HBase</title>
+    <link href="https://mhuig.github.io/posts/cdec63d.html"/>
+    <id>https://mhuig.github.io/posts/cdec63d.html</id>
+    <published>2020-02-09T02:41:49.000Z</published>
+    <updated>2020-05-03T01:12:45.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;NoSQL HBase PDF &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/"/>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="PDF" scheme="https://MHuiG.github.io/tags/pdf/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/tags/nosql/"/>
+    
+      <category term="HBase" scheme="https://MHuiG.github.io/tags/hbase/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NoSQL-Cassandra</title>
+    <link href="https://mhuig.github.io/posts/e3dcc811.html"/>
+    <id>https://mhuig.github.io/posts/e3dcc811.html</id>
+    <published>2020-02-09T02:41:48.000Z</published>
+    <updated>2020-05-03T01:12:45.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;NoSQL Cassandra PDF &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/"/>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="PDF" scheme="https://MHuiG.github.io/tags/pdf/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/tags/nosql/"/>
+    
+      <category term="Cassandra" scheme="https://MHuiG.github.io/tags/cassandra/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NoSQL</title>
+    <link href="https://mhuig.github.io/posts/f0940727.html"/>
+    <id>https://mhuig.github.io/posts/f0940727.html</id>
+    <published>2020-02-09T02:41:47.000Z</published>
+    <updated>2020-05-03T01:12:45.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;NoSQL PDF &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/"/>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="PDF" scheme="https://MHuiG.github.io/tags/pdf/"/>
+    
+      <category term="NoSQL" scheme="https://MHuiG.github.io/tags/nosql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python如何调用C</title>
+    <link href="https://mhuig.github.io/posts/b6ffaac2.html"/>
+    <id>https://mhuig.github.io/posts/b6ffaac2.html</id>
+    <published>2020-02-06T07:45:30.000Z</published>
+    <updated>2020-05-03T01:12:45.048Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Python语言特点：简单，明确，优雅，高效率，同时Python语言的可扩展性和可嵌入性很强，又被成为“胶水语言”。但是Python语言有一个最大的缺点，便是运行速度慢，所以当你对速度有要求时，你可以用C语言来编写你的关键代码，或者当你希望某些算法不公开时，也可以把你的程序用C编写，然后在你的Python程序中使用它们。本文将介绍在Python程序中如何调用C…&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://MHuiG.github.io/categories/python/"/>
+    
+    
+      <category term="Python" scheme="https://MHuiG.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何加密你的 Python 代码</title>
+    <link href="https://mhuig.github.io/posts/b190dcb.html"/>
+    <id>https://mhuig.github.io/posts/b190dcb.html</id>
+    <published>2020-02-05T05:08:17.000Z</published>
+    <updated>2020-05-03T01:12:45.048Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;讲述了如何通过修改 Python 解释器达到加解密 Python 代码的目的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://MHuiG.github.io/categories/python/"/>
+    
+      <category term="解释器" scheme="https://MHuiG.github.io/categories/python/%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
+    
+    
+      <category term="加解密" scheme="https://MHuiG.github.io/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/"/>
+    
+      <category term="Python" scheme="https://MHuiG.github.io/tags/python/"/>
+    
+      <category term="解释器" scheme="https://MHuiG.github.io/tags/%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
+    
+      <category term="源码保护" scheme="https://MHuiG.github.io/tags/%E6%BA%90%E7%A0%81%E4%BF%9D%E6%8A%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows安装gcc</title>
+    <link href="https://mhuig.github.io/posts/e6f6b883.html"/>
+    <id>https://mhuig.github.io/posts/e6f6b883.html</id>
+    <published>2020-02-05T04:57:02.000Z</published>
+    <updated>2020-05-03T01:12:45.048Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  最近测试一下windows上vs编译和gcc编译的区别，同时比较ubuntu上gcc编译的却别，主要在内存上，做了一个小测试，现在写下安装gcc的过程。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="windows" scheme="https://MHuiG.github.io/categories/windows/"/>
+    
+      <category term="gcc" scheme="https://MHuiG.github.io/categories/windows/gcc/"/>
+    
+    
+      <category term="windows" scheme="https://MHuiG.github.io/tags/windows/"/>
+    
+      <category term="gcc" scheme="https://MHuiG.github.io/tags/gcc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AES加解密</title>
+    <link href="https://mhuig.github.io/posts/357dc334.html"/>
+    <id>https://mhuig.github.io/posts/357dc334.html</id>
+    <published>2020-02-03T05:14:17.000Z</published>
+    <updated>2020-05-03T01:12:45.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;AES加密解密实现&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://MHuiG.github.io/categories/python/"/>
+    
+      <category term="密码学" scheme="https://MHuiG.github.io/categories/python/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+      <category term="AES" scheme="https://MHuiG.github.io/tags/aes/"/>
+    
+      <category term="密码学" scheme="https://MHuiG.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+      <category term="加解密" scheme="https://MHuiG.github.io/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WebSocket Maven配置模板</title>
+    <link href="https://mhuig.github.io/posts/4a71123b.html"/>
+    <id>https://mhuig.github.io/posts/4a71123b.html</id>
+    <published>2020-01-12T05:59:18.000Z</published>
+    <updated>2020-05-03T01:12:45.048Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;maven配置模板&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="模板" scheme="https://MHuiG.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="maven" scheme="https://MHuiG.github.io/categories/%E6%A8%A1%E6%9D%BF/maven/"/>
+    
+    
+      <category term="maven" scheme="https://MHuiG.github.io/tags/maven/"/>
+    
+      <category term="模板" scheme="https://MHuiG.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="WebSocket" scheme="https://MHuiG.github.io/tags/websocket/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSM Maven配置模板</title>
+    <link href="https://mhuig.github.io/posts/4a71133b.html"/>
+    <id>https://mhuig.github.io/posts/4a71133b.html</id>
+    <published>2020-01-12T05:59:17.000Z</published>
+    <updated>2020-05-03T01:12:45.048Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;maven配置模板&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="模板" scheme="https://MHuiG.github.io/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="maven" scheme="https://MHuiG.github.io/categories/%E6%A8%A1%E6%9D%BF/maven/"/>
+    
+    
+      <category term="maven" scheme="https://MHuiG.github.io/tags/maven/"/>
+    
+      <category term="模板" scheme="https://MHuiG.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="SSM" scheme="https://MHuiG.github.io/tags/ssm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flink常用的算子</title>
+    <link href="https://mhuig.github.io/posts/714668f9.html"/>
+    <id>https://mhuig.github.io/posts/714668f9.html</id>
+    <published>2020-01-11T06:12:29.000Z</published>
+    <updated>2020-05-03T01:12:45.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Flink 数据处理模型&lt;/p&gt;
+&lt;p&gt;Flink 算子 Operator&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Flink" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/flink/"/>
+    
+    
+      <category term="Flink" scheme="https://MHuiG.github.io/tags/flink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flink Window</title>
+    <link href="https://mhuig.github.io/posts/38a07d35.html"/>
+    <id>https://mhuig.github.io/posts/38a07d35.html</id>
+    <published>2020-01-11T01:12:29.000Z</published>
+    <updated>2020-05-03T01:12:45.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;什么是 Window？&lt;/p&gt;
+&lt;p&gt;Window 有什么作用？&lt;/p&gt;
+&lt;p&gt;Flink 中的三种Window&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Flink" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/flink/"/>
+    
+    
+      <category term="Flink" scheme="https://MHuiG.github.io/tags/flink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7重启之后无法联网重启network发现报错</title>
+    <link href="https://mhuig.github.io/posts/5cc46d49.html"/>
+    <id>https://mhuig.github.io/posts/5cc46d49.html</id>
+    <published>2020-01-10T12:12:29.000Z</published>
+    <updated>2020-05-03T01:12:45.044Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虚拟机里边的CentOS7重启之后无法联网，重启network发现报错。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="错误集锦" scheme="https://MHuiG.github.io/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/"/>
+    
+      <category term="CentOS7" scheme="https://MHuiG.github.io/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/centos7/"/>
+    
+    
+      <category term="CentOS7" scheme="https://MHuiG.github.io/tags/centos7/"/>
+    
+      <category term="network" scheme="https://MHuiG.github.io/tags/network/"/>
     
   </entry>
   

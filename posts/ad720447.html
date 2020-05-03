@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme="https://volantis.js.org/#2.6.5">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Nginx配置 - The Blog of MHuiG</title>
+  
+    <meta name="keywords" content="Nginx,Web安全">
+  
+  
+    <meta name="description" content="Nginx 基础配置 安全性配置">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="The Blog of MHuiG">
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="theme-color" content="skyblue">
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="/assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/favicon/favicon_180.png">
+  <link rel="mask-icon" color="#1BC3FB" href="/assets/favicon/favicon_180.png">
+  <link rel="manifest" href="/manifest.json">
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+  <div class="container">
+  <div class="wrapper">
+    <div class="nav-sub">
+      <p class="title"></p>
+      <ul class="switcher nav-list-h">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href="/">
+          
+          
+          
+            MHuiG's Blog
+          
+          
+        </a>
+      
+
+			<div class="menu navigation">
+				<ul class="nav-list-h">
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-rss fa-fw"></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/friends/" id="friends">
+                  <i class="fas fa-link fa-fw"></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://comment.mhuig.top" id="https:commentmhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-file-code fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-cog fa-spin fa-fw"></i>博客构建
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              
+                <li>
+                  <a class="flat-box">
+                    <i class="fas fa-compact-disc fa-fw music"></i>Music
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="playlist" id="3175833810" list-folded="true">
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                </li><li>
+              
+            
+          
+                    
+                      
+            
+              </li><li>
+                <a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fas fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search...">
+        </form>
+      </div>
+
+			<ul class="switcher nav-list-h">
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-rss fa-fw"></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/friends/" id="friends">
+                  <i class="fas fa-link fa-fw"></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://comment.mhuig.top" id="https:commentmhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-file-code fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-cog fa-spin fa-fw"></i>博客构建
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fas fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class="body-wrapper">
+      
+
+<div class="l_main">
+  
+
+  
+    <article id="post" class="post white-box reveal shadow floatable blur article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/posts/ad720447.html">
+      Nginx配置
+    </a>
+  </h1>
+
+
+        
+        <div class="new-meta-box">
+          
+            
+          
+            
+              
+<div class="new-meta-item author">
+  <a href="https://MHuiG.github.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png">
+    <p>MHuiG</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class="new-meta-item category">
+    <a href="/categories/web/nginx/" rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Web/Nginx</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年9月23日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class="notlink">
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.5k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class="notlink">
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：10分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>Nginx 基础配置 安全性配置</p>
+<a id="more"></a>
+
+<h2 id="Nginx配置error-page-404-500等自定义的错误页面"><a href="#Nginx配置error-page-404-500等自定义的错误页面" class="headerlink" title="Nginx配置error_page 404 500等自定义的错误页面"></a>Nginx配置error_page 404 500等自定义的错误页面</h2><ul>
+<li><p>1.创建自己的404.html页面</p>
+</li>
+<li><p>2.更改nginx.conf在http定义区域加入：</p>
+</li>
+</ul>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="attribute">fastcgi_intercept_errors</span> <span class="literal">on</span>;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>3.更改nginx.conf(或单独网站配置文件)中在server 区域加入：</li>
+</ul>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="attribute">error_page</span> <span class="number">400</span> <span class="number">401</span> <span class="number">402</span> <span class="number">403</span> <span class="number">404</span> <span class="number">405</span> <span class="number">408</span> <span class="number">410</span> <span class="number">412</span> <span class="number">413</span> <span class="number">414</span> <span class="number">415</span> <span class="number">500</span> <span class="number">501</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span> <span class="number">506</span> /<span class="number">404</span>.html;</span><br><span class="line">    <span class="attribute">location</span> = /<span class="number">404</span>.html &#123;</span><br><span class="line">        <span class="attribute">root</span> /alidata/www/phpwind/error;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>4.更改后重启nginx,测试nginx.conf正确性：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure></li>
+<li>5.502 等错误可以用同样的方法来配置。  </li>
+</ul>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="attribute">error_page</span>  <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">    <span class="attribute">location</span> = /50x.html &#123;</span><br><span class="line">        <span class="attribute">root</span> /alidata/www/phpwind/error;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Nginx隐藏版本号的安全性与方法"><a href="#Nginx隐藏版本号的安全性与方法" class="headerlink" title="Nginx隐藏版本号的安全性与方法"></a>Nginx隐藏版本号的安全性与方法</h2><p>隐藏原因：Nginx某些版本有漏洞，暴露出来容易被攻击者利用，隐藏起来更安全</p>
+<h3 id="隐藏版本号"><a href="#隐藏版本号" class="headerlink" title="隐藏版本号"></a>隐藏版本号</h3><p>nginx.conf中去掉下面注释，或者添加这一行</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="attribute">server_tokens</span> <span class="literal">off</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果是转发给php－fpm ，需要编辑fastcgi.conf，一般在nginx.conf 同层<br>找到：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fastcgi_param</span> SERVER_SOFTWARE nginx/<span class="variable">$nginx_version</span>;</span><br></pre></td></tr></table></figure>
+<p>改为：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fastcgi_param</span> SERVER_SOFTWARE nginx;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编译源码返回自定义的server"><a href="#编译源码返回自定义的server" class="headerlink" title="编译源码返回自定义的server"></a>编译源码返回自定义的server</h3><p>修改src/http/ngx_http_header_filter_module.c 中的48行</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> ngx_http_server_string[] = <span class="string">"Server: nginx"</span> CRLF;</span><br></pre></td></tr></table></figure>
+
+<p>把其中的nginx改为我们自己想要的文字即可，笔者就改为了GFW.</p>
+<p>修改src/core/nginx.h 定位到13-14行</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> nginx_version      2000000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NGINX_VERSION      <span class="meta-string">"2.0"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NGINX_VER          <span class="meta-string">"GFW/"</span> NGINX_VERSION</span></span><br></pre></td></tr></table></figure>
+<p>Server返回的就是常量NGINX_VER</p>
+<p>重新编译</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="控制缓冲区溢出攻击"><a href="#控制缓冲区溢出攻击" class="headerlink" title="控制缓冲区溢出攻击"></a>控制缓冲区溢出攻击</h2><p>编辑nginx.conf，为所有客户端设置缓冲区的大小限制。</p>
+<p>编辑和设置所有客户端缓冲区的大小限制如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">  ...</span><br><span class="line"><span class="comment">## Start: Size Limits &amp; Buffer Overflows ##</span></span><br><span class="line">  <span class="attribute">client_body_buffer_size</span>  <span class="number">1K</span>;</span><br><span class="line">  <span class="attribute">client_header_buffer_size</span> <span class="number">1k</span>;</span><br><span class="line">  <span class="attribute">client_max_body_size</span> <span class="number">1k</span>;</span><br><span class="line">  <span class="attribute">large_client_header_buffers</span> <span class="number">2</span> <span class="number">1k</span>;</span><br><span class="line"><span class="comment">## END: Size Limits &amp; Buffer Overflows ##</span></span><br><span class="line"> ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<ul>
+<li><p>1、client_body_buffer_size 1k-（默认8k或16k）这个指令可以指定连接请求实体的缓冲区大小。如果连接请求超过缓存区指定的值，那么这些请求实体的整体或部分将尝试写入一个临时文件。</p>
+</li>
+<li><p>2、client_header_buffer_size 1k-指令指定客户端请求头部的缓冲区大小。绝大多数情况下一个请求头不会大于1k，不过如果有来自于wap客户端的较大的cookie它可能会大于1k，Nginx将分配给它一个更大的缓冲区，这个值可以在large_client_header_buffers里面设置。</p>
+</li>
+<li><p>3、client_max_body_size 1k-指令指定允许客户端连接的最大请求实体大小，它出现在请求头部的Content-Length字段。<br>如果请求大于指定的值，客户端将收到一个”Request Entity Too Large” (413)错误。记住，浏览器并不知道怎样显示这个错误。</p>
+</li>
+<li><p>4、large_client_header_buffers-指定客户端一些比较大的请求头使用的缓冲区数量和大小。请求字段不能大于一个缓冲区大小，如果客户端发送一个比较大的头，nginx将返回”Request URI too large” (414)</p>
+<p>同样，请求的头部最长字段不能大于一个缓冲区，否则服务器将返回”Bad request” (400)。缓冲区只在需求时分开。默认一个缓冲区大小为操作系统中分页文件大小，通常是4k或8k，如果一个连接请求最终将状态转换为keep-alive，它所占用的缓冲区将被释放。<br>你还需要控制超时来提高服务器性能并与客户端断开连接。按照如下编辑：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">  ...</span><br><span class="line"><span class="comment">## Start: Timeouts ##</span></span><br><span class="line">  <span class="attribute">client_body_timeout</span>   <span class="number">10</span>;</span><br><span class="line">  <span class="attribute">client_header_timeout</span> <span class="number">10</span>;</span><br><span class="line">  <span class="attribute">keepalive_timeout</span>     <span class="number">5</span> <span class="number">5</span>;</span><br><span class="line">  <span class="attribute">send_timeout</span>          <span class="number">10</span>;</span><br><span class="line"><span class="comment">## End: Timeouts ##</span></span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>1、client_body_timeout 10;-指令指定读取请求实体的超时时间。这里的超时是指一个请求实体没有进入读取步骤，如果连接超过这个时间而客户端没有任何响应，Nginx将返回一个”Request time out” (408)错误。</p>
+</li>
+<li><p>2、client_header_timeout 10;-指令指定读取客户端请求头标题的超时时间。这里的超时是指一个请求头没有进入读取步骤，如果连接超过这个时间而客户端没有任何响应，Nginx将返回一个”Request time out” (408)错误。</p>
+</li>
+<li><p>3、keepalive_timeout 5 5; – 参数的第一个值指定了客户端与服务器长连接的超时时间，超过这个时间，服务器将关闭连接。参数的第二个值（可选）指定了应答头中Keep-Alive: timeout=time的time值，这个值可以使一些浏览器知道什么时候关闭连接，以便服务器不用重复关闭，如果不指定这个参数，nginx不会在应答头中发送Keep-Alive信息。（但这并不是指怎样将一个连接“Keep-Alive”）参数的这两个值可以不相同。</p>
+</li>
+<li><p>4、send_timeout 10; 指令指定了发送给客户端应答后的超时时间，Timeout是指没有进入完整established状态，只完成了两次握手，如果超过这个时间客户端没有任何响应，nginx将关闭连接。</p>
+</li>
+</ul>
+<h2 id="限制可用的请求方法"><a href="#限制可用的请求方法" class="headerlink" title="限制可用的请求方法"></a>限制可用的请求方法</h2><p>GET和POST是互联网上最常用的方法。 Web服务器的方法被定义在RFC 2616。如果Web服务器不要求启用所有可用的方法，它们应该被禁用。下面的指令将过滤只允许GET，HEAD和POST方法：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  ...</span><br><span class="line"><span class="comment">## Only allow these request methods ##</span></span><br><span class="line">   <span class="attribute">if</span> (<span class="variable">$request_method</span> !<span class="regexp">~ ^(GET|HEAD|POST)$</span> ) &#123;</span><br><span class="line">       <span class="attribute">return</span> <span class="number">444</span>;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="comment">## Do not accept DELETE, SEARCH and other methods ##</span></span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更多关于HTTP方法的介绍</p>
+<p>GET方法是用来请求，如文件<a href="https://www.centos.bz/index.php。" target="_blank" rel="external nofollow noopener noreferrer">https://www.centos.bz/index.php。</a><br>HEAD方法是一样的，除非该服务器的GET请求无法返回消息体。<br>POST方法可能涉及到很多东西，如储存或更新数据，或订购产品，或通过提交表单发送电子邮件。这通常是使用服务器端处理，如PHP，Perl和Python等脚本。如果你要上传的文件和在服务器处理数据，你必须使用这个方法。</p>
+<h2 id="拒绝一些User-Agents"><a href="#拒绝一些User-Agents" class="headerlink" title="拒绝一些User-Agents"></a>拒绝一些User-Agents</h2><p>你可以很容易地阻止User-Agents,如扫描器，机器人以及滥用你服务器的垃圾邮件发送者。<br>Nginx的444状态比较特殊，如果返回444那么客户端将不会收到服务端返回的信息，就像是网站无法连接一样</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  ...</span><br><span class="line"><span class="comment">## Block download agents ##</span></span><br><span class="line">     <span class="attribute">if</span> (<span class="variable">$http_user_agent</span> <span class="regexp">~* LWP::Simple|BBBike|wget|curl)</span> &#123;</span><br><span class="line">            <span class="attribute">return</span> <span class="number">444</span>;</span><br><span class="line">     &#125;</span><br><span class="line"><span class="comment">##</span></span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>阻止Soso和有道的机器人：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  ...</span><br><span class="line"><span class="comment">## Block some robots ##</span></span><br><span class="line">     <span class="attribute">if</span> (<span class="variable">$http_user_agent</span> <span class="regexp">~* Sosospider|YodaoBot)</span> &#123;</span><br><span class="line">            <span class="attribute">return</span> <span class="number">403</span>;</span><br><span class="line">     &#125;</span><br><span class="line"><span class="comment">##</span></span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Header头设置"><a href="#Header头设置" class="headerlink" title="Header头设置"></a>Header头设置</h2><p>通过以下设置可有效防止XSS攻击</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">add_header</span> X-Frame-Options <span class="string">"SAMEORIGIN"</span>;</span><br><span class="line"><span class="attribute">add_header</span> X-XSS-Protection <span class="string">"1; mode=block"</span>;</span><br><span class="line"><span class="attribute">add_header</span> X-Content-Type-Options <span class="string">"nosniff"</span>;</span><br></pre></td></tr></table></figure>
+<p>X-Frame-Options： 响应头表示是否允许浏览器加载frame等属性，有三个配置DENY禁止任何网页被嵌入,SAMEORIGIN只允许本网站的嵌套,ALLOW-FROM允许指定地址的嵌套</p>
+<p>X-XSS-Protection： 表示启用XSS过滤（禁用过滤为X-XSS-Protection: 0），mode=block表示若检查到XSS攻击则停止渲染页面</p>
+<p>X-Content-Type-Options： 响应头用来指定浏览器对未指定或错误指定Content-Type资源真正类型的猜测行为，nosniff 表示不允许任何猜测</p>
+<p>在通常的请求响应中，浏览器会根据Content-Type来分辨响应的类型，但当响应类型未指定或错误指定时，浏览会尝试启用MIME-sniffing来猜测资源的响应类型，这是非常危险的</p>
+<p>例如一个.jpg的图片文件被恶意嵌入了可执行的js代码，在开启资源类型猜测的情况下，浏览器将执行嵌入的js代码，可能会有意想不到的后果</p>
+<p>另外还有几个关于请求头的安全配置需要注意</p>
+<p>Content-Security-Policy： 定义页面可以加载哪些资源，</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">add_header</span> Content-Security-Policy <span class="string">"default-src 'self'"</span>;</span><br></pre></td></tr></table></figure>
+<p>上边的配置会限制所有的外部资源，都只能从当前域名加载，其中default-src定义针对所有类型资源的默认加载策略，self允许来自相同来源的内容</p>
+<p>Strict-Transport-Security： 会告诉浏览器用HTTPS协议代替HTTP来访问目标站点</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">add_header</span> Strict-Transport-Security <span class="string">"max-age=31536000; includeSubDomains"</span>;</span><br></pre></td></tr></table></figure>
+<p>上边的配置表示当用户第一次访问后，会返回一个包含了Strict-Transport-Security响应头的字段，这个字段会告诉浏览器，在接下来的31536000秒内，当前网站的所有请求都使用https协议访问，参数includeSubDomains是可选的，表示所有子域名也将采用同样的规则</p>
+<h2 id="经过多层CDN之后取得原始用户的IP地址，nginx-配置根据用户的真实-IP-做连接限制"><a href="#经过多层CDN之后取得原始用户的IP地址，nginx-配置根据用户的真实-IP-做连接限制" class="headerlink" title="经过多层CDN之后取得原始用户的IP地址，nginx 配置根据用户的真实 IP 做连接限制"></a>经过多层CDN之后取得原始用户的IP地址，nginx 配置根据用户的真实 IP 做连接限制</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">  ...</span><br><span class="line"><span class="comment">##############</span></span><br><span class="line"><span class="attribute">map</span> <span class="variable">$http_x_forwarded_for</span>  <span class="variable">$clientRealIp</span> &#123;</span><br><span class="line">        <span class="comment">## 没有通过代理，直接用 remote_addr</span></span><br><span class="line">    ""  $remote_addr;  </span><br><span class="line">        <span class="comment">## 用正则匹配，从 x_forwarded_for 中取得用户的原始IP</span></span><br><span class="line">        <span class="comment">## 例如   X-Forwarded-For: 202.123.123.11, 208.22.22.234, 192.168.2.100,...</span></span><br><span class="line">        <span class="comment">## 这里第一个 202.123.123.11 是用户的真实 IP，后面其它都是经过的 CDN 服务器</span></span><br><span class="line">    ~^(?P&lt;firstAddr&gt;[0-9\.]+),?.*$  $firstAddr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 通过 map 指令，我们为 nginx 创建了一个变量 $clientRealIp ，这个就是 原始用户的真实 IP 地址，</span></span><br><span class="line"><span class="comment">## 不论用户是直接访问，还是通过一串 CDN 之后的访问，我们都能取得正确的原始IP地址</span></span><br><span class="line"><span class="comment">#################</span></span><br><span class="line"><span class="comment">## 针对原始用户 IP 地址做限制</span></span><br><span class="line"><span class="attribute">limit_conn_zone</span> <span class="variable">$clientRealIp</span> zone=TotalConnLimitZone:<span class="number">20m</span> ;</span><br><span class="line"><span class="attribute">limit_conn</span>  TotalConnLimitZone  <span class="number">50</span>;</span><br><span class="line"><span class="attribute">limit_conn_log_level</span> <span class="literal">notice</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 针对原始用户 IP 地址做限制</span></span><br><span class="line"><span class="attribute">limit_req_zone</span> <span class="variable">$clientRealIp</span> zone=ConnLimitZone:<span class="number">20m</span>  rate=10r/s;</span><br><span class="line"><span class="attribute">limit_req</span> zone=ConnLimitZone burst=<span class="number">10</span> nodelay;</span><br><span class="line"><span class="attribute">limit_req_log_level</span> <span class="literal">notice</span>;</span><br><span class="line"><span class="comment">######################</span></span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="nginx日志按天保存"><a href="#nginx日志按天保存" class="headerlink" title="nginx日志按天保存"></a>nginx日志按天保存</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">log_format</span>  main  <span class="string">'<span class="variable">$remote_addr</span> - <span class="variable">$remote_user</span> [<span class="variable">$time_local</span>] "<span class="variable">$request</span>" '</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">'<span class="variable">$status</span> <span class="variable">$body_bytes_sent</span> "<span class="variable">$http_referer</span>" '</span></span><br><span class="line">                      <span class="string">'"<span class="variable">$http_user_agent</span>" "<span class="variable">$http_x_forwarded_for</span>"'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">log_format</span>  main  <span class="string">'<span class="variable">$remote_addr</span> - <span class="variable">$remote_user</span> [<span class="variable">$time_iso8601</span>] "<span class="variable">$request</span>" '</span></span><br><span class="line">                      <span class="string">'<span class="variable">$status</span> <span class="variable">$body_bytes_sent</span> "<span class="variable">$http_referer</span>" '</span></span><br><span class="line">                      <span class="string">'"<span class="variable">$http_user_agent</span>" "<span class="variable">$http_x_forwarded_for</span>"'</span>;</span><br></pre></td></tr></table></figure>
+<p>将原来的time_local修改为time_iso8601，该格式日期为“2017-01-19T09:10:52+08:00”，也可以其他格式，看个人习惯</p>
+<p>注意层次关系，这段脚本一定要加到server配置内部，且if要在access_log前面，否则set的变量将无法引用</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">...</span><br><span class="line">if ($time_iso8601 ~ '(\d&#123;4&#125;-\d&#123;2&#125;-\d&#123;2&#125;)') &#123;</span><br><span class="line">                <span class="attribute">set</span> <span class="variable">$tttt</span> <span class="variable">$1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="attribute">access_log</span>  logs/access-<span class="variable">$tttt</span>.log  main;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按yyyy-mm-dd格式截取字符串，写入指定日志文件中</p>
+<p>执行 nginx -s reload 后则配置生效</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    ....</span><br><span class="line">    <span class="attribute">log_format</span>  main  <span class="string">'<span class="variable">$remote_addr</span> - <span class="variable">$remote_user</span> [<span class="variable">$time_iso8601</span>] "<span class="variable">$request</span>" '</span></span><br><span class="line">                      <span class="string">'<span class="variable">$status</span> <span class="variable">$body_bytes_sent</span> "<span class="variable">$http_referer</span>" '</span></span><br><span class="line">                      <span class="string">'"<span class="variable">$http_user_agent</span>" "<span class="variable">$http_x_forwarded_for</span>"'</span>;</span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        if ($time_iso8601 ~ '(\d&#123;4&#125;-\d&#123;2&#125;-\d&#123;2&#125;)') &#123;</span><br><span class="line">                <span class="attribute">set</span> <span class="variable">$tttt</span> <span class="variable">$1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="attribute">access_log</span>  logs/<span class="variable">$tttt</span>.access.log  main;    </span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+            <div class="article_footer">
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class="content">
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href="https://mhuig.github.io/posts/ad720447.html">https://mhuig.github.io/posts/ad720447.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class="content article-entry">
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-03T09:12:45+08:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年5月3日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nginx/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Nginx</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/web%E5%AE%89%E5%85%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Web安全</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mhuig.github.io/posts/ad720447.html&title=Nginx配置 - The Blog of MHuiG&summary=Nginx 基础配置 安全性配置" target="_blank">
+          
+            <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mhuig.github.io/posts/ad720447.html&title=Nginx配置 - The Blog of MHuiG&summary=Nginx 基础配置 安全性配置" target="_blank">
+          
+            <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://mhuig.github.io/posts/ad720447.html&title=Nginx配置 - The Blog of MHuiG&summary=Nginx 基础配置 安全性配置" target="_blank">
+          
+            <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class="prev" href="/posts/5bb73de.html">
+                <p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>自建Https证书</p>
+                <p class="content">生成nginx的证书与配置chrome安全告警的问题
+
+
+安装openssl生成根证书1openssl req -x509 -nodes -days 1461 -newkey rsa:2048 ...</p>
+              </a>
+            
+            
+              <a class="next" href="/posts/96f894a7.html">
+                <p class="title">LaTeX数学符号语法速查表<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class="content">最近写一些报告的时候经常需要使用 LaTeX 语法输入数学公式，每次用的时候都去网上搜资料实在是太麻烦了，所以花了点时间整理了一些常用的 LaTeX 数学符号语法供自己查阅。
+
+
+PS： 本文中...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow floatable blur">
+    <section class="article typo">
+      <p ct><i class="fas fa-comments"></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Nginx配置',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class="l_side">
+  
+  
+    
+    
+
+<section class="widget blogger shadow floatable blur desktop mobile">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box" href="/about/">
+          <img no-lazy src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+        
+        
+          <p><span id="jinrishici-sentence">The Blog of MHuiG</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:thepie@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx配置error-page-404-500等自定义的错误页面"><span class="toc-text">Nginx配置error_page 404 500等自定义的错误页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx隐藏版本号的安全性与方法"><span class="toc-text">Nginx隐藏版本号的安全性与方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#隐藏版本号"><span class="toc-text">隐藏版本号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译源码返回自定义的server"><span class="toc-text">编译源码返回自定义的server</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制缓冲区溢出攻击"><span class="toc-text">控制缓冲区溢出攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#限制可用的请求方法"><span class="toc-text">限制可用的请求方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拒绝一些User-Agents"><span class="toc-text">拒绝一些User-Agents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Header头设置"><span class="toc-text">Header头设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经过多层CDN之后取得原始用户的IP地址，nginx-配置根据用户的真实-IP-做连接限制"><span class="toc-text">经过多层CDN之后取得原始用户的IP地址，nginx 配置根据用户的真实 IP 做连接限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx日志按天保存"><span class="toc-text">nginx日志按天保存</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow floatable blur desktop">
+    
+  <header>
+    
+      <a href="/categories/"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class="name">文章分类</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box" title="/categories/51/" href="/categories/51/" id="categories51"><div class="name">51</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/bigdata/" href="/categories/bigdata/" id="categoriesbigdata"><div class="name">BigData</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/hello/" href="/categories/hello/" id="categorieshello"><div class="name">Hello</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/linux/" href="/categories/linux/" id="categorieslinux"><div class="name">Linux</div><div class="badge">(12)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/linux/centos7/" href="/categories/linux/centos7/" id="categorieslinuxcentos7"><div class="name">CentOS7</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/linux/centos7/python/" href="/categories/linux/centos7/python/" id="categorieslinuxcentos7python"><div class="name">Python</div><div class="badge">(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/linux/kali/" href="/categories/linux/kali/" id="categorieslinuxkali"><div class="name">kali</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/linux/shell/" href="/categories/linux/shell/" id="categorieslinuxshell"><div class="name">shell</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/math/" href="/categories/math/" id="categoriesmath"><div class="name">Math</div><div class="badge">(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/math/latex/" href="/categories/math/latex/" id="categoriesmathlatex"><div class="name">LaTeX</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/math/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" href="/categories/math/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" id="categoriesmathE695B0E5ADA6E5BBBAE6A8A1"><div class="name">数学建模</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/math/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" href="/categories/math/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" id="categoriesmathE7BABFE680A7E4BBA3E695B0"><div class="name">线性代数</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/python/" href="/categories/python/" id="categoriespython"><div class="name">Python</div><div class="badge">(15)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/python/%E5%8F%8D%E7%BC%96%E8%AF%91/" href="/categories/python/%E5%8F%8D%E7%BC%96%E8%AF%91/" id="categoriespythonE58F8DE7BC96E8AF91"><div class="name">反编译</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/python/%E5%AF%86%E7%A0%81%E5%AD%A6/" href="/categories/python/%E5%AF%86%E7%A0%81%E5%AD%A6/" id="categoriespythonE5AF86E7A081E5ADA6"><div class="name">密码学</div><div class="badge">(11)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/python/%E8%A7%A3%E9%87%8A%E5%99%A8/" href="/categories/python/%E8%A7%A3%E9%87%8A%E5%99%A8/" id="categoriespythonE8A7A3E9878AE599A8"><div class="name">解释器</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/time/" href="/categories/time/" id="categoriestime"><div class="name">Time</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/web/" href="/categories/web/" id="categoriesweb"><div class="name">Web</div><div class="badge">(12)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/web/django/" href="/categories/web/django/" id="categorieswebdjango"><div class="name">Django</div><div class="badge">(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/web/hexo/" href="/categories/web/hexo/" id="categorieswebhexo"><div class="name">hexo</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/web/nginx/" href="/categories/web/nginx/" id="categorieswebnginx"><div class="name">Nginx</div><div class="badge">(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/web/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" href="/categories/web/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" id="categorieswebE58685E7BD91E7A9BFE9808F"><div class="name">内网穿透</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/windows/" href="/categories/windows/" id="categorieswindows"><div class="name">windows</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/windows/gcc/" href="/categories/windows/gcc/" id="categorieswindowsgcc"><div class="name">gcc</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/windows/netcat/" href="/categories/windows/netcat/" id="categorieswindowsnetcat"><div class="name">netcat</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E4%BC%9A%E8%AE%AE%E6%8A%A5%E5%91%8A/" href="/categories/%E4%BC%9A%E8%AE%AE%E6%8A%A5%E5%91%8A/" id="categoriesE4BC9AE8AEAEE68AA5E5918A"><div class="name">会议报告</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" id="categoriesE5A4A7E695B0E68DAE"><div class="name">大数据</div><div class="badge">(72)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/flink/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/flink/" id="categoriesE5A4A7E695B0E68DAEflink"><div class="name">Flink</div><div class="badge">(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/hadoop/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/hadoop/" id="categoriesE5A4A7E695B0E68DAEhadoop"><div class="name">Hadoop</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/" id="categoriesE5A4A7E695B0E68DAEnosql"><div class="name">NoSQL</div><div class="badge">(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAF"><div class="name">大数据处理技术</div><div class="badge">(58)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/azkaban/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/azkaban/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFazkaban"><div class="name">Azkaban</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/echarts/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/echarts/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFecharts"><div class="name">Echarts</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/flume/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/flume/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFflume"><div class="name">Flume</div><div class="badge">(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hadoop/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hadoop/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFhadoop"><div class="name">Hadoop</div><div class="badge">(10)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hdfs/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hdfs/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFhdfs"><div class="name">HDFS</div><div class="badge">(9)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hive/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/hive/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFhive"><div class="name">Hive</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/kafka/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/kafka/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFkafka"><div class="name">Kafka</div><div class="badge">(8)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/mapreduce/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/mapreduce/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFmapreduce"><div class="name">MapReduce</div><div class="badge">(11)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/sqoop/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/sqoop/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFsqoop"><div class="name">Sqoop</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/yarn/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/yarn/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFyarn"><div class="name">Yarn</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/zookeeper/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/zookeeper/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFzookeeper"><div class="name">Zookeeper</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/" id="categoriesE5A4A7E695B0E68DAEE5A4A7E695B0E68DAEE5A484E79086E68A80E69CAFE5A4A7E695B0E68DAEE99B86E7BEA4E78EAFE5A283E58786E5A487"><div class="name">大数据集群环境准备</div><div class="badge">(3)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" id="categoriesE5A4A7E695B0E68DAEE695B0E68DAEE58FAFE8A786E58C96"><div class="name">数据可视化</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" id="categoriesE5A4A7E695B0E68DAEE695B0E68DAEE68C96E68E98"><div class="name">数据挖掘</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/" href="/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/" id="categoriesE5AE9EE9AA8CE680A7"><div class="name">实验性</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" id="categoriesE6938DE4BD9CE7B3BBE7BB9F"><div class="name">操作系统</div><div class="badge">(6)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" id="categoriesE69CBAE599A8E5ADA6E4B9A0"><div class="name">机器学习</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" id="categoriesE69CBAE599A8E5ADA6E4B9A0E69CBAE599A8E8A786E8A789"><div class="name">机器视觉</div><div class="badge">(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%A8%A1%E6%9D%BF/" href="/categories/%E6%A8%A1%E6%9D%BF/" id="categoriesE6A8A1E69DBF"><div class="name">模板</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%A8%A1%E6%9D%BF/maven/" href="/categories/%E6%A8%A1%E6%9D%BF/maven/" id="categoriesE6A8A1E69DBFmaven"><div class="name">maven</div><div class="badge">(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/" href="/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/" id="categoriesE99499E8AFAFE99B86E994A6"><div class="name">错误集锦</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/centos7/" href="/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/centos7/" id="categoriesE99499E8AFAFE99B86E994A6centos7"><div class="name">CentOS7</div><div class="badge">(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow floatable blur desktop mobile">
+    
+  <header>
+    
+      <a href="/tags/"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      <a href="/tags/51/" style="font-size: 16.14px; color: #8a8a8a">51</a> <a href="/tags/aes/" style="font-size: 14px; color: #999">AES</a> <a href="/tags/anaconda/" style="font-size: 14px; color: #999">Anaconda</a> <a href="/tags/azkaban/" style="font-size: 14px; color: #999">Azkaban</a> <a href="/tags/bigdata/" style="font-size: 14px; color: #999">BigData</a> <a href="/tags/cassandra/" style="font-size: 14px; color: #999">Cassandra</a> <a href="/tags/centos7/" style="font-size: 16.86px; color: #868686">CentOS7</a> <a href="/tags/django/" style="font-size: 18.29px; color: #7c7c7c">Django</a> <a href="/tags/echarts/" style="font-size: 14px; color: #999">Echarts</a> <a href="/tags/flink/" style="font-size: 17.57px; color: #818181">Flink</a> <a href="/tags/flume/" style="font-size: 19px; color: #777">Flume</a> <a href="/tags/frp/" style="font-size: 14px; color: #999">Frp</a> <a href="/tags/github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/hbase/" style="font-size: 14px; color: #999">HBase</a> <a href="/tags/hdfs/" style="font-size: 19px; color: #777">HDFS</a> <a href="/tags/hadoop/" style="font-size: 21.14px; color: #686868">Hadoop</a> <a href="/tags/hello/" style="font-size: 14px; color: #999">Hello</a> <a href="/tags/hive/" style="font-size: 16.14px; color: #8a8a8a">Hive</a> <a href="/tags/javaapi/" style="font-size: 14px; color: #999">JavaAPI</a> <a href="/tags/jupyter/" style="font-size: 14px; color: #999">Jupyter</a> <a href="/tags/kafka/" style="font-size: 19px; color: #777">Kafka</a> <a href="/tags/latex/" style="font-size: 14px; color: #999">LaTeX</a> <a href="/tags/linux/" style="font-size: 19.71px; color: #727272">Linux</a> <a href="/tags/mapreduce/" style="font-size: 19.71px; color: #727272">MapReduce</a> <a href="/tags/markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/math/" style="font-size: 15.43px; color: #8f8f8f">Math</a> <a href="/tags/mongodb/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/neo4j/" style="font-size: 14px; color: #999">Neo4j</a> <a href="/tags/nginx/" style="font-size: 15.43px; color: #8f8f8f">Nginx</a> <a href="/tags/nosql/" style="font-size: 16.86px; color: #868686">NoSQL</a> <a href="/tags/pdf/" style="font-size: 24px; color: #555">PDF</a> <a href="/tags/python/" style="font-size: 21.86px; color: #646464">Python</a> <a href="/tags/ssm/" style="font-size: 14px; color: #999">SSM</a> <a href="/tags/sqoop/" style="font-size: 14px; color: #999">Sqoop</a> <a href="/tags/time/" style="font-size: 14px; color: #999">Time</a> <a href="/tags/web/" style="font-size: 14px; color: #999">Web</a> <a href="/tags/websocket/" style="font-size: 14px; color: #999">WebSocket</a> <a href="/tags/web%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">Web安全</a> <a href="/tags/yarn/" style="font-size: 14.71px; color: #949494">Yarn</a> <a href="/tags/zookeeper/" style="font-size: 14px; color: #999">Zookeeper</a> <a href="/tags/cloud/" style="font-size: 14px; color: #999">cloud</a> <a href="/tags/gcc/" style="font-size: 14px; color: #999">gcc</a> <a href="/tags/glob%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 14px; color: #999">glob表达式</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/https/" style="font-size: 14px; color: #999">https</a> <a href="/tags/kali/" style="font-size: 14px; color: #999">kali</a> <a href="/tags/maven/" style="font-size: 14.71px; color: #949494">maven</a> <a href="/tags/mysql/" style="font-size: 14.71px; color: #949494">mysql</a> <a href="/tags/netcat/" style="font-size: 14px; color: #999">netcat</a> <a href="/tags/network/" style="font-size: 14px; color: #999">network</a> <a href="/tags/php/" style="font-size: 14px; color: #999">php</a> <a href="/tags/shell/" style="font-size: 14px; color: #999">shell</a> <a href="/tags/windows/" style="font-size: 14.71px; color: #949494">windows</a> <a href="/tags/xrdp/" style="font-size: 14px; color: #999">xrdp</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 14px; color: #999">人工智能</a> <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 14px; color: #999">内网穿透</a> <a href="/tags/%E5%88%86%E7%B1%BB%E5%99%A8/" style="font-size: 14px; color: #999">分类器</a> <a href="/tags/%E5%88%A0%E9%99%A4%E6%B3%A8%E9%87%8A/" style="font-size: 14px; color: #999">删除注释</a> <a href="/tags/%E5%89%8D%E9%A9%B1%E5%9B%BE/" style="font-size: 14px; color: #999">前驱图</a> <a href="/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/" style="font-size: 20.43px; color: #6d6d6d">加解密</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 14px; color: #999">历史</a> <a href="/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/" style="font-size: 14px; color: #999">反编译</a> <a href="/tags/%E5%9B%BE%E5%83%8F/" style="font-size: 14px; color: #999">图像</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 23.29px; color: #5a5a5a">大数据</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/" style="font-size: 22.57px; color: #5f5f5f">大数据处理技术</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87/" style="font-size: 15.43px; color: #8f8f8f">大数据集群环境准备</a> <a href="/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/" style="font-size: 14.71px; color: #949494">实验性</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 19.71px; color: #727272">密码学</a> <a href="/tags/%E6%8C%89%E9%94%AE%E6%97%B6%E9%92%9F/" style="font-size: 14px; color: #999">按键时钟</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 17.57px; color: #818181">操作系统</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">数学建模</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">数学模型</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" style="font-size: 14px; color: #999">数据可视化</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" style="font-size: 14px; color: #999">数据挖掘</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14.71px; color: #949494">机器学习</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" style="font-size: 14.71px; color: #949494">机器视觉</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 14.71px; color: #949494">模板</a> <a href="/tags/%E6%AD%BB%E9%94%81/" style="font-size: 14px; color: #999">死锁</a> <a href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6/" style="font-size: 14px; color: #999">温湿度</a> <a href="/tags/%E6%BA%90%E7%A0%81%E4%BF%9D%E6%8A%A4/" style="font-size: 14px; color: #999">源码保护</a> <a href="/tags/%E7%89%B9%E5%BE%81/" style="font-size: 14px; color: #999">特征</a> <a href="/tags/%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" style="font-size: 14px; color: #999">特征向量</a> <a href="/tags/%E7%A7%92%E8%A1%A8/" style="font-size: 14px; color: #999">秒表</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/%E8%84%91%E7%A7%91%E5%AD%A6/" style="font-size: 14px; color: #999">脑科学</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" style="font-size: 14px; color: #999">虚拟内存</a> <a href="/tags/%E8%A7%86%E7%9F%A5%E8%A7%89/" style="font-size: 14.71px; color: #949494">视知觉</a> <a href="/tags/%E8%A7%A3%E9%87%8A%E5%99%A8/" style="font-size: 14px; color: #999">解释器</a> <a href="/tags/%E8%B6%85%E5%A3%B0%E6%B3%A2/" style="font-size: 14px; color: #999">超声波</a> <a href="/tags/%E8%BF%9B%E7%A8%8B/" style="font-size: 14px; color: #999">进程</a> <a href="/tags/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/" style="font-size: 14px; color: #999">进程同步</a> <a href="/tags/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/" style="font-size: 14px; color: #999">进程调度</a> <a href="/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/" style="font-size: 14px; color: #999">通配符</a>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="playlist" id="3175833810" list-folded="true">
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:thepie@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="external nofollow noopener noreferrer">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename" rel="external nofollow noopener noreferrer">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class="copyright">
+        <p><a href="https://MHuiG.github.io">Copyright © 2018-2020 MHuiG</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://source.unsplash.com/1600x900/?nature,water,sky,blue,sea"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@master/js/valine-no-math.js"></script>
+
+  
+  
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "HIAOvtfdfuIaz1EnjsuflKrm-MdYXbMMI",
+    appKey: "VKo9lpLdViqS2rs2cg51r3ol",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps,
+    metaPlaceholder: { "nick": "昵称 / QQ 号", "mail": "邮箱(必填)" },
+    meta: ["nick", "mail", "link"],
+    tagMeta: ["管理员", "小伙伴", "访客"],
+    master: ["de8a7aa53d07e6b6bceb45c64027763d"],
+    friends: ["b5bd5d836c7a0091aa8473e79ed4c25e", "adb7d1cd192658a55c0ad22a3309cecf", "dc99f0dbf8bf2e93a9774befccdbd112"]
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>
