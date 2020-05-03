@@ -442,7 +442,7 @@ function log(msg) {
 	}
 };
 function embedError(msg) {
-	//log(msg);
+        //log(msg);
 	return false;
 };
 function getTargetElement(targetSelector) {
@@ -529,7 +529,7 @@ function ShowPDF(){
 			  pagemode: 'thumbs',
 			  view: 'FitH'
 			},
-			PDFJS_URL: 'https://source.mhuig.top/libs/pdf.js/es5/web/viewer.html',
+			PDFJS_URL: 'https://sourcemhuig.netlify.app/libs/pdf.js/es5/web/viewer.html',
 			height: '500px'
 		  });
 		});
