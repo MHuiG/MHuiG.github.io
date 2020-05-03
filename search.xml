@@ -200,6 +200,31 @@
     
     
     <entry>
+      <title>Python如何调用C</title>
+      <link href="/posts/b6ffaac2.html"/>
+      <url>/posts/b6ffaac2.html</url>
+      
+        <content type="html"><![CDATA[<p>Python语言特点：简单，明确，优雅，高效率，同时Python语言的可扩展性和可嵌入性很强，又被成为“胶水语言”。但是Python语言有一个最大的缺点，便是运行速度慢，所以当你对速度有要求时，你可以用C语言来编写你的关键代码，或者当你希望某些算法不公开时，也可以把你的程序用C编写，然后在你的Python程序中使用它们。本文将介绍在Python程序中如何调用C…</p><a id="more"></a><h2 id="编写C语言代码"><a href="#编写C语言代码" class="headerlink" title="编写C语言代码"></a>编写C语言代码</h2><p>一个简单的c语言程序，实现了两个整数的加法运算</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="生成so库文件"><a href="#生成so库文件" class="headerlink" title="生成so库文件"></a>生成so库文件</h2><p>使用命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -fPIC -shared main.c -o lib.so</span><br></pre></td></tr></table></figure><p>so库文件不能跨平台使用，如果你在Windows下面生成的，便只能够在Windows下面使用，使用命令以后，生成后缀为.so的库文件</p><h2 id="编写Python程序来调用C语言"><a href="#编写Python程序来调用C语言" class="headerlink" title="编写Python程序来调用C语言"></a>编写Python程序来调用C语言</h2><ul><li>把so库文件放入我们的Python项目中</li><li>使用ctypes库中的CDLL来加载库   lib_main = CDLL(‘so库文件路径’)</li><li>调用C    sum_value = lib_main.sum(10, 20)</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ctypes的库</span></span><br><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载so库</span></span><br><span class="line">lib_main = CDLL(<span class="string">'./lib.so'</span>)  <span class="comment"># CDLL加载库</span></span><br><span class="line"></span><br><span class="line">sum_value = lib_main.sum(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">print(sum_value)</span><br></pre></td></tr></table></figure><p>最终得到结果30</p><p>ctypes库是Python提供的一个外部函数库，提供C语言兼容集中数据类型，可以允许调用C编译好的库，已下附上ctypes库官方文档：<a href="https://docs.python.org/3/library/ctypes.html" target="_blank" rel="external nofollow noopener noreferrer">https://docs.python.org/3/library/ctypes.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Npm更换源</title>
       <link href="/posts/ba036091.html"/>
       <url>/posts/ba036091.html</url>
@@ -409,31 +434,6 @@
             <tag> PDF </tag>
             
             <tag> NoSQL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Python如何调用C</title>
-      <link href="/posts/b6ffaac2.html"/>
-      <url>/posts/b6ffaac2.html</url>
-      
-        <content type="html"><![CDATA[<p>Python语言特点：简单，明确，优雅，高效率，同时Python语言的可扩展性和可嵌入性很强，又被成为“胶水语言”。但是Python语言有一个最大的缺点，便是运行速度慢，所以当你对速度有要求时，你可以用C语言来编写你的关键代码，或者当你希望某些算法不公开时，也可以把你的程序用C编写，然后在你的Python程序中使用它们。本文将介绍在Python程序中如何调用C…</p><a id="more"></a><h2 id="编写C语言代码"><a href="#编写C语言代码" class="headerlink" title="编写C语言代码"></a>编写C语言代码</h2><p>一个简单的c语言程序，实现了两个整数的加法运算</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="生成so库文件"><a href="#生成so库文件" class="headerlink" title="生成so库文件"></a>生成so库文件</h2><p>使用命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -fPIC -shared main.c -o lib.so</span><br></pre></td></tr></table></figure><p>so库文件不能跨平台使用，如果你在Windows下面生成的，便只能够在Windows下面使用，使用命令以后，生成后缀为.so的库文件</p><h2 id="编写Python程序来调用C语言"><a href="#编写Python程序来调用C语言" class="headerlink" title="编写Python程序来调用C语言"></a>编写Python程序来调用C语言</h2><ul><li>把so库文件放入我们的Python项目中</li><li>使用ctypes库中的CDLL来加载库   lib_main = CDLL(‘so库文件路径’)</li><li>调用C    sum_value = lib_main.sum(10, 20)</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ctypes的库</span></span><br><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载so库</span></span><br><span class="line">lib_main = CDLL(<span class="string">'./lib.so'</span>)  <span class="comment"># CDLL加载库</span></span><br><span class="line"></span><br><span class="line">sum_value = lib_main.sum(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">print(sum_value)</span><br></pre></td></tr></table></figure><p>最终得到结果30</p><p>ctypes库是Python提供的一个外部函数库，提供C语言兼容集中数据类型，可以允许调用C编译好的库，已下附上ctypes库官方文档：<a href="https://docs.python.org/3/library/ctypes.html" target="_blank" rel="external nofollow noopener noreferrer">https://docs.python.org/3/library/ctypes.html</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Python </tag>
             
         </tags>
       
