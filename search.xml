@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Travellings 开往下一个地方</title>
+      <link href="/posts/4bd2472f.html"/>
+      <url>/posts/4bd2472f.html</url>
+      
+        <content type="html"><![CDATA[<p>互联网将人与人之间的距离大大减小，却还是形成了大大小小的孤岛。只有熟人间才知道彼此，而陌生人永远只能是陌生人。</p><a id="more"></a><h2 id="什么是开往-友链接力"><a href="#什么是开往-友链接力" class="headerlink" title="什么是开往-友链接力"></a>什么是开往-友链接力</h2><p>开往-友链助力是传统友链的增强，我们不必互相知道了解彼此，标准的审查让友好的朋友加入我们，只需要一个徽标，占用一块位置，我们所有人都联系在了一起，简单而又强大。</p><span class="btn regular"><a href="https://github.com/volfclub/travellings" target="_blank" rel="external nofollow noopener noreferrer" title="开往-友链接力"><i class="fab fa-github"></i>开往-友链接力</a></span><h2 id="旅行愉快"><a href="#旅行愉快" class="headerlink" title="旅行愉快"></a>旅行愉快</h2><p>日常大家可以点击banner或者footer栏中的“Travellings”图标去参观其他博主的博客，祝大家旅行愉快。</p><h2 id="站台"><a href="#站台" class="headerlink" title="站台"></a>站台</h2><p>这里是下一站的站台，来场星际旅行吧~。</p><p><a href="https://travellings.now.sh/" target="_blank" title="开往-友链接力" rel="external nofollow noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://travellings.now.sh/assets/logo.gif" alt="开往-友链接力" width="120"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>哈勃望远镜在你生日那天看到了啥</title>
       <link href="/posts/6af346a8.html"/>
       <url>/posts/6af346a8.html</url>
@@ -13,14 +38,14 @@
       
       <categories>
           
-          <category> sky </category>
+          <category> 笔录 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> sky </tag>
+            <tag> 笔录 </tag>
             
         </tags>
       
@@ -111,6 +136,18 @@
         <content type="html"><![CDATA[<style>*{margin:0;padding:0}.list{width:100%;margin:0 auto;overflow:hidden;zoom:1}.list .ul{float:left;width:calc((100% - 100px)/ 4);margin:0 10px}.list .li{margin-bottom:20px}.list img{width:100%;border-radius:5px;vertical-align:top}</style><div class="list"></div><script src="https://cdn.jsdelivr.net/npm/jquery"></script><script>function URL(d){  d+=new Date().getTime()  var s = "https://picsum.photos/seed/"+d+"/200/300"  return s}var i=0;function WriteHtml(){    document.getElementsByClassName('list')[0].innerHTML+=`        <div class="ul">            <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div>        </div>        <div class="ul">            <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div>        </div>        <div class="ul">            <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div>        </div>        <div class="ul">            <div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div>        </div>    `}WriteHtml();WriteHtml();WriteHtml();WriteHtml();$(window).scroll(function(){　　var scrollTop = $(this).scrollTop();　　var scrollHeight = $(document).height();　　var windowHeight = $(this).height();　　if(scrollTop + windowHeight > scrollHeight - 2000){        WriteHtml()　　}});</script>]]></content>
       
       
+      <categories>
+          
+          <category> 笔录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔录 </tag>
+            
+        </tags>
       
     </entry>
     
