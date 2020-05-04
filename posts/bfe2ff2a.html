@@ -759,7 +759,7 @@
 <p>效果较差的方法是计算函数或代码块的哈希并将其与已知表进行比较。但是这种方法确实很愚蠢。一种更现实，更有效的方法可以重复使用我们之前在堆栈跟踪中使用的相同策略。我们可以计算代码块的哈希值，并将其用作解密其他代码块的密钥。</p>
 <p>创建隐式完整性控件的最漂亮方法是在md5中使用冲突。基本上，我们可以创建在自己的函数中测试其自己的md5的函数。为了在功能内执行检查，我们需要进行碰撞处理（我们想创建类似的东西<strong>function(){ if (md5(arguments.callee.toString() === ‘<md5>‘) code_function;</md5></strong> }。</p>
 <p>该技术背后的概念与用于生成图像文件的概念相同，在自己的图片中显示了md5校验和。这是一个经典示例：显示自己的md5校验和的gif。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/NoteBook@master/images/1587348824.2532935.gif#align=left&display=inline&height=203&name=md5.gif&originHeight=203&originWidth=855&size=85606&status=done&style=none&width=855" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/md5.gif" alt></p>
 <p>(注:本站的图片处理策略更改了图片md5值,点击查看原图=&gt; <a href="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/md5.gif" target="_blank" rel="external nofollow noopener noreferrer">显示自己的md5校验和的gif</a>)</p>
 <p>关于如何产生这种冲突，有大量的文章（甚至在PoC || GTFO中出现了一些示例），但是我阅读并可以复制的第一个文章是<a href="https://natmchugh.blogspot.com.es/2014/10/how-i-made-two-php-files-with-same-md5.html" target="_blank" rel="external nofollow noopener noreferrer">使用PHP编写的</a>。您可以非常快速地预先计算生成碰撞所需的块。实际上，<a href="https://gist.github.com/cgvwzq/c70901dc46aeb8a3d70dc70177428a30" target="_blank" rel="external nofollow noopener noreferrer">这</a>是<a href="https://twitter.com/cgvwzq" target="_blank" rel="external nofollow noopener noreferrer">@cgvwzq</a>创建的示例，通过这种方式检查了函数内容的完整性。</p>
 <p>如前所述，我们需要对这种技术进行强力混淆。</p>
@@ -877,7 +877,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-04T09:22:43+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-04T11:52:14+08:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年5月4日</p>
