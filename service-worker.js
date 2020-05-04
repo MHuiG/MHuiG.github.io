@@ -287,6 +287,7 @@ self.addEventListener('fetch', function(event) {
 
 toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"cdn.jsdelivr.net"});
 toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"cdnjs.cloudflare.com"});
+toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"m7.music.126.net"});
 
 
 
