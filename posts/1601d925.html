@@ -1,4 +1,969 @@
-<!DOCTYPE html><html><head hexo-theme="https://volantis.js.org/#2.6.5"><meta charset="utf-8"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>Python BinaryConversion - The Blog of MHuiG</title><meta name="keywords" content="密码学,加解密,Python"><meta name="description" content="Python BinaryConversion"><link rel="alternate" href="/atom.xml" title="The Blog of MHuiG"><meta name="theme-color" content="skyblue"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css"><link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="/assets/favicon/favicon.ico"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/favicon/favicon_180.png"><link rel="mask-icon" color="#1BC3FB" href="/assets/favicon/favicon_180.png"><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/css/style.css"><script>function setLoadingBarProgress(e){document.getElementById("loading-bar").style.width=e+"%"}</script></head><body><div id="loading-bar-wrapper"><div id="loading-bar"></div></div><header class="l_header shadow floatable blur"><div class="container"><div class="wrapper"><div class="nav-sub"><p class="title"></p><ul class="switcher nav-list-h"><li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li></ul></div><div class="nav-main"><a class="title flat-box" target="_self" href="/">MHuiG's Blog</a><div class="menu navigation"><ul class="nav-list-h"><li><a class="flat-box" href="/" id="home"><i class="fas fa-rss fa-fw"></i>博客</a></li><li><a class="flat-box" href="/archives/" id="archives"><i class="fas fa-list-alt fa-fw"></i>索引</a><ul class="list-v"><li><a class="flat-box" href="/categories/" id="categories"><i class="fas fa-folder-open fa-fw"></i>分类</a></li><li><a class="flat-box" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="flat-box" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li><li><a class="flat-box" href="/friends/" id="friends"><i class="fas fa-link fa-fw"></i>友链</a><ul class="list-v"><li class="header"><i class="fas fa-share fa-fw"></i>友链接力</li><li><a class="flat-box" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-paper-plane fa-fw"></i>Travelling</a></li></ul></li><li><a class="flat-box" href="/about/" id="about"><i class="fas fa-info-circle fa-fw"></i>关于</a></li><li><a class="flat-box"><i class="fas fa-fan fa-spin fa-fw"></i>更多</a><ul class="list-v"><li><a class="flat-box"><i class="fas fa-user-shield fa-fw"></i>博客管理</a><ul class="list-v"><li><a class="flat-box" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-comments fa-fw"></i>评论管理</a></li><li><a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-edit fa-fw"></i>云端编辑</a></li><li><a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-file-code fa-fw"></i>博客源码</a></li><li><a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-cog fa-spin fa-fw"></i>博客构建</a></li></ul></li><hr><li><a class="flat-box"><i class="fas fa-tools fa-fw"></i>工具箱</a><ul class="list-v"><li><a class="flat-box"><i class="fas fa-compact-disc fa-fw music"></i>Music</a><ul class="list-v"><li><div class="aplayer-container"><meting-js theme="#1BCDFC" autoplay volume="0.7" loop order="list" fixed="false" list-max-height="340px" server="netease" type="song" id="412785957" list-folded="true"></meting-js></div></li></ul></li><li></li><li><a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook"><i class="fas fa-star fa-spin fa-fw"></i>NoteBook</a></li></ul></li><hr><li><a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a></li></ul></li></ul></div><div class="m_search"><form name="searchform" class="form u-search-form"><i class="icon fas fa-search fa-fw"></i> <input type="text" class="input u-search-input" placeholder="Search..."></form></div><ul class="switcher nav-list-h"><li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a><ul class="menu-phone list-v navigation white-box"><li><a class="flat-box" href="/" id="home"><i class="fas fa-rss fa-fw"></i>博客</a></li><li><a class="flat-box" href="/archives/" id="archives"><i class="fas fa-list-alt fa-fw"></i>索引</a><ul class="list-v"><li><a class="flat-box" href="/categories/" id="categories"><i class="fas fa-folder-open fa-fw"></i>分类</a></li><li><a class="flat-box" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="flat-box" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li><li><a class="flat-box" href="/friends/" id="friends"><i class="fas fa-link fa-fw"></i>友链</a><ul class="list-v"><li class="header"><i class="fas fa-share fa-fw"></i>友链接力</li><li><a class="flat-box" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-paper-plane fa-fw"></i>Travelling</a></li></ul></li><li><a class="flat-box" href="/about/" id="about"><i class="fas fa-info-circle fa-fw"></i>关于</a></li><li><a class="flat-box"><i class="fas fa-fan fa-spin fa-fw"></i>更多</a><ul class="list-v"><li><a class="flat-box"><i class="fas fa-user-shield fa-fw"></i>博客管理</a><ul class="list-v"><li><a class="flat-box" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-comments fa-fw"></i>评论管理</a></li><li><a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-edit fa-fw"></i>云端编辑</a></li><li><a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-file-code fa-fw"></i>博客源码</a></li><li><a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-cog fa-spin fa-fw"></i>博客构建</a></li></ul></li><hr><li><a class="flat-box"><i class="fas fa-tools fa-fw"></i>工具箱</a><ul class="list-v"><li><a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook"><i class="fas fa-star fa-spin fa-fw"></i>NoteBook</a></li></ul></li><hr><li><a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a></li></ul></li></ul></li></ul></div></div></div></header><script>setLoadingBarProgress(40)</script><div class="l_body nocover"><div class="body-wrapper"><div class="l_main"><article id="post" class="post white-box reveal shadow floatable blur article-type-post" itemscope itemprop="blogPost"><section class="meta"><div class="meta" id="header-meta"><h1 class="title"><a href="/posts/1601d925.html">Python BinaryConversion</a></h1><div class="new-meta-box"><div class="new-meta-item author"><a href="https://MHuiG.github.io" rel="nofollow"><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png"><p>MHuiG</p></a></div><div class="new-meta-item category"><a href="/categories/python/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>Python/密码学</p></a></div><div class="new-meta-item date"><a class="notlink"><i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i><p>发布于：2018年12月1日</p></a></div><div class="new-meta-item wordcount"><a class="notlink"><i class="fas fa-keyboard fa-fw" aria-hidden="true"></i><p>字数：197字</p></a></div><div class="new-meta-item readtime"><a class="notlink"><i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i><p>时长：1分钟</p></a></div></div><hr></div></section><section class="article typo"><div class="article-entry" itemprop="articleBody"><p>Python BinaryConversion</p><a id="more"></a><p>Binary.py</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#coding:utf-8</span><br><span class="line">import re</span><br><span class="line">import argparse</span><br><span class="line">  </span><br><span class="line">def bintostr(text):</span><br><span class="line">    text &#x3D; text.replace(&#39; &#39;,&#39;&#39;)</span><br><span class="line">    text &#x3D; re.findall(r&#39;.&#123;8&#125;&#39;,text)</span><br><span class="line">    s &#x3D; map(lambda x:chr(int(x,2)),text) #批量二进制转十进制</span><br><span class="line">    flag &#x3D; &#39;&#39;.join(s)</span><br><span class="line">    return (flag)</span><br><span class="line">  </span><br><span class="line">def asciitostr(text):</span><br><span class="line">    if &#39; &#39; in text:</span><br><span class="line">        text &#x3D; text.split(&#39; &#39;)</span><br><span class="line">    elif &#39;,&#39; in text:</span><br><span class="line">        text &#x3D; text.split(&#39;,&#39;)</span><br><span class="line">    s &#x3D; map(lambda x:chr(int(x)),text)</span><br><span class="line">    flag &#x3D; &#39;&#39;.join(s)</span><br><span class="line">    return flag</span><br><span class="line">  </span><br><span class="line">def hextostr(text):</span><br><span class="line">    text &#x3D; re.findall(r&#39;.&#123;2&#125;&#39;,text)</span><br><span class="line">    #print text</span><br><span class="line">    s &#x3D; map(lambda x:chr(int(x,16)),text)</span><br><span class="line">    #print s</span><br><span class="line">    flag &#x3D; &#39;&#39;.join(s)</span><br><span class="line">    return flag</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    parser &#x3D; argparse.ArgumentParser()</span><br><span class="line">    parser.add_argument(&quot;-b&quot;)</span><br><span class="line">    parser.add_argument(&quot;-a&quot;)</span><br><span class="line">    parser.add_argument(&quot;-x&quot;)</span><br><span class="line">    argv &#x3D; parser.parse_args()</span><br><span class="line">    #print argv</span><br><span class="line">    if argv.b:</span><br><span class="line">        res &#x3D; bintostr(argv.b)</span><br><span class="line">        print (res)</span><br><span class="line">    elif argv.a:</span><br><span class="line">        res &#x3D; asciitostr(argv.a)</span><br><span class="line">        print (res)</span><br><span class="line">    elif argv.x:</span><br><span class="line">        res &#x3D; hextostr(argv.x)</span><br><span class="line">        print (res)</span><br></pre></td></tr></table></figure><div class="article_footer"><section class="widget copyright desktop mobile"><div class="content"><blockquote><p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p><p>本文永久链接是：<a href="https://mhuig.github.io/posts/1601d925.html">https://mhuig.github.io/posts/1601d925.html</a></p></blockquote></div></section><section class="widget qrcode desktop mobile"><div class="content article-entry"></div></section></div></div><section class="meta" id="footer-meta"><div class="new-meta-box"><div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-05T18:49:06+08:00"><a class="notlink"><i class="fas fa-edit fa-fw" aria-hidden="true"></i><p>更新于：2020年5月5日</p></a></div><div class="new-meta-item browse valine"><a class="notlink"><i class="fas fa-eye fa-fw" aria-hidden="true"></i> <span id="/posts/1601d925.html" class="leancloud_visitors" data-flag-title="Python BinaryConversion"><p><span class="leancloud-visitors-count"></span></p></span></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>密码学</p></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>加解密</p></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python</p></a></div><div class="new-meta-item share -mob-share-list"><div class="-mob-share-list share-body"><a class="-mob-share-qq" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mhuig.github.io/posts/1601d925.html&title=Python BinaryConversion - The Blog of MHuiG&summary=Python BinaryConversion" target="_blank"><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png"> </a><a class="-mob-share-qzone" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mhuig.github.io/posts/1601d925.html&title=Python BinaryConversion - The Blog of MHuiG&summary=Python BinaryConversion" target="_blank"><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png"> </a><a class="-mob-share-weibo" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://mhuig.github.io/posts/1601d925.html&title=Python BinaryConversion - The Blog of MHuiG&summary=Python BinaryConversion" target="_blank"><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png"></a></div></div></div></section><div class="prev-next"><a class="prev" href="/posts/fecd7f2.html"><p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>Python Caesar</p><p class="content">Python CaesarCaesar.py123456789101112131415161718192021222324252627282930313233343536373839404142...</p></a><a class="next" href="/posts/a2af0ea3.html"><p class="title">Python Morse<i class="fas fa-chevron-right" aria-hidden="true"></i></p><p class="content">Python MorseMorse.py12345678910111213141516171819202122232425262728293031323334353637383940414243...</p></a></div></section></article><article class="post white-box reveal comments shadow floatable blur"><section class="article typo"><p ct><i class="fas fa-comments"></i> 评论</p><section id="comments"><div id="valine_container" class="valine_thread"><i class="fas fa-cog fa-spin fa-fw fa-2x"></i></div></section></section></article><script>window.subData={title:"Python BinaryConversion",tools:!0}</script><script>var pdfobjectversion = "2.1.1", ua = window.navigator.userAgent, supportsPDFs, isIE, supportsPdfMimeType = (typeof navigator.mimeTypes['application/pdf'] !== "undefined"), supportsPdfActiveX, isModernBrowser = (function() {
+<!DOCTYPE html>
+<html>
+<head hexo-theme="https://volantis.js.org/#2.6.5">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Python BinaryConversion - The Blog of MHuiG</title>
+  
+    <meta name="keywords" content="密码学,加解密,Python">
+  
+  
+    <meta name="description" content="Python BinaryConversion">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="The Blog of MHuiG">
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="theme-color" content="skyblue">
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="/assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/favicon/favicon_180.png">
+  <link rel="mask-icon" color="#1BC3FB" href="/assets/favicon/favicon_180.png">
+  <link rel="manifest" href="/manifest.json">
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+  <div class="container">
+  <div class="wrapper">
+    <div class="nav-sub">
+      <p class="title"></p>
+      <ul class="switcher nav-list-h">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href="/">
+          
+          
+          
+            MHuiG's Blog
+          
+          
+        </a>
+      
+
+			<div class="menu navigation">
+				<ul class="nav-list-h">
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-rss fa-fw"></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/friends/" id="friends">
+                  <i class="fas fa-link fa-fw"></i>友链
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-share fa-fw"></i>友链接力
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-paper-plane fa-fw"></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-file-code fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-cog fa-spin fa-fw"></i>博客构建
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              
+                <li>
+                  <a class="flat-box">
+                    <i class="fas fa-compact-disc fa-fw music"></i>Music
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="song" id="412785957" list-folded="true">
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                </li><li>
+              
+            
+          
+                    
+                      
+            
+              </li><li>
+                <a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fas fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search...">
+        </form>
+      </div>
+
+			<ul class="switcher nav-list-h">
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-rss fa-fw"></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/friends/" id="friends">
+                  <i class="fas fa-link fa-fw"></i>友链
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-share fa-fw"></i>友链接力
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-paper-plane fa-fw"></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-file-code fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-cog fa-spin fa-fw"></i>博客构建
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fas fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class="body-wrapper">
+      
+
+<div class="l_main">
+  
+
+  
+    <article id="post" class="post white-box reveal shadow floatable blur article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/posts/1601d925.html">
+      Python BinaryConversion
+    </a>
+  </h1>
+
+
+        
+        <div class="new-meta-box">
+          
+            
+          
+            
+              
+<div class="new-meta-item author">
+  <a href="https://MHuiG.github.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png">
+    <p>MHuiG</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class="new-meta-item category">
+    <a href="/categories/python/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Python/密码学</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2018年12月1日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class="notlink">
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：199字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class="notlink">
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>Python BinaryConversion</p>
+<a id="more"></a>
+
+<p>Binary.py</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#coding:utf-8</span><br><span class="line">import re</span><br><span class="line">import argparse</span><br><span class="line">  </span><br><span class="line">def bintostr(text):</span><br><span class="line">    text &#x3D; text.replace(&#39; &#39;,&#39;&#39;)</span><br><span class="line">    text &#x3D; re.findall(r&#39;.&#123;8&#125;&#39;,text)</span><br><span class="line">    s &#x3D; map(lambda x:chr(int(x,2)),text) #批量二进制转十进制</span><br><span class="line">    flag &#x3D; &#39;&#39;.join(s)</span><br><span class="line">    return (flag)</span><br><span class="line">  </span><br><span class="line">def asciitostr(text):</span><br><span class="line">    if &#39; &#39; in text:</span><br><span class="line">        text &#x3D; text.split(&#39; &#39;)</span><br><span class="line">    elif &#39;,&#39; in text:</span><br><span class="line">        text &#x3D; text.split(&#39;,&#39;)</span><br><span class="line">    s &#x3D; map(lambda x:chr(int(x)),text)</span><br><span class="line">    flag &#x3D; &#39;&#39;.join(s)</span><br><span class="line">    return flag</span><br><span class="line">  </span><br><span class="line">def hextostr(text):</span><br><span class="line">    text &#x3D; re.findall(r&#39;.&#123;2&#125;&#39;,text)</span><br><span class="line">    #print text</span><br><span class="line">    s &#x3D; map(lambda x:chr(int(x,16)),text)</span><br><span class="line">    #print s</span><br><span class="line">    flag &#x3D; &#39;&#39;.join(s)</span><br><span class="line">    return flag</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    parser &#x3D; argparse.ArgumentParser()</span><br><span class="line">    parser.add_argument(&quot;-b&quot;)</span><br><span class="line">    parser.add_argument(&quot;-a&quot;)</span><br><span class="line">    parser.add_argument(&quot;-x&quot;)</span><br><span class="line">    argv &#x3D; parser.parse_args()</span><br><span class="line">    #print argv</span><br><span class="line">    if argv.b:</span><br><span class="line">        res &#x3D; bintostr(argv.b)</span><br><span class="line">        print (res)</span><br><span class="line">    elif argv.a:</span><br><span class="line">        res &#x3D; asciitostr(argv.a)</span><br><span class="line">        print (res)</span><br><span class="line">    elif argv.x:</span><br><span class="line">        res &#x3D; hextostr(argv.x)</span><br><span class="line">        print (res)</span><br></pre></td></tr></table></figure>
+
+          
+            <div class="article_footer">
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class="content">
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href="https://mhuig.github.io/posts/1601d925.html">https://mhuig.github.io/posts/1601d925.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class="content article-entry">
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-06T10:02:13+08:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年5月6日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  <div class="new-meta-item browse valine">
+    <a class="notlink">
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      <span id="/posts/1601d925.html" class="leancloud_visitors" data-flag-title="Python BinaryConversion">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>密码学</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>加解密</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mhuig.github.io/posts/1601d925.html&title=Python BinaryConversion - The Blog of MHuiG&summary=Python BinaryConversion" target="_blank">
+          
+            <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mhuig.github.io/posts/1601d925.html&title=Python BinaryConversion - The Blog of MHuiG&summary=Python BinaryConversion" target="_blank">
+          
+            <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://mhuig.github.io/posts/1601d925.html&title=Python BinaryConversion - The Blog of MHuiG&summary=Python BinaryConversion" target="_blank">
+          
+            <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class="prev" href="/posts/fecd7f2.html">
+                <p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>Python Caesar</p>
+                <p class="content">Python Caesar
+
+
+Caesar.py
+12345678910111213141516171819202122232425262728293031323334353637383940...</p>
+              </a>
+            
+            
+              <a class="next" href="/posts/a2af0ea3.html">
+                <p class="title">Python Morse<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class="content">Python Morse
+
+
+Morse.py
+1234567891011121314151617181920212223242526272829303132333435363738394041...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow floatable blur">
+    <section class="article typo">
+      <p ct><i class="fas fa-comments"></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Python BinaryConversion',
+      tools: true
+    }
+  </script>
+
+
+
+  <script>
+var pdfobjectversion = "2.1.1", ua = window.navigator.userAgent, supportsPDFs, isIE, supportsPdfMimeType = (typeof navigator.mimeTypes['application/pdf'] !== "undefined"), supportsPdfActiveX, isModernBrowser = (function() {
 	return (typeof window.Promise !== "undefined");
 }
 )(), isFirefox = (function() {
@@ -161,7 +1126,284 @@ function ShowPDF(){
 		});
 	}
 }
-ShowPDF();</script></div><aside class="l_side"></aside><footer class="clearfix"><br><br><div class="aplayer-container"><meting-js theme="#1BCDFC" autoplay volume="0.7" loop order="list" fixed="false" list-max-height="340px" server="netease" type="song" id="412785957" list-folded="true"></meting-js></div><br><div class="social-wrapper"><a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="mailto:thepie@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div><div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="external nofollow noopener noreferrer">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p></div><div class="copyright"><p><a href="https://MHuiG.github.io">Copyright © 2018-2020 MHuiG</a></p></div></footer><script>setLoadingBarProgress(80)</script><script>setLoadingBarProgress(60)</script></div><a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a></div><script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script><script>var SEARCH_SERVICE="hexo",ROOT="/";ROOT.endsWith("/")||(ROOT+="/")</script><script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script><script type="text/javascript">$(function(){ScrollReveal().reveal(".l_main .reveal",{distance:"8px",duration:"800",interval:"100",scale:"1"})})</script><script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script><script type="text/javascript">$(function(){Waves.attach(".flat-btn",["waves-button"]),Waves.attach(".float-btn",["waves-button","waves-float"]),Waves.attach(".float-btn-light",["waves-button","waves-float","waves-light"]),Waves.attach(".flat-box",["waves-block"]),Waves.attach(".float-box",["waves-block","waves-float"]),Waves.attach(".waves-image"),Waves.init()})</script><script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script><script type="text/javascript">$(function(){var a=["https://source.unsplash.com/1600x900/?nature,water,sky,blue,sea"];!function(a){for(var t=a.length;t--;){var r=Math.floor(Math.random()*t),n=a[r];a[r]=a[t],a[t]=n}}(a),$.backstretch(a,{duration:"20000",fade:"1500"})})</script><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@master/js/valine-no-math.js"></script><script>var GUEST_INFO=["nick","mail","link"],meta="nick,mail,link".split(",").filter(function(i){return-1<GUEST_INFO.indexOf(i)}),REQUIRED_FIELDS=["nick","mail","link"],requiredFields="nick,mail".split(",").filter(function(i){return-1<REQUIRED_FIELDS.indexOf(i)}),valine=new Valine;function emoji(i,e,a){return i+"/"+i+"-"+e+"."+a}for(var emojiMaps={},i=1;i<=54;i++)emojiMaps["tieba-"+i]=emoji("tieba",i,"png");for(i=1;i<=101;i++)emojiMaps["qq-"+i]=emoji("qq",i,"gif");for(i=1;i<=116;i++)emojiMaps["aru-"+i]=emoji("aru",i,"gif");for(i=1;i<=125;i++)emojiMaps["twemoji-"+i]=emoji("twemoji",i,"png");for(i=1;i<=4;i++)emojiMaps["weibo-"+i]=emoji("weibo",i,"png");valine.init({el:"#valine_container",meta:meta,appId:"HIAOvtfdfuIaz1EnjsuflKrm-MdYXbMMI",appKey:"VKo9lpLdViqS2rs2cg51r3ol",placeholder:"快来评论吧~",pageSize:"10",avatar:"robohash",lang:"zh-cn",visitor:"true",highlight:"true",mathJax:"false",enableQQ:"true",requiredFields:requiredFields,emojiCDN:"https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/",emojiMaps:emojiMaps,metaPlaceholder:{nick:"昵称 / QQ 号",mail:"邮箱(必填)"},meta:["nick","mail","link"],tagMeta:["管理员","小伙伴","访客"],master:["de8a7aa53d07e6b6bceb45c64027763d"],friends:["b5bd5d836c7a0091aa8473e79ed4c25e","adb7d1cd192658a55c0ad22a3309cecf","3ce1e6c77b4910f1871106cb30dc62b0","cfce8dc43725cc14ffcd9fb4892d5bfc"]})</script><script src="/js/app.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script><script>function wait(callback, seconds) {
+ShowPDF();
+</script>
+
+</div>
+<aside class="l_side">
+  
+  
+    
+    
+
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="song" id="412785957" list-folded="true">
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:thepie@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="external nofollow noopener noreferrer">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div class="copyright">
+        <p><a href="https://MHuiG.github.io">Copyright © 2018-2020 MHuiG</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://source.unsplash.com/1600x900/?nature,water,sky,blue,sea"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@master/js/valine-no-math.js"></script>
+
+  
+  
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "HIAOvtfdfuIaz1EnjsuflKrm-MdYXbMMI",
+    appKey: "VKo9lpLdViqS2rs2cg51r3ol",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps,
+    metaPlaceholder: { "nick": "昵称 / QQ 号", "mail": "邮箱(必填)" },
+    meta: ["nick", "mail", "link"],
+    tagMeta: ["管理员", "小伙伴", "访客"],
+    master: ["de8a7aa53d07e6b6bceb45c64027763d"],
+    friends: ["b5bd5d836c7a0091aa8473e79ed4c25e", "adb7d1cd192658a55c0ad22a3309cecf", "3ce1e6c77b4910f1871106cb30dc62b0", "cfce8dc43725cc14ffcd9fb4892d5bfc"]
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
     var timelag = null;
     timelag = window.setTimeout(callback, seconds);
   }
@@ -211,7 +1453,17 @@ ShowPDF();</script></div><aside class="l_side"></aside><footer class="clearfix">
       });
     }
     initCopyCode();
-  }(window, document);</script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script>let LAZY_LOAD_IMAGE = "[object Object]";
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "[object Object]";
   $(".article-entry").find("div.fancybox").find("img").each(function () {
       var element = document.createElement("a");
       $(element).attr("data-fancybox", "gallery");
@@ -225,4 +1477,14 @@ ShowPDF();</script></div><aside class="l_side"></aside><footer class="clearfix">
          $(element).attr("href", $(this).attr("data-original"));
        }
       $(this).wrap(element);
-  });</script><script>setLoadingBarProgress(100)</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body></html>
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>
