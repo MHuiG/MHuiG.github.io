@@ -704,7 +704,7 @@
   <div class="new-meta-item wordcount">
     <a class="notlink">
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：412字</p>
+      <p>字数：459字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -755,22 +755,17 @@
               </div>
             </details>
 
-<h2 id="启用root用户"><a href="#启用root用户" class="headerlink" title="启用root用户"></a>启用root用户</h2><h3 id="设置root用户"><a href="#设置root用户" class="headerlink" title="设置root用户"></a>设置root用户</h3><p>使用sudo passwd root来设置root密码</p>
-<figure class="highlight shell"><figcaption><span>设置root密码</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure>
+<h2 id="启用root用户"><a href="#启用root用户" class="headerlink" title="启用root用户"></a>启用root用户</h2><details><summary> <p>启用root用户</p> </summary>
+              <div class="content">
+              <h3 id="设置root用户"><a href="#设置root用户" class="headerlink" title="设置root用户"></a>设置root用户</h3><p>使用sudo passwd root来设置root密码</p><figure class="highlight shell"><figcaption><span>设置root密码</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure><p>然后使用su root命令，再输入密码，测试是否可以进入root用户</p><figure class="highlight shell"><figcaption><span>进入root</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure><h3 id="修改-root-profile文件"><a href="#修改-root-profile文件" class="headerlink" title="修改/root/.profile文件"></a>修改/root/.profile文件</h3><p>运行vim /root/.profile命令修改文件，但是发现系统没有安装vim，可以使用apt install vim命令自动安装</p><p>vim安装成功后，使用vim /root/.profile打开该文件（你也可以使用nano）</p><p>找到最后一行：mesg n || true，先注释掉，增加tty -s &amp;&amp; mesg n || true这行</p><h3 id="修改-etc-pam-d-目录下文件"><a href="#修改-etc-pam-d-目录下文件" class="headerlink" title="修改/etc/pam.d/目录下文件"></a>修改/etc/pam.d/目录下文件</h3><p>运行cd /etc/pam.d/，里面有两个要修改的文件，即gdm-autologin和gdm-password</p><p>运行vim gdm-autologin，注释掉下面一行</p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200506212530.png" alt></p><p>运行vim gdm-password，注释掉下面一行</p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200506212709.png" alt></p><h3 id="重启系统或者虚拟机"><a href="#重启系统或者虚拟机" class="headerlink" title="重启系统或者虚拟机"></a>重启系统或者虚拟机</h3><p>输入用户名root，然后输入设置的root密码，使完成用root登录</p>
+              </div>
+            </details>
 
-<p>然后使用su root命令，再输入密码，测试是否可以进入root用户</p>
-<figure class="highlight shell"><figcaption><span>进入root</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改-root-profile文件"><a href="#修改-root-profile文件" class="headerlink" title="修改/root/.profile文件"></a>修改/root/.profile文件</h3><p>运行vim /root/.profile命令修改文件，但是发现系统没有安装vim，可以使用apt install vim命令自动安装</p>
-<p>vim安装成功后，使用vim /root/.profile打开该文件（你也可以使用nano）</p>
-<p>找到最后一行：mesg n || true，先注释掉，增加tty -s &amp;&amp; mesg n || true这行</p>
-<h3 id="修改-etc-pam-d-目录下文件"><a href="#修改-etc-pam-d-目录下文件" class="headerlink" title="修改/etc/pam.d/目录下文件"></a>修改/etc/pam.d/目录下文件</h3><p>运行cd /etc/pam.d/，里面有两个要修改的文件，即gdm-autologin和gdm-password</p>
-<p>运行vim gdm-autologin，注释掉下面一行</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200506212530.png" alt></p>
-<p>运行vim gdm-password，注释掉下面一行</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200506212709.png" alt></p>
-<h3 id="重启系统或者虚拟机"><a href="#重启系统或者虚拟机" class="headerlink" title="重启系统或者虚拟机"></a>重启系统或者虚拟机</h3><p>输入用户名root，然后输入设置的root密码，使完成用root登录</p>
-<h2 id="更换国内源"><a href="#更换国内源" class="headerlink" title="更换国内源"></a>更换国内源</h2><p>未完待续。。。。</p>
+<h2 id="更换国内源"><a href="#更换国内源" class="headerlink" title="更换国内源"></a>更换国内源</h2><details><summary> <p>启用root用户</p> </summary>
+              <div class="content">
+              <h3 id="备份-etc-apt-sources-list"><a href="#备份-etc-apt-sources-list" class="headerlink" title="备份/etc/apt/sources.list"></a>备份/etc/apt/sources.list</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure><h3 id="修改Ubuntu的源列表"><a href="#修改Ubuntu的源列表" class="headerlink" title="修改Ubuntu的源列表"></a>修改Ubuntu的源列表</h3><p>修改 /etc/apt/sources.list 文件下的列表</p><p><a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank" rel="external nofollow noopener noreferrer">清华大学开源软件镜像站</a></p>
+              </div>
+            </details>
 
           
             <div class="article_footer">
@@ -844,7 +839,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-07T11:12:16+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-07T12:47:57+08:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年5月7日</p>
@@ -1169,7 +1164,7 @@ ShowPDF();
 
 
     <div class="content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载Ubuntu镜像文件"><span class="toc-text">下载Ubuntu镜像文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VMware-安装配置"><span class="toc-text">VMware 安装配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启用root用户"><span class="toc-text">启用root用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置root用户"><span class="toc-text">设置root用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-root-profile文件"><span class="toc-text">修改&#x2F;root&#x2F;.profile文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-etc-pam-d-目录下文件"><span class="toc-text">修改&#x2F;etc&#x2F;pam.d&#x2F;目录下文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启系统或者虚拟机"><span class="toc-text">重启系统或者虚拟机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更换国内源"><span class="toc-text">更换国内源</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载Ubuntu镜像文件"><span class="toc-text">下载Ubuntu镜像文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VMware-安装配置"><span class="toc-text">VMware 安装配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启用root用户"><span class="toc-text">启用root用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置root用户"><span class="toc-text">设置root用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-root-profile文件"><span class="toc-text">修改&#x2F;root&#x2F;.profile文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-etc-pam-d-目录下文件"><span class="toc-text">修改&#x2F;etc&#x2F;pam.d&#x2F;目录下文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启系统或者虚拟机"><span class="toc-text">重启系统或者虚拟机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更换国内源"><span class="toc-text">更换国内源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#备份-etc-apt-sources-list"><span class="toc-text">备份&#x2F;etc&#x2F;apt&#x2F;sources.list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改Ubuntu的源列表"><span class="toc-text">修改Ubuntu的源列表</span></a></li></ol></li></ol>
     </div>
   </section>
 
