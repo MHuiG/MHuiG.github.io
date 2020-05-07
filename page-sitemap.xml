@@ -8,43 +8,43 @@
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/about/</loc>
-        <lastmod>2020-05-07T01:41:50.274Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>https://mhuig.github.io/categories/</loc>
-        <lastmod>2020-05-07T01:41:50.274Z</lastmod>
+        <lastmod>2020-05-07T01:47:02.706Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://mhuig.github.io/friends/</loc>
-        <lastmod>2020-05-07T01:41:50.274Z</lastmod>
+        <lastmod>2020-05-07T01:47:02.706Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://mhuig.github.io/mylist/</loc>
-        <lastmod>2020-05-07T01:41:50.274Z</lastmod>
+        <lastmod>2020-05-07T01:47:02.706Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://mhuig.github.io/tags/</loc>
-        <lastmod>2020-05-07T01:41:50.274Z</lastmod>
+        <lastmod>2020-05-07T01:47:02.706Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://mhuig.github.io/about/</loc>
+        <lastmod>2020-05-07T01:47:02.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://mhuig.github.io/404.html</loc>
-        <lastmod>2020-05-07T01:41:50.270Z</lastmod>
+        <lastmod>2020-05-07T01:47:02.698Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
