@@ -704,13 +704,13 @@
   <div class="new-meta-item wordcount">
     <a class="notlink">
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：554字</p>
+      <p>字数：753字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class="notlink">
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2分钟</p>
+      <p>时长：3分钟</p>
     </a>
   </div>
 
@@ -769,10 +769,23 @@
 
 <h2 id="更换国内源"><a href="#更换国内源" class="headerlink" title="更换国内源"></a>更换国内源</h2><details><summary> <p>更换国内源</p> </summary>
               <div class="content">
-              <h3 id="备份-etc-apt-sources-list"><a href="#备份-etc-apt-sources-list" class="headerlink" title="备份/etc/apt/sources.list"></a>备份/etc/apt/sources.list</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure><h3 id="修改Ubuntu的源列表"><a href="#修改Ubuntu的源列表" class="headerlink" title="修改Ubuntu的源列表"></a>修改Ubuntu的源列表</h3><p>修改 /etc/apt/sources.list 文件下的列表</p><p><a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank" rel="external nofollow noopener noreferrer">清华大学开源软件镜像站</a></p>
+              <h3 id="备份-etc-apt-sources-list"><a href="#备份-etc-apt-sources-list" class="headerlink" title="备份/etc/apt/sources.list"></a>备份/etc/apt/sources.list</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure><h3 id="修改Ubuntu的源列表"><a href="#修改Ubuntu的源列表" class="headerlink" title="修改Ubuntu的源列表"></a>修改Ubuntu的源列表</h3><p>修改 /etc/apt/sources.list 文件下的列表</p><p><a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank" rel="external nofollow noopener noreferrer">清华大学开源软件镜像站</a></p><h3 id="更新apt"><a href="#更新apt" class="headerlink" title="更新apt"></a>更新apt</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
               </div>
             </details>
 
+<h2 id="安装SSH、配置SSH无密码登陆"><a href="#安装SSH、配置SSH无密码登陆" class="headerlink" title="安装SSH、配置SSH无密码登陆"></a>安装SSH、配置SSH无密码登陆</h2><p>集群、单节点模式都需要用到 SSH 登陆（类似于远程登陆，你可以登录某台 Linux 主机，并且在上面运行命令），Ubuntu 默认已安装了 SSH client，此外还需要安装 SSH server：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure>
+<p>安装后，可以使用如下命令登陆本机：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh localhost</span><br></pre></td></tr></table></figure>
+<p>利用 ssh-keygen 生成密钥，并将密钥加入到授权中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;.ssh&#x2F;</span><br><span class="line">ssh-keygen -t rsa              # 会有提示，都按回车就可以</span><br><span class="line">cat .&#x2F;id_rsa.pub &gt;&gt; .&#x2F;authorized_keys  # 加入授权</span><br></pre></td></tr></table></figure>
+<p>如果没有问题可能是ssh-server的配置文件设置了拒绝以root用户登录的模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes</span><br></pre></td></tr></table></figure>
+
+<p>重启ssh-server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;ssh restart</span><br></pre></td></tr></table></figure>
           
             <div class="article_footer">
               
@@ -845,7 +858,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-07T16:04:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-07T17:43:13+08:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年5月7日</p>
@@ -1170,7 +1183,7 @@ ShowPDF();
 
 
     <div class="content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载Ubuntu镜像文件"><span class="toc-text">下载Ubuntu镜像文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VMware-安装配置"><span class="toc-text">VMware 安装配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启用root用户"><span class="toc-text">启用root用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置root用户"><span class="toc-text">设置root用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-root-profile文件"><span class="toc-text">修改&#x2F;root&#x2F;.profile文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-etc-pam-d-目录下文件"><span class="toc-text">修改&#x2F;etc&#x2F;pam.d&#x2F;目录下文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启系统或者虚拟机"><span class="toc-text">重启系统或者虚拟机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更换国内源"><span class="toc-text">更换国内源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#备份-etc-apt-sources-list"><span class="toc-text">备份&#x2F;etc&#x2F;apt&#x2F;sources.list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改Ubuntu的源列表"><span class="toc-text">修改Ubuntu的源列表</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载Ubuntu镜像文件"><span class="toc-text">下载Ubuntu镜像文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VMware-安装配置"><span class="toc-text">VMware 安装配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启用root用户"><span class="toc-text">启用root用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置root用户"><span class="toc-text">设置root用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-root-profile文件"><span class="toc-text">修改&#x2F;root&#x2F;.profile文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-etc-pam-d-目录下文件"><span class="toc-text">修改&#x2F;etc&#x2F;pam.d&#x2F;目录下文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启系统或者虚拟机"><span class="toc-text">重启系统或者虚拟机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更换国内源"><span class="toc-text">更换国内源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#备份-etc-apt-sources-list"><span class="toc-text">备份&#x2F;etc&#x2F;apt&#x2F;sources.list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改Ubuntu的源列表"><span class="toc-text">修改Ubuntu的源列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新apt"><span class="toc-text">更新apt</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装SSH、配置SSH无密码登陆"><span class="toc-text">安装SSH、配置SSH无密码登陆</span></a></li></ol>
     </div>
   </section>
 
