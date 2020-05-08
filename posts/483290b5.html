@@ -79,6 +79,34 @@
   </script>
 
   
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-148909894-1";
+	  script.defer=true;
+	  document.body.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-148909894-1');
+	}, 8000);
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	  setTimeout(function() { 
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?d367964cbb21775bfbb9c16fe4da3484";
+		hm.defer=true;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+	  }, 8000);
+    })();
+    </script>
   
 </head>
 
@@ -862,7 +890,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-08T17:01:34+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-08T20:17:38+08:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年5月8日</p>
@@ -1554,14 +1582,12 @@ ShowPDF();
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
   function pjax_fancybox() {
-    let LAZY_LOAD_IMAGE = "true";
     $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
       var element = document.createElement("a"); // a 标签
       $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      if (LAZY_LOAD_IMAGE == true) {
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
         $(element).attr("href", $(this).attr("data-original"));
-      } else {
-        $(element).attr("href", $(this).attr("src"));
       }
       $(element).attr("data-fancybox", "images");
       var caption = "";   // 描述信息
