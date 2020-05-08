@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme="https://volantis.js.org/#2.6.5">
+<head hexo-theme="https://volantis.js.org/#2.6.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -39,10 +39,8 @@
   <!-- link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css">
   
-    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
   
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
@@ -851,7 +849,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-08T16:12:37+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-08T16:28:36+08:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年5月8日</p>
@@ -865,6 +863,7 @@
   <div class="new-meta-item browse valine">
     <a class="notlink">
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
       <span id="/posts/6cfc95e.html" class="leancloud_visitors" data-flag-title="数学建模资料">
       <p>
         <span class="leancloud-visitors-count"></span>
@@ -945,17 +944,18 @@ zook...</p>
               </a>
             
             
-              <a class="next" href="/posts/b59b6a41.html">
-                <p class="title">数据挖掘PDF资料<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class="content">汇总数据挖掘PDF资料
+              <a class="next" href="/posts/98579906.html">
+                <p class="title">数据可视化PDF资料<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class="content">汇总数据可视化PDF资料
 
-数据挖掘概念与特性
-常用分类算法及原理
-常用降维算法及原理
-常用聚类算法及原理
-关联分析及常用算法
-常用推荐算法及原理
-</p>
+HTML的基本标签及语法
+CSS语法规则
+网页基本布局方式
+自适应设计和响应式设计
+js基本语法汇总
+Ajax基本原理和概念
+Ajax实现与后台服务通信
+Echart...</p>
               </a>
             
           </div>
@@ -1519,16 +1519,17 @@ ShowPDF();
 
 
 <!-- fancybox -->
-
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
   function pjax_fancybox() {
-    let LAZY_LOAD_IMAGE = "[object Object]";
+    let LAZY_LOAD_IMAGE = "true";
     $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
       var element = document.createElement("a"); // a 标签
       $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      if (LAZY_LOAD_IMAGE) {
+      if (LAZY_LOAD_IMAGE == true) {
         $(element).attr("href", $(this).attr("data-original"));
+      } else {
+        $(element).attr("href", $(this).attr("src"));
       }
       $(element).attr("data-fancybox", "images");
       var caption = "";   // 描述信息
@@ -1563,8 +1564,6 @@ ShowPDF();
     pjax_fancybox();
   });
 </script>
-
-
 
 
 

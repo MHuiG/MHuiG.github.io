@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme="https://volantis.js.org/#2.6.5">
+<head hexo-theme="https://volantis.js.org/#2.6.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -37,10 +37,8 @@
   <!-- link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css">
   
-    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
   
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
@@ -1846,16 +1844,17 @@
 
 
 <!-- fancybox -->
-
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
   function pjax_fancybox() {
-    let LAZY_LOAD_IMAGE = "[object Object]";
+    let LAZY_LOAD_IMAGE = "true";
     $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
       var element = document.createElement("a"); // a 标签
       $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      if (LAZY_LOAD_IMAGE) {
+      if (LAZY_LOAD_IMAGE == true) {
         $(element).attr("href", $(this).attr("data-original"));
+      } else {
+        $(element).attr("href", $(this).attr("src"));
       }
       $(element).attr("data-fancybox", "images");
       var caption = "";   // 描述信息
@@ -1890,8 +1889,6 @@
     pjax_fancybox();
   });
 </script>
-
-
 
 
 

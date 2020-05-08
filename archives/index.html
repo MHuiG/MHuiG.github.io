@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme="https://volantis.js.org/#2.6.5">
+<head hexo-theme="https://volantis.js.org/#2.6.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -37,10 +37,8 @@
   <!-- link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css">
   
-    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
   
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
@@ -643,20 +641,6 @@
 	      
 	          <div class="archive-item archive-year mark">
 	            <h2>2020</h2>
-	          </div>
-	      
-	          <div class="archive-item archive-post mark">
-	            <a href="/posts/56612abd.html">
-	              <time>05-07</time>
-	              <span class="title">
-	                
-	                  Spark环境配置(Ubuntu20.04)
-	                
-	                
-									
-									
-	              </span>
-	            </a>
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
@@ -1672,11 +1656,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/posts/c89a329f.html">
+	            <a href="/posts/b9b7baa7.html">
 	              <time>09-19</time>
 	              <span class="title">
 	                
-	                  大数据处理技术-Flume的负载均衡loadbalancer
+	                  大数据处理技术-Kafka的介绍
 	                
 	                
 									
@@ -1686,11 +1670,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/posts/b9b7baa7.html">
+	            <a href="/posts/c89a329f.html">
 	              <time>09-19</time>
 	              <span class="title">
 	                
-	                  大数据处理技术-Kafka的介绍
+	                  大数据处理技术-Flume的负载均衡loadbalancer
 	                
 	                
 									
@@ -2372,11 +2356,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/posts/b59b6a41.html">
+	            <a href="/posts/98579906.html">
 	              <time>09-17</time>
 	              <span class="title">
 	                
-	                  数据挖掘PDF资料
+	                  数据可视化PDF资料
 	                
 	                
 									
@@ -2386,11 +2370,11 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
-	            <a href="/posts/98579906.html">
+	            <a href="/posts/b59b6a41.html">
 	              <time>09-17</time>
 	              <span class="title">
 	                
-	                  数据可视化PDF资料
+	                  数据挖掘PDF资料
 	                
 	                
 									
@@ -3040,6 +3024,27 @@
 	
 
 	
+	    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    tags: "ams",
+    macros: {
+      href: "{}"
+    }
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|dno",
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+
+	
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -3236,16 +3241,17 @@
 
 
 <!-- fancybox -->
-
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
   function pjax_fancybox() {
-    let LAZY_LOAD_IMAGE = "[object Object]";
+    let LAZY_LOAD_IMAGE = "true";
     $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
       var element = document.createElement("a"); // a 标签
       $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      if (LAZY_LOAD_IMAGE) {
+      if (LAZY_LOAD_IMAGE == true) {
         $(element).attr("href", $(this).attr("data-original"));
+      } else {
+        $(element).attr("href", $(this).attr("src"));
       }
       $(element).attr("data-fancybox", "images");
       var caption = "";   // 描述信息
@@ -3280,8 +3286,6 @@
     pjax_fancybox();
   });
 </script>
-
-
 
 
 

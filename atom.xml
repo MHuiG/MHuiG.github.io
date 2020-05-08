@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-05-08T08:13:17.856Z</updated>
+  <updated>2020-05-08T08:28:36.015Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -17,34 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Spark环境配置(Ubuntu20.04)</title>
-    <link href="https://mhuig.github.io/posts/56612abd.html"/>
-    <id>https://mhuig.github.io/posts/56612abd.html</id>
-    <published>2020-05-07T11:03:35.000Z</published>
-    <updated>2020-05-08T08:13:17.856Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!doctype html&gt;&lt;div data-lake-element=&quot;root&quot; class=&quot;lake-engine lake-typography-traditional&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu环境安装</title>
     <link href="https://mhuig.github.io/posts/2844bf39.html"/>
     <id>https://mhuig.github.io/posts/2844bf39.html</id>
     <published>2020-05-06T08:30:53.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -69,7 +46,7 @@
     <link href="https://mhuig.github.io/posts/4bd2472f.html"/>
     <id>https://mhuig.github.io/posts/4bd2472f.html</id>
     <published>2020-05-04T11:47:43.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -90,7 +67,7 @@
     <link href="https://mhuig.github.io/posts/6af346a8.html"/>
     <id>https://mhuig.github.io/posts/6af346a8.html</id>
     <published>2020-05-04T08:50:43.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -111,7 +88,7 @@
     <link href="https://mhuig.github.io/posts/323ed1b8.html"/>
     <id>https://mhuig.github.io/posts/323ed1b8.html</id>
     <published>2020-05-02T13:02:43.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -132,7 +109,7 @@
     <link href="https://mhuig.github.io/posts/376025fe.html"/>
     <id>https://mhuig.github.io/posts/376025fe.html</id>
     <published>2020-05-01T00:02:39.000Z</published>
-    <updated>2020-05-08T08:12:37.880Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -153,7 +130,7 @@
     <link href="https://mhuig.github.io/posts/91953e39.html"/>
     <id>https://mhuig.github.io/posts/91953e39.html</id>
     <published>2020-04-30T06:06:43.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -174,7 +151,7 @@
     <link href="https://mhuig.github.io/posts/e9fadccb.html"/>
     <id>https://mhuig.github.io/posts/e9fadccb.html</id>
     <published>2020-04-28T04:05:43.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -195,7 +172,7 @@
     <link href="https://mhuig.github.io/posts/564714f9.html"/>
     <id>https://mhuig.github.io/posts/564714f9.html</id>
     <published>2020-04-22T01:42:43.000Z</published>
-    <updated>2020-05-08T08:13:17.860Z</updated>
+    <updated>2020-05-08T08:29:17.359Z</updated>
     
     <summary type="html">
     
@@ -216,7 +193,7 @@
     <link href="https://mhuig.github.io/posts/4a17b156.html"/>
     <id>https://mhuig.github.io/posts/4a17b156.html</id>
     <published>2020-04-19T06:24:29.000Z</published>
-    <updated>2020-05-08T08:13:17.864Z</updated>
+    <updated>2020-05-08T08:29:17.363Z</updated>
     
     <summary type="html">
     
@@ -237,7 +214,7 @@
     <link href="https://mhuig.github.io/posts/xa6297acc.html"/>
     <id>https://mhuig.github.io/posts/xa6297acc.html</id>
     <published>2020-03-09T12:05:42.000Z</published>
-    <updated>2020-05-08T08:12:37.880Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -264,7 +241,7 @@
     <link href="https://mhuig.github.io/posts/bfe2ff2a.html"/>
     <id>https://mhuig.github.io/posts/bfe2ff2a.html</id>
     <published>2020-02-26T02:36:40.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -287,7 +264,7 @@
     <link href="https://mhuig.github.io/posts/b6ffaac2.html"/>
     <id>https://mhuig.github.io/posts/b6ffaac2.html</id>
     <published>2020-02-24T07:45:30.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -308,7 +285,7 @@
     <link href="https://mhuig.github.io/posts/ba036091.html"/>
     <id>https://mhuig.github.io/posts/ba036091.html</id>
     <published>2020-02-23T11:02:43.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -329,7 +306,7 @@
     <link href="https://mhuig.github.io/posts/5e7ad437.html"/>
     <id>https://mhuig.github.io/posts/5e7ad437.html</id>
     <published>2020-02-23T01:40:32.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -354,7 +331,7 @@
     <link href="https://mhuig.github.io/posts/9b624d43.html"/>
     <id>https://mhuig.github.io/posts/9b624d43.html</id>
     <published>2020-02-09T02:41:51.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -383,7 +360,7 @@
     <link href="https://mhuig.github.io/posts/ec477027.html"/>
     <id>https://mhuig.github.io/posts/ec477027.html</id>
     <published>2020-02-09T02:41:50.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -412,7 +389,7 @@
     <link href="https://mhuig.github.io/posts/cdec63d.html"/>
     <id>https://mhuig.github.io/posts/cdec63d.html</id>
     <published>2020-02-09T02:41:49.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -441,7 +418,7 @@
     <link href="https://mhuig.github.io/posts/e3dcc811.html"/>
     <id>https://mhuig.github.io/posts/e3dcc811.html</id>
     <published>2020-02-09T02:41:48.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -470,7 +447,7 @@
     <link href="https://mhuig.github.io/posts/f0940727.html"/>
     <id>https://mhuig.github.io/posts/f0940727.html</id>
     <published>2020-02-09T02:41:47.000Z</published>
-    <updated>2020-05-08T08:12:37.876Z</updated>
+    <updated>2020-05-08T08:28:36.015Z</updated>
     
     <summary type="html">
     
@@ -489,6 +466,35 @@
       <category term="PDF" scheme="https://MHuiG.github.io/tags/pdf/"/>
     
       <category term="NoSQL" scheme="https://MHuiG.github.io/tags/nosql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何加密你的 Python 代码</title>
+    <link href="https://mhuig.github.io/posts/b190dcb.html"/>
+    <id>https://mhuig.github.io/posts/b190dcb.html</id>
+    <published>2020-02-05T05:08:17.000Z</published>
+    <updated>2020-05-08T08:28:36.015Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;讲述了如何通过修改 Python 解释器达到加解密 Python 代码的目的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://MHuiG.github.io/categories/python/"/>
+    
+      <category term="解释器" scheme="https://MHuiG.github.io/categories/python/%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
+    
+    
+      <category term="Python" scheme="https://MHuiG.github.io/tags/python/"/>
+    
+      <category term="加解密" scheme="https://MHuiG.github.io/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/"/>
+    
+      <category term="解释器" scheme="https://MHuiG.github.io/tags/%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
+    
+      <category term="源码保护" scheme="https://MHuiG.github.io/tags/%E6%BA%90%E7%A0%81%E4%BF%9D%E6%8A%A4/"/>
     
   </entry>
   
