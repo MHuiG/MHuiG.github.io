@@ -37,24 +37,20 @@
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-  
+  <script src="https://cdn.jsdelivr.net/npm/fg-loadcss@3.1.0/src/loadCSS.min.js"></script>
+  <script id="loadcss">
+    loadCSS( "https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css", document.getElementById("loadcss") );
+    loadCSS( "https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss") );
+	
+	loadCSS( "https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", document.getElementById("loadcss") );
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
-
+	
+	loadCSS( "https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", document.getElementById("loadcss") );
+    
+    
+  </script>
   
-
   
-
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
-  
-
-  
-
   <!-- import link -->
   
   
@@ -842,7 +838,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-09T09:06:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-09T10:51:21+08:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年5月9日</p>
