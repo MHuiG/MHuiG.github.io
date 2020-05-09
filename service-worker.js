@@ -290,6 +290,7 @@ toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"cdnjs.cloudflare.com"});
 toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"m7.music.126.net"});
 toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"ajax.cloudflare.com"});
 toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"blog.mhuig.top"});
+toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"source.mhuig.top"});
 toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"mhuig.github.io"});
 
 
