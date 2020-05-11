@@ -1,4 +1,950 @@
-<!DOCTYPE html><html><head hexo-theme="https://volantis.js.org/#3.0-beta"><meta charset="utf-8"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>HC-SR04 超声波测距模块 串口 程序 - The Blog of MHuiG</title><meta name="keywords" content="51,超声波"><meta name="description" content="HC-SR04 超声波测距模块 串口 程序"><link rel="alternate" href="/atom.xml" title="The Blog of MHuiG"><meta name="theme-color" content="skyblue"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"><script aysc src="https://cdn.jsdelivr.net/npm/fg-loadcss@3.1.0/src/loadCSS.min.js"></script><script id="loadcss">loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css",document.getElementById("loadcss")),loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css",document.getElementById("loadcss")),loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css",document.getElementById("loadcss"))</script><link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn/assets/favicon/favicon.ico"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn/assets/favicon/favicon_180.png"><link rel="mask-icon" color="#1BC3FB" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn/assets/favicon/favicon_180.png"><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script><script>setTimeout(function(){var e=document.createElement("script");function a(){dataLayer.push(arguments)}e.src="https://www.googletagmanager.com/gtag/js?id=UA-148909894-1",e.defer=!0,document.body.appendChild(e),window.dataLayer=window.dataLayer||[],a("js",new Date),a("config","UA-148909894-1")},5e3)</script><script>var _hmt=_hmt||[];setTimeout(function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?d367964cbb21775bfbb9c16fe4da3484",e.defer=!0;var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)},5e3)</script></head><body><div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper"}),NProgress.start()</script></div><header class="l_header shadow floatable blur"><div class="container"><div class="wrapper"><div class="nav-sub"><p class="title"></p><ul class="switcher nav-list-h"><li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li></ul></div><div class="nav-main"><a class="title flat-box" target="_self" href="/">MHuiG's Blog</a><div class="menu navigation"><ul class="nav-list-h"><li><a class="flat-box" href="/" id="home"><i class="fas fa-rss fa-fw"></i>博客</a></li><li><a class="flat-box" href="/archives/" id="archives"><i class="fas fa-list-alt fa-fw"></i>索引</a><ul class="list-v"><li><a class="flat-box" href="/categories/" id="categories"><i class="fas fa-folder-open fa-fw"></i>分类</a></li><li><a class="flat-box" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="flat-box" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li><li><a class="flat-box" href="/friends/" id="friends"><i class="fas fa-link fa-fw"></i>友链</a><ul class="list-v"><li class="header"><i class="fas fa-share fa-fw"></i>友链接力</li><li><a class="flat-box" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-paper-plane fa-fw"></i>Travelling</a></li></ul></li><li><a class="flat-box" href="/about/" id="about"><i class="fas fa-info-circle fa-fw"></i>关于</a></li><li><a class="flat-box"><i class="fas fa-fan fa-spin fa-fw"></i>更多</a><ul class="list-v"><li><a class="flat-box"><i class="fas fa-user-shield fa-fw"></i>博客管理</a><ul class="list-v"><li><a class="flat-box" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-comments fa-fw"></i>评论管理</a></li><li><a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-edit fa-fw"></i>云端编辑</a></li><li><a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-file-code fa-fw"></i>博客源码</a></li><li><a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-cog fa-spin fa-fw"></i>博客构建</a></li></ul></li><hr><li><a class="flat-box"><i class="fas fa-tools fa-fw"></i>工具箱</a><ul class="list-v"><li><a class="flat-box"><i class="fas fa-compact-disc fa-fw music"></i>Music</a><ul class="list-v"><li><div class="aplayer-container"><meting-js theme="#1BCDFC" autoplay volume="0.7" loop order="list" fixed="false" list-max-height="340px" server="netease" type="song" id="412785957" list-folded="true"></meting-js></div></li></ul></li><li></li><li><a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook"><i class="fas fa-star fa-spin fa-fw"></i>NoteBook</a></li></ul></li><hr><li><a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a></li></ul></li></ul></div><div class="m_search"><form name="searchform" class="form u-search-form"><i class="icon fas fa-search fa-fw"></i> <input type="text" class="input u-search-input" placeholder="Search..."></form></div><ul class="switcher nav-list-h"><li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a><ul class="menu-phone list-v navigation white-box"><li><a class="flat-box" href="/" id="home"><i class="fas fa-rss fa-fw"></i>博客</a></li><li><a class="flat-box" href="/archives/" id="archives"><i class="fas fa-list-alt fa-fw"></i>索引</a><ul class="list-v"><li><a class="flat-box" href="/categories/" id="categories"><i class="fas fa-folder-open fa-fw"></i>分类</a></li><li><a class="flat-box" href="/tags/" id="tags"><i class="fas fa-tags fa-fw"></i>标签</a></li><li><a class="flat-box" href="/archives/" id="archives"><i class="fas fa-archive fa-fw"></i>归档</a></li></ul></li><li><a class="flat-box" href="/friends/" id="friends"><i class="fas fa-link fa-fw"></i>友链</a><ul class="list-v"><li class="header"><i class="fas fa-share fa-fw"></i>友链接力</li><li><a class="flat-box" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-paper-plane fa-fw"></i>Travelling</a></li></ul></li><li><a class="flat-box" href="/about/" id="about"><i class="fas fa-info-circle fa-fw"></i>关于</a></li><li><a class="flat-box"><i class="fas fa-fan fa-spin fa-fw"></i>更多</a><ul class="list-v"><li><a class="flat-box"><i class="fas fa-user-shield fa-fw"></i>博客管理</a><ul class="list-v"><li><a class="flat-box" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-comments fa-fw"></i>评论管理</a></li><li><a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-edit fa-fw"></i>云端编辑</a></li><li><a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-file-code fa-fw"></i>博客源码</a></li><li><a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-cog fa-spin fa-fw"></i>博客构建</a></li></ul></li><hr><li><a class="flat-box"><i class="fas fa-tools fa-fw"></i>工具箱</a><ul class="list-v"><li><a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook"><i class="fas fa-star fa-spin fa-fw"></i>NoteBook</a></li></ul></li><hr><li><a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a></li></ul></li></ul></li></ul></div></div></div></header><div class="l_body nocover"><div class="body-wrapper" id="pjax-container"><div class="l_main"><article id="post" class="post white-box reveal shadow floatable blur article-type-post" itemscope itemprop="blogPost"><section class="meta"><div class="meta" id="header-meta"><h1 class="title"><a href="/posts/eb168c8b.html">HC-SR04 超声波测距模块 串口 程序</a></h1><div class="new-meta-box"><div class="new-meta-item author"><a href="https://MHuiG.github.io" rel="nofollow"><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn/assets/avatar/avatar-16.webp"><p>MHuiG</p></a></div><div class="new-meta-item category"><a href="/categories/51/" rel="nofollow"><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><p>51</p></a></div><div class="new-meta-item date"><a class="notlink"><i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i><p>发布于：2018年12月2日</p></a></div><div class="new-meta-item wordcount"><a class="notlink"><i class="fas fa-keyboard fa-fw" aria-hidden="true"></i><p>字数：333字</p></a></div><div class="new-meta-item readtime"><a class="notlink"><i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i><p>时长：1分钟</p></a></div></div><hr></div></section><section class="article typo"><div class="article-entry" itemprop="articleBody"><p>HC-SR04 超声波测距模块 串口 程序</p><a id="more"></a><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***********************************************************************************************************/</span></span><br><span class="line"><span class="comment">//HC-SR04 超声波测距模块 串口 程序</span></span><br><span class="line"><span class="comment">//晶振：11.0592</span></span><br><span class="line"><span class="comment">//接线：模块TRIG接 P1.2  ECH0 接P1.1</span></span><br><span class="line"><span class="comment">//串口波特率9600</span></span><br><span class="line"><span class="comment">//Atmel AT89C52 C51</span></span><br><span class="line"><span class="comment">/***********************************************************************************************************/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>   <span class="meta-string">&lt;AT89X51.H&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>   <span class="meta-string">&lt;intrins.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>   <span class="meta-string">&lt;STDIO.H&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> uchar unsigned  char</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> uint  unsigned   int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  RX  P1_1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  TX  P1_2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span>  time=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span>  timer=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">float</span>         S=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">bit</span>           flag =<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Conut</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    time=TH0*<span class="number">256</span>+TL0;</span><br><span class="line">    TH0=<span class="number">0</span>;</span><br><span class="line">    TL0=<span class="number">0</span>;</span><br><span class="line">    S=(time*<span class="number">1.87</span>)/<span class="number">100</span>;     <span class="comment">//算出来是CM</span></span><br><span class="line">    <span class="keyword">if</span>(flag==<span class="number">1</span>) &#123;	    <span class="comment">//超出测量</span></span><br><span class="line">        flag=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-----\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"S=%fcm\n"</span>,S);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delayms</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> ms)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> i=<span class="number">100</span>,j;</span><br><span class="line">    <span class="keyword">for</span>(; ms; ms--) &#123;</span><br><span class="line">        <span class="keyword">while</span>(--i) &#123;</span><br><span class="line">            j=<span class="number">10</span>;</span><br><span class="line">            <span class="keyword">while</span>(--j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">zd0</span><span class="params">()</span> interrupt 1 </span>&#123;	 <span class="comment">//T0中断用来计数器溢出,超过测距范围</span></span><br><span class="line">    flag=<span class="number">1</span>;							 <span class="comment">//中断溢出标志</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span>  <span class="title">StartModule</span><span class="params">()</span> </span>&#123;	         <span class="comment">//T1中断用来扫描数码管和计800MS启动模块</span></span><br><span class="line">    TX=<span class="number">1</span>;			                 <span class="comment">//800MS  启动一次模块</span></span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    TX=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    TMOD=<span class="number">0x21</span>;		   <span class="comment">//设T0为方式1，GATE=1；</span></span><br><span class="line">    SCON=<span class="number">0x50</span>;</span><br><span class="line">    TH1=<span class="number">0xFD</span>;</span><br><span class="line">    TL1=<span class="number">0xFD</span>;</span><br><span class="line">    TH0=<span class="number">0</span>;</span><br><span class="line">    TL0=<span class="number">0</span>;</span><br><span class="line">    TR0=<span class="number">1</span>;</span><br><span class="line">    ET0=<span class="number">1</span>;             <span class="comment">//允许T0中断</span></span><br><span class="line">    TR1=<span class="number">1</span>;			   <span class="comment">//开启定时器</span></span><br><span class="line">    TI=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    EA=<span class="number">1</span>;			   <span class="comment">//开启总中断</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        StartModule();</span><br><span class="line">        <span class="keyword">while</span>(!RX);		<span class="comment">//当RX为零时等待</span></span><br><span class="line">        TR0=<span class="number">1</span>;			    <span class="comment">//开启计数</span></span><br><span class="line">        <span class="keyword">while</span>(RX);			<span class="comment">//当RX为1计数并等待</span></span><br><span class="line">        TR0=<span class="number">0</span>;				<span class="comment">//关闭计数</span></span><br><span class="line">        Conut();			<span class="comment">//计算</span></span><br><span class="line">        delayms(<span class="number">100</span>);		<span class="comment">//100MS</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div class="article_footer"><section class="widget copyright desktop mobile"><div class="content"><blockquote><p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p><p>本文永久链接是：<a href="https://mhuig.github.io/posts/eb168c8b.html">https://mhuig.github.io/posts/eb168c8b.html</a></p></blockquote></div></section><section class="widget qrcode desktop mobile"><div class="content article-entry"></div></section></div></div><section class="meta" id="footer-meta"><div class="new-meta-box"><div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-11T21:29:51+08:00"><a class="notlink"><i class="fas fa-edit fa-fw" aria-hidden="true"></i><p>更新于：2020年5月11日</p></a></div><div class="new-meta-item browse valine"><a class="notlink"><i class="fas fa-eye fa-fw" aria-hidden="true"></i> <span id="/posts/eb168c8b.html" class="leancloud_visitors" data-flag-title="HC-SR04 超声波测距模块 串口 程序"><p><span class="leancloud-visitors-count"></span></p></span></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/51/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>51</p></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%B6%85%E5%A3%B0%E6%B3%A2/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>超声波</p></a></div></div></section><div class="prev-next"><a class="prev" href="/posts/3d7d3997.html"><p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>AT89S52 或 STC89C52RC 串口发送温湿度数据</p><p class="content">AT89S52 或 STC89C52RC 串口发送温湿度数据1234567891011121314151617181920212223242526272829303132333435363738...</p></a><a class="next" href="/posts/d07ffe1c.html"><p class="title">51按键时钟<i class="fas fa-chevron-right" aria-hidden="true"></i></p><p class="content">51按键时钟1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950...</p></a></div></section></article><article class="post white-box reveal comments shadow floatable blur"><section class="article typo"><p ct><i class="fas fa-comments"></i> 评论</p><section id="comments"><div id="valine_container" class="valine_thread"><i class="fas fa-cog fa-spin fa-fw fa-2x"></i></div></section></section></article><script>window.subData={title:"HC-SR04 超声波测距模块 串口 程序",tools:!0}</script><script>var pdfobjectversion = "2.1.1", ua = window.navigator.userAgent, supportsPDFs, isIE, supportsPdfMimeType = (typeof navigator.mimeTypes['application/pdf'] !== "undefined"), supportsPdfActiveX, isModernBrowser = (function() {
+<!DOCTYPE html>
+<html>
+<head hexo-theme="https://volantis.js.org/#3.0-beta">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>HC-SR04 超声波测距模块 串口 程序 - The Blog of MHuiG</title>
+  
+    <meta name="keywords" content="51,超声波">
+  
+  
+    <meta name="description" content="HC-SR04 超声波测距模块 串口 程序">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="The Blog of MHuiG">
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="theme-color" content="skyblue">
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@latest/fonts/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+  <script aysc src="https://cdn.jsdelivr.net/npm/fg-loadcss@3.1.0/src/loadCSS.min.js"></script>
+  <script id="loadcss">
+    loadCSS( "https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss") );
+	
+	loadCSS( "https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", document.getElementById("loadcss") );
+    
+	
+	loadCSS( "https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", document.getElementById("loadcss") );
+    
+    
+	
+  </script>
+
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn/assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn/assets/favicon/favicon_180.png">
+  <link rel="mask-icon" color="#1BC3FB" href="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn/assets/favicon/favicon_180.png">
+  <link rel="manifest" href="/manifest.json">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+	setTimeout(function() {
+	  var script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-148909894-1";
+	  script.defer=true;
+	  document.body.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-148909894-1');
+	}, 5000);
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	  setTimeout(function() { 
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?d367964cbb21775bfbb9c16fe4da3484";
+		hm.defer=true;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+	  }, 5000);
+    })();
+    </script>
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+    <script>NProgress.configure({parent:"#loading-bar-wrapper"});NProgress.start();</script>
+</div>
+<header class="l_header shadow floatable blur">
+  <div class="container">
+  <div class="wrapper">
+    <div class="nav-sub">
+      <p class="title"></p>
+      <ul class="switcher nav-list-h">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href="/">
+          
+          
+          
+            MHuiG's Blog
+          
+          
+        </a>
+      
+
+			<div class="menu navigation">
+				<ul class="nav-list-h">
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-rss fa-fw"></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/friends/" id="friends">
+                  <i class="fas fa-link fa-fw"></i>友链
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-share fa-fw"></i>友链接力
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-paper-plane fa-fw"></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-file-code fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-cog fa-spin fa-fw"></i>博客构建
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              
+                <li>
+                  <a class="flat-box">
+                    <i class="fas fa-compact-disc fa-fw music"></i>Music
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="song" id="412785957" list-folded="true">
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                </li><li>
+              
+            
+          
+                    
+                      
+            
+              </li><li>
+                <a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fas fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search...">
+        </form>
+      </div>
+
+			<ul class="switcher nav-list-h">
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-rss fa-fw"></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/friends/" id="friends">
+                  <i class="fas fa-link fa-fw"></i>友链
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-share fa-fw"></i>友链接力
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-paper-plane fa-fw"></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG/blog-source" id="https:githubcomMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-file-code fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://travis-ci.com/github/MHuiG/blog-source" id="https:travis-cicomgithubMHuiGblog-source" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fas fa-cog fa-spin fa-fw"></i>博客构建
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fas fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+
+
+  <div class="l_body nocover">
+    <div class="body-wrapper" id="pjax-container">
+      
+
+<div class="l_main">
+  
+
+  
+    <article id="post" class="post white-box reveal shadow floatable blur article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/posts/eb168c8b.html">
+      HC-SR04 超声波测距模块 串口 程序
+    </a>
+  </h1>
+
+
+        
+        <div class="new-meta-box">
+          
+            
+          
+            
+              
+<div class="new-meta-item author">
+  <a href="https://MHuiG.github.io" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/loading.svg" data-original="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn/assets/avatar/avatar-16.webp">
+    <p>MHuiG</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class="new-meta-item category">
+    <a href="/categories/51/" rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>51</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2018年12月2日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class="notlink">
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：333字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class="notlink">
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>HC-SR04 超声波测距模块 串口 程序</p>
+<a id="more"></a>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***********************************************************************************************************/</span></span><br><span class="line"><span class="comment">//HC-SR04 超声波测距模块 串口 程序</span></span><br><span class="line"><span class="comment">//晶振：11.0592</span></span><br><span class="line"><span class="comment">//接线：模块TRIG接 P1.2  ECH0 接P1.1</span></span><br><span class="line"><span class="comment">//串口波特率9600</span></span><br><span class="line"><span class="comment">//Atmel AT89C52 C51</span></span><br><span class="line"><span class="comment">/***********************************************************************************************************/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>   <span class="meta-string">&lt;AT89X51.H&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>   <span class="meta-string">&lt;intrins.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>   <span class="meta-string">&lt;STDIO.H&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> uchar unsigned  char</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> uint  unsigned   int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  RX  P1_1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  TX  P1_2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span>  time=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span>  timer=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">float</span>         S=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">bit</span>           flag =<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Conut</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    time=TH0*<span class="number">256</span>+TL0;</span><br><span class="line">    TH0=<span class="number">0</span>;</span><br><span class="line">    TL0=<span class="number">0</span>;</span><br><span class="line">    S=(time*<span class="number">1.87</span>)/<span class="number">100</span>;     <span class="comment">//算出来是CM</span></span><br><span class="line">    <span class="keyword">if</span>(flag==<span class="number">1</span>) &#123;	    <span class="comment">//超出测量</span></span><br><span class="line">        flag=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-----\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"S=%fcm\n"</span>,S);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delayms</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> ms)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> i=<span class="number">100</span>,j;</span><br><span class="line">    <span class="keyword">for</span>(; ms; ms--) &#123;</span><br><span class="line">        <span class="keyword">while</span>(--i) &#123;</span><br><span class="line">            j=<span class="number">10</span>;</span><br><span class="line">            <span class="keyword">while</span>(--j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">zd0</span><span class="params">()</span> interrupt 1 </span>&#123;	 <span class="comment">//T0中断用来计数器溢出,超过测距范围</span></span><br><span class="line">    flag=<span class="number">1</span>;							 <span class="comment">//中断溢出标志</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span>  <span class="title">StartModule</span><span class="params">()</span> </span>&#123;	         <span class="comment">//T1中断用来扫描数码管和计800MS启动模块</span></span><br><span class="line">    TX=<span class="number">1</span>;			                 <span class="comment">//800MS  启动一次模块</span></span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    _nop_();</span><br><span class="line">    TX=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/********************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    TMOD=<span class="number">0x21</span>;		   <span class="comment">//设T0为方式1，GATE=1；</span></span><br><span class="line">    SCON=<span class="number">0x50</span>;</span><br><span class="line">    TH1=<span class="number">0xFD</span>;</span><br><span class="line">    TL1=<span class="number">0xFD</span>;</span><br><span class="line">    TH0=<span class="number">0</span>;</span><br><span class="line">    TL0=<span class="number">0</span>;</span><br><span class="line">    TR0=<span class="number">1</span>;</span><br><span class="line">    ET0=<span class="number">1</span>;             <span class="comment">//允许T0中断</span></span><br><span class="line">    TR1=<span class="number">1</span>;			   <span class="comment">//开启定时器</span></span><br><span class="line">    TI=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    EA=<span class="number">1</span>;			   <span class="comment">//开启总中断</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        StartModule();</span><br><span class="line">        <span class="keyword">while</span>(!RX);		<span class="comment">//当RX为零时等待</span></span><br><span class="line">        TR0=<span class="number">1</span>;			    <span class="comment">//开启计数</span></span><br><span class="line">        <span class="keyword">while</span>(RX);			<span class="comment">//当RX为1计数并等待</span></span><br><span class="line">        TR0=<span class="number">0</span>;				<span class="comment">//关闭计数</span></span><br><span class="line">        Conut();			<span class="comment">//计算</span></span><br><span class="line">        delayms(<span class="number">100</span>);		<span class="comment">//100MS</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+            <div class="article_footer">
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class="content">
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href="https://mhuig.github.io/posts/eb168c8b.html">https://mhuig.github.io/posts/eb168c8b.html</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class="content article-entry">
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-12T07:51:59+08:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年5月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  <div class="new-meta-item browse valine">
+    <a class="notlink">
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/posts/eb168c8b.html" class="leancloud_visitors" data-flag-title="HC-SR04 超声波测距模块 串口 程序">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/51/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>51</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%B6%85%E5%A3%B0%E6%B3%A2/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>超声波</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class="prev" href="/posts/3d7d3997.html">
+                <p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>AT89S52 或 STC89C52RC 串口发送温湿度数据</p>
+                <p class="content">AT89S52 或 STC89C52RC 串口发送温湿度数据
+
+
+1234567891011121314151617181920212223242526272829303132333435363...</p>
+              </a>
+            
+            
+              <a class="next" href="/posts/d07ffe1c.html">
+                <p class="title">51按键时钟<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class="content">51按键时钟
+
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow floatable blur">
+    <section class="article typo">
+      <p ct><i class="fas fa-comments"></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'HC-SR04 超声波测距模块 串口 程序',
+      tools: true
+    }
+  </script>
+
+
+
+  <script>
+var pdfobjectversion = "2.1.1", ua = window.navigator.userAgent, supportsPDFs, isIE, supportsPdfMimeType = (typeof navigator.mimeTypes['application/pdf'] !== "undefined"), supportsPdfActiveX, isModernBrowser = (function() {
 	return (typeof window.Promise !== "undefined");
 }
 )(), isFirefox = (function() {
@@ -161,9 +1107,516 @@ function ShowPDF(){
 		});
 	}
 }
-ShowPDF();</script></div><aside class="l_side"></aside><footer class="clearfix"><br><br><div class="aplayer-container"><meting-js theme="#1BCDFC" autoplay volume="0.7" loop order="list" fixed="false" list-max-height="340px" server="netease" type="song" id="412785957" list-folded="true"></meting-js></div><br><div class="social-wrapper"><a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="mailto:thepie@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a> <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div><div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="external nofollow noopener noreferrer">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p></div><div class="copyright"><p><a href="https://MHuiG.github.io">Copyright © 2018-2020 MHuiG</a></p></div></footer><div id="pjax-data" style="display:none"><div id="page-cover">none</div><div id="pjax-ispage">true</div><div id="pjax-pageTitle">HC-SR04 超声波测距模块 串口 程序</div><div id="valine-path">none</div><div id="valine-placeholder">none</div></div></div><a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>var SEARCH_SERVICE="hexo",ROOT="/";ROOT.endsWith("/")||(ROOT+="/")</script><script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script><script aysc src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script><script type="text/javascript">$(function(){ScrollReveal().reveal(".l_main .reveal",{distance:"8px",duration:"800",interval:"100",scale:"1"})})</script><script type="text/javascript">$("body > div.l_body > div > div > section > div:nth-child(3) > article").addClass("reveal"),$("body > div.l_body > div > div > section > div:nth-child(4) > article").addClass("reveal"),$("body > div.l_body > div > div > section > div:nth-child(5) > article").addClass("reveal")</script><script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" aysc></script><script type="text/javascript">$(function(){Waves.attach(".flat-btn",["waves-button"]),Waves.attach(".float-btn",["waves-button","waves-float"]),Waves.attach(".float-btn-light",["waves-button","waves-float","waves-light"]),Waves.attach(".flat-box",["waves-block"]),Waves.attach(".float-box",["waves-block","waves-float"]),Waves.attach(".waves-image"),Waves.init()})</script><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" aysc></script><script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" aysc></script><script src="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@1.2.2/js/valine.js"></script><script>var GUEST_INFO=["nick","mail","link"],meta="nick,mail,link".split(",").filter(function(e){return-1<GUEST_INFO.indexOf(e)}),REQUIRED_FIELDS=["nick","mail","link"],requiredFields="nick,mail".split(",").filter(function(e){return-1<REQUIRED_FIELDS.indexOf(e)});function emoji(e,i,a){return e+"/"+e+"-"+i+"."+a}for(var emojiMaps={},i=1;i<=101;i++)emojiMaps["qq-"+i]=emoji("qq",i,"gif");for(i=1;i<=4;i++)emojiMaps["weibo-"+i]=emoji("weibo",i,"png");function pjax_valine(){var e="none"===$.trim($("#valine-path").text())?window.location.pathname:$.trim($("#valine-path").text()),i="none"===$.trim($("#valine-placeholder").text())?"快来评论吧~":$.trim($("#valine-placeholder").text());(new Valine).init({el:"#valine_container",meta:meta,placeholder:i,path:e,appId:"HIAOvtfdfuIaz1EnjsuflKrm-MdYXbMMI",appKey:"VKo9lpLdViqS2rs2cg51r3ol",pageSize:"10",avatar:"robohash",lang:"zh-cn",visitor:"true",highlight:"true",mathJax:"false",enableQQ:"true",requiredFields:requiredFields,emojiCDN:"https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/",emojiMaps:emojiMaps,metaPlaceholder:{nick:"昵称 / QQ 号",mail:"邮箱(必填)"},meta:["nick","mail","link"],tagMeta:["管理员","小伙伴","访客"],master:["de8a7aa53d07e6b6bceb45c64027763d"],friends:["b5bd5d836c7a0091aa8473e79ed4c25e","adb7d1cd192658a55c0ad22a3309cecf","3ce1e6c77b4910f1871106cb30dc62b0","cfce8dc43725cc14ffcd9fb4892d5bfc"]})}$(function(){pjax_valine()})</script><script aysc src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script><script>function wait(e,a){window.setTimeout(e,a)}function pjax_initCopyCode(){var e="";e+='<button class="btn-copy" data-clipboard-snippet="">',e+='<i class="fas fa-copy"></i><span>COPY</span>',e+="</button>",$(".highlight .code pre").before(e),$(".article pre code").before(e);var a=new ClipboardJS(".btn-copy",{target:function(e){return e.nextElementSibling}});a.on("success",function(e){var a=$(e.trigger);a.addClass("copied");var i=$(a.find("i"));i.removeClass("fa-copy"),i.addClass("fa-check-circle");var n=$(a.find("span"));n[0].innerText="COPIED",wait(function(){i.removeClass("fa-check-circle"),i.addClass("fa-copy"),n[0].innerText="COPY"},2e3)}),a.on("error",function(e){e.clearSelection();var a=$(e.trigger);a.addClass("copy-failed");var i=$(a.find("i"));i.removeClass("fa-copy"),i.addClass("fa-times-circle");var n=$(a.find("span"));n[0].innerText="COPY FAILED",wait(function(){i.removeClass("fa-times-circle"),i.addClass("fa-copy"),n[0].innerText="COPY"},2e3)})}$(function(){pjax_initCopyCode()})</script><script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script><script type="text/javascript">function pjax_scrollrebeal(){ScrollReveal().reveal(".l_main .reveal",{distance:"8px",duration:"800",interval:"100",scale:"1"})}$(function(){pjax_scrollrebeal()})</script><script aysc src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script>function pjax_fancybox(){$(".article-entry").find("img").not(".inline").not("a img").each(function(){var t=document.createElement("a");$(t).attr("pjax-fancybox",""),$(t).attr("href",$(this).attr("src")),$(this).attr("data-original")&&$(t).attr("href",$(this).attr("data-original")),$(t).attr("data-fancybox","images");var a="";$(this).attr("alt")&&($(t).attr("data-caption",$(this).attr("alt")),a=$(this).attr("alt"));var e=document.createElement("div");$(e).addClass("fancybox"),$(this).wrap(e);var i=document.createElement("span");$(i).addClass("image-caption"),$(i).text(a),$(this).after(i),$(this).wrap(t)}),$(".article-entry").find("img").fancybox({selector:'[data-fancybox="images"]',hash:!1,loop:!1,closeClick:!0,helpers:{overlay:{closeClick:!0}},buttons:["zoom","close"]})}$(function(){pjax_fancybox()})</script><script src="/js/app.js"></script><script src="/js/search.js"></script><script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script><script type="text/javascript">$(function(){Waves.attach(".flat-btn",["waves-button"]),Waves.attach(".float-btn",["waves-button","waves-float"]),Waves.attach(".float-btn-light",["waves-button","waves-float","waves-light"]),Waves.attach(".flat-box",["waves-block"]),Waves.attach(".float-box",["waves-block","waves-float"]),Waves.attach(".waves-image"),Waves.init()})</script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js" aysc></script><script>var pjax;$(document).ready(function(){NProgress.done()}),document.addEventListener("DOMContentLoaded",function(){pjax=new Pjax({elements:'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',selectors:["title","meta[name=description]","meta[name=keywords]","#pjax-container"],cacheBust:!1,timeout:"5000"})}),document.addEventListener("pjax:send",function(){window.stop(),window.subData=null,$.fancybox.close(),$(".l_header .switcher .s-search").removeClass("active"),$("header.l_header.shadow.blur").removeClass("show"),$(".l_header").removeClass("z_search-open"),$(".wrapper").removeClass("sub"),$(window).unbind("resize"),$(window).unbind("scroll"),$(window).unbind("click"),$(document).unbind("scroll"),NProgress.start()}),document.addEventListener("pjax:complete",function(){$("script[data-pjax], .pjax-reload script").each(function(){$(this).parent().append($(this).remove())});try{pjax_fancybox(),pjax_scrollrebeal(),pjax_initCopyCode(),pjax_valine()}catch(e){console.log(e)}NProgress.done()}),document.addEventListener("pjax:error",function(){NProgress.done(),window.location.href=event.triggerElement.href})</script></div><script>
+ShowPDF();
+</script>
+
+
+
+</div>
+<aside class="l_side">
+  
+  
+    
+    
+
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.7" loop="all" order="list" fixed="false" list-max-height="340px" server="netease" type="song" id="412785957" list-folded="true">
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:thepie@foxmail.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382" class="social fas fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="external nofollow noopener noreferrer">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div class="copyright">
+        <p><a href="https://MHuiG.github.io">Copyright © 2018-2020 MHuiG</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+
+      <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+
+    <div id="page-cover">none</div>
+
+    <div id="pjax-ispage">true</div>
+    <div id="pjax-pageTitle">HC-SR04 超声波测距模块 串口 程序</div>
+
+    
+    <div id="valine-path">none</div>
+    <div id="valine-placeholder">none</div>
+    
+</div>
+
+
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+  </div>
+  <div>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+<!--无许处理 - 确认兼容-->
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script aysc src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+  <script type="text/javascript">
+      $("body > div.l_body > div > div > section > div:nth-child(3) > article").addClass("reveal");
+      $("body > div.l_body > div > div > section > div:nth-child(4) > article").addClass("reveal");
+      $("body > div.l_body > div > div > section > div:nth-child(5) > article").addClass("reveal");
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" aysc></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+<!--无许处理 - 确认兼容-->
+
+
+<!--似乎不需要处理-->
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" aysc></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" aysc></script>
+
+  
+
+
+<!--PS：只对 valine 做了 Pjax 兼容测试-->
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@1.2.2/js/valine.js"></script>
+
+  
+  
+  
+  <script>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var meta = 'nick,mail,link'.split(',').filter(function (item) {
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+    var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+      return REQUIRED_FIELDS.indexOf(item) > -1
+    });
+
+    function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+    }
+
+    var emojiMaps = {};
+    for (var i = 1; i <= 101; i++) {
+      emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+    }
+    for (var i = 1; i <= 4; i++) {
+      emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+    }
+
+    function pjax_valine() {
+      var valinePath = $.trim($('#valine-path').text()) === "none" ?
+              window.location.pathname : $.trim($('#valine-path').text());
+
+      var valinePlaceholder = $.trim($('#valine-placeholder').text()) === "none" ?
+              "快来评论吧~" : $.trim($('#valine-placeholder').text());
+
+      var ALLPATH = '';
+      if(ALLPATH != '') valinePath = ALLPATH;
+
+      var valine = new Valine();
+      valine.init({
+        el: '#valine_container',
+        meta: meta,
+        placeholder: valinePlaceholder,
+        path: valinePath,
+        appId: "HIAOvtfdfuIaz1EnjsuflKrm-MdYXbMMI",
+        appKey: "VKo9lpLdViqS2rs2cg51r3ol",
+        pageSize: '10',
+        avatar: 'robohash',
+        lang: 'zh-cn',
+        visitor: 'true',
+        highlight: 'true',
+        mathJax: 'false',
+        enableQQ: 'true',
+        requiredFields: requiredFields,
+        emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+        emojiMaps: emojiMaps,
+        metaPlaceholder: { "nick": "昵称 / QQ 号", "mail": "邮箱(必填)" },
+        meta: ["nick", "mail", "link"],
+        tagMeta: ["管理员", "小伙伴", "访客"],
+        master: ["de8a7aa53d07e6b6bceb45c64027763d"],
+        friends: ["b5bd5d836c7a0091aa8473e79ed4c25e", "adb7d1cd192658a55c0ad22a3309cecf", "3ce1e6c77b4910f1871106cb30dc62b0", "cfce8dc43725cc14ffcd9fb4892d5bfc"]
+      })
+    }
+
+    $(function () {
+      pjax_valine();
+    });
+  </script>
+
+
+
+<!-- 复制 -fix -->
+
+  <script aysc src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+
+  function pjax_initCopyCode() {
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    $(".article pre code").before(copyHtml);
+    var clipboard = new ClipboardJS('.btn-copy', {
+      target: function (trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clipboard.on('success', function (e) {
+      var $btn = $(e.trigger);
+      $btn.addClass('copied');
+      var $icon = $($btn.find('i'));
+      $icon.removeClass('fa-copy');
+      $icon.addClass('fa-check-circle');
+      var $span = $($btn.find('span'));
+      $span[0].innerText = 'COPIED';
+
+      wait(function () { // 等待两秒钟后恢复
+        $icon.removeClass('fa-check-circle');
+        $icon.addClass('fa-copy');
+        $span[0].innerText = 'COPY';
+      }, 2000);
+    });
+    clipboard.on('error', function (e) {
+      e.clearSelection();
+      var $btn = $(e.trigger);
+      $btn.addClass('copy-failed');
+      var $icon = $($btn.find('i'));
+      $icon.removeClass('fa-copy');
+      $icon.addClass('fa-times-circle');
+      var $span = $($btn.find('span'));
+      $span[0].innerText = 'COPY FAILED';
+
+      wait(function () { // 等待两秒钟后恢复
+        $icon.removeClass('fa-times-circle');
+        $icon.addClass('fa-copy');
+        $span[0].innerText = 'COPY';
+      }, 2000);
+    });
+  }
+
+  $(function () {
+    pjax_initCopyCode();
+  });
+
+</script>
+
+
+<!-- ******************************** -->
+
+<!--scrollreveal -fix -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -fix -->
+<script aysc src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+<!--主要的 JS 文件-->
+
+  
+<script src="/js/app.js"></script>
+
+
+
+<!--fix-->
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+<!--重新加载即可-->
+
+
+<!--无需处理-->
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+<!--无需处理-->
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js" aysc></script>
+
+
+
+<!--无需处理 ？-->
+
+
+
+
+<script>
+  $(document).ready(function () {
+    NProgress.done();
+  });
+
+  var pjax;
+  document.addEventListener('DOMContentLoaded', function () {
+    pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+      selectors: [
+        "title",
+        "meta[name=description]",
+        "meta[name=keywords]",
+        "#pjax-container"
+      ],
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: '5000'
+    });
+  });
+
+  document.addEventListener('pjax:send', function () {
+    window.stop(); // 相当于点击了浏览器的停止按钮
+    window.subData = null; // 移除标题（用于一二级导航栏切换处）
+
+    $.fancybox.close();    // 关闭弹窗，曾经有人提过个BUG，在查看图片时浏览器返回上一页后，弹窗无法关闭了
+
+    $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+    $('header.l_header.shadow.blur').removeClass('show'); // 移除导航栏
+    $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+    $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+    $(window).unbind('resize');    // 解绑
+    $(window).unbind('scroll');    // 解绑
+    $(window).unbind('click');     // 解绑
+    $(document).unbind('scroll');  // 解绑
+
+    NProgress.start();
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    
+    $('script[data-pjax], .pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    try{
+      pjax_fancybox();
+      
+        pjax_scrollrebeal();
+      
+      
+        pjax_initCopyCode();
+      
+      
+        pjax_valine();
+      
+    } catch (e) {
+      console.log(e);
+    }
+
+    NProgress.done();
+  });
+
+  document.addEventListener('pjax:error', function () {
+    NProgress.done();
+    window.location.href = event.triggerElement.href;
+  });
+
+</script>
+
+  </div>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: true,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body></html>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
