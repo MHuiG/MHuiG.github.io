@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/css/style.css","b638430054e0ecfc6215e4040bb7118f"],["/favicon.ico","d0cd815a171f58c431cb037873f4ef9a"],["/fonts/Monaco.ttf","7d1b5cf51af724a2641a89a881b342fe"],["/fonts/Skranji-Regular.ttf","0f860580e235e4ae4ae655c2bbb9c943"],["/fonts/Ubuntu-Regular.ttf","75adbf87abbf62e27f6a738caeb71f75"],["/js/app.js","7540ec6dbf29a47bdd7681d2523fba18"],["/js/search.js","5daa40766b8882ccf6e2199d33ce6371"]];
+var precacheConfig = [["/css/style.css","b638430054e0ecfc6215e4040bb7118f"],["/favicon.ico","d0cd815a171f58c431cb037873f4ef9a"],["/fonts/Monaco.ttf","7d1b5cf51af724a2641a89a881b342fe"],["/fonts/Skranji-Regular.ttf","0f860580e235e4ae4ae655c2bbb9c943"],["/fonts/Ubuntu-Regular.ttf","75adbf87abbf62e27f6a738caeb71f75"],["/js/app.js","0819261b2c1ac1887798378e0e30ec93"],["/js/search.js","5daa40766b8882ccf6e2199d33ce6371"]];
 var cacheName = 'sw-precache-v3--' + (self.registration ? self.registration.scope : '');
 
 

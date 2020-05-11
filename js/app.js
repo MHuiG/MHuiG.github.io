@@ -448,3 +448,20 @@ if(window.location.hash){
 	   }
 	}, 100);
 }
+/*Hidden*/
+var OriginTitle = document.title;
+var titleTime;
+document.addEventListener('visibilitychange', function () {
+ if (document.hidden) {
+	 $('[rel="shortcut icon"]').attr('href', "https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@master/assets/favicon/Error.ico");
+	 document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
+	 clearTimeout(titleTime);
+ }
+ else {
+	 $('[rel="shortcut icon"]').attr('href', "https://cdn.jsdelivr.net/gh/MHuiG/blog-cdn@master/assets/favicon/favicon.ico");
+	 document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitle;
+	 titleTime = setTimeout(function () {
+		 document.title = OriginTitle;
+	 }, 2000);
+ }
+});
