@@ -883,7 +883,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-11T09:58:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-11T13:47:23+08:00">
   <a class="notlink">
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年5月11日</p>
@@ -930,18 +930,17 @@
         
           <div class="prev-next">
             
-              <a class="prev" href="/posts/98579906.html">
-                <p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>数据可视化PDF资料</p>
-                <p class="content">汇总数据可视化PDF资料
+              <a class="prev" href="/posts/b59b6a41.html">
+                <p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>数据挖掘PDF资料</p>
+                <p class="content">汇总数据挖掘PDF资料
 
-HTML的基本标签及语法
-CSS语法规则
-网页基本布局方式
-自适应设计和响应式设计
-js基本语法汇总
-Ajax基本原理和概念
-Ajax实现与后台服务通信
-Echart...</p>
+数据挖掘概念与特性
+常用分类算法及原理
+常用降维算法及原理
+常用聚类算法及原理
+关联分析及常用算法
+常用推荐算法及原理
+</p>
               </a>
             
             
@@ -990,24 +989,56 @@ Echart...</p>
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js"></script>
 <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
 <script>
-window.MathJax = {
-  tex: {
-    inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-    processEscapes: true,
-    tags: "ams",
-    macros: {
-      href: "{}"
-    }
-  },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|dno",
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
   }
-};
 </script>
 
 
