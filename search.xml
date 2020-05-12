@@ -2145,41 +2145,6 @@
     
     
     <entry>
-      <title>大数据处理技术-Kafka的介绍</title>
-      <link href="/posts/b9b7baa7.html"/>
-      <url>/posts/b9b7baa7.html</url>
-      
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF kafka的介绍</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData" target="_blank" rel="external nofollow noopener noreferrer">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day09消息队列Kafka/1.kafka的介绍.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 大数据处理技术 </category>
-          
-          <category> Kafka </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 大数据处理技术 </tag>
-            
-            <tag> Kafka </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>大数据处理技术-Flume的负载均衡loadbalancer</title>
       <link href="/posts/c89a329f.html"/>
       <url>/posts/c89a329f.html</url>
@@ -2207,6 +2172,41 @@
             <tag> 大数据处理技术 </tag>
             
             <tag> Flume </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>大数据处理技术-Kafka的介绍</title>
+      <link href="/posts/b9b7baa7.html"/>
+      <url>/posts/b9b7baa7.html</url>
+      
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF kafka的介绍</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData" target="_blank" rel="external nofollow noopener noreferrer">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day09消息队列Kafka/1.kafka的介绍.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 大数据处理技术 </category>
+          
+          <category> Kafka </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 大数据处理技术 </tag>
+            
+            <tag> Kafka </tag>
             
         </tags>
       
@@ -2705,11 +2705,11 @@
     
     
     <entry>
-      <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
-      <link href="/posts/ea7b2ec0.html"/>
-      <url>/posts/ea7b2ec0.html</url>
+      <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
+      <link href="/posts/d178b062.html"/>
+      <url>/posts/d178b062.html</url>
       
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData" target="_blank" rel="external nofollow noopener noreferrer">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData" target="_blank" rel="external nofollow noopener noreferrer">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
       
       
       <categories>
@@ -2740,11 +2740,11 @@
     
     
     <entry>
-      <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
-      <link href="/posts/d178b062.html"/>
-      <url>/posts/d178b062.html</url>
+      <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
+      <link href="/posts/ea7b2ec0.html"/>
+      <url>/posts/ea7b2ec0.html</url>
       
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData" target="_blank" rel="external nofollow noopener noreferrer">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData" target="_blank" rel="external nofollow noopener noreferrer">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
       
       
       <categories>
