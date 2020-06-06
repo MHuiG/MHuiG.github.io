@@ -13,6 +13,13 @@
 		}
 		return flag;
 	};
+	function IsEDGE() {
+		if (navigator.userAgent.indexOf("Edg") > -1) {
+			return true;
+		}else{
+			return false;
+		}
+	};
 	if(IsPC()){
 		var options = {
 		  bottom: '64px', // default: '32px'
@@ -27,6 +34,9 @@
 		  label: '🌓', // default: ''
 		  autoMatchOsTheme: true // default: true
 		};
+		if(IsEDGE()){
+			options.mixColor="black";
+		}
 		const darkmode = new Darkmode(options);
 		darkmode.showWidget();
 	}
