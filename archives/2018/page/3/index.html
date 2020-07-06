@@ -3,19 +3,14 @@ window.addEventListener('load', () =>{
   quicklink.listen();
 });
 </script><script>var SEARCH_SERVICE="hexo",ROOT="/";ROOT.endsWith("/")||(ROOT+="/")</script><script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script><script aysc src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script><script type="text/javascript">$(function(){ScrollReveal().reveal(".l_main .reveal",{distance:"8px",duration:"800",interval:"100",scale:"1"})})</script><script type="text/javascript">$("body > div.l_body > div > div > section > div:nth-child(3) > article").addClass("reveal"),$("body > div.l_body > div > div > section > div:nth-child(4) > article").addClass("reveal"),$("body > div.l_body > div > div > section > div:nth-child(5) > article").addClass("reveal")</script><script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js" aysc></script><script type="text/javascript">$(function(){Waves.attach(".flat-btn",["waves-button"]),Waves.attach(".float-btn",["waves-button","waves-float"]),Waves.attach(".float-btn-light",["waves-button","waves-float","waves-light"]),Waves.attach(".flat-box",["waves-block"]),Waves.attach(".float-box",["waves-block","waves-float"]),Waves.attach(".waves-image"),Waves.init()})</script><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" aysc></script><script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" aysc></script><script src="https://cdn.jsdelivr.net/npm/minivaline@2.8.1/dist/MiniValine.min.js"></script><script>function pjax_minivaline(){var e="none"===$.trim($("#minivaline-path").text())?window.location.pathname:$.trim($("#minivaline-path").text()),a="none"===$.trim($("#minivaline-placeholder").text())?"快来评论吧~":$.trim($("#minivaline-placeholder").text());new MiniValine({el:"#minivaline_container",appId:"HIAOvtfdfuIaz1EnjsuflKrm-MdYXbMMI",appKey:"VKo9lpLdViqS2rs2cg51r3ol",mode:"xCss",placeholder:a,pathname:e,lang:"",adminEmailMd5:"de8a7aa53d07e6b6bceb45c64027763d",tagMeta:["管理员","小伙伴","访客"],master:["de8a7aa53d07e6b6bceb45c64027763d"],friends:["b5bd5d836c7a0091aa8473e79ed4c25e","adb7d1cd192658a55c0ad22a3309cecf","3ce1e6c77b4910f1871106cb30dc62b0","e468a3ac39cc3219731e39defd549f50","ad39e755b60641e3e154c8c326fb6de7","f124d445ddbf3a3e2ae949126da43253","cfce8dc43725cc14ffcd9fb4892d5bfc","ace17cd3a53d0e8567d389fc7004ed9d","73ad73700166631e25f82f304080ebe3"],math:!0,md:!0,enableQQ:!1,NoRecordIP:!1,visitor:!0,maxNest:6,pageSize:6,emoticonUrl:["https://cdn.jsdelivr.net/npm/alus@latest","https://cdn.jsdelivr.net/gh/MiniValine/qq@latest","https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest","https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest","https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest","https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],serverURLs:"https://HIAOvtfd.api.lncldglobal.com",vc:"Vt",region:"true"})}$(function(){pjax_minivaline()})</script><script aysc src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js"></script><script type="text/javascript">
-	function IsPC() {
-		var userAgentInfo = navigator.userAgent;
-		var Agents = ["Android", "iPhone",
-					"SymbianOS", "Windows Phone",
-					"iPad", "iPod"];
-		var flag = true;
-		for (var v = 0; v < Agents.length; v++) {
-			if (userAgentInfo.indexOf(Agents[v]) > 0) {
-				flag = false;
-				break;
-			}
-		}
-		return flag;
+	function getClientHeight(){
+	  var clientHeight=0;
+	  if(document.body.clientHeight&&document.documentElement.clientHeight){
+	  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }else{
+	  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }
+	  return clientHeight;
 	}
 	function supportCss3(style) {  
 		var prefix = ['webkit', 'Moz', 'ms', 'o'],  
@@ -51,11 +46,10 @@ window.addEventListener('load', () =>{
 	// 卡片兼容处理
 	function pjax_darkmodejs(){
 		if(!supportCss3('mix-blend-mode'))return;
-		if(!IsPC())return;
 		var checkExist2 = setInterval(function() {
 		   if (typeof jQuery == 'undefined'){return;}
 		   clearInterval(checkExist2);
-		   var TopFlag=document.documentElement.scrollHeight+500;
+		   var TopFlag=getClientHeight();
 			$(window).scroll(function(){
 				var top = $(document).scrollTop();
 				if(top > TopFlag) {
@@ -69,7 +63,7 @@ window.addEventListener('load', () =>{
 		}, 100);
 	}
 	// mix-blend-mode support?
-	if(supportCss3('mix-blend-mode')&&IsPC()){
+	if(supportCss3('mix-blend-mode')){
 		const darkmode = new Darkmode(options);
 		darkmode.showWidget();
 		pjax_darkmodejs();
