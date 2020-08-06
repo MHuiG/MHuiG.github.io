@@ -1,5 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
-<script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script><script>
 document.addEventListener('paste', function (event) {
     var items = event.clipboardData && event.clipboardData.items;
     var file = null;
@@ -63,8 +62,4 @@ function imgChange(img) {
     }
     reader.readAsDataURL(img.files[0]);
 };
-</script>
-<input id="key">
-<div style="font-size: 30px;display: inline; cursor: pointer" onclick="myimg.click()">🤣</div>
-<div id="neirong"></div>
-<input type="file" id="myimg" onchange="imgChange(this)" style="visibility: hidden;" accept="image/png,image/gif,image/jpeg">
+</script> <input id="key"><div style="font-size:30px;display:inline;cursor:pointer" onclick="myimg.click()">🤣</div><div id="neirong"></div> <input type="file" id="myimg" onchange="imgChange(this)" style="visibility:hidden" accept="image/png,image/gif,image/jpeg">
