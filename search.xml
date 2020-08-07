@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>Hello Hexo</title>
-      <link href="/posts/a1751c09.html"/>
-      <url>/posts/a1751c09.html</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>基于K均值聚类的网络流量异常检测(pyspark)</title>
       <link href="/posts/7b55143e.html"/>
       <url>/posts/7b55143e.html</url>
@@ -2793,11 +2780,11 @@
     
     
     <entry>
-      <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
-      <link href="/posts/d178b062.html"/>
-      <url>/posts/d178b062.html</url>
+      <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
+      <link href="/posts/ea7b2ec0.html"/>
+      <url>/posts/ea7b2ec0.html</url>
       
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
       
       
       <categories>
@@ -2828,11 +2815,11 @@
     
     
     <entry>
-      <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
-      <link href="/posts/ea7b2ec0.html"/>
-      <url>/posts/ea7b2ec0.html</url>
+      <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
+      <link href="/posts/d178b062.html"/>
+      <url>/posts/d178b062.html</url>
       
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
       
       
       <categories>
@@ -3985,37 +3972,6 @@
     
     
     <entry>
-      <title>数据可视化PDF资料</title>
-      <link href="/posts/98579906.html"/>
-      <url>/posts/98579906.html</url>
-      
-        <content type="html"><![CDATA[<p>汇总数据可视化PDF资料</p><a id="more"></a><h2 id="HTML的基本标签及语法"><a href="#HTML的基本标签及语法" class="headerlink" title="HTML的基本标签及语法"></a>HTML的基本标签及语法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/HTML的基本标签及语法.pdf" height="500px"></div><h2 id="CSS语法规则"><a href="#CSS语法规则" class="headerlink" title="CSS语法规则"></a>CSS语法规则</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/CSS语法规则.pdf" height="500px"></div><h2 id="网页基本布局方式"><a href="#网页基本布局方式" class="headerlink" title="网页基本布局方式"></a>网页基本布局方式</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/网页基本布局方式.pdf" height="500px"></div><h2 id="自适应设计和响应式设计"><a href="#自适应设计和响应式设计" class="headerlink" title="自适应设计和响应式设计"></a>自适应设计和响应式设计</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/自适应设计和响应式设计.pdf" height="500px"></div><h2 id="js基本语法汇总"><a href="#js基本语法汇总" class="headerlink" title="js基本语法汇总"></a>js基本语法汇总</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/js基本语法汇总.pdf" height="500px"></div><h2 id="Ajax基本原理和概念"><a href="#Ajax基本原理和概念" class="headerlink" title="Ajax基本原理和概念"></a>Ajax基本原理和概念</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Ajax基本原理和概念.pdf" height="500px"></div><h2 id="Ajax实现与后台服务通信"><a href="#Ajax实现与后台服务通信" class="headerlink" title="Ajax实现与后台服务通信"></a>Ajax实现与后台服务通信</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Ajax实现与后台服务通信.pdf" height="500px"></div><h2 id="Echarts常用功能api"><a href="#Echarts常用功能api" class="headerlink" title="Echarts常用功能api"></a>Echarts常用功能api</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Echarts常用功能api.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 数据可视化 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 数据可视化 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>数据挖掘PDF资料</title>
       <link href="/posts/b59b6a41.html"/>
       <url>/posts/b59b6a41.html</url>
@@ -4039,6 +3995,37 @@
             <tag> PDF </tag>
             
             <tag> 数据挖掘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据可视化PDF资料</title>
+      <link href="/posts/98579906.html"/>
+      <url>/posts/98579906.html</url>
+      
+        <content type="html"><![CDATA[<p>汇总数据可视化PDF资料</p><a id="more"></a><h2 id="HTML的基本标签及语法"><a href="#HTML的基本标签及语法" class="headerlink" title="HTML的基本标签及语法"></a>HTML的基本标签及语法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/HTML的基本标签及语法.pdf" height="500px"></div><h2 id="CSS语法规则"><a href="#CSS语法规则" class="headerlink" title="CSS语法规则"></a>CSS语法规则</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/CSS语法规则.pdf" height="500px"></div><h2 id="网页基本布局方式"><a href="#网页基本布局方式" class="headerlink" title="网页基本布局方式"></a>网页基本布局方式</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/网页基本布局方式.pdf" height="500px"></div><h2 id="自适应设计和响应式设计"><a href="#自适应设计和响应式设计" class="headerlink" title="自适应设计和响应式设计"></a>自适应设计和响应式设计</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/自适应设计和响应式设计.pdf" height="500px"></div><h2 id="js基本语法汇总"><a href="#js基本语法汇总" class="headerlink" title="js基本语法汇总"></a>js基本语法汇总</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/js基本语法汇总.pdf" height="500px"></div><h2 id="Ajax基本原理和概念"><a href="#Ajax基本原理和概念" class="headerlink" title="Ajax基本原理和概念"></a>Ajax基本原理和概念</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Ajax基本原理和概念.pdf" height="500px"></div><h2 id="Ajax实现与后台服务通信"><a href="#Ajax实现与后台服务通信" class="headerlink" title="Ajax实现与后台服务通信"></a>Ajax实现与后台服务通信</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Ajax实现与后台服务通信.pdf" height="500px"></div><h2 id="Echarts常用功能api"><a href="#Echarts常用功能api" class="headerlink" title="Echarts常用功能api"></a>Echarts常用功能api</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Echarts常用功能api.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 数据可视化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 数据可视化 </tag>
             
         </tags>
       
