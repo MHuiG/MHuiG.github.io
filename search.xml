@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Hello Hexo</title>
+      <link href="/posts/a1751c09.html"/>
+      <url>/posts/a1751c09.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于K均值聚类的网络流量异常检测(pyspark)</title>
       <link href="/posts/7b55143e.html"/>
       <url>/posts/7b55143e.html</url>
@@ -3972,37 +3985,6 @@
     
     
     <entry>
-      <title>数据挖掘PDF资料</title>
-      <link href="/posts/b59b6a41.html"/>
-      <url>/posts/b59b6a41.html</url>
-      
-        <content type="html"><![CDATA[<p>汇总数据挖掘PDF资料</p><a id="more"></a><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 数据挖掘 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 数据挖掘 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>数据可视化PDF资料</title>
       <link href="/posts/98579906.html"/>
       <url>/posts/98579906.html</url>
@@ -4026,6 +4008,37 @@
             <tag> PDF </tag>
             
             <tag> 数据可视化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据挖掘PDF资料</title>
+      <link href="/posts/b59b6a41.html"/>
+      <url>/posts/b59b6a41.html</url>
+      
+        <content type="html"><![CDATA[<p>汇总数据挖掘PDF资料</p><a id="more"></a><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 数据挖掘 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 数据挖掘 </tag>
             
         </tags>
       
