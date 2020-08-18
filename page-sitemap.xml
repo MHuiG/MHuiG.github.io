@@ -8,43 +8,43 @@
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/about/</loc>
-        <lastmod>2020-08-18T12:04:59.958Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mhuig.github.io/categories/</loc>
-        <lastmod>2020-08-18T12:04:59.958Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mhuig.github.io/friends/</loc>
-        <lastmod>2020-08-18T12:04:59.958Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>https://mhuig.github.io/tags/</loc>
-        <lastmod>2020-08-18T12:04:59.958Z</lastmod>
+        <lastmod>2020-08-18T12:11:22.854Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://mhuig.github.io/havefun/site/</loc>
-        <lastmod>2020-08-18T12:04:59.958Z</lastmod>
+        <lastmod>2020-08-18T12:11:22.854Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://mhuig.github.io/categories/</loc>
+        <lastmod>2020-08-18T12:11:22.850Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://mhuig.github.io/about/</loc>
+        <lastmod>2020-08-18T12:11:22.850Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://mhuig.github.io/friends/</loc>
+        <lastmod>2020-08-18T12:11:22.850Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://mhuig.github.io/404.html</loc>
-        <lastmod>2020-08-18T12:04:59.950Z</lastmod>
+        <lastmod>2020-08-18T12:11:22.842Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
