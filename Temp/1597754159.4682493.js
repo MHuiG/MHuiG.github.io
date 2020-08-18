@@ -1,0 +1,1 @@
+var SEARCH_SERVICE="hexo",ROOT="/";ROOT.endsWith("/")||(ROOT+="/");

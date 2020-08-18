@@ -1,0 +1,1 @@
+document.getElementsByClassName("cover")[0].style.display="none",document.getElementsByClassName("l_body")[0].classList.add("nocover"),document.getElementsByClassName("l_header","cover-wrapper")[0].classList.add("show");
