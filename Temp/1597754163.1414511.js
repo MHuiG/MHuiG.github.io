@@ -1,1 +1,0 @@
-window.ShowLoading=function(){NProgress.start()},window.HideLoading=function(){NProgress.done()};

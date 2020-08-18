@@ -1,1 +1,0 @@
-setTimeout(function(){var e=document.createElement("script");function a(){dataLayer.push(arguments)}e.src="https://www.googletagmanager.com/gtag/js?id=UA-148909894-1",e.defer=!0,document.body.appendChild(e),window.dataLayer=window.dataLayer||[],a("js",new Date),a("config","UA-148909894-1")},5e3);

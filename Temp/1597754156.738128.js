@@ -1,1 +1,0 @@
-"mhuig.github.io"!=window.location.host&&"localhost:4000"!=window.location.host&&"blog.mhuig.top"!=window.location.host&&(window.location.host="blog.mhuig.top:443");

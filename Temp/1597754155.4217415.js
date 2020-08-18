@@ -1,1 +1,0 @@
-NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed:100});

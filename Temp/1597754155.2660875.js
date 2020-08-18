@@ -1,1 +1,0 @@
-window.BMAP_PROTOCOL="https",window.BMap_loadScriptTime=(new Date).getTime();
