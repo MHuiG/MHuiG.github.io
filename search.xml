@@ -713,11 +713,11 @@
       
         <tags>
             
+            <tag> AES </tag>
+            
             <tag> 密码学 </tag>
             
             <tag> 加解密 </tag>
-            
-            <tag> AES </tag>
             
         </tags>
       
@@ -2220,41 +2220,6 @@
     
     
     <entry>
-      <title>大数据处理技术-Flume的负载均衡loadbalancer</title>
-      <link href="/posts/c89a329f.html"/>
-      <url>/posts/c89a329f.html</url>
-      
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF flume的负载均衡loadbalancer</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day08Flume数据采集/8.flume的负载均衡loadbalancer.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 大数据处理技术 </category>
-          
-          <category> Flume </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 大数据处理技术 </tag>
-            
-            <tag> Flume </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>大数据处理技术-Kafka的介绍</title>
       <link href="/posts/b9b7baa7.html"/>
       <url>/posts/b9b7baa7.html</url>
@@ -2282,6 +2247,41 @@
             <tag> 大数据处理技术 </tag>
             
             <tag> Kafka </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>大数据处理技术-Flume的负载均衡loadbalancer</title>
+      <link href="/posts/c89a329f.html"/>
+      <url>/posts/c89a329f.html</url>
+      
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF flume的负载均衡loadbalancer</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day08Flume数据采集/8.flume的负载均衡loadbalancer.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 大数据处理技术 </category>
+          
+          <category> Flume </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 大数据处理技术 </tag>
+            
+            <tag> Flume </tag>
             
         </tags>
       
@@ -2780,11 +2780,11 @@
     
     
     <entry>
-      <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
-      <link href="/posts/ea7b2ec0.html"/>
-      <url>/posts/ea7b2ec0.html</url>
+      <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
+      <link href="/posts/d178b062.html"/>
+      <url>/posts/d178b062.html</url>
       
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
       
       
       <categories>
@@ -2815,11 +2815,11 @@
     
     
     <entry>
-      <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
-      <link href="/posts/d178b062.html"/>
-      <url>/posts/d178b062.html</url>
+      <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
+      <link href="/posts/ea7b2ec0.html"/>
+      <url>/posts/ea7b2ec0.html</url>
       
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
       
       
       <categories>
@@ -3972,37 +3972,6 @@
     
     
     <entry>
-      <title>数据挖掘PDF资料</title>
-      <link href="/posts/b59b6a41.html"/>
-      <url>/posts/b59b6a41.html</url>
-      
-        <content type="html"><![CDATA[<p>汇总数据挖掘PDF资料</p><a id="more"></a><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 数据挖掘 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 数据挖掘 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>数据可视化PDF资料</title>
       <link href="/posts/98579906.html"/>
       <url>/posts/98579906.html</url>
@@ -4026,6 +3995,37 @@
             <tag> PDF </tag>
             
             <tag> 数据可视化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据挖掘PDF资料</title>
+      <link href="/posts/b59b6a41.html"/>
+      <url>/posts/b59b6a41.html</url>
+      
+        <content type="html"><![CDATA[<p>汇总数据挖掘PDF资料</p><a id="more"></a><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 数据挖掘 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 数据挖掘 </tag>
             
         </tags>
       
