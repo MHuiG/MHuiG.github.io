@@ -3972,37 +3972,6 @@
     
     
     <entry>
-      <title>数据挖掘PDF资料</title>
-      <link href="/posts/b59b6a41.html"/>
-      <url>/posts/b59b6a41.html</url>
-      
-        <content type="html"><![CDATA[<p>汇总数据挖掘PDF资料</p><a id="more"></a><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 数据挖掘 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 数据挖掘 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>数据可视化PDF资料</title>
       <link href="/posts/98579906.html"/>
       <url>/posts/98579906.html</url>
@@ -4026,6 +3995,37 @@
             <tag> PDF </tag>
             
             <tag> 数据可视化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据挖掘PDF资料</title>
+      <link href="/posts/b59b6a41.html"/>
+      <url>/posts/b59b6a41.html</url>
+      
+        <content type="html"><![CDATA[<p>汇总数据挖掘PDF资料</p><a id="more"></a><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 数据挖掘 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 数据挖掘 </tag>
             
         </tags>
       
