@@ -713,11 +713,11 @@
       
         <tags>
             
-            <tag> AES </tag>
-            
             <tag> 密码学 </tag>
             
             <tag> 加解密 </tag>
+            
+            <tag> AES </tag>
             
         </tags>
       
@@ -3125,9 +3125,9 @@
             
             <tag> Hadoop </tag>
             
-            <tag> HDFS </tag>
-            
             <tag> JavaAPI </tag>
+            
+            <tag> HDFS </tag>
             
         </tags>
       
