@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-08-02T10:23:15.000Z</updated>
+  <updated>2020-08-31T11:53:40.000Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初探 Cloudflare Workers 边缘计算</title>
+    <link href="https://mhuig.github.io/posts/4a0f523a.html"/>
+    <id>https://mhuig.github.io/posts/4a0f523a.html</id>
+    <published>2020-08-31T11:53:40.000Z</published>
+    <updated>2020-08-31T11:53:40.000Z</updated>
+    
+    <summary type="html">
+    
+      尝试在边缘运行JavaScript。
+    
+    </summary>
+    
+    
+      <category term="边缘计算" scheme="https://MHuiG.github.io/categories/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/"/>
+    
+    
+      <category term="边缘计算" scheme="https://MHuiG.github.io/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
   
   <entry>
     <title>基于K均值聚类的网络流量异常检测(pyspark)</title>
@@ -436,35 +457,6 @@
       <category term="NoSQL" scheme="https://MHuiG.github.io/tags/nosql/"/>
     
       <category term="Neo4j" scheme="https://MHuiG.github.io/tags/neo4j/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NoSQL-MongoDB</title>
-    <link href="https://mhuig.github.io/posts/ec477027.html"/>
-    <id>https://mhuig.github.io/posts/ec477027.html</id>
-    <published>2020-02-09T02:41:50.000Z</published>
-    <updated>2020-02-09T02:41:50.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;NoSQL MongoDB PDF &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="大数据" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="NoSQL" scheme="https://MHuiG.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/nosql/"/>
-    
-    
-      <category term="大数据" scheme="https://MHuiG.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="PDF" scheme="https://MHuiG.github.io/tags/pdf/"/>
-    
-      <category term="NoSQL" scheme="https://MHuiG.github.io/tags/nosql/"/>
-    
-      <category term="MongoDB" scheme="https://MHuiG.github.io/tags/mongodb/"/>
     
   </entry>
   
