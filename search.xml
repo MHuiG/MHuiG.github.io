@@ -876,8 +876,6 @@
       
       <categories>
           
-          <category> 错误集锦 </category>
-          
           <category> CentOS7 </category>
           
       </categories>
@@ -2245,41 +2243,6 @@
     
     
     <entry>
-      <title>大数据处理技术-Flume的负载均衡loadbalancer</title>
-      <link href="/posts/c89a329f.html"/>
-      <url>/posts/c89a329f.html</url>
-      
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF flume的负载均衡loadbalancer</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day08Flume数据采集/8.flume的负载均衡loadbalancer.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 大数据处理技术 </category>
-          
-          <category> Flume </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 大数据处理技术 </tag>
-            
-            <tag> Flume </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>大数据处理技术-Kafka的介绍</title>
       <link href="/posts/b9b7baa7.html"/>
       <url>/posts/b9b7baa7.html</url>
@@ -2307,6 +2270,41 @@
             <tag> 大数据处理技术 </tag>
             
             <tag> Kafka </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>大数据处理技术-Flume的负载均衡loadbalancer</title>
+      <link href="/posts/c89a329f.html"/>
+      <url>/posts/c89a329f.html</url>
+      
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF flume的负载均衡loadbalancer</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day08Flume数据采集/8.flume的负载均衡loadbalancer.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 大数据处理技术 </category>
+          
+          <category> Flume </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 大数据处理技术 </tag>
+            
+            <tag> Flume </tag>
             
         </tags>
       
@@ -3997,37 +3995,6 @@
     
     
     <entry>
-      <title>数据可视化PDF资料</title>
-      <link href="/posts/98579906.html"/>
-      <url>/posts/98579906.html</url>
-      
-        <content type="html"><![CDATA[<p>汇总数据可视化PDF资料</p><a id="more"></a><h2 id="HTML的基本标签及语法"><a href="#HTML的基本标签及语法" class="headerlink" title="HTML的基本标签及语法"></a>HTML的基本标签及语法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/HTML的基本标签及语法.pdf" height="500px"></div><h2 id="CSS语法规则"><a href="#CSS语法规则" class="headerlink" title="CSS语法规则"></a>CSS语法规则</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/CSS语法规则.pdf" height="500px"></div><h2 id="网页基本布局方式"><a href="#网页基本布局方式" class="headerlink" title="网页基本布局方式"></a>网页基本布局方式</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/网页基本布局方式.pdf" height="500px"></div><h2 id="自适应设计和响应式设计"><a href="#自适应设计和响应式设计" class="headerlink" title="自适应设计和响应式设计"></a>自适应设计和响应式设计</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/自适应设计和响应式设计.pdf" height="500px"></div><h2 id="js基本语法汇总"><a href="#js基本语法汇总" class="headerlink" title="js基本语法汇总"></a>js基本语法汇总</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/js基本语法汇总.pdf" height="500px"></div><h2 id="Ajax基本原理和概念"><a href="#Ajax基本原理和概念" class="headerlink" title="Ajax基本原理和概念"></a>Ajax基本原理和概念</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Ajax基本原理和概念.pdf" height="500px"></div><h2 id="Ajax实现与后台服务通信"><a href="#Ajax实现与后台服务通信" class="headerlink" title="Ajax实现与后台服务通信"></a>Ajax实现与后台服务通信</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Ajax实现与后台服务通信.pdf" height="500px"></div><h2 id="Echarts常用功能api"><a href="#Echarts常用功能api" class="headerlink" title="Echarts常用功能api"></a>Echarts常用功能api</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Echarts常用功能api.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 数据可视化 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 数据可视化 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>数据挖掘PDF资料</title>
       <link href="/posts/b59b6a41.html"/>
       <url>/posts/b59b6a41.html</url>
@@ -4051,6 +4018,37 @@
             <tag> PDF </tag>
             
             <tag> 数据挖掘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据可视化PDF资料</title>
+      <link href="/posts/98579906.html"/>
+      <url>/posts/98579906.html</url>
+      
+        <content type="html"><![CDATA[<p>汇总数据可视化PDF资料</p><a id="more"></a><h2 id="HTML的基本标签及语法"><a href="#HTML的基本标签及语法" class="headerlink" title="HTML的基本标签及语法"></a>HTML的基本标签及语法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/HTML的基本标签及语法.pdf" height="500px"></div><h2 id="CSS语法规则"><a href="#CSS语法规则" class="headerlink" title="CSS语法规则"></a>CSS语法规则</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/CSS语法规则.pdf" height="500px"></div><h2 id="网页基本布局方式"><a href="#网页基本布局方式" class="headerlink" title="网页基本布局方式"></a>网页基本布局方式</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/网页基本布局方式.pdf" height="500px"></div><h2 id="自适应设计和响应式设计"><a href="#自适应设计和响应式设计" class="headerlink" title="自适应设计和响应式设计"></a>自适应设计和响应式设计</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/自适应设计和响应式设计.pdf" height="500px"></div><h2 id="js基本语法汇总"><a href="#js基本语法汇总" class="headerlink" title="js基本语法汇总"></a>js基本语法汇总</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/js基本语法汇总.pdf" height="500px"></div><h2 id="Ajax基本原理和概念"><a href="#Ajax基本原理和概念" class="headerlink" title="Ajax基本原理和概念"></a>Ajax基本原理和概念</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Ajax基本原理和概念.pdf" height="500px"></div><h2 id="Ajax实现与后台服务通信"><a href="#Ajax实现与后台服务通信" class="headerlink" title="Ajax实现与后台服务通信"></a>Ajax实现与后台服务通信</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Ajax实现与后台服务通信.pdf" height="500px"></div><h2 id="Echarts常用功能api"><a href="#Echarts常用功能api" class="headerlink" title="Echarts常用功能api"></a>Echarts常用功能api</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/Echarts常用功能api.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 数据可视化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 数据可视化 </tag>
             
         </tags>
       
@@ -4171,33 +4169,6 @@
             <tag> 操作系统 </tag>
             
             <tag> 前驱图 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>意识、脑与人工智能 十大科学问题</title>
-      <link href="/posts/c270974.html"/>
-      <url>/posts/c270974.html</url>
-      
-        <content type="html"><![CDATA[<p>2018年9月，浙江大学发布“双脑计划”，布局脑科学与人工智能的会聚研究，聚集全校生命科学、信息科学、物质科学和哲学社会科学众多领域的专家学者，开启探索脑认知、意识及智能的本质和规律。2019年4月，浙江大学召开“意识、脑与人工智能”圆桌论坛，吴朝晖院士、段树民院士与倪梁康教授（文科资深教授）分别围绕“意识”问题，从计算机科学、脑科学、哲学角度作主旨报告，提出了一系列具有挑战性的跨学科问题。在此基础上，浙江大学“双脑计划”相关团队组织哲学、计算机科学、神经与脑科学、心理学、社会学等领域专家，聚焦意识与脑、意识与人工智能方面的重大问题，经过反复讨论、不断碰撞、深入凝练，最终提出了十大具有前沿性、挑战性的科学问题，旨在引领国内外学术界的思考，推动意识、脑与人工智能交叉领域的研究。</p><a id="more"></a><h2 id="“意识、脑与人工智能”十大科学问题"><a href="#“意识、脑与人工智能”十大科学问题" class="headerlink" title="“意识、脑与人工智能”十大科学问题"></a>“意识、脑与人工智能”十大科学问题</h2><h3 id="一、意识的生物学基础是什么？"><a href="#一、意识的生物学基础是什么？" class="headerlink" title="一、意识的生物学基础是什么？"></a>一、意识的生物学基础是什么？</h3><p>意识曾仅是哲学家的研究领域，但随着神经科学发展，科学家逐渐参与到意识本质的研究中。目前大部分观点认为，意识产生的物质基础是神经元，其生物学基础是脑中多个神经网络间的相互作用；也有研究认为意识的产生由相对独立的脑结构（称为意识开关）来主导。意识的生物学基础是什么，及其衍生出来的一系列问题有待进一步探究。例如，意识产生的物质基础是否唯一，能否在神经元以外的物质载体上制造出意识等。</p><h3 id="二、“人工意识”是否可能？"><a href="#二、“人工意识”是否可能？" class="headerlink" title="二、“人工意识”是否可能？"></a>二、“人工意识”是否可能？</h3><p>从人工智能向人工意识的发展，必须考虑将人工情感和人工意欲的因素纳入人工意识和人工心灵系统的可能性。可尝试通过对神经回路的复杂性的把控来解决所有类型的意识涌现（表象、情感、意志）的复杂性，并在神经系统中找到作为意识之自身觉知（qualia）的对应项。</p><h3 id="三、机器如何理解人类的情感表达？"><a href="#三、机器如何理解人类的情感表达？" class="headerlink" title="三、机器如何理解人类的情感表达？"></a>三、机器如何理解人类的情感表达？</h3><p>在人机共生社会，需要解决机器人与人类的自然交互问题，以使得机器人可以真正融入人们的生活，产生共情、共鸣和自然的社会行为。其中一个重要的挑战是机器如何理解人类的情感表达。</p><h3 id="四、强人工智能的心理机制是什么？"><a href="#四、强人工智能的心理机制是什么？" class="headerlink" title="四、强人工智能的心理机制是什么？"></a>四、强人工智能的心理机制是什么？</h3><p>弱人工智能在解决特定领域问题中，展现出了强大到可以比肩甚至超越人类的能力，但也暴露出通用性弱、学习效率低等一系列问题。解决这些问题需要回归强人工智能的“初心”，即研究人类智能的心理机制是什么，探索人类为何能利用有限的算力实现通用智能、如何在小数据条件下完成高效学习等问题。</p><h3 id="五、意识的信息机制是什么？"><a href="#五、意识的信息机制是什么？" class="headerlink" title="五、意识的信息机制是什么？"></a>五、意识的信息机制是什么？</h3><p>意识是指一个人体验自身存在的能力，而不仅仅是记录或者像机器人那样对刺激做出反应。研究意识的信息处理机制，需要重点关注信息处理的主观性（subjective）、结构性（structured）、特有性（specific）、统一性（unified）和确定性（definitive）等问题。</p><h3 id="六、脑机融合能否实现超级智能？"><a href="#六、脑机融合能否实现超级智能？" class="headerlink" title="六、脑机融合能否实现超级智能？"></a>六、脑机融合能否实现超级智能？</h3><p>脑机融合是基于脑机接口技术，实现脑与机的双向交互、相互适应及协同工作，最终达到生物智能和机器智能的融合，其目标是实现更强大的智能形态。鉴于机器智能与人类智能的互补性，如何实现生物智能和机器智能的互联互通，融合各自所长，创造出性能更强的智能形态是核心问题。</p><h3 id="七、情绪情感的脑机制是什么？"><a href="#七、情绪情感的脑机制是什么？" class="headerlink" title="七、情绪情感的脑机制是什么？"></a>七、情绪情感的脑机制是什么？</h3><p>情绪是个体对一定程度的复杂情况做出反应的特定状态。情绪情感的产生涉及感觉、知觉、动机、奖赏、评估、感觉-行为转换等多种脑功能，并参与修饰和调控记忆及相关认知过程。人类智慧的形成和复杂社会体系的建立，均与情绪情感程序的进化和固化有关。情绪情感相关精神疾病也在持续和广泛地困扰人类社会。因此，研究情绪情感的脑机制是脑科学研究领域最令人兴奋的方向之一，其研究成果也将为相关精神疾病的诊断和治疗提供新的策略和手段。</p><h3 id="八、学习的生物学基础是什么？"><a href="#八、学习的生物学基础是什么？" class="headerlink" title="八、学习的生物学基础是什么？"></a>八、学习的生物学基础是什么？</h3><p>动物需要适应环境变化，而学习就是神经系统把环境信息转变成经验的编码过程，与学习密切相关的记忆则是神经系统对这些经验的存储和提取的过程。研究学习记忆的神经生物学机制是神经科学领域至关重要的研究方向，也是阐明认知功能障碍的关键。</p><h3 id="九、潜意识的脑科学机制是什么？"><a href="#九、潜意识的脑科学机制是什么？" class="headerlink" title="九、潜意识的脑科学机制是什么？"></a>九、潜意识的脑科学机制是什么？</h3><p>潜意识指“已然发生但并未达到意识水平的心理活动过程或内容”，被认为是最复杂的心理现象，可能成为阐明人类意识大脑机制的突破口。随着认知神经科学和脑科学等交叉学科研究的发展，以及脑图谱技术、基因技术的进步，对潜意识的脑科学机制研究可能会有更大的突破。</p><h3 id="十、人类决策的脑处理机制是什么？"><a href="#十、人类决策的脑处理机制是什么？" class="headerlink" title="十、人类决策的脑处理机制是什么？"></a>十、人类决策的脑处理机制是什么？</h3><p>决策脑机制的研究日益受到重视，但决策偏好的神经机理还远未被揭开。系统探究决策脑机制，不仅有助于揭示决策者价值权衡过程的神经基础，还能为基于神经信号预测人的决策倾向，以及诊治决策异常相关脑疾病提供科学研究依据。</p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.innovation2030.zju.edu.cn/">浙江大学面向2030的学科会聚研究计划（创新2030计划）</a><br><a href="http://www.innovation2030.zju.edu.cn/2019/0829/c21944a1595774/page.htm">“意识、脑与人工智能”十大科学问题</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 会议报告 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 人工智能 </tag>
-            
-            <tag> 脑科学 </tag>
             
         </tags>
       
