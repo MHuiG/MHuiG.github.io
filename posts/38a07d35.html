@@ -1,3 +1,1239 @@
-<!DOCTYPE html><html><head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-rc.3"><meta charset="utf-8"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="x-dns-prefetch-control" content="on"><title>Flink Window - MHuiG</title><meta name="keywords" content="Flink"><meta name="description" content="什么是 Window？
+<!DOCTYPE html>
+<html>
+<head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-rc.3">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+
+  <!-- 页面元数据 -->
+  
+  <title>Flink Window - MHuiG</title>
+  
+    <meta name="keywords" content="Flink">
+  
+
+  
+    <meta name="description" content="什么是 Window？
 Window 有什么作用？
-Flink 中的三种Window"><link rel="alternate" href="/atom.xml" title="MHuiG" type="application/atom+xml"><meta name="theme-color" content="skyblue"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon.ico"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon_180.png"><link rel="mask-icon" color="#1BC3FB" href="https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon_180.png"><link rel="dns-prefetch" href="https://hm.baidu.com"><link rel="dns-prefetch" href="https://rmt.dogedoge.com"><link rel="dns-prefetch" href="https://mv.mhuig.top"><link rel="dns-prefetch" href="https://zz.bdstatic.com"><link rel="dns-prefetch" href="https://push.zhanzhang.baidu.com"><link rel="dns-prefetch" href="https://github.com"><link rel="stylesheet" href="/css/style.css"><script>setTimeout(function(){window.ga_tid="UA-148909894-1",function(){var e=document.createElement("script");e.src="https://rmt.dogedoge.com/fetch/public/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()},5e3);</script><script>var _hmt=_hmt||[];setTimeout(function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?d367964cbb21775bfbb9c16fe4da3484",e.defer=!0;var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)},5e3);</script><script>function loadScript(e,t){var n=document.getElementsByTagName("head")[0]||document.documentElement,r=document.createElement("script");r.setAttribute("type","text/javascript"),t&&(r.onload=t),r.setAttribute("src",e),n.appendChild(r)}var loadCSS=function(e,t,n,r){var i,o,a=window.document,d=a.createElement("link");o=t||(i=(a.body||a.getElementsByTagName("head")[0]).childNodes)[i.length-1];var l=a.styleSheets;if(r)for(var s in r)r.hasOwnProperty(s)&&d.setAttribute(s,r[s]);d.rel="stylesheet",d.href=e,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(d,t?o:o.nextSibling)});function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=n||"all"}return d.addEventListener&&d.addEventListener("load",c),(d.onloadcssdefined=function e(t){for(var n=d.href,r=l.length;r--;)if(l[r].href===n)return t();setTimeout(function(){e(t)})})(c),d};</script><script id="loadcss"></script><script>"mhuig.github.io"!=window.location.host&&"localhost:4000"!=window.location.host&&"blog.mhuig.top"!=window.location.host&&"dev.mhuig.top"!=window.location.host&&"me.mhuig.top"!=window.location.host&&"coding.mhuig.top"!=window.location.host&&(window.location.host="blog.mhuig.top:443");</script></head><body><header class="l_header auto shadow floatable blur" style="opacity:0"><div class="container"><div class="wrapper"><div class="nav-sub"><p class="title"></p><ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list"><li><a class="s-comment fad fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-toc fad fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li></ul></div><div class="nav-main"> <a class="title flat-box" target="_self" href="/">MHuiG's Blog</a><div class="menu navigation"><ul class="nav-list-h m-pc"><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fad fa-list-alt fa-fw"></i> 索引</a><ul class="list-v"><li><a class="menuitem flat-box faa-parent animated-hover" href="/categories/" id="categories"><i class="fad fa-folder-open fa-fw"></i> 分类</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fad fa-tags fa-fw"></i> 标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fad fa-archive fa-fw"></i> 归档</a></li></ul></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/friends/" id="friends"><i class="fad fa-link fa-fw"></i> 友链</a><ul class="list-v"><li class="header"><i class="fad fa-share fa-fw"></i> 友链接力</li><li><a class="menuitem flat-box faa-parent animated-hover" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank"><i class="fad fa-paper-plane fa-fw"></i> Travelling</a></li></ul></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/about/" id="about"><i class="fad fa-user-tie fa-fw"></i> 关于</a><ul class="list-v"><li><a class="menuitem flat-box faa-parent animated-hover" href="/time-machine/" id="time-machine"><i class="fad fa-clock fa-fw"></i> 时光机</a></li></ul></li><li><a class="menuitem flat-box faa-parent animated-hover"><i class="fad fa-fan fa-spin fa-fw"></i> 更多</a><ul class="list-v"><li><a class="menuitem flat-box faa-parent animated-hover"><i class="fad fa-user-shield fa-fw"></i> 博客管理</a><ul class="list-v"><li><a class="menuitem flat-box faa-parent animated-hover" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank"><i class="fad fa-comments fa-fw"></i> 评论管理</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank"><i class="fad fa-edit fa-fw"></i> 云端编辑</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="https://status.mhuig.top/" id="https:statusmhuigtop" rel="external nofollow noopener noreferrer" target="_blank"><i class="fad fa-telescope fa-fw"></i> Monitors</a></li></ul></li><hr><li><a class="menuitem flat-box faa-parent animated-hover"><i class="fad fa-tools fa-fw"></i> 工具箱</a><ul class="list-v"><li class="header"><i class="fad fa-moon darkbtn fa-fw"></i> Dark Mode</li><li><a class="menuitem flat-box"><i class="fad fa-compact-disc fa-spin fa-fw music"></i> Music</a><ul class="list-v"><li><div class="aplayer-container"><meting-js theme="#1BCDFC" volume="0.7" loop="all" order="list" fixed="false" list-max-height="320px" server="netease" type="song" id="412785957" list-folded="true"></meting-js></div></li></ul></li><li></li><li><a class="menuitem flat-box faa-parent animated-hover" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook"><i class="fad fa-star fa-spin fa-fw"></i> NoteBook</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/atom.xml" id="atomxml"><i class="fad fa-rss fa-fw"></i> RSS订阅</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/sitemap.xml" id="sitemapxml"><i class="fad fa-sitemap fa-fw"></i> 站点地图</a></li></ul></li><hr><li><a class="menuitem flat-box faa-parent animated-hover" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i> GitHub</a></li></ul></li></ul></div><div class="m_search"><form name="searchform" class="form u-search-form"><i class="icon fad fa-search fa-fw"></i> <input type="text" class="input u-search-input" placeholder="Search..."></form></div><ul class="switcher nav-list-h m-phone"><li><a class="s-search fad fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li><li><a class="s-menu fad fa-bars fa-fw" target="_self" href="javascript:void(0)"></a><ul class="menu-phone list-v navigation white-box"><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fad fa-list-alt fa-fw"></i> 索引</a><ul class="list-v"><li><a class="menuitem flat-box faa-parent animated-hover" href="/categories/" id="categories"><i class="fad fa-folder-open fa-fw"></i> 分类</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags"><i class="fad fa-tags fa-fw"></i> 标签</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives"><i class="fad fa-archive fa-fw"></i> 归档</a></li></ul></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/friends/" id="friends"><i class="fad fa-link fa-fw"></i> 友链</a><ul class="list-v"><li class="header"><i class="fad fa-share fa-fw"></i> 友链接力</li><li><a class="menuitem flat-box faa-parent animated-hover" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank"><i class="fad fa-paper-plane fa-fw"></i> Travelling</a></li></ul></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/about/" id="about"><i class="fad fa-user-tie fa-fw"></i> 关于</a><ul class="list-v"><li><a class="menuitem flat-box faa-parent animated-hover" href="/time-machine/" id="time-machine"><i class="fad fa-clock fa-fw"></i> 时光机</a></li></ul></li><li><a class="menuitem flat-box faa-parent animated-hover"><i class="fad fa-fan fa-spin fa-fw"></i> 更多</a><ul class="list-v"><li><a class="menuitem flat-box faa-parent animated-hover"><i class="fad fa-user-shield fa-fw"></i> 博客管理</a><ul class="list-v"><li><a class="menuitem flat-box faa-parent animated-hover" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank"><i class="fad fa-comments fa-fw"></i> 评论管理</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank"><i class="fad fa-edit fa-fw"></i> 云端编辑</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="https://status.mhuig.top/" id="https:statusmhuigtop" rel="external nofollow noopener noreferrer" target="_blank"><i class="fad fa-telescope fa-fw"></i> Monitors</a></li></ul></li><hr><li><a class="menuitem flat-box faa-parent animated-hover"><i class="fad fa-tools fa-fw"></i> 工具箱</a><ul class="list-v"><li class="header"><i class="fad fa-moon darkbtn fa-fw"></i> Dark Mode</li><li><a class="menuitem flat-box faa-parent animated-hover" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook"><i class="fad fa-star fa-spin fa-fw"></i> NoteBook</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/atom.xml" id="atomxml"><i class="fad fa-rss fa-fw"></i> RSS订阅</a></li><li><a class="menuitem flat-box faa-parent animated-hover" href="/sitemap.xml" id="sitemapxml"><i class="fad fa-sitemap fa-fw"></i> 站点地图</a></li></ul></li><hr><li><a class="menuitem flat-box faa-parent animated-hover" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i> GitHub</a></li></ul></li></ul></li></ul></div></div></div></header><div class="l_body"><div class="l_cover"><div class="cover-wrapper post featured" style="display:none"><div class="cover-backstretch"></div><div class="cover-body"><div class="top"><p class="title">MHuiG</p><p class="subtitle">「Be Yourself, Make a Difference.」</p></div><div class="bottom"><div class="menu navigation"><div class="list-h"><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/MHuiG" id="https:githubcomMHuiG"><i class="fab fa-github fa-fw" style="color:#000"></i><p>Github</p></a><a href="/friends/" id="friends"><i class="fad fa-link fa-fw" style="color:#d31ee9"></i><p>友链</p></a><a href="/about/" id="about"><i class="fad fa-user-tie fa-fw" style="color:#0095ff"></i><p>关于</p></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://travellings.now.sh/" id="https:travellingsnowsh"><i class="fad fa-paper-plane fa-fw" style="color:#734ae6"></i><p>Travelling</p></a></div></div></div></div><div class="scroll-down" style="display:none"><i class="fa fa-chevron-down scroll-down-effects"></i></div></div></div><div class="safearea"><div class="body-wrapper" id="pjax-container"><div id="pjax-data" style="display:none"><div id="pjax-ispage">true</div><div id="pjax-pageTitle">Flink Window</div><div id="pjax-enable-cover">true</div><div id="pjax-comment-path"></div><div id="pjax-comment-placeholder"></div></div><script>document.getElementsByClassName("cover-wrapper")[0].style.display="none",document.getElementsByClassName("l_header","cover-wrapper")[0].classList.add("show");</script><div class="l_main"><article class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost"><div class="article-meta" id="top"><h1 class="title"> Flink Window</h1><div class="new-meta-box"><div class="new-meta-item category"><a class="notlink"><i class="fad fa-folder-open fa-fw" aria-hidden="true"></i> <a class="category-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a><span class="sep"></span><a class="category-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/flink/">Flink</a></a></div><div class="new-meta-item date"><a class="notlink"><i class="fad fa-calendar-alt fa-fw" aria-hidden="true"></i><p>发布于：2020年1月11日</p></a></div><div class="new-meta-item wordcount"><a class="notlink"><i class="fad fa-keyboard fa-fw" aria-hidden="true"></i><p>字数：877字</p></a></div><div class="new-meta-item readtime"><a class="notlink"><i class="fad fa-hourglass-half fa-fw" aria-hidden="true"></i><p>时长：3分钟</p></a></div></div></div><p>什么是 Window？</p><p>Window 有什么作用？</p><p>Flink 中的三种Window</p><a id="more"></a><p>Flink Window Demo 源码<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/MHuiG/FlinkWindow">GitHub</a></p><h2 id="什么是-Window？"><a href="#什么是-Window？" class="headerlink" title="什么是 Window？"></a>什么是 Window？</h2><p>统计经过某红绿灯的汽车数量之和？</p><p>假设在一个红绿灯处，统计通过此红绿灯的汽车数量</p><p>可以把汽车的经过看成一个流，无穷的流，不断有汽车经过此红绿灯，因此无法统计总共的汽车数量。但是，我们可以换一种思路，每隔 15 秒，我们都将与上一次的结果进行 sum 操作（滑动聚合）</p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090422.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090422.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>这个结果似乎还是无法回答我们的问题，根本原因在于流是无界的，我们不能限制流，但可以在有一个有界的范围内处理无界的流数据。因此，我们需要换一个问题的提法：每分钟经过某红绿灯的汽车数量之和？</p><p>这个问题，就相当于一个定义了一个 Window（窗口），Window 的界限是 1 分钟，且每分钟内的数据互不干扰，因此也可以称为翻滚（不重合）窗口，如下图：</p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090523.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090523.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>再考虑一种情况，每 30 秒统计一次过去 1 分钟的汽车数量之和</p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090701.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090701.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>此时，Window 出现了重合。这样，1 个小时内会有 120 个 Window。</p><ul><li>Window 指定时间范围内的所有数据</li><li>滚动窗口 各个窗口之间的数据不重叠（不重复）</li><li>滑动窗口 各个窗口之间的数据重叠（重复）</li></ul><h2 id="Window-有什么作用？"><a href="#Window-有什么作用？" class="headerlink" title="Window 有什么作用？"></a>Window 有什么作用？</h2><p>通常来讲，Window 就是用来对一个无限的流设置一个有限的集合，在有界的数据集上进行操作的一种机制。Window 又可以分为基于时间（Time-based）的 Window 以及基于数量（Count-based）的 window。</p><h2 id="Flink-中的三种-Window"><a href="#Flink-中的三种-Window" class="headerlink" title="Flink 中的三种 Window"></a>Flink 中的三种 Window</h2><p>Flink 在 KeyedStream（DataStream 的继承类） 中提供了下面几种 Window：</p><ul><li>以时间驱动的 Time Window</li><li>以事件数量驱动的 Count Window</li><li>以会话间隔驱动的 Session Window</li></ul><h2 id="Time-Window"><a href="#Time-Window" class="headerlink" title="Time Window"></a>Time Window</h2><ul><li>正如命名那样，Time Window 根据时间来聚合流数据。</li><li>例如：一分钟的时间窗口就只会收集一分钟的数据，并在一分钟过后对窗口中的所有数据应用于下一个算子。</li><li>在 Flink 中使用 Time Window 非常简单，输入一个时间参数，这个时间参数可以利用 Time 这个类来控制，如果事前没指定 TimeCharacteristic 类型的话，则默认使用的是 ProcessingTime</li></ul><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090945.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090945.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>)</span><br><span class="line">.timeWindow(<span class="type">Time</span>.minutes(<span class="number">1</span>)) <span class="comment">//time Window 每分钟统计一次数量和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091114.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091114.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>)</span><br><span class="line">.timeWindow(<span class="type">Time</span>.minutes(<span class="number">1</span>), <span class="type">Time</span>.seconds(<span class="number">30</span>)) <span class="comment">//隔 30s 统计过去1m和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure><h3 id="Count-Window"><a href="#Count-Window" class="headerlink" title="Count Window"></a>Count Window</h3><p>Apache Flink 还提供计数窗口功能，如果计数窗口的值设置的为 3 ，那么将会在窗口中收集 3 个事件，并在添加第 3 个事件时才会计算窗口中所有事件的值。</p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091727.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091727.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>)</span><br><span class="line">.countWindow(<span class="number">3</span>) <span class="comment">//统计每 3 个元素的数量之和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091808.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091808.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>) </span><br><span class="line">.countWindow(<span class="number">4</span>, <span class="number">3</span>) <span class="comment">//每隔 3 个元素统计过去 4 个元素的数量之和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure><h3 id="Session-Window"><a href="#Session-Window" class="headerlink" title="Session Window"></a>Session Window</h3><p>Apache Flink 还提供了会话窗口，是什么意思呢？使用该窗口的时候你可以传入一个时间参数（表示某种数据维持的会话持续时长），如果超过这个时间，就代表着超出会话时长。</p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091858.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091858.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>)</span><br><span class="line">.window(<span class="type">ProcessingTimeSessionWindows</span>.withGap(<span class="type">Time</span>.seconds(<span class="number">5</span>)))<span class="comment">//表示如果 5s 内没出现数据则认为超出会话时长，然后计算这个窗口的和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure><div class="footer"><div class="copyright"><blockquote><p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p><p>本文永久链接是：<a href="https://mhuig.github.io/posts/38a07d35.html">https://mhuig.github.io/posts/38a07d35.html</a></p></blockquote></div></div><div class="article-meta" id="bottom"><div class="new-meta-box"><div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-11T09:12:29+08:00"><a class="notlink"><i class="fad fa-edit fa-fw" aria-hidden="true"></i><p>更新于：2020年1月11日</p></a></div><div class="new-meta-item browse valine"><a class="notlink"><i class="fad fa-eye fa-fw" aria-hidden="true"></i><span id="/posts/38a07d35.html" class="leancloud_visitors" data-flag-title="Flink Window"><p><span class="leancloud-visitors-count"></span></p></span></a></div><div class="new-meta-item meta-tags"><a class="tag" href="/tags/flink/" rel="nofollow"><i class="fad fa-hashtag fa-fw" aria-hidden="true"></i><p>Flink</p></a></div></div></div><div class="prev-next"><a class="prev" href="/posts/714668f9.html"><p class="title"><i class="fad fa-chevron-left" aria-hidden="true"></i>Flink常用的算子</p><p class="content">Flink 数据处理模型 Flink 算子 Operator Flink 数据处理模型在 Flink 应用程序中，无论你的应用程序是批程序，还是流程序，都是下图这种模型，有数据源（source...</p></a><a class="next" href="/posts/5cc46d49.html"><p class="title">CentOS7重启之后无法联网重启network发现报错<i class="fad fa-chevron-right" aria-hidden="true"></i></p><p class="content">虚拟机里边的CentOS7重启之后无法联网，重启network发现报错。 解决方式：禁用NetworkManager 123systemctl stop NetworkManagersyst...</p></a></div></article><article class="post white-box reveal shadow floatable blur" id="comments"><p ct><i class="fad fa-comments"></i> 评论</p><div id="minivaline_container"><i class="fad fa-cog fa-spin fa-fw fa-2x"></i></div></article></div><aside class="l_side"><section class="widget toc-wrapper shadow floatable blur desktop mobile" id="toc-div"><header><i class="fad fa-list fa-fw" aria-hidden="true"></i> <span class="name">本文目录</span></header><div class="content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Window%EF%BC%9F"><span class="toc-text">什么是 Window？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Window-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">Window 有什么作用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flink-%E4%B8%AD%E7%9A%84%E4%B8%89%E7%A7%8D-Window"><span class="toc-text">Flink 中的三种 Window</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Time-Window"><span class="toc-text">Time Window</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Count-Window"><span class="toc-text">Count Window</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session-Window"><span class="toc-text">Session Window</span></a></li></ol></li></ol></div></section></aside></div><footer class="footer clearfix"><br><br><div class="aplayer-container"><meting-js theme="#1BCDFC" volume="0.7" loop="all" order="list" fixed="false" list-max-height="320px" server="netease" type="song" id="412785957" list-folded="true"></meting-js></div><br><div class="social-wrapper"><a href="/atom.xml" class="social fad fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a><a href="mailto:mhuig1998@gmail.com" class="social fad fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a><a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a><a href="https://music.163.com/#/user/home?id=63035382" class="social fad fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer"></a></div><div><p>博客内容遵循 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p></div><div class="copyright"><p><a href="https://icp.gov.moe" target="_blank" rel="external nofollow noopener noreferrer">萌ICP备</a> <a href="https://icp.gov.moe/?keyword=2020012138" target="_blank" rel="external nofollow noopener noreferrer">2020012138号</a><br><a href="https://mhuig.github.io/">Copyright © 2018-2020 MHuiG</a></p></div></footer><noscript><style type="text/css">#dialog{background-color:#fff;height:100%;width:100%;position:fixed!important;position:absolute;top:0;left:0;z-index:500;display:none}#dialog p{margin:0 auto;height:auto;line-height:124px;background:#ccc;color:red;font-size:60px}</style><div id="dialog" style="display:block"><div><p style="text-align:center"><b>本页面需要浏览器支持（启用）JavaScript<br><br>This page requires browser support (enabled) JavaScript</b></p></div></div></noscript><a class="s-top fad fa-arrow-up fa-fw" href="javascript:void(0)"></a></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script>function pjax_fancybox(){$(".md").find("img").not(".inline").not("a img").each(function(){var t=document.createElement("a");$(t).attr("class","fancybox"),$(t).attr("pjax-fancybox",""),$(t).attr("href",$(this).attr("src")),$(this).attr("data-original")&&$(t).attr("href",$(this).attr("data-original")),$(t).attr("data-fancybox","images");var a="";$(this).attr("alt")&&($(t).attr("data-caption",$(this).attr("alt")),a=$(this).attr("alt"));var n=document.createElement("div");$(n).addClass("fancybox"),$(this).wrap(n);var e=document.createElement("span");$(e).addClass("image-caption"),$(e).text(a),$(this).after(e);var i=document.createElement("div");$(i).addClass("bg"),$(this).attr("bg")&&$(i).css("background",$(this).attr("bg")),$(this).wrap(i),$(this).wrap(t)}),$(".md").find("img").fancybox({selector:'[data-fancybox="images"]',hash:!1,loop:!1,closeClick:!0,helpers:{overlay:{closeClick:!0}},buttons:["zoom","close"]})}function SCload_fancybox(){$(".md").find("img").not(".inline").not("a img").length+$(".article-entry").find("img").length!=0&&(loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css",document.getElementById("loadcss")),setTimeout(function(){loadScript("https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js",pjax_fancybox)},1))}$(function(){SCload_fancybox()});</script><script type="text/javascript">$(function(){for(var t=[],e=1;e<=40;e++)t.push("https://cdn.jsdelivr.net/npm/mhg@0.0.0/cov/1%20("+e+").webp");!function(t){for(var e=t.length;e--;){var c=Math.floor(Math.random()*e),r=t[c];t[c]=t[e],t[e]=r}}(t),loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",function(){setTimeout(function(){$(".cover-backstretch").backstretch(t,{duration:"10000",fade:"1500"}),"none"==document.getElementsByClassName("cover-wrapper")[0].style.display?$(".cover-backstretch").backstretch("pause"):$(".cover-backstretch").backstretch("next")},1e4)})});</script><script defer="defer" src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script><script>window.lazyLoadOptions={elements_selector:".lazyload",threshold:0},window.addEventListener("LazyLoad::Initialized",function(n){window.lazyLoadInstance=n.detail.instance},!1),document.addEventListener("DOMContentLoaded",function(){lazyLoadInstance.update()}),document.addEventListener("pjax:complete",function(){lazyLoadInstance.update()});</script><script>window.FPConfig={delay:0,ignoreKeywords:["#"],maxRPS:6,hoverDelay:0};</script><script defer="defer" src="https://cdn.jsdelivr.net/npm/mhg@0.0.1/js/flying-pages.min.js"></script><script>var APlayerController=new Object;APlayerController.id="412785957",APlayerController.volume="0.7",setTimeout(function(){loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css",document.getElementById("loadcss")),loadScript("https://cdn.jsdelivr.net/npm/mhg@0.0.0/js/APlayer.mini.js"),loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")},1);</script><script>var load_minivaline,pjax_minivaline;"localhost"!=window.location.hostname&&(load_minivaline=function(){setTimeout(function(){document.getElementsByTagName("head")[0]||document.documentElement;loadScript("https://cdn.jsdelivr.net/npm/minivaline@4.1.1/dist/MiniValine.min.js",pjax_minivaline)},1)},pjax_minivaline=function(){var e,n;document.querySelectorAll("#minivaline_container")[0]&&(e=$.trim($("#pjax-comment-placeholder").text())||"快来评论吧~",0==(n=$.trim($("#pjax-comment-path").text())).length&&(n=decodeURI(window.location.pathname)),new MiniValine({el:"#minivaline_container",appId:"233",appKey:"23333",mode:"xCss",placeholder:e,path:n,math:!0,md:!0,enableQQ:!1,NoRecordIP:!1,visitor:!0,maxNest:6,pageSize:6,barrager:0,closeFlag:!1,cloudflag:!0,closeUA:!1,serverURLs:"https://mv.mhuig.top",vc:"Vt",region:"true"}))},$(function(){document.querySelectorAll("#minivaline_container")[0]&&load_minivaline()}));</script><script type="text/javascript">function getClientHeight(){return document.body.clientHeight&&document.documentElement.clientHeight?document.body.clientHeight<document.documentElement.clientHeight?document.body.clientHeight:document.documentElement.clientHeight:document.body.clientHeight>document.documentElement.clientHeight?document.body.clientHeight:document.documentElement.clientHeight}function supportCss3(e){function t(e){return e.replace(/-(\w)/g,function(e,t){return t.toUpperCase()})}var o,n=["webkit","Moz","ms","o"],d=[],r=document.documentElement.style;for(o in n)d.push(t(n[o]+"-"+e));for(o in d.push(t(e)),d)if(d[o]in r)return!0;return!1}var options={bottom:"32px",right:"unset",left:"16px",time:"0s",mixColor:"skyblue",backgroundColor:"skyblue",buttonColorDark:"#333",buttonColorLight:"#ddd",saveInCookies:!0,label:"",autoMatchOsTheme:!0};function pjax_darkmodejs(){var e;supportCss3("mix-blend-mode")&&(e=setInterval(function(){var t;"undefined"!=typeof jQuery&&(clearInterval(e),t=getClientHeight(),$(window).scroll(function(){var e=$(document).scrollTop();t<e?($(".darkmode-layer").css("mix-blend-mode","normal"),$(".darkmode-layer").css("background-color","#21232F")):($(".darkmode-layer").css("mix-blend-mode","difference"),$(".darkmode-layer").css("background-color",""))}))},100))}function loaddarkmodejs(){supportCss3("mix-blend-mode")&&(window.darkmode=new Darkmode(options),pjax_darkmodejs())}loadScript("https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js",loaddarkmodejs);</script><script src="/js/app.js"></script><script>var ROOT="/".endsWith("/")?"/":"//";!function(){function n(){ustomSearch=new HexoSearch}jQuery(".input.u-search-input").one("focus",function(){loadScript("https://cdn.jsdelivr.net/npm/mhg@0.0.6/js/search.js",n)})}();</script><script>var ROOT="/".endsWith("/")?"/":"//";!function(){function n(){ustomSearch=new HexoSearch}jQuery(".input.u-search-input").one("focus",function(){loadScript("https://cdn.jsdelivr.net/npm/mhg@0.0.6/js/search.js",n)})}();</script><script>var TimeInterval,now=new Date;function SiteTime(){try{var n=new Date("08/19/2019 21:23:12");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已安全运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}catch(n){}}"undefined"==typeof SiteTimeFlag&&(TimeInterval=setInterval("SiteTime()",250),window.SiteTimeFlag=!0);</script><script>loadScript("https://cdn.jsdelivr.net/npm/mhg@0.0.8/js/ip.min.js");</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><div class="pjax-animate"><script aysc src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script><div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed:100});</script></div><script>window.ShowLoading=function(){NProgress.start()},window.HideLoading=function(){NProgress.done()};</script></div><script>var pjax;document.addEventListener("DOMContentLoaded",function(){pjax=new Pjax({elements:'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',selectors:["title","#pjax-container","#pjax-header-nav-list"],cacheBust:!1,timeout:5e3})}),document.addEventListener("pjax:send",function(e){try{var n=window.location.pathname,o=e.triggerElement.href,a=["/time-machine/index.html","/time-machine/"];""!=a[0]&&a.forEach(function(e){-1==n.indexOf(e)&&-1==o.indexOf(e)||(window.location.href=o)}),"localhost:4000"!=window.location.host&&window.location.origin&&window.BlogPageFastURL&&window.location.origin!=window.BlogPageFastURL&&(window.location.href=e.triggerElement.href.replace(window.location.origin,window.BlogPageFastURL))}catch(e){}window.subData=null,void 0!==$.fancybox&&$.fancybox.close(),$(".l_header .switcher .s-search").removeClass("active"),$(".l_header").removeClass("z_search-open"),$(".wrapper").removeClass("sub"),$(".s-top").unbind("click"),$(".menu a").unbind("click"),$(window).unbind("resize"),$(window).unbind("scroll"),$(document).unbind("scroll"),$(document).unbind("click"),$("body").unbind("click"),window.ShowLoading()}),document.addEventListener("pjax:complete",function(){_hmt.push(["_trackPageview",document.location.pathname]),window.dataLayer=window.dataLayer||[],function(){dataLayer.push(arguments)}("config","UA-148909894-1",{page_path:document.location.pathname}),$(".nav-main").find(".list-v").not(".menu-phone").removeAttr("style",""),$(".menu-phone.list-v").removeAttr("style",""),$("script[data-pjax], .pjax-reload script").each(function(){$(this).parent().append($(this).remove())});try{(void 0===$.fancybox?SCload_fancybox:pjax_fancybox)(),$(".cover-backstretch").backstretch("resize"),("undefined"==typeof MiniValine?load_minivaline:pjax_minivaline)(),pjax_darkmodejs(),"none"==document.getElementsByClassName("cover-wrapper")[0].style.display?$(".cover-backstretch").backstretch("pause"):$(".cover-backstretch").backstretch("next")}catch(e){console.log(e)}window.HideLoading()}),document.addEventListener("pjax:error",function(e){window.HideLoading(),window.location.href=e.triggerElement.href});</script></div><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/s.js").then(function(r){r.onupdatefound=function(){var e=r.installing;e.onstatechange=function(){switch(e.state){case"installed":navigator.serviceWorker.controller?console.log("Updated serviceWorker."):console.log("serviceWorker Sucess!");break;case"redundant":console.error("The installing service worker became redundant.")}}}}).catch(function(e){console.error("Error during service worker registration:",e)});</script></body></html>
+Flink 中的三种Window">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="MHuiG" type="application/atom+xml">
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="theme-color" content="skyblue">
+    
+  
+
+  <!-- link -->
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  
+
+  
+
+  
+  
+  <!-- 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+  -->
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon.ico">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon_180.png">
+  <link rel="mask-icon" color="#1BC3FB" href="https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon_180.png">
+  <link rel="dns-prefetch" href="https://hm.baidu.com">
+  <link rel="dns-prefetch" href="https://rmt.dogedoge.com">
+  <link rel="dns-prefetch" href="https://mv.mhuig.top">
+  <link rel="dns-prefetch" href="https://zz.bdstatic.com">
+  <link rel="dns-prefetch" href="https://push.zhanzhang.baidu.com">
+  <link rel="dns-prefetch" href="https://github.com">
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>setTimeout(function(){window.ga_tid="UA-148909894-1",function(){var e=document.createElement("script");e.src="https://rmt.dogedoge.com/fetch/public/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()},5e3);</script>
+  
+  
+    <!-- ba -->
+    <script>var _hmt=_hmt||[];setTimeout(function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?d367964cbb21775bfbb9c16fe4da3484",e.defer=!0;var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)},5e3);</script>
+  
+
+
+  <!-- 脚本懒加载函数 -->
+  <script>function loadScript(e,t){var n=document.getElementsByTagName("head")[0]||document.documentElement,r=document.createElement("script");r.setAttribute("type","text/javascript"),t&&(r.onload=t),r.setAttribute("src",e),n.appendChild(r)}var loadCSS=function(e,t,n,r){var i,o,a=window.document,d=a.createElement("link");o=t||(i=(a.body||a.getElementsByTagName("head")[0]).childNodes)[i.length-1];var l=a.styleSheets;if(r)for(var s in r)r.hasOwnProperty(s)&&d.setAttribute(s,r[s]);d.rel="stylesheet",d.href=e,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(d,t?o:o.nextSibling)});function c(e){for(var t=d.href,n=l.length;n--;)if(l[n].href===t)return e();setTimeout(function(){c(e)})}function u(){d.addEventListener&&d.removeEventListener("load",u),d.media=n||"all"}return d.addEventListener&&d.addEventListener("load",u),(d.onloadcssdefined=c)(u),d};</script>
+  <script id="loadcss"></script>
+
+
+  <!-- 非常时期紧急方案 -->
+  
+  <script>"mhuig.github.io"!=window.location.host&&"localhost:4000"!=window.location.host&&"blog.mhuig.top"!=window.location.host&&"dev.mhuig.top"!=window.location.host&&"me.mhuig.top"!=window.location.host&&"coding.mhuig.top"!=window.location.host&&(window.location.host="blog.mhuig.top:443");</script>
+</head>
+
+<body>
+  <header class="l_header auto shadow floatable blur " style="opacity: 0">
+  <div class="container">
+  <div class="wrapper">
+    <div class="nav-sub">
+      <p class="title"></p>
+      <ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list">
+        <li><a class="s-comment fad fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+          <li><a class="s-toc fad fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href="/">
+          
+          
+          
+            MHuiG's Blog
+          
+        </a>
+      
+
+			<div class="menu navigation">
+				<ul class="nav-list-h m-pc">
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives">
+                  <i class="fad fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/categories/" id="categories">
+                  <i class="fad fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags">
+                  <i class="fad fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives">
+                  <i class="fad fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/friends/" id="friends">
+                  <i class="fad fa-link fa-fw"></i>友链
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class="header">
+                <i class="fad fa-share fa-fw"></i>友链接力
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fad fa-paper-plane fa-fw"></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/about/" id="about">
+                  <i class="fad fa-user-tie fa-fw"></i>关于
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/time-machine/" id="time-machine">
+                  <i class="fad fa-clock fa-fw"></i>时光机
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover">
+                  <i class="fad fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover">
+                  <i class="fad fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fad fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fad fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://status.mhuig.top/" id="https:statusmhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fad fa-telescope fa-fw"></i>Monitors
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover">
+                  <i class="fad fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class="header">
+                <i class="fad fa-moon darkbtn fa-fw"></i>Dark Mode
+              </li>
+            
+          
+                    
+                      
+            
+              
+                <li>
+                  <a class="menuitem flat-box">
+                    <i class="fad fa-compact-disc fa-spin fa-fw music"></i>Music
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js theme="#1BCDFC" volume="0.7" loop="all" order="list" fixed="false" list-max-height="320px" server="netease" type="song" id="412785957" list-folded="true">
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                </li><li>
+              
+            
+          
+                    
+                      
+            
+              </li><li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fad fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/atom.xml" id="atomxml">
+                  <i class="fad fa-rss fa-fw"></i>RSS订阅
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/sitemap.xml" id="sitemapxml">
+                  <i class="fad fa-sitemap fa-fw"></i>站点地图
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fad fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search...">
+        </form>
+      </div>
+
+			<ul class="switcher nav-list-h m-phone">
+				
+					<li><a class="s-search fad fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li>
+				
+				<li>
+          <a class="s-menu fad fa-bars fa-fw" target="_self" href="javascript:void(0)"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives">
+                  <i class="fad fa-list-alt fa-fw"></i>索引
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/categories/" id="categories">
+                  <i class="fad fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/tags/" id="tags">
+                  <i class="fad fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" id="archives">
+                  <i class="fad fa-archive fa-fw"></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/friends/" id="friends">
+                  <i class="fad fa-link fa-fw"></i>友链
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class="header">
+                <i class="fad fa-share fa-fw"></i>友链接力
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://travellings.now.sh/" id="https:travellingsnowsh" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fad fa-paper-plane fa-fw"></i>Travelling
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/about/" id="about">
+                  <i class="fad fa-user-tie fa-fw"></i>关于
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/time-machine/" id="time-machine">
+                  <i class="fad fa-clock fa-fw"></i>时光机
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover">
+                  <i class="fad fa-fan fa-spin fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover">
+                  <i class="fad fa-user-shield fa-fw"></i>博客管理
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://info.mhuig.top" id="https:infomhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fad fa-comments fa-fw"></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://www.yuque.com/mhuig" id="https:wwwyuquecommhuig" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fad fa-edit fa-fw"></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://status.mhuig.top/" id="https:statusmhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fad fa-telescope fa-fw"></i>Monitors
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover">
+                  <i class="fad fa-tools fa-fw"></i>工具箱
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class="header">
+                <i class="fad fa-moon darkbtn fa-fw"></i>Dark Mode
+              </li>
+            
+          
+                    
+                      
+            
+              
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://MHuiG.github.io/NoteBook/" id="https:MHuiGgithubioNoteBook">
+                  <i class="fad fa-star fa-spin fa-fw"></i>NoteBook
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/atom.xml" id="atomxml">
+                  <i class="fad fa-rss fa-fw"></i>RSS订阅
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="/sitemap.xml" id="sitemapxml">
+                  <i class="fad fa-sitemap fa-fw"></i>站点地图
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://github.com/MHuiG" id="https:githubcomMHuiG" rel="external nofollow noopener noreferrer" target="_blank">
+                  <i class="fab fa-github fa-fw"></i>GitHub
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+  
+    
+    
+        <div class="cover-wrapper post featured" style="display: none;">
+          
+            <div class="cover-backstretch"></div>
+          
+          <div class="cover-body">
+  <div class="top">
+    
+    
+      <p class="title">MHuiG</p>
+    
+    
+      <p class="subtitle">「Be Yourself, Make a Difference.」</p>
+    
+  </div>
+  <div class="bottom">
+    <div class="menu navigation">
+      <div class="list-h">
+        
+          
+            <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/MHuiG" id="https:githubcomMHuiG">
+              <i class="fab fa-github fa-fw" style="color: #000;"></i><p>Github</p>
+            </a>
+          
+            <a href="/friends/" id="friends">
+              <i class="fad fa-link fa-fw" style="color: #d31ee9;"></i><p>友链</p>
+            </a>
+          
+            <a href="/about/" id="about">
+              <i class="fad fa-user-tie fa-fw" style="color: #0095ff;"></i><p>关于</p>
+            </a>
+          
+            <a target="_blank" rel="external nofollow noopener noreferrer" href="https://travellings.now.sh/" id="https:travellingsnowsh">
+              <i class="fad fa-paper-plane fa-fw" style="color: #734ae6;"></i><p>Travelling</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+  
+    <div class="safearea">
+      <div class="body-wrapper" id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量--> 
+<!--思路大概是将值藏到重加载的区域内--> 
+ 
+ 
+ 
+<div id="pjax-data" style="display: none"> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">Flink Window</div> 
+  <div id="pjax-enable-cover">true</div> 
+  <div id="pjax-comment-path"></div> 
+  <div id="pjax-comment-placeholder"></div> 
+</div> 
+ 
+ 
+<script>document.getElementsByClassName("cover-wrapper")[0].style.display="none",document.getElementsByClassName("l_header","cover-wrapper")[0].classList.add("show");</script> 
+ 
+
+        
+        
+
+<div class="l_main">
+  <article class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        Flink Window
+      </h1>
+      <div class="new-meta-box">
+        
+          
+            
+  <div class="new-meta-item category">
+    <a class="notlink">
+      <i class="fad fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a><span class="sep"></span><a class="category-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/flink/">Flink</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fad fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年1月11日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class="notlink">
+      <i class="fad fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：877字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class="notlink">
+      <i class="fad fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+        
+      </div>
+    
+  </div>
+
+  
+  
+  <p>什么是 Window？</p>
+<p>Window 有什么作用？</p>
+<p>Flink 中的三种Window</p>
+<a id="more"></a>
+
+<p>Flink Window Demo 源码<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/MHuiG/FlinkWindow">GitHub</a></p>
+<h2 id="什么是-Window？"><a href="#什么是-Window？" class="headerlink" title="什么是 Window？"></a>什么是 Window？</h2><p>统计经过某红绿灯的汽车数量之和？</p>
+<p>假设在一个红绿灯处，统计通过此红绿灯的汽车数量</p>
+<p>可以把汽车的经过看成一个流，无穷的流，不断有汽车经过此红绿灯，因此无法统计总共的汽车数量。但是，我们可以换一种思路，每隔 15 秒，我们都将与上一次的结果进行 sum 操作（滑动聚合）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090422.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090422.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>这个结果似乎还是无法回答我们的问题，根本原因在于流是无界的，我们不能限制流，但可以在有一个有界的范围内处理无界的流数据。因此，我们需要换一个问题的提法：每分钟经过某红绿灯的汽车数量之和？</p>
+<p>这个问题，就相当于一个定义了一个 Window（窗口），Window 的界限是 1 分钟，且每分钟内的数据互不干扰，因此也可以称为翻滚（不重合）窗口，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090523.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090523.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>再考虑一种情况，每 30 秒统计一次过去 1 分钟的汽车数量之和</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090701.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090701.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>此时，Window 出现了重合。这样，1 个小时内会有 120 个 Window。</p>
+<ul>
+<li>Window 指定时间范围内的所有数据</li>
+<li>滚动窗口 各个窗口之间的数据不重叠（不重复）</li>
+<li>滑动窗口 各个窗口之间的数据重叠（重复）</li>
+</ul>
+<h2 id="Window-有什么作用？"><a href="#Window-有什么作用？" class="headerlink" title="Window 有什么作用？"></a>Window 有什么作用？</h2><p>通常来讲，Window 就是用来对一个无限的流设置一个有限的集合，在有界的数据集上进行操作的一种机制。Window 又可以分为基于时间（Time-based）的 Window 以及基于数量（Count-based）的 window。</p>
+<h2 id="Flink-中的三种-Window"><a href="#Flink-中的三种-Window" class="headerlink" title="Flink 中的三种 Window"></a>Flink 中的三种 Window</h2><p>Flink 在 KeyedStream（DataStream 的继承类） 中提供了下面几种 Window：</p>
+<ul>
+<li>以时间驱动的 Time Window</li>
+<li>以事件数量驱动的 Count Window</li>
+<li>以会话间隔驱动的 Session Window</li>
+</ul>
+<h2 id="Time-Window"><a href="#Time-Window" class="headerlink" title="Time Window"></a>Time Window</h2><ul>
+<li>正如命名那样，Time Window 根据时间来聚合流数据。</li>
+<li>例如：一分钟的时间窗口就只会收集一分钟的数据，并在一分钟过后对窗口中的所有数据应用于下一个算子。</li>
+<li>在 Flink 中使用 Time Window 非常简单，输入一个时间参数，这个时间参数可以利用 Time 这个类来控制，如果事前没指定 TimeCharacteristic 类型的话，则默认使用的是 ProcessingTime</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090945.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111090945.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>)</span><br><span class="line">.timeWindow(<span class="type">Time</span>.minutes(<span class="number">1</span>)) <span class="comment">//time Window 每分钟统计一次数量和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091114.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091114.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>)</span><br><span class="line">.timeWindow(<span class="type">Time</span>.minutes(<span class="number">1</span>), <span class="type">Time</span>.seconds(<span class="number">30</span>)) <span class="comment">//隔 30s 统计过去1m和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Count-Window"><a href="#Count-Window" class="headerlink" title="Count Window"></a>Count Window</h3><p>Apache Flink 还提供计数窗口功能，如果计数窗口的值设置的为 3 ，那么将会在窗口中收集 3 个事件，并在添加第 3 个事件时才会计算窗口中所有事件的值。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091727.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091727.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>)</span><br><span class="line">.countWindow(<span class="number">3</span>) <span class="comment">//统计每 3 个元素的数量之和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091808.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091808.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>) </span><br><span class="line">.countWindow(<span class="number">4</span>, <span class="number">3</span>) <span class="comment">//每隔 3 个元素统计过去 4 个元素的数量之和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Session-Window"><a href="#Session-Window" class="headerlink" title="Session Window"></a>Session Window</h3><p>Apache Flink 还提供了会话窗口，是什么意思呢？使用该窗口的时候你可以传入一个时间参数（表示某种数据维持的会话持续时长），如果超过这个时间，就代表着超出会话时长。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091858.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/20200111091858.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataStream.keyBy(<span class="number">1</span>)</span><br><span class="line">.window(<span class="type">ProcessingTimeSessionWindows</span>.withGap(<span class="type">Time</span>.seconds(<span class="number">5</span>)))<span class="comment">//表示如果 5s 内没出现数据则认为超出会话时长，然后计算这个窗口的和</span></span><br><span class="line">.sum(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+  
+  
+    
+    <div class="footer">
+      
+      
+      
+        <div class="copyright">
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href="https://mhuig.github.io/posts/38a07d35.html">https://mhuig.github.io/posts/38a07d35.html</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class="article-meta" id="bottom">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-11T09:12:29+08:00">
+  <a class="notlink">
+    <i class="fad fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年1月11日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  <div class="new-meta-item browse valine">
+    <a class="notlink">
+      <i class="fad fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/posts/38a07d35.html" class="leancloud_visitors" data-flag-title="Flink Window">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/flink/" rel="nofollow"><i class="fad fa-hashtag fa-fw" aria-hidden="true"></i><p>Flink</p></a></div>
+
+
+        
+      
+        
+      
+    </div>
+  </div>
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class="prev" href="/posts/714668f9.html">
+          <p class="title"><i class="fad fa-chevron-left" aria-hidden="true"></i>Flink常用的算子</p>
+          <p class="content">Flink 数据处理模型
+Flink 算子 Operator
+
+Flink 数据处理模型在 Flink 应用程序中，无论你的应用程序是批程序，还是流程序，都是下图这种模型，有数据源（source...</p>
+        </a>
+      
+      
+        <a class="next" href="/posts/5cc46d49.html">
+          <p class="title">CentOS7重启之后无法联网重启network发现报错<i class="fad fa-chevron-right" aria-hidden="true"></i></p>
+          <p class="content">虚拟机里边的CentOS7重启之后无法联网，重启network发现报错。
+
+
+解决方式：禁用NetworkManager
+123systemctl stop NetworkManagersyst...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow floatable blur" id="comments">
+    <p ct><i class="fad fa-comments"></i> 评论</p>
+    
+    <div id="minivaline_container">
+  <i class="fad fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+
+
+</div>
+<aside class="l_side">
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile" id="toc-div">
+    
+  <header>
+    
+      <i class="fad fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span>
+    
+  </header>
+
+
+    <div class="content">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Window%EF%BC%9F"><span class="toc-text">什么是 Window？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Window-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">Window 有什么作用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flink-%E4%B8%AD%E7%9A%84%E4%B8%89%E7%A7%8D-Window"><span class="toc-text">Flink 中的三种 Window</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Time-Window"><span class="toc-text">Time Window</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Count-Window"><span class="toc-text">Count Window</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session-Window"><span class="toc-text">Session Window</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js theme="#1BCDFC" volume="0.7" loop="all" order="list" fixed="false" list-max-height="320px" server="netease" type="song" id="412785957" list-folded="true">
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml" class="social fad fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="mailto:mhuig1998@gmail.com" class="social fad fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/MHuiG" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382" class="social fad fa-headphones-alt flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div class="copyright">
+        <p><a href="https://icp.gov.moe" target="_blank" rel="external nofollow noopener noreferrer">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020012138" target="_blank" rel="external nofollow noopener noreferrer"> 2020012138号</a><br><a href="https://mhuig.github.io/">Copyright © 2018-2020 MHuiG</a></p>
+
+        </div>
+      
+    
+  </footer>
+<noscript>
+<style type="text/css">
+   #dialog {
+  	background-color: #fff;
+  	height: 100%;
+  	width: 100%;
+  	position: fixed!important;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	z-index: 500;
+  	display: none
+  }
+
+  #dialog p {
+  	margin: 0 auto;
+  	height: auto;
+  	line-height: 124px;
+  	background: #ccc;
+  	color: red;
+  	font-size: 60px
+  }
+</style>
+  <div id="dialog" style="display:block">
+   <div>
+    <p style="text-align:center"><b>本页面需要浏览器支持（启用）JavaScript<br><br>This page requires browser support (enabled) JavaScript</b></p>
+   </div>
+  </div>
+</noscript>
+
+
+      <a class="s-top fad fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+    </div>
+  </div>
+  <div>
+    <!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>function pjax_fancybox(){$(".md").find("img").not(".inline").not("a img").each(function(){var t=document.createElement("a");$(t).attr("class","fancybox"),$(t).attr("pjax-fancybox",""),$(t).attr("href",$(this).attr("src")),$(this).attr("data-original")&&$(t).attr("href",$(this).attr("data-original")),$(t).attr("data-fancybox","images");var a="";$(this).attr("alt")&&($(t).attr("data-caption",$(this).attr("alt")),a=$(this).attr("alt"));var n=document.createElement("div");$(n).addClass("fancybox"),$(this).wrap(n);var e=document.createElement("span");$(e).addClass("image-caption"),$(e).text(a),$(this).after(e);var i=document.createElement("div");$(i).addClass("bg"),$(this).attr("bg")&&$(i).css("background",$(this).attr("bg")),$(this).wrap(i),$(this).wrap(t)}),$(".md").find("img").fancybox({selector:'[data-fancybox="images"]',hash:!1,loop:!1,closeClick:!0,helpers:{overlay:{closeClick:!0}},buttons:["zoom","close"]})}function SCload_fancybox(){$(".md").find("img").not(".inline").not("a img").length+$(".article-entry").find("img").length!=0&&(loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css",document.getElementById("loadcss")),setTimeout(function(){loadScript("https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js",pjax_fancybox)},1))}$(function(){SCload_fancybox()});</script>
+
+
+<!-- internal -->
+
+  
+  
+  
+    <script type="text/javascript">$(function(){for(var t=[],e=1;e<=40;e++)t.push("https://cdn.jsdelivr.net/npm/mhg@0.0.0/cov/1%20("+e+").webp");!function(t){for(var e=t.length;e--;){var c=Math.floor(Math.random()*e),r=t[c];t[c]=t[e],t[e]=r}}(t),loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",function(){setTimeout(function(){$(".cover-backstretch").backstretch(t,{duration:"10000",fade:"1500"}),"none"==document.getElementsByClassName("cover-wrapper")[0].style.display?$(".cover-backstretch").backstretch("pause"):$(".cover-backstretch").backstretch("next")},1e4)})});</script>
+  
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>window.lazyLoadOptions={elements_selector:".lazyload",threshold:0},window.addEventListener("LazyLoad::Initialized",function(n){window.lazyLoadInstance=n.detail.instance},!1),document.addEventListener("DOMContentLoaded",function(){lazyLoadInstance.update()}),document.addEventListener("pjax:complete",function(){lazyLoadInstance.update()});</script>
+
+
+
+
+  
+  
+    <script>window.FPConfig={delay:0,ignoreKeywords:["#"],maxRPS:6,hoverDelay:0};</script>
+	<script defer src="https://cdn.jsdelivr.net/npm/mhg@0.0.1/js/flying-pages.min.js"></script>
+  
+
+
+
+
+
+
+
+
+  <script>var APlayerController=new Object;APlayerController.id="412785957",APlayerController.volume="0.7",setTimeout(function(){loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css",document.getElementById("loadcss")),loadScript("https://cdn.jsdelivr.net/npm/mhg@0.0.0/js/APlayer.mini.js"),loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")},1);</script>
+
+
+
+  
+
+
+
+<script>var load_minivaline,pjax_minivaline;"localhost"!=window.location.hostname&&(load_minivaline=function(){setTimeout(function(){document.getElementsByTagName("head")[0]||document.documentElement;loadScript("https://cdn.jsdelivr.net/npm/minivaline@4.1.1/dist/MiniValine.min.js",pjax_minivaline)},1)},pjax_minivaline=function(){var e,n;document.querySelectorAll("#minivaline_container")[0]&&(e=$.trim($("#pjax-comment-placeholder").text())||"快来评论吧~",0==(n=$.trim($("#pjax-comment-path").text())).length&&(n=decodeURI(window.location.pathname)),new MiniValine({el:"#minivaline_container",appId:"233",appKey:"23333",mode:"xCss",placeholder:e,path:n,math:!0,md:!0,enableQQ:!1,NoRecordIP:!1,visitor:!0,maxNest:6,pageSize:6,barrager:0,closeFlag:!1,cloudflag:!0,closeUA:!1,serverURLs:"https://mv.mhuig.top",vc:"Vt",region:"true"}))},$(function(){document.querySelectorAll("#minivaline_container")[0]&&load_minivaline()}));</script>
+
+
+
+
+  <script type="text/javascript">function getClientHeight(){return document.body.clientHeight&&document.documentElement.clientHeight?document.body.clientHeight<document.documentElement.clientHeight?document.body.clientHeight:document.documentElement.clientHeight:document.body.clientHeight>document.documentElement.clientHeight?document.body.clientHeight:document.documentElement.clientHeight}function supportCss3(e){function t(e){return e.replace(/-(\w)/g,function(e,t){return t.toUpperCase()})}var o,n=["webkit","Moz","ms","o"],d=[],r=document.documentElement.style;for(o in n)d.push(t(n[o]+"-"+e));for(o in d.push(t(e)),d)if(d[o]in r)return!0;return!1}var options={bottom:"32px",right:"unset",left:"16px",time:"0s",mixColor:"skyblue",backgroundColor:"skyblue",buttonColorDark:"#333",buttonColorLight:"#ddd",saveInCookies:!0,label:"",autoMatchOsTheme:!0};function pjax_darkmodejs(){var e;supportCss3("mix-blend-mode")&&(e=setInterval(function(){var t;"undefined"!=typeof jQuery&&(clearInterval(e),t=getClientHeight(),$(window).scroll(function(){var e=$(document).scrollTop();t<e?($(".darkmode-layer").css("mix-blend-mode","normal"),$(".darkmode-layer").css("background-color","#21232F")):($(".darkmode-layer").css("mix-blend-mode","difference"),$(".darkmode-layer").css("background-color",""))}))},100))}function loaddarkmodejs(){supportCss3("mix-blend-mode")&&(window.darkmode=new Darkmode(options),pjax_darkmodejs())}loadScript("https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js",loaddarkmodejs);</script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  <script>var ROOT="/".endsWith("/")?"/":"//";!function(){function n(){ustomSearch=new HexoSearch}jQuery(".input.u-search-input").one("focus",function(){loadScript("https://cdn.jsdelivr.net/npm/mhg@0.0.6/js/search.js",n)})}();</script>
+
+
+
+<!-- optional -->
+
+  <script>var ROOT="/".endsWith("/")?"/":"//";!function(){function n(){ustomSearch=new HexoSearch}jQuery(".input.u-search-input").one("focus",function(){loadScript("https://cdn.jsdelivr.net/npm/mhg@0.0.6/js/search.js",n)})}();</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- more -->
+
+
+<script>var TimeInterval,now=new Date;function SiteTime(){try{var n=new Date("08/19/2019 21:23:12");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已安全运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}catch(n){}}"undefined"==typeof SiteTimeFlag&&(TimeInterval=setInterval("SiteTime()",250),window.SiteTimeFlag=!0);</script>
+
+<script>loadScript("https://cdn.jsdelivr.net/npm/mhg@0.0.8/js/ip.min.js");</script>
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+</div>
+
+<script>var pjax;document.addEventListener("DOMContentLoaded",function(){pjax=new Pjax({elements:'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',selectors:["title","#pjax-container","#pjax-header-nav-list"],cacheBust:!1,timeout:5e3})}),document.addEventListener("pjax:send",function(e){try{var n=window.location.pathname,o=e.triggerElement.href,a=["/time-machine/index.html","/time-machine/"];""!=a[0]&&a.forEach(function(e){-1==n.indexOf(e)&&-1==o.indexOf(e)||(window.location.href=o)}),"localhost:4000"!=window.location.host&&window.location.origin&&window.BlogPageFastURL&&window.location.origin!=window.BlogPageFastURL&&(window.location.href=e.triggerElement.href.replace(window.location.origin,window.BlogPageFastURL))}catch(e){}window.subData=null,void 0!==$.fancybox&&$.fancybox.close(),$(".l_header .switcher .s-search").removeClass("active"),$(".l_header").removeClass("z_search-open"),$(".wrapper").removeClass("sub"),$(".s-top").unbind("click"),$(".menu a").unbind("click"),$(window).unbind("resize"),$(window).unbind("scroll"),$(document).unbind("scroll"),$(document).unbind("click"),$("body").unbind("click"),window.ShowLoading()}),document.addEventListener("pjax:complete",function(){_hmt.push(["_trackPageview",document.location.pathname]),window.dataLayer=window.dataLayer||[],function(){dataLayer.push(arguments)}("config","UA-148909894-1",{page_path:document.location.pathname}),$(".nav-main").find(".list-v").not(".menu-phone").removeAttr("style",""),$(".menu-phone.list-v").removeAttr("style",""),$("script[data-pjax], .pjax-reload script").each(function(){$(this).parent().append($(this).remove())});try{(void 0===$.fancybox?SCload_fancybox:pjax_fancybox)(),$(".cover-backstretch").backstretch("resize"),("undefined"==typeof MiniValine?load_minivaline:pjax_minivaline)(),pjax_darkmodejs(),"none"==document.getElementsByClassName("cover-wrapper")[0].style.display?$(".cover-backstretch").backstretch("pause"):$(".cover-backstretch").backstretch("next")}catch(e){console.log(e)}window.HideLoading()}),document.addEventListener("pjax:error",function(e){window.HideLoading(),window.location.href=e.triggerElement.href});</script>
+
+    
+  </div>
+  <script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/s.js").then(function(r){r.onupdatefound=function(){var e=r.installing;e.onstatechange=function(){switch(e.state){case"installed":navigator.serviceWorker.controller?console.log("Updated serviceWorker."):console.log("serviceWorker Sucess!");break;case"redundant":console.error("The installing service worker became redundant.")}}}}).catch(function(e){console.error("Error during service worker registration:",e)});</script>
+</body>
+</html>
