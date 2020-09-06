@@ -36,4 +36,88 @@
 		<b>
 		</b>
 	</div>
-	<script>!function(){for(var t,c=encodeURIComponent,n=location.search.substr(1).split("&"),o=n.length,e={};o--;)t=n[o].split("="),e[t.shift()]=decodeURIComponent(t.join("="));e.ss;function f(t,n){鼠标.style.cssText="top:"+t+"px;left:"+n+"px;"}function u(t){提示文字.innerHTML=t}function a(t,n){l=setTimeout(t,n)}function s(i){clearTimeout(l),r.value="",r.blur(),history.pushState({},i,location.pathname+"?s="+c(i)),f(搜索框.offsetTop+25,搜索框.offsetLeft+搜索框.offsetWidth/2),u("光标移至输入框，左键单击"),a(function(){鼠标.classList.add("左键点击"),a(function(){r.focus(),u("键入搜索关键字"),a(function(){var n,o,e,s;鼠标.classList.remove("左键点击"),n=i.split(""),o=function(t,n){var o=this+1;r.value=i.substr(0,o),r.selectionStart=r.selectionEnd=o,a(n,50+250*Math.random())},e=function(){f(搜索框.offsetTop+25,搜索框.offsetLeft+搜索框.offsetWidth-60),u("点击「百度一下」按钮，进行搜索"),a(function(){鼠标.classList.add("左键点击"),u("等待跳转到搜索结果页..."),a(function(){location.href="https://www.baidu.com/s?wd="+c(i)},700)},1200)},s=-1,function t(){item=n[++s],item?o.call(s,item,t):e&&e()}()},800)},100)},1100)}var l,r=搜索框.text;搜索框.onsubmit=function(t){t.preventDefault();var n=r.value.replace(/^\s+|\s+$/g,"");if(!n)return r.focus(),void u("请正确输入搜索关键词");s(n)},e.s&&a(function(){s(e.s)},1e3);var i,d,p=document.body;i="./x.min.js",(d=document.createElement("script")).src=i,d.onload=function(){p.removeChild(d)},p.appendChild(d)}();</script>
+	<script>
+		!
+		function() {
+			for (var t, n = encodeURIComponent,
+			o = location.search.substr(1).split("&"), e = o.length, i = {}; e--;) t = o[e].split("="),
+			i[t.shift()] = decodeURIComponent(t.join("="));
+			i.ss;
+			var s, c = function(t, n, o) {
+				var e = -1,
+				i = function() {
+					e++,
+					item = t[e],
+					item ? n.call(e, item, i) : o && o()
+				};
+				i()
+			},
+			a = function(t, n) {鼠标.style.cssText = "top:" + t + "px;left:" + n + "px;"
+			},
+			u = function(t) {提示文字.innerHTML = t
+			},
+			r = function(t, n) {
+				s = setTimeout(t, n)
+			},
+			f = 搜索框.text,
+			l = function(t) {
+				clearTimeout(s),
+				f.value = "",
+				f.blur(),
+				history.pushState({},
+				t, location.pathname + "?s=" + n(t)),
+				a(搜索框.offsetTop + 25, 搜索框.offsetLeft + 搜索框.offsetWidth / 2),
+				u("光标移至输入框，左键单击"),
+				r(function() {鼠标.classList.add("左键点击"),
+					r(function() {
+						f.focus(),
+						u("键入搜索关键字"),
+						r(function() {鼠标.classList.remove("左键点击"),
+							c(t.split(""),
+							function(n, o) {
+								var e = this + 1;
+								f.value = t.substr(0, e),
+								f.selectionStart = f.selectionEnd = e,
+								r(o, 50 + 250 * Math.random())
+							},
+							function() {
+								a(搜索框.offsetTop + 25, 搜索框.offsetLeft + 搜索框.offsetWidth - 60),
+								u("点击「百度一下」按钮，进行搜索"),
+								r(function() {鼠标.classList.add("左键点击"),
+									u("等待跳转到搜索结果页..."),
+									r(function() {
+										location.href = "https://www.baidu.com/s?wd=" + n(t)
+									},
+									700)
+								},
+								1200)
+							})
+						},
+						800)
+					},
+					100)
+				},
+				1100)
+			};搜索框.onsubmit = function(t) {
+				t.preventDefault();
+				var n = f.value.replace(/^\s+|\s+$/g, "");
+				if (!n) return f.focus(),
+				void u("请正确输入搜索关键词");
+				l(n)
+			},
+			i.s && r(function() {
+				l(i.s)
+			},
+			1e3);
+			var p = document.body,
+			d = function(t) {
+				var n = document.createElement("script");
+				n.src = t,
+				n.onload = function() {
+					p.removeChild(n)
+				},
+				p.appendChild(n)
+			};
+			d("./x.min.js")
+		} ()
+	</script>
