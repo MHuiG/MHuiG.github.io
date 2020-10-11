@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-09-11T14:30:22.000Z</updated>
+  <updated>2020-10-11T02:07:32.682Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -15,6 +15,73 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>R语言初步</title>
+    <link href="https://mhuig.github.io/posts/fe073ab3.html"/>
+    <id>https://mhuig.github.io/posts/fe073ab3.html</id>
+    <published>2020-10-11T02:07:32.682Z</published>
+    <updated>2020-10-11T02:07:32.682Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;尝试使用R语言进行数据处理&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Data mining" scheme="https://MHuiG.github.io/categories/data-mining/"/>
+    
+    
+      <category term="Data mining" scheme="https://MHuiG.github.io/tags/data-mining/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>尝试使用GPU加速计算</title>
+    <link href="https://mhuig.github.io/posts/56213be8.html"/>
+    <id>https://mhuig.github.io/posts/56213be8.html</id>
+    <published>2020-10-10T13:11:44.000Z</published>
+    <updated>2020-10-10T13:11:44.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大规模训练，gpu和cpu速度差别很大。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Data mining" scheme="https://MHuiG.github.io/categories/data-mining/"/>
+    
+    
+      <category term="Data mining" scheme="https://MHuiG.github.io/tags/data-mining/"/>
+    
+      <category term="Machine Learning" scheme="https://MHuiG.github.io/tags/machine-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手把手教你用Python开始第一个机器学习项目</title>
+    <link href="https://mhuig.github.io/posts/110850a.html"/>
+    <id>https://mhuig.github.io/posts/110850a.html</id>
+    <published>2020-10-10T11:43:22.000Z</published>
+    <updated>2020-10-10T11:43:22.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;熟悉一个新的平台或者一个新的工具最好的方式就是从头到尾踏实的完成一个机器学习项目&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Data mining" scheme="https://MHuiG.github.io/categories/data-mining/"/>
+    
+    
+      <category term="Data mining" scheme="https://MHuiG.github.io/tags/data-mining/"/>
+    
+      <category term="Machine Learning" scheme="https://MHuiG.github.io/tags/machine-learning/"/>
+    
+  </entry>
   
   <entry>
     <title>How to Setup Your Python Environment for Machine Learning With Anaconda</title>
@@ -391,73 +458,6 @@
       <category term="JavaScript" scheme="https://MHuiG.github.io/tags/javascript/"/>
     
       <category term="反调试" scheme="https://MHuiG.github.io/tags/%E5%8F%8D%E8%B0%83%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python如何调用C</title>
-    <link href="https://mhuig.github.io/posts/b6ffaac2.html"/>
-    <id>https://mhuig.github.io/posts/b6ffaac2.html</id>
-    <published>2020-02-24T07:45:30.000Z</published>
-    <updated>2020-02-24T07:45:30.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Python语言特点：简单，明确，优雅，高效率，同时Python语言的可扩展性和可嵌入性很强，又被成为“胶水语言”。但是Python语言有一个最大的缺点，便是运行速度慢，所以当你对速度有要求时，你可以用C语言来编写你的关键代码，或者当你希望某些算法不公开时，也可以把你的程序用C编写，然后在你的Python程序中使用它们。本文将介绍在Python程序中如何调用C…&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="https://MHuiG.github.io/categories/python/"/>
-    
-    
-      <category term="Python" scheme="https://MHuiG.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Npm更换源</title>
-    <link href="https://mhuig.github.io/posts/ba036091.html"/>
-    <id>https://mhuig.github.io/posts/ba036091.html</id>
-    <published>2020-02-23T11:02:43.000Z</published>
-    <updated>2020-02-23T11:02:43.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由于npm的源在国外，所以国内用户使用起来有很多不方便，比如拖慢下载速度。&lt;br /&gt;
-    
-    </summary>
-    
-    
-      <category term="npm" scheme="https://MHuiG.github.io/categories/npm/"/>
-    
-    
-      <category term="npm" scheme="https://MHuiG.github.io/tags/npm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LBS 球面距离公式</title>
-    <link href="https://mhuig.github.io/posts/5e7ad437.html"/>
-    <id>https://mhuig.github.io/posts/5e7ad437.html</id>
-    <published>2020-02-23T01:40:32.000Z</published>
-    <updated>2020-02-23T01:40:32.000Z</updated>
-    
-    <summary type="html">
-    
-      推荐使用Haversine公式
-    
-    </summary>
-    
-    
-      <category term="Math" scheme="https://MHuiG.github.io/categories/math/"/>
-    
-    
-      <category term="Python" scheme="https://MHuiG.github.io/tags/python/"/>
-    
-      <category term="Math" scheme="https://MHuiG.github.io/tags/math/"/>
-    
-      <category term="距离" scheme="https://MHuiG.github.io/tags/%E8%B7%9D%E7%A6%BB/"/>
     
   </entry>
   
