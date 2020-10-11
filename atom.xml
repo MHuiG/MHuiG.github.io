@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-10-11T04:59:54.451Z</updated>
+  <updated>2020-10-11T01:11:44.000Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>R语言初步</title>
-    <link href="https://mhuig.github.io/posts/fe073ab3.html"/>
-    <id>https://mhuig.github.io/posts/fe073ab3.html</id>
-    <published>2020-10-11T04:59:54.451Z</published>
-    <updated>2020-10-11T04:59:54.451Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;尝试使用R语言进行数据处理&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Data mining" scheme="https://MHuiG.github.io/categories/data-mining/"/>
-    
-    
-      <category term="Data mining" scheme="https://MHuiG.github.io/tags/data-mining/"/>
-    
-  </entry>
   
   <entry>
     <title>尝试使用GPU加速计算</title>
@@ -57,6 +36,29 @@
       <category term="Data mining" scheme="https://MHuiG.github.io/tags/data-mining/"/>
     
       <category term="Machine Learning" scheme="https://MHuiG.github.io/tags/machine-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R语言初步</title>
+    <link href="https://mhuig.github.io/posts/fe073ab3.html"/>
+    <id>https://mhuig.github.io/posts/fe073ab3.html</id>
+    <published>2020-10-10T12:30:27.000Z</published>
+    <updated>2020-10-10T12:30:27.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;尝试使用R语言进行数据处理&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Data mining" scheme="https://MHuiG.github.io/categories/data-mining/"/>
+    
+    
+      <category term="Data mining" scheme="https://MHuiG.github.io/tags/data-mining/"/>
+    
+      <category term="R" scheme="https://MHuiG.github.io/tags/r/"/>
     
   </entry>
   
