@@ -6,7 +6,7 @@
   <link href="https://mhuig.github.io/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-10-20T06:00:59.000Z</updated>
+  <updated>2020-10-28T05:55:09.933Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jupyter测试</title>
+    <link href="https://mhuig.github.io/posts/a2eb4e7a.html"/>
+    <id>https://mhuig.github.io/posts/a2eb4e7a.html</id>
+    <published>2020-10-28T05:55:09.933Z</published>
+    <updated>2020-10-28T05:55:09.933Z</updated>
+    
+    
+    <summary type="html">jupyter测试</summary>
+    
+    
+    
+    <category term="实验性" scheme="https://mhuig.github.io/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
+    
+    
+    <category term="实验性" scheme="https://mhuig.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>自然语言处理研究报告[存档备用]</title>
@@ -393,31 +412,6 @@
     
     
     <category term="Hello" scheme="https://mhuig.github.io/tags/hello/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>理解卷积</title>
-    <link href="https://mhuig.github.io/posts/xa6297acc.html"/>
-    <id>https://mhuig.github.io/posts/xa6297acc.html</id>
-    <published>2020-03-09T12:05:42.000Z</published>
-    <updated>2020-03-09T12:05:42.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文的目的是深入的理解卷积,通过一些示例,卷积将会成为一个非常简单的想法.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Math" scheme="https://mhuig.github.io/categories/math/"/>
-    
-    <category term="概率" scheme="https://mhuig.github.io/categories/math/%E6%A6%82%E7%8E%87/"/>
-    
-    
-    <category term="Math" scheme="https://mhuig.github.io/tags/math/"/>
-    
-    <category term="概率" scheme="https://mhuig.github.io/tags/%E6%A6%82%E7%8E%87/"/>
-    
-    <category term="神经网络" scheme="https://mhuig.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
