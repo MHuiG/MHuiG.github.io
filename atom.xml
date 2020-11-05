@@ -6,7 +6,7 @@
   <link href="https://mhuig.github.io/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-11-04T18:02:42.322Z</updated>
+  <updated>2020-11-05T08:00:55.192Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Jupyter测试</title>
     <link href="https://mhuig.github.io/posts/a2eb4e7a.html"/>
     <id>https://mhuig.github.io/posts/a2eb4e7a.html</id>
-    <published>2020-11-04T18:02:42.322Z</published>
-    <updated>2020-11-04T18:02:42.322Z</updated>
+    <published>2020-11-05T08:00:55.192Z</published>
+    <updated>2020-11-05T08:00:55.192Z</updated>
     
     
     <summary type="html">jupyter测试</summary>
@@ -32,6 +32,29 @@
     
     
     <category term="实验性" scheme="https://mhuig.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BERT预训练模型及其应用案例</title>
+    <link href="https://mhuig.github.io/posts/48f700eb.html"/>
+    <id>https://mhuig.github.io/posts/48f700eb.html</id>
+    <published>2020-11-05T07:47:27.000Z</published>
+    <updated>2020-11-05T07:47:27.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;预训练模型最开始是在图像领域提出的，获得了良好的效果，近几年才被广泛应用到自然语言处理各项任务中。&lt;/p&gt;
+&lt;p&gt;(1)2003年Bengio提出神经网络语言模型NNLM，从此统一了NLP的特征形式——Embedding；&lt;/p&gt;
+&lt;p&gt;(2)2013年Mikolov提出词向量Word2vec，延续NNLM又引入了大规模预训练（Pretrain）的思路；&lt;/p&gt;
+&lt;p&gt;(3)2017年Vaswani提出Transformer模型，实现用一个模型处理多种NLP任务。&lt;/p&gt;
+&lt;p&gt;(4) 基于Transformer架构，2018年底开始出现一大批预训练语言模型(3个预训练代表性模型BERT[2018]、XLNet[2019]和MPNet[2020])，刷新众多NLP任务，形成新的里程碑事件。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="NLP" scheme="https://mhuig.github.io/categories/nlp/"/>
+    
+    
+    <category term="NLP" scheme="https://mhuig.github.io/tags/nlp/"/>
     
   </entry>
   
@@ -393,25 +416,6 @@
     
     
     <category term="Time" scheme="https://mhuig.github.io/tags/time/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://mhuig.github.io/posts/4a17b156.html"/>
-    <id>https://mhuig.github.io/posts/4a17b156.html</id>
-    <published>2020-04-19T06:24:29.000Z</published>
-    <updated>2020-04-19T06:24:29.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;你好，世界！&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Hello" scheme="https://mhuig.github.io/categories/hello/"/>
-    
-    
-    <category term="Hello" scheme="https://mhuig.github.io/tags/hello/"/>
     
   </entry>
   
