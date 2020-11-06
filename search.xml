@@ -38,14 +38,14 @@
       
       <categories>
           
-          <category> 笔录 </category>
+          <category> 随笔 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 笔录 </tag>
+            <tag> 随笔 </tag>
             
         </tags>
       
@@ -375,14 +375,14 @@
       
       <categories>
           
-          <category> 笔录 </category>
+          <category> 随笔 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 笔录 </tag>
+            <tag> 随笔 </tag>
             
         </tags>
       
@@ -400,14 +400,14 @@
       
       <categories>
           
-          <category> 笔录 </category>
+          <category> 随笔 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 笔录 </tag>
+            <tag> 随笔 </tag>
             
         </tags>
       
@@ -500,14 +500,14 @@
       
       <categories>
           
-          <category> 笔录 </category>
+          <category> 实验性 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 笔录 </tag>
+            <tag> 实验性 </tag>
             
         </tags>
       
@@ -525,12 +525,16 @@
       
       <categories>
           
+          <category> 随笔 </category>
+          
           <category> Time </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> 随笔 </tag>
             
             <tag> Time </tag>
             
@@ -550,12 +554,16 @@
       
       <categories>
           
+          <category> 随笔 </category>
+          
           <category> Hello </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> 随笔 </tag>
             
             <tag> Hello </tag>
             

@@ -6,7 +6,7 @@
   <link href="https://mhuig.github.io/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-11-06T04:02:12.257Z</updated>
+  <updated>2020-11-06T05:56:56.178Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Jupyter测试</title>
     <link href="https://mhuig.github.io/posts/a2eb4e7a.html"/>
     <id>https://mhuig.github.io/posts/a2eb4e7a.html</id>
-    <published>2020-11-06T04:02:12.257Z</published>
-    <updated>2020-11-06T04:02:12.257Z</updated>
+    <published>2020-11-06T05:56:56.178Z</published>
+    <updated>2020-11-06T05:56:56.178Z</updated>
     
     
     <summary type="html">jupyter测试</summary>
@@ -47,10 +47,10 @@
     
     
     
-    <category term="笔录" scheme="https://mhuig.github.io/categories/%E7%AC%94%E5%BD%95/"/>
+    <category term="随笔" scheme="https://mhuig.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="笔录" scheme="https://mhuig.github.io/tags/%E7%AC%94%E5%BD%95/"/>
+    <category term="随笔" scheme="https://mhuig.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -323,10 +323,10 @@
     
     
     
-    <category term="笔录" scheme="https://mhuig.github.io/categories/%E7%AC%94%E5%BD%95/"/>
+    <category term="随笔" scheme="https://mhuig.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="笔录" scheme="https://mhuig.github.io/tags/%E7%AC%94%E5%BD%95/"/>
+    <category term="随笔" scheme="https://mhuig.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -342,10 +342,10 @@
     
     
     
-    <category term="笔录" scheme="https://mhuig.github.io/categories/%E7%AC%94%E5%BD%95/"/>
+    <category term="随笔" scheme="https://mhuig.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="笔录" scheme="https://mhuig.github.io/tags/%E7%AC%94%E5%BD%95/"/>
+    <category term="随笔" scheme="https://mhuig.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -418,10 +418,10 @@
     
     
     
-    <category term="笔录" scheme="https://mhuig.github.io/categories/%E7%AC%94%E5%BD%95/"/>
+    <category term="实验性" scheme="https://mhuig.github.io/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
     
     
-    <category term="笔录" scheme="https://mhuig.github.io/tags/%E7%AC%94%E5%BD%95/"/>
+    <category term="实验性" scheme="https://mhuig.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
     
   </entry>
   
