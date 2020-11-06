@@ -6,7 +6,7 @@
   <link href="https://mhuig.github.io/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-11-05T18:02:53.510Z</updated>
+  <updated>2020-11-06T02:03:59.864Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Jupyter测试</title>
     <link href="https://mhuig.github.io/posts/a2eb4e7a.html"/>
     <id>https://mhuig.github.io/posts/a2eb4e7a.html</id>
-    <published>2020-11-05T18:02:53.510Z</published>
-    <updated>2020-11-05T18:02:53.510Z</updated>
+    <published>2020-11-06T02:03:59.864Z</published>
+    <updated>2020-11-06T02:03:59.864Z</updated>
     
     
     <summary type="html">jupyter测试</summary>
@@ -32,6 +32,25 @@
     
     
     <category term="实验性" scheme="https://mhuig.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>宇宙的本质是计算</title>
+    <link href="https://mhuig.github.io/posts/92a4ae9.html"/>
+    <id>https://mhuig.github.io/posts/92a4ae9.html</id>
+    <published>2020-11-06T00:35:48.000Z</published>
+    <updated>2020-11-06T00:35:48.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;想象一下，一望无际的大平面被分成了许许多多方格子。每个格子里正好能放下一个“细胞”。这个细胞不能运动，它可以是死的，也可以是活的；但它的状态，是由它周围8个细胞的死活决定。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="笔录" scheme="https://mhuig.github.io/categories/%E7%AC%94%E5%BD%95/"/>
+    
+    
+    <category term="笔录" scheme="https://mhuig.github.io/tags/%E7%AC%94%E5%BD%95/"/>
     
   </entry>
   
@@ -403,25 +422,6 @@
     
     
     <category term="笔录" scheme="https://mhuig.github.io/tags/%E7%AC%94%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>时间之箭</title>
-    <link href="https://mhuig.github.io/posts/564714f9.html"/>
-    <id>https://mhuig.github.io/posts/564714f9.html</id>
-    <published>2020-04-22T01:42:43.000Z</published>
-    <updated>2020-04-22T01:42:43.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;时间就像一只箭，射向未知的前方，把过去永远留在后面。&lt;br&gt;Time is like an arrow, shooting towards the unknown, leaving the past behind forever.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Time" scheme="https://mhuig.github.io/categories/time/"/>
-    
-    
-    <category term="Time" scheme="https://mhuig.github.io/tags/time/"/>
     
   </entry>
   
