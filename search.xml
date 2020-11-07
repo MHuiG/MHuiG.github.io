@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>Jupyter测试</title>
-      <link href="posts/a2eb4e7a.html"/>
-      <url>posts/a2eb4e7a.html</url>
-      
-        <content type="html"><![CDATA[<div class="note warning"><p>测试</p></div><iframe src="https://nbviewer.jupyter.org/github/MHuiG/Spyder-learn/blob/master/data%20acquisition/BeautifulSoup.ipynb" width="100%" height="2000px"></iframe>]]></content>
-      
-      
-      <categories>
-          
-          <category> 实验性 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 实验性 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>宇宙的本质是计算</title>
       <link href="posts/92a4ae9.html"/>
       <url>posts/92a4ae9.html</url>
@@ -204,6 +179,31 @@
             <tag> Data mining </tag>
             
             <tag> Machine Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Jupyter测试</title>
+      <link href="posts/a2eb4e7a.html"/>
+      <url>posts/a2eb4e7a.html</url>
+      
+        <content type="html"><![CDATA[<div class="note warning"><p>测试</p></div><iframe src="https://nbviewer.jupyter.org/github/MHuiG/Spyder-learn/blob/master/data%20acquisition/BeautifulSoup.ipynb" width="100%" height="2000px"></iframe>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实验性 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 实验性 </tag>
             
         </tags>
       
