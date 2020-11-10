@@ -1,1 +1,242 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>FLXG</title><style type="text/css">body,html{margin:0;width:100%;height:100vh;overflow:hidden;background:#000}#canvas{width:100%;height:100%}</style></head><body><canvas id="canvas"></canvas><script type="text/javascript">function project3D(a,s,e,t){var h,i;return a-=t.camX,s-=t.camY,e-=t.camZ,h=Math.atan2(a,e),i=Math.sqrt(a*a+e*e),a=Math.sin(h-t.yaw)*i,e=Math.cos(h-t.yaw)*i,h=Math.atan2(s,e),i=Math.sqrt(s*s+e*e),s=Math.sin(h-t.pitch)*i,e=Math.cos(h-t.pitch)*i,h=Math.atan2(a,s),i=Math.sqrt(a*a+s*s),a=Math.sin(h-t.roll)*i,s=Math.cos(h-t.roll)*i,{x:t.cx+a/e*t.scale,y:t.cy+s/e*t.scale,d:e>0?Math.sqrt(a*a+s*s+e*e):-1}}function rgb(a){a+=1e-6;var s=parseInt(16*(.5+.5*Math.sin(a))),e=parseInt(16*(.5+.5*Math.cos(a))),t=parseInt(16*(.5-.5*Math.sin(a)));return"#"+s.toString(16)+e.toString(16)+t.toString(16)}function process(a){a.scale-=8*Math.cos(a.frameNo/40),a.shipSpeed+=Math.cos(a.frameNo/40)/30,a.yaw+=Math.cos(a.frameNo/100)/80,a.pitch+=Math.sin(a.frameNo/70)/40,a.roll-=Math.cos(a.frameNo/130)/40,a.shipVX=Math.sin(a.yaw)*Math.cos(a.pitch)*a.shipSpeed,a.shipVZ=Math.cos(a.yaw)*Math.cos(a.pitch)*a.shipSpeed,a.shipVY=Math.sin(a.pitch)*a.shipSpeed,a.camX+=a.shipVX,a.camY+=a.shipVY,a.camZ+=a.shipVZ;for(var s=0;s<a.shapes.length;++s)rotateShape(a.shapes[s],s/a.shapes.length*.1,-s/a.shapes.length*.1,s/a.shapes.length*.1),a.shapes[s].x-a.camX>a.fieldRadius&&(a.shapes[s].x-=2*a.fieldRadius),a.shapes[s].x-a.camX<-a.fieldRadius&&(a.shapes[s].x+=2*a.fieldRadius),a.shapes[s].y-a.camY>a.fieldRadius&&(a.shapes[s].y-=2*a.fieldRadius),a.shapes[s].y-a.camY<-a.fieldRadius&&(a.shapes[s].y+=2*a.fieldRadius),a.shapes[s].z-a.camZ>a.fieldRadius&&(a.shapes[s].z-=2*a.fieldRadius),a.shapes[s].z-a.camZ<-a.fieldRadius&&(a.shapes[s].z+=2*a.fieldRadius)}function sortFunction(a,s){return s.dist-a.dist}function draw(a){var s,e,t,h,n,c,o;for(a.ctx.globalAlpha=1,a.ctx.fillStyle="rgba(0,0,0,.65)",a.ctx.fillRect(0,0,canvas.width,canvas.height),i=a.shapes.length;i--;){for(h=project3D(s=a.shapes[i].x,e=a.shapes[i].y,t=a.shapes[i].z,a),o=1-Math.pow(h.d/a.fieldRadius,10),a.ctx.globalAlpha=o<0?0:o,a.ctx.strokeStyle=rgb(a.frameNo/16+i/800*(1/a.scale*200)),a.ctx.lineWidth=40/(1+h.d),a.ctx.beginPath(),j=12;j--;)n=project3D(s+a.shapes[i].s[j].a.x,e+a.shapes[i].s[j].a.y,t+a.shapes[i].s[j].a.z,a),c=project3D(s+a.shapes[i].s[j].b.x,e+a.shapes[i].s[j].b.y,t+a.shapes[i].s[j].b.z,a),-1!=n.d&&-1!=c.d&&(a.ctx.moveTo(n.x,n.y),a.ctx.lineTo(c.x,c.y));a.ctx.stroke()}}function rotateShape(a,s,e,t){for(var h,i,n,c,o,d=0;d<a.s.length;++d)for(var p=2;p--;)p?(h=a.s[d].a.x,i=a.s[d].a.y,n=a.s[d].a.z):(h=a.s[d].b.x,i=a.s[d].b.y,n=a.s[d].b.z),o=Math.sqrt(h*h+n*n),c=Math.atan2(h,n),h=Math.sin(c+s)*o,n=Math.cos(c+s)*o,o=Math.sqrt(i*i+n*n),c=Math.atan2(i,n),i=Math.sin(c+e)*o,n=Math.cos(c+e)*o,o=Math.sqrt(h*h+i*i),c=Math.atan2(h,i),h=Math.sin(c+t)*o,i=Math.cos(c+t)*o,p?(a.s[d].a.x=h,a.s[d].a.y=i,a.s[d].a.z=n):(a.s[d].b.x=h,a.s[d].b.y=i,a.s[d].b.z=n)}function S(a,s,e,t,h,i){this.a={x:a,y:s,z:e},this.b={x:t,y:h,z:i}}function Cube(a,s,e){return Q={},Q.x=a,Q.y=s,Q.z=e,Q.s=[],Q.s.push(new S(-1,-1,-1,1,-1,-1)),Q.s.push(new S(1,-1,-1,1,1,-1)),Q.s.push(new S(1,1,-1,-1,1,-1)),Q.s.push(new S(-1,1,-1,-1,-1,-1)),Q.s.push(new S(-1,-1,1,1,-1,1)),Q.s.push(new S(1,-1,1,1,1,1)),Q.s.push(new S(1,1,1,-1,1,1)),Q.s.push(new S(-1,1,1,-1,-1,1)),Q.s.push(new S(-1,-1,-1,-1,-1,1)),Q.s.push(new S(1,-1,-1,1,-1,1)),Q.s.push(new S(1,1,-1,1,1,1)),Q.s.push(new S(-1,1,-1,-1,1,1)),Q}function loadScene(a){a.shapes=[];for(var s=0;s<a.cubeNo;++s){var e=new Cube(a.fieldRadius-Math.random()*a.fieldRadius*2,a.fieldRadius-Math.random()*a.fieldRadius*2,a.fieldRadius-Math.random()*a.fieldRadius*2);rotateShape(e,R(),R(),R()),a.shapes.push(e)}}function frame(a){void 0===a&&((a={}).canvas=document.querySelector("canvas"),a.ctx=a.canvas.getContext("2d"),a.canvas.width=document.body.clientWidth,a.canvas.height=document.body.clientHeight,window.addEventListener("resize",(function(){a.canvas.width=document.body.clientWidth,a.canvas.height=document.body.clientHeight,a.cx=a.canvas.width/2,a.cy=a.canvas.height/2}),!0),a.frameNo=0,a.canvas.addEventListener("mousemove",s=>{a.mx=s.clientX/a.canvas.clientWidth*a.canvas.width,a.my=s.clientY/a.canvas.clientHeight*a.canvas.height}),a.camX=0,a.camY=0,a.camZ=0,a.pitch=0,a.yaw=0,a.roll=0,a.cx=a.canvas.width/2,a.cy=a.canvas.height/2,a.scale=400,a.shipSpeed=1.5,a.shipVX=a.shipVY=a.shipVZ=0,a.fieldRadius=150,a.cubeNo=1500,loadScene(a));a.frameNo++,requestAnimationFrame((function(){frame(a)})),process(a),draw(a)}R=()=>Math.random()*Math.PI*2,frame()</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>FLXG</title>
+		<style type="text/css">
+			html,
+			body {
+				margin: 0px;
+				width: 100%;
+				height: 100vh;
+				overflow: hidden;
+				background: #000;
+			}
+
+			#canvas {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<script type="text/javascript">
+			function project3D(x, y, z, vars) {
+				var p, d;
+				x -= vars.camX;
+				y -= vars.camY;
+				z -= vars.camZ;
+				p = Math.atan2(x, z);
+				d = Math.sqrt(x * x + z * z);
+				x = Math.sin(p - vars.yaw) * d;
+				z = Math.cos(p - vars.yaw) * d;
+				p = Math.atan2(y, z);
+				d = Math.sqrt(y * y + z * z);
+				y = Math.sin(p - vars.pitch) * d;
+				z = Math.cos(p - vars.pitch) * d;
+				p = Math.atan2(x, y);
+				d = Math.sqrt(x * x + y * y);
+				x = Math.sin(p - vars.roll) * d;
+				y = Math.cos(p - vars.roll) * d;
+				return {
+					x: vars.cx + x / z * vars.scale,
+					y: vars.cy + y / z * vars.scale,
+					d: z > 0 ? Math.sqrt(x * x + y * y + z * z) : -1
+				}
+			}
+
+			function rgb(col) {
+				col += 0.000001;
+				var r = parseInt((0.5 + Math.sin(col) * 0.5) * 16);
+				var g = parseInt((0.5 + Math.cos(col) * 0.5) * 16);
+				var b = parseInt((0.5 - Math.sin(col) * 0.5) * 16);
+				return "#" + r.toString(16) + g.toString(16) + b.toString(16);
+			}
+
+			function process(vars) {
+				vars.scale -= Math.cos(vars.frameNo / 40) * 8;
+				vars.shipSpeed += Math.cos(vars.frameNo / 40) / 30;
+				vars.yaw += Math.cos(vars.frameNo / 100) / 80;
+				vars.pitch += Math.sin(vars.frameNo / 70) / 40;
+				vars.roll -= Math.cos(vars.frameNo / 130) / 40;
+				vars.shipVX = Math.sin(vars.yaw) * Math.cos(vars.pitch) * vars.shipSpeed;
+				vars.shipVZ = Math.cos(vars.yaw) * Math.cos(vars.pitch) * vars.shipSpeed;
+				vars.shipVY = Math.sin(vars.pitch) * vars.shipSpeed;
+				vars.camX += vars.shipVX;
+				vars.camY += vars.shipVY;
+				vars.camZ += vars.shipVZ;
+				for (var i = 0; i < vars.shapes.length; ++i) {
+					rotateShape(vars.shapes[i], i / vars.shapes.length * .1, -i / vars.shapes.length * .1, i / vars.shapes.length * .1);
+					if (vars.shapes[i].x - vars.camX > vars.fieldRadius) vars.shapes[i].x -= vars.fieldRadius * 2;
+					if (vars.shapes[i].x - vars.camX < -vars.fieldRadius) vars.shapes[i].x += vars.fieldRadius * 2;
+					if (vars.shapes[i].y - vars.camY > vars.fieldRadius) vars.shapes[i].y -= vars.fieldRadius * 2;
+					if (vars.shapes[i].y - vars.camY < -vars.fieldRadius) vars.shapes[i].y += vars.fieldRadius * 2;
+					if (vars.shapes[i].z - vars.camZ > vars.fieldRadius) vars.shapes[i].z -= vars.fieldRadius * 2;
+					if (vars.shapes[i].z - vars.camZ < -vars.fieldRadius) vars.shapes[i].z += vars.fieldRadius * 2;
+				}
+			}
+
+			function sortFunction(a, b) {
+				return b.dist - a.dist;
+			}
+
+			function draw(vars) {
+				vars.ctx.globalAlpha = 1;
+				vars.ctx.fillStyle = "rgba(0,0,0,.65)";
+				vars.ctx.fillRect(0, 0, canvas.width, canvas.height);
+				var x, y, z, point, pta, ptb, a;
+				for (i = vars.shapes.length; i--;) {
+					x = vars.shapes[i].x;
+					y = vars.shapes[i].y;
+					z = vars.shapes[i].z;
+					point = project3D(x, y, z, vars);
+					a = 1 - Math.pow(point.d / vars.fieldRadius, 10);
+					vars.ctx.globalAlpha = a < 0 ? 0 : a;
+					vars.ctx.strokeStyle = rgb(vars.frameNo / 16 + (i / 800) * (1 / vars.scale * 200));
+					vars.ctx.lineWidth = 40 / (1 + point.d);
+					vars.ctx.beginPath();
+					for (j = 12; j--;) {
+						pta = project3D(x + vars.shapes[i].s[j].a.x, y + vars.shapes[i].s[j].a.y, z + vars.shapes[i].s[j].a.z, vars);
+						ptb = project3D(x + vars.shapes[i].s[j].b.x, y + vars.shapes[i].s[j].b.y, z + vars.shapes[i].s[j].b.z, vars);
+						if (pta.d != -1 && ptb.d != -1) {
+							vars.ctx.moveTo(pta.x, pta.y);
+							vars.ctx.lineTo(ptb.x, ptb.y);
+						}
+					}
+					vars.ctx.stroke();
+				}
+			}
+
+			function rotateShape(shape, yaw, pitch, roll) {
+				var x, y, z, p, d;
+				for (var i = 0; i < shape.s.length; ++i) {
+					for (var j = 2; j--;) {
+						if (j) {
+							x = shape.s[i].a.x;
+							y = shape.s[i].a.y;
+							z = shape.s[i].a.z;
+						} else {
+							x = shape.s[i].b.x;
+							y = shape.s[i].b.y;
+							z = shape.s[i].b.z;
+						}
+						d = Math.sqrt(x * x + z * z);
+						p = Math.atan2(x, z);
+						x = Math.sin(p + yaw) * d;
+						z = Math.cos(p + yaw) * d;
+						d = Math.sqrt(y * y + z * z);
+						p = Math.atan2(y, z);
+						y = Math.sin(p + pitch) * d;
+						z = Math.cos(p + pitch) * d;
+						d = Math.sqrt(x * x + y * y);
+						p = Math.atan2(x, y);
+						x = Math.sin(p + roll) * d;
+						y = Math.cos(p + roll) * d;
+						if (j) {
+							shape.s[i].a.x = x;
+							shape.s[i].a.y = y;
+							shape.s[i].a.z = z;
+						} else {
+							shape.s[i].b.x = x;
+							shape.s[i].b.y = y;
+							shape.s[i].b.z = z;
+						}
+					}
+				}
+			}
+
+			function S(x1, y1, z1, x2, y2, z2) {
+				this.a = {
+					x: x1,
+					y: y1,
+					z: z1
+				};
+				this.b = {
+					x: x2,
+					y: y2,
+					z: z2
+				};
+			}
+
+			function Cube(x, y, z) {
+				Q = {};
+				Q.x = x;
+				Q.y = y;
+				Q.z = z;
+				Q.s = [];
+				Q.s.push(new S(-1, -1, -1, 1, -1, -1));
+				Q.s.push(new S(1, -1, -1, 1, 1, -1));
+				Q.s.push(new S(1, 1, -1, -1, 1, -1));
+				Q.s.push(new S(-1, 1, -1, -1, -1, -1));
+				Q.s.push(new S(-1, -1, 1, 1, -1, 1));
+				Q.s.push(new S(1, -1, 1, 1, 1, 1));
+				Q.s.push(new S(1, 1, 1, -1, 1, 1));
+				Q.s.push(new S(-1, 1, 1, -1, -1, 1));
+				Q.s.push(new S(-1, -1, -1, -1, -1, 1));
+				Q.s.push(new S(1, -1, -1, 1, -1, 1));
+				Q.s.push(new S(1, 1, -1, 1, 1, 1));
+				Q.s.push(new S(-1, 1, -1, -1, 1, 1));
+				return Q;
+			}
+
+			R = () => Math.random() * Math.PI * 2;
+
+			function loadScene(vars) {
+
+				vars.shapes = [];
+				for (var i = 0; i < vars.cubeNo; ++i) {
+					var x = vars.fieldRadius - Math.random() * vars.fieldRadius * 2;
+					var y = vars.fieldRadius - Math.random() * vars.fieldRadius * 2;
+					var z = vars.fieldRadius - Math.random() * vars.fieldRadius * 2;
+					var c = new Cube(x, y, z);
+					rotateShape(c, R(), R(), R());
+					vars.shapes.push(c);
+				}
+			}
+
+			function frame(vars) {
+				if (vars === undefined) {
+					var vars = {};
+					vars.canvas = document.querySelector("canvas");
+					vars.ctx = vars.canvas.getContext("2d");
+					vars.canvas.width = document.body.clientWidth;
+					vars.canvas.height = document.body.clientHeight;
+					window.addEventListener("resize", function() {
+						vars.canvas.width = document.body.clientWidth;
+						vars.canvas.height = document.body.clientHeight;
+						vars.cx = vars.canvas.width / 2;
+						vars.cy = vars.canvas.height / 2;
+					}, true);
+					vars.frameNo = 0;
+					vars.canvas.addEventListener("mousemove", (e) => {
+						vars.mx = e.clientX / vars.canvas.clientWidth * vars.canvas.width
+						vars.my = e.clientY / vars.canvas.clientHeight * vars.canvas.height
+					});
+					vars.camX = 0;
+					vars.camY = 0;
+					vars.camZ = 0;
+					vars.pitch = 0;
+					vars.yaw = 0;
+					vars.roll = 0;
+					vars.cx = vars.canvas.width / 2;
+					vars.cy = vars.canvas.height / 2;
+					vars.scale = 400;
+
+					vars.shipSpeed = 1.5;
+					vars.shipVX = vars.shipVY = vars.shipVZ = 0;
+					vars.fieldRadius = 150;
+					vars.cubeNo = 1500;
+					loadScene(vars);
+				}
+				vars.frameNo++;
+				requestAnimationFrame(function() {
+					frame(vars);
+				});
+				process(vars);
+				draw(vars);
+			}
+			frame();
+		</script>
+	</body>
+</html>
