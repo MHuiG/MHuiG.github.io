@@ -6,4 +6,3 @@ Disallow: /archives/
 Disallow: /page/
 
 Sitemap: https://MHuiG.github.io/sitemap.xml
-Sitemap: https://MHuiG.github.io/NoteBook/sitemap.xml
