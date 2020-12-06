@@ -6,7 +6,7 @@
   <link href="https://mhuig.github.io/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2020-11-16T13:08:56.000Z</updated>
+  <updated>2020-12-06T13:33:18.000Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一大波题目正在来袭</title>
+    <link href="https://mhuig.github.io/posts/bc43343e.html"/>
+    <id>https://mhuig.github.io/posts/bc43343e.html</id>
+    <published>2020-12-06T13:33:18.000Z</published>
+    <updated>2020-12-06T13:33:18.000Z</updated>
+    
+    
+    <summary type="html">请做好准备！</summary>
+    
+    
+    
+    <category term="Math" scheme="https://mhuig.github.io/categories/math/"/>
+    
+    
+    <category term="Math" scheme="https://mhuig.github.io/tags/math/"/>
+    
+  </entry>
   
   <entry>
     <title>回顾几个有趣的小题目</title>
@@ -403,25 +422,6 @@
     
     
     <category term="实验性" scheme="https://mhuig.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大数据技术概述</title>
-    <link href="https://mhuig.github.io/posts/376025fe.html"/>
-    <id>https://mhuig.github.io/posts/376025fe.html</id>
-    <published>2020-05-01T00:02:39.000Z</published>
-    <updated>2020-05-01T00:02:39.000Z</updated>
-    
-    
-    <summary type="html">大数据技术概述 简述</summary>
-    
-    
-    
-    <category term="BigData" scheme="https://mhuig.github.io/categories/bigdata/"/>
-    
-    
-    <category term="BigData" scheme="https://mhuig.github.io/tags/bigdata/"/>
     
   </entry>
   
