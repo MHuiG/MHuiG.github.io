@@ -6,7 +6,7 @@
   <link href="https://mhuig.github.io/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2021-02-07T12:51:06.000Z</updated>
+  <updated>2021-02-07T13:40:49.000Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SparkStreaming</title>
+    <link href="https://mhuig.github.io/posts/4e2051bb.html"/>
+    <id>https://mhuig.github.io/posts/4e2051bb.html</id>
+    <published>2021-02-07T13:40:49.000Z</published>
+    <updated>2021-02-07T13:40:49.000Z</updated>
+    
+    
+    <summary type="html">SparkStreaming 实时任务</summary>
+    
+    
+    
+    <category term="Spark" scheme="https://mhuig.github.io/categories/spark/"/>
+    
+    
+    <category term="Spark" scheme="https://mhuig.github.io/tags/spark/"/>
+    
+  </entry>
   
   <entry>
     <title>大数据架构演变</title>
@@ -403,25 +422,6 @@
     <category term="Linux" scheme="https://mhuig.github.io/tags/linux/"/>
     
     <category term="Ubuntu" scheme="https://mhuig.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Travellings 开往下一个地方</title>
-    <link href="https://mhuig.github.io/posts/4bd2472f.html"/>
-    <id>https://mhuig.github.io/posts/4bd2472f.html</id>
-    <published>2020-05-04T11:47:43.000Z</published>
-    <updated>2020-05-04T11:47:43.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;互联网将人与人之间的距离大大减小，却还是形成了大大小小的孤岛。只有熟人间才知道彼此，而陌生人永远只能是陌生人。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="https://mhuig.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="随笔" scheme="https://mhuig.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
