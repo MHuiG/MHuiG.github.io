@@ -6,7 +6,7 @@
   <link href="https://mhuig.github.io/atom.xml" rel="self"/>
   
   <link href="https://mhuig.github.io/"/>
-  <updated>2021-02-07T13:40:49.000Z</updated>
+  <updated>2021-02-07T13:57:53.000Z</updated>
   <id>https://mhuig.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SparkStreaming进阶</title>
+    <link href="https://mhuig.github.io/posts/21e23691.html"/>
+    <id>https://mhuig.github.io/posts/21e23691.html</id>
+    <published>2021-02-07T13:57:53.000Z</published>
+    <updated>2021-02-07T13:57:53.000Z</updated>
+    
+    
+    <summary type="html">SparkStreaming 整合 Kafka</summary>
+    
+    
+    
+    <category term="Spark" scheme="https://mhuig.github.io/categories/spark/"/>
+    
+    
+    <category term="Spark" scheme="https://mhuig.github.io/tags/spark/"/>
+    
+    <category term="SparkStreaming" scheme="https://mhuig.github.io/tags/sparkstreaming/"/>
+    
+    <category term="Kafka" scheme="https://mhuig.github.io/tags/kafka/"/>
+    
+  </entry>
   
   <entry>
     <title>SparkStreaming</title>
@@ -32,6 +55,8 @@
     
     
     <category term="Spark" scheme="https://mhuig.github.io/tags/spark/"/>
+    
+    <category term="SparkStreaming" scheme="https://mhuig.github.io/tags/sparkstreaming/"/>
     
   </entry>
   
@@ -399,29 +424,6 @@
     
     
     <category term="Spark" scheme="https://mhuig.github.io/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu环境安装</title>
-    <link href="https://mhuig.github.io/posts/2844bf39.html"/>
-    <id>https://mhuig.github.io/posts/2844bf39.html</id>
-    <published>2020-05-06T08:30:53.000Z</published>
-    <updated>2020-05-06T08:30:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Ubuntu 20.04 LTS 在虚拟机中的安装配置&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="https://mhuig.github.io/categories/linux/"/>
-    
-    <category term="Ubuntu" scheme="https://mhuig.github.io/categories/linux/ubuntu/"/>
-    
-    
-    <category term="Linux" scheme="https://mhuig.github.io/tags/linux/"/>
-    
-    <category term="Ubuntu" scheme="https://mhuig.github.io/tags/ubuntu/"/>
     
   </entry>
   

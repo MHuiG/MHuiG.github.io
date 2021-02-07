@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>SparkStreaming进阶</title>
+      <link href="posts/21e23691.html"/>
+      <url>posts/21e23691.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="SparkStreaming整合Kafka"><a href="#SparkStreaming整合Kafka" class="headerlink" title="SparkStreaming整合Kafka"></a><strong>SparkStreaming整合Kafka</strong></h2><p>kafka的两个重要版本 </p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/202127214745.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/data/202127214745.png" srcset="data:image/png;base64,666"></p><p>Kafka-0.8</p><ul><li><p>consumer在消费消息的时候会记录一个偏移量（offset）</p></li><li><p>offset 偏移量记录上一次消费到哪里了，那么下一次我知道要从哪里继续消费数据</p></li><li><p>偏移量被保存在 Zookeeper 中</p></li><li><p>问题：在一个公司里可能有几百号人去消费kafka集群，这个时候zookeeper会面临高并发的读写（zookeeper不擅长高并发读写，zookeeper是有问题的）这个设计明显是有问题的</p></li></ul><p>Kafka-0.10</p><ul><li><p>不再在zookeeper中存储offset了</p></li><li><p>在kafka中设计了一个特殊topic(__consumer_offset)，将所有的consumer中的所有offset存在了这个topic中</p></li><li><p>这个用来存储offset的topic默认50个分区，如果集群足够大的话那么这些分区也会均匀的分布在整个集群中支持高并发的读写，这样高并发的读写就不会成为瓶颈了</p></li></ul><div class="note guide clear"><p>0.8-kafka(zookeeper) 和 0.10-kafka(kafka)的offset是怎么提交的？</p></div><p>自动提交offset，这样整个系统就可能面临丢失数据的风险</p><h2 id="SparkStreaming-防数据丢失设计"><a href="#SparkStreaming-防数据丢失设计" class="headerlink" title="SparkStreaming 防数据丢失设计"></a><strong>SparkStreaming 防数据丢失设计</strong></h2><div class="note guide clear"><p>Kafka每隔5秒提交一次offset，如果这样我们的程序就有可能丢数据，为什么？</p></div><p>SparkStreaming读取到了kafka的数据（offset=100），还没有处理正好遇到了5s的时间间隔提交了offset</p><p>这个时候offset已经提交了，但是等到处理的时候，发现处理失败了</p><p>这样重启的时候数据就发生了丢失，我们企业中当然是不允许数据丢失的</p><div class="note guide clear"><p>怎么解决丢数据的问题呢？</p></div><p>kafka-0.8：把自动提交offset关掉，改成手动提交offset，但是这个时候有可能出现数据重复；因为你在提交offset的时候有可能失败，所以就会重复的消费数据进行处理，但是这个总好过丢数据，并且可以根据幂等性等一些方案对重复数据进行过滤，来保证数据不丢失的前提下保证唯一性</p><p>kafka-0.10：和kafka-0.8一样关闭自动提交offset，改成手动提交，只是offset存储的地方不一样</p><div class="note guide clear"><p>实时处理系统中对数据处理的策略</p></div><ul><li><p>At most once 一条记录要么被处理一次，要么没有被处理（丢数据） </p></li><li><p>At least once 一条记录可能被处理一次或者多次，可能会重复处理（重复消费） </p></li><li><p>Exactly once 一条记录只被处理一次（仅一次）</p></li></ul><div class="note guide clear"><p>要想实现仅一次语义</p></div><ul><li><p>数据的输入：从上一次offset读取数据 offset </p></li><li><p>数据的处理：Spark 本身就有容错，所以天然的就保证了Exactly-Once</p></li><li><p>数据的输出：利用事务去实现</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spark </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spark </tag>
+            
+            <tag> SparkStreaming </tag>
+            
+            <tag> Kafka </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SparkStreaming</title>
       <link href="posts/4e2051bb.html"/>
       <url>posts/4e2051bb.html</url>
@@ -21,6 +50,8 @@
         <tags>
             
             <tag> Spark </tag>
+            
+            <tag> SparkStreaming </tag>
             
         </tags>
       
@@ -2386,9 +2417,9 @@
             
             <tag> PDF </tag>
             
-            <tag> 大数据处理技术 </tag>
-            
             <tag> Kafka </tag>
+            
+            <tag> 大数据处理技术 </tag>
             
         </tags>
       
@@ -2421,11 +2452,11 @@
             
             <tag> PDF </tag>
             
+            <tag> Kafka </tag>
+            
             <tag> 大数据处理技术 </tag>
             
             <tag> Flume </tag>
-            
-            <tag> Kafka </tag>
             
         </tags>
       
@@ -2458,9 +2489,9 @@
             
             <tag> PDF </tag>
             
-            <tag> 大数据处理技术 </tag>
-            
             <tag> Kafka </tag>
+            
+            <tag> 大数据处理技术 </tag>
             
         </tags>
       
@@ -2493,9 +2524,9 @@
             
             <tag> PDF </tag>
             
-            <tag> 大数据处理技术 </tag>
-            
             <tag> Kafka </tag>
+            
+            <tag> 大数据处理技术 </tag>
             
         </tags>
       
@@ -2528,9 +2559,9 @@
             
             <tag> PDF </tag>
             
-            <tag> 大数据处理技术 </tag>
-            
             <tag> Kafka </tag>
+            
+            <tag> 大数据处理技术 </tag>
             
         </tags>
       
@@ -2563,9 +2594,9 @@
             
             <tag> PDF </tag>
             
-            <tag> 大数据处理技术 </tag>
-            
             <tag> Kafka </tag>
+            
+            <tag> 大数据处理技术 </tag>
             
         </tags>
       
@@ -2598,9 +2629,9 @@
             
             <tag> PDF </tag>
             
-            <tag> 大数据处理技术 </tag>
-            
             <tag> Kafka </tag>
+            
+            <tag> 大数据处理技术 </tag>
             
         </tags>
       
@@ -2633,9 +2664,9 @@
             
             <tag> PDF </tag>
             
-            <tag> 大数据处理技术 </tag>
-            
             <tag> Kafka </tag>
+            
+            <tag> 大数据处理技术 </tag>
             
         </tags>
       
@@ -3169,11 +3200,11 @@
     
     
     <entry>
-      <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
-      <link href="posts/ea7b2ec0.html"/>
-      <url>posts/ea7b2ec0.html</url>
+      <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
+      <link href="posts/d178b062.html"/>
+      <url>posts/d178b062.html</url>
       
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
       
       
       <categories>
@@ -3204,11 +3235,11 @@
     
     
     <entry>
-      <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
-      <link href="posts/d178b062.html"/>
-      <url>posts/d178b062.html</url>
+      <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
+      <link href="posts/ea7b2ec0.html"/>
+      <url>posts/ea7b2ec0.html</url>
       
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
       
       
       <categories>
@@ -4361,37 +4392,6 @@
     
     
     <entry>
-      <title>数据挖掘PDF资料</title>
-      <link href="posts/b59b6a41.html"/>
-      <url>posts/b59b6a41.html</url>
-      
-        <content type="html"><![CDATA[<p>汇总数据挖掘PDF资料</p><a id="more"></a><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 数据挖掘 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 数据挖掘 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>数据可视化PDF资料</title>
       <link href="posts/98579906.html"/>
       <url>posts/98579906.html</url>
@@ -4415,6 +4415,37 @@
             <tag> PDF </tag>
             
             <tag> 数据可视化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据挖掘PDF资料</title>
+      <link href="posts/b59b6a41.html"/>
+      <url>posts/b59b6a41.html</url>
+      
+        <content type="html"><![CDATA[<p>汇总数据挖掘PDF资料</p><a id="more"></a><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/imgbed/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 数据挖掘 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 数据挖掘 </tag>
             
         </tags>
       
