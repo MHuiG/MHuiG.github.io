@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HPP测试</title>
+      <link href="posts/d9d9a7f4.html"/>
+      <url>posts/d9d9a7f4.html</url>
+      
+        <content type="html"><![CDATA[<div class="note warning"><p>HPP测试</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实验性 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 实验性 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SparkStreaming进阶</title>
       <link href="posts/21e23691.html"/>
       <url>posts/21e23691.html</url>
@@ -1047,31 +1072,6 @@
             <tag> PDF </tag>
             
             <tag> NoSQL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>HPP测试</title>
-      <link href="posts/d9d9a7f4.html"/>
-      <url>posts/d9d9a7f4.html</url>
-      
-        <content type="html"><![CDATA[<div class="note warning"><p>HPP测试</p></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 实验性 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 实验性 </tag>
             
         </tags>
       
