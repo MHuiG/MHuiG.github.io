@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>神秘数字4.669</title>
+      <link href="posts/373468cd.html"/>
+      <url>posts/373468cd.html</url>
+      
+        <content type="html"><![CDATA[<div class="note error"><p>从无序迈向有序</p></div><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/1612922136000.gif" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/1612922136000.gif" srcset="data:image/png;base64,666"></p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/1612922294000.gif" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/1612922294000.gif" srcset="data:image/png;base64,666"></p><p><img src="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/1612922328000.gif" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/1612922328000.gif" srcset="data:image/png;base64,666"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Math </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Math </tag>
+            
+            <tag> 分形 </tag>
+            
+            <tag> 混沌 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HPP测试</title>
       <link href="posts/d9d9a7f4.html"/>
       <url>posts/d9d9a7f4.html</url>
@@ -2665,41 +2694,6 @@
     
     
     <entry>
-      <title>大数据处理技术-Flume的负载均衡loadbalancer</title>
-      <link href="posts/c89a329f.html"/>
-      <url>posts/c89a329f.html</url>
-      
-        <content type="html"><![CDATA[<p>大数据处理技术 PDF flume的负载均衡loadbalancer</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day08Flume数据采集/8.flume的负载均衡loadbalancer.pdf" height="500px"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 大数据 </category>
-          
-          <category> 大数据处理技术 </category>
-          
-          <category> Flume </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 大数据 </tag>
-            
-            <tag> PDF </tag>
-            
-            <tag> 大数据处理技术 </tag>
-            
-            <tag> Flume </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>大数据处理技术-Kafka的介绍</title>
       <link href="posts/b9b7baa7.html"/>
       <url>posts/b9b7baa7.html</url>
@@ -2727,6 +2721,41 @@
             <tag> Kafka </tag>
             
             <tag> 大数据处理技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>大数据处理技术-Flume的负载均衡loadbalancer</title>
+      <link href="posts/c89a329f.html"/>
+      <url>posts/c89a329f.html</url>
+      
+        <content type="html"><![CDATA[<p>大数据处理技术 PDF flume的负载均衡loadbalancer</p><a id="more"></a><p><a href="https://github.com/MHuiG/BigData">GitHub</a></p><div class="pdf" target="https://cdn.jsdelivr.net/gh/MHuiG/BigData/PDF/day08Flume数据采集/8.flume的负载均衡loadbalancer.pdf" height="500px"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+          <category> 大数据处理技术 </category>
+          
+          <category> Flume </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 大数据处理技术 </tag>
+            
+            <tag> Flume </tag>
             
         </tags>
       
