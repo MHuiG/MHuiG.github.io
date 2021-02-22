@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MHuiG</title>
-  <icon>https://mhuig.github.io/icon.png</icon>
+  <icon>https://blog.mhuig.top/icon.png</icon>
   <subtitle>Be Yourself, Make a Difference.</subtitle>
-  <link href="https://mhuig.github.io/atom.xml" rel="self"/>
+  <link href="https://blog.mhuig.top/atom.xml" rel="self"/>
   
-  <link href="https://mhuig.github.io/"/>
+  <link href="https://blog.mhuig.top/"/>
   <updated>2021-02-10T01:50:47.000Z</updated>
-  <id>https://mhuig.github.io/</id>
+  <id>https://blog.mhuig.top/</id>
   
   <author>
     <name>MHuiG</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>神秘数字4.669</title>
-    <link href="https://mhuig.github.io/posts/373468cd.html"/>
-    <id>https://mhuig.github.io/posts/373468cd.html</id>
+    <link href="https://blog.mhuig.top/posts/373468cd.html"/>
+    <id>https://blog.mhuig.top/posts/373468cd.html</id>
     <published>2021-02-10T01:50:47.000Z</published>
     <updated>2021-02-10T01:50:47.000Z</updated>
     
@@ -28,21 +28,21 @@
     
     
     
-    <category term="Math" scheme="https://mhuig.github.io/categories/math/"/>
+    <category term="Math" scheme="https://blog.mhuig.top/categories/math/"/>
     
     
-    <category term="Math" scheme="https://mhuig.github.io/tags/math/"/>
+    <category term="Math" scheme="https://blog.mhuig.top/tags/math/"/>
     
-    <category term="分形" scheme="https://mhuig.github.io/tags/%E5%88%86%E5%BD%A2/"/>
+    <category term="分形" scheme="https://blog.mhuig.top/tags/%E5%88%86%E5%BD%A2/"/>
     
-    <category term="混沌" scheme="https://mhuig.github.io/tags/%E6%B7%B7%E6%B2%8C/"/>
+    <category term="混沌" scheme="https://blog.mhuig.top/tags/%E6%B7%B7%E6%B2%8C/"/>
     
   </entry>
   
   <entry>
     <title>HPP测试</title>
-    <link href="https://mhuig.github.io/posts/d9d9a7f4.html"/>
-    <id>https://mhuig.github.io/posts/d9d9a7f4.html</id>
+    <link href="https://blog.mhuig.top/posts/d9d9a7f4.html"/>
+    <id>https://blog.mhuig.top/posts/d9d9a7f4.html</id>
     <published>2021-02-08T09:18:47.000Z</published>
     <updated>2021-02-08T09:18:47.000Z</updated>
     
@@ -51,17 +51,17 @@
     
     
     
-    <category term="实验性" scheme="https://mhuig.github.io/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
+    <category term="实验性" scheme="https://blog.mhuig.top/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
     
     
-    <category term="实验性" scheme="https://mhuig.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
+    <category term="实验性" scheme="https://blog.mhuig.top/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
     
   </entry>
   
   <entry>
     <title>SparkStreaming进阶</title>
-    <link href="https://mhuig.github.io/posts/21e23691.html"/>
-    <id>https://mhuig.github.io/posts/21e23691.html</id>
+    <link href="https://blog.mhuig.top/posts/21e23691.html"/>
+    <id>https://blog.mhuig.top/posts/21e23691.html</id>
     <published>2021-02-07T13:57:53.000Z</published>
     <updated>2021-02-07T13:57:53.000Z</updated>
     
@@ -70,21 +70,21 @@
     
     
     
-    <category term="Spark" scheme="https://mhuig.github.io/categories/spark/"/>
+    <category term="Spark" scheme="https://blog.mhuig.top/categories/spark/"/>
     
     
-    <category term="Spark" scheme="https://mhuig.github.io/tags/spark/"/>
+    <category term="Spark" scheme="https://blog.mhuig.top/tags/spark/"/>
     
-    <category term="SparkStreaming" scheme="https://mhuig.github.io/tags/sparkstreaming/"/>
+    <category term="SparkStreaming" scheme="https://blog.mhuig.top/tags/sparkstreaming/"/>
     
-    <category term="Kafka" scheme="https://mhuig.github.io/tags/kafka/"/>
+    <category term="Kafka" scheme="https://blog.mhuig.top/tags/kafka/"/>
     
   </entry>
   
   <entry>
     <title>SparkStreaming</title>
-    <link href="https://mhuig.github.io/posts/4e2051bb.html"/>
-    <id>https://mhuig.github.io/posts/4e2051bb.html</id>
+    <link href="https://blog.mhuig.top/posts/4e2051bb.html"/>
+    <id>https://blog.mhuig.top/posts/4e2051bb.html</id>
     <published>2021-02-07T13:40:49.000Z</published>
     <updated>2021-02-07T13:40:49.000Z</updated>
     
@@ -93,19 +93,19 @@
     
     
     
-    <category term="Spark" scheme="https://mhuig.github.io/categories/spark/"/>
+    <category term="Spark" scheme="https://blog.mhuig.top/categories/spark/"/>
     
     
-    <category term="Spark" scheme="https://mhuig.github.io/tags/spark/"/>
+    <category term="Spark" scheme="https://blog.mhuig.top/tags/spark/"/>
     
-    <category term="SparkStreaming" scheme="https://mhuig.github.io/tags/sparkstreaming/"/>
+    <category term="SparkStreaming" scheme="https://blog.mhuig.top/tags/sparkstreaming/"/>
     
   </entry>
   
   <entry>
     <title>大数据架构演变</title>
-    <link href="https://mhuig.github.io/posts/7e3480e9.html"/>
-    <id>https://mhuig.github.io/posts/7e3480e9.html</id>
+    <link href="https://blog.mhuig.top/posts/7e3480e9.html"/>
+    <id>https://blog.mhuig.top/posts/7e3480e9.html</id>
     <published>2021-02-07T12:51:06.000Z</published>
     <updated>2021-02-07T12:51:06.000Z</updated>
     
@@ -114,17 +114,17 @@
     
     
     
-    <category term="BigData" scheme="https://mhuig.github.io/categories/bigdata/"/>
+    <category term="BigData" scheme="https://blog.mhuig.top/categories/bigdata/"/>
     
     
-    <category term="BigData" scheme="https://mhuig.github.io/tags/bigdata/"/>
+    <category term="BigData" scheme="https://blog.mhuig.top/tags/bigdata/"/>
     
   </entry>
   
   <entry>
     <title>离散世界与连续世界的联系</title>
-    <link href="https://mhuig.github.io/posts/2b995a0c.html"/>
-    <id>https://mhuig.github.io/posts/2b995a0c.html</id>
+    <link href="https://blog.mhuig.top/posts/2b995a0c.html"/>
+    <id>https://blog.mhuig.top/posts/2b995a0c.html</id>
     <published>2021-01-02T12:34:44.000Z</published>
     <updated>2021-01-02T12:34:44.000Z</updated>
     
@@ -133,17 +133,17 @@
     
     
     
-    <category term="Math" scheme="https://mhuig.github.io/categories/math/"/>
+    <category term="Math" scheme="https://blog.mhuig.top/categories/math/"/>
     
     
-    <category term="Math" scheme="https://mhuig.github.io/tags/math/"/>
+    <category term="Math" scheme="https://blog.mhuig.top/tags/math/"/>
     
   </entry>
   
   <entry>
     <title>一大波题目正在来袭</title>
-    <link href="https://mhuig.github.io/posts/bc43343e.html"/>
-    <id>https://mhuig.github.io/posts/bc43343e.html</id>
+    <link href="https://blog.mhuig.top/posts/bc43343e.html"/>
+    <id>https://blog.mhuig.top/posts/bc43343e.html</id>
     <published>2020-12-06T13:33:18.000Z</published>
     <updated>2020-12-06T13:33:18.000Z</updated>
     
@@ -152,17 +152,17 @@
     
     
     
-    <category term="Math" scheme="https://mhuig.github.io/categories/math/"/>
+    <category term="Math" scheme="https://blog.mhuig.top/categories/math/"/>
     
     
-    <category term="Math" scheme="https://mhuig.github.io/tags/math/"/>
+    <category term="Math" scheme="https://blog.mhuig.top/tags/math/"/>
     
   </entry>
   
   <entry>
     <title>回顾几个有趣的小题目</title>
-    <link href="https://mhuig.github.io/posts/ce5b71c0.html"/>
-    <id>https://mhuig.github.io/posts/ce5b71c0.html</id>
+    <link href="https://blog.mhuig.top/posts/ce5b71c0.html"/>
+    <id>https://blog.mhuig.top/posts/ce5b71c0.html</id>
     <published>2020-11-16T13:08:56.000Z</published>
     <updated>2020-11-16T13:08:56.000Z</updated>
     
@@ -171,17 +171,17 @@
     
     
     
-    <category term="Math" scheme="https://mhuig.github.io/categories/math/"/>
+    <category term="Math" scheme="https://blog.mhuig.top/categories/math/"/>
     
     
-    <category term="Math" scheme="https://mhuig.github.io/tags/math/"/>
+    <category term="Math" scheme="https://blog.mhuig.top/tags/math/"/>
     
   </entry>
   
   <entry>
     <title>宇宙的本质是计算</title>
-    <link href="https://mhuig.github.io/posts/92a4ae9.html"/>
-    <id>https://mhuig.github.io/posts/92a4ae9.html</id>
+    <link href="https://blog.mhuig.top/posts/92a4ae9.html"/>
+    <id>https://blog.mhuig.top/posts/92a4ae9.html</id>
     <published>2020-11-06T00:35:48.000Z</published>
     <updated>2020-11-06T00:35:48.000Z</updated>
     
@@ -190,17 +190,17 @@
     
     
     
-    <category term="随笔" scheme="https://mhuig.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://blog.mhuig.top/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="随笔" scheme="https://mhuig.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://blog.mhuig.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>互联网进化！</title>
-    <link href="https://mhuig.github.io/posts/9feab2fa.html"/>
-    <id>https://mhuig.github.io/posts/9feab2fa.html</id>
+    <link href="https://blog.mhuig.top/posts/9feab2fa.html"/>
+    <id>https://blog.mhuig.top/posts/9feab2fa.html</id>
     <published>2020-11-05T23:00:00.000Z</published>
     <updated>2020-11-05T23:00:00.000Z</updated>
     
@@ -209,17 +209,17 @@
     
     
     
-    <category term="随笔" scheme="https://mhuig.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://blog.mhuig.top/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="随笔" scheme="https://mhuig.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://blog.mhuig.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>BERT预训练模型及其应用案例</title>
-    <link href="https://mhuig.github.io/posts/48f700eb.html"/>
-    <id>https://mhuig.github.io/posts/48f700eb.html</id>
+    <link href="https://blog.mhuig.top/posts/48f700eb.html"/>
+    <id>https://blog.mhuig.top/posts/48f700eb.html</id>
     <published>2020-11-05T07:47:27.000Z</published>
     <updated>2020-11-05T07:47:27.000Z</updated>
     
@@ -238,17 +238,17 @@
     
     
     
-    <category term="NLP" scheme="https://mhuig.github.io/categories/nlp/"/>
+    <category term="NLP" scheme="https://blog.mhuig.top/categories/nlp/"/>
     
     
-    <category term="NLP" scheme="https://mhuig.github.io/tags/nlp/"/>
+    <category term="NLP" scheme="https://blog.mhuig.top/tags/nlp/"/>
     
   </entry>
   
   <entry>
     <title>自然语言处理研究报告[存档备用]</title>
-    <link href="https://mhuig.github.io/posts/618ec98d.html"/>
-    <id>https://mhuig.github.io/posts/618ec98d.html</id>
+    <link href="https://blog.mhuig.top/posts/618ec98d.html"/>
+    <id>https://blog.mhuig.top/posts/618ec98d.html</id>
     <published>2020-10-20T06:00:59.000Z</published>
     <updated>2020-10-20T06:00:59.000Z</updated>
     
@@ -257,17 +257,17 @@
     
     
     
-    <category term="NLP" scheme="https://mhuig.github.io/categories/nlp/"/>
+    <category term="NLP" scheme="https://blog.mhuig.top/categories/nlp/"/>
     
     
-    <category term="NLP" scheme="https://mhuig.github.io/tags/nlp/"/>
+    <category term="NLP" scheme="https://blog.mhuig.top/tags/nlp/"/>
     
   </entry>
   
   <entry>
     <title>尝试使用GPU加速计算</title>
-    <link href="https://mhuig.github.io/posts/56213be8.html"/>
-    <id>https://mhuig.github.io/posts/56213be8.html</id>
+    <link href="https://blog.mhuig.top/posts/56213be8.html"/>
+    <id>https://blog.mhuig.top/posts/56213be8.html</id>
     <published>2020-10-11T01:11:44.000Z</published>
     <updated>2020-10-11T01:11:44.000Z</updated>
     
@@ -276,19 +276,19 @@
     
     
     
-    <category term="Data mining" scheme="https://mhuig.github.io/categories/data-mining/"/>
+    <category term="Data mining" scheme="https://blog.mhuig.top/categories/data-mining/"/>
     
     
-    <category term="Data mining" scheme="https://mhuig.github.io/tags/data-mining/"/>
+    <category term="Data mining" scheme="https://blog.mhuig.top/tags/data-mining/"/>
     
-    <category term="Machine Learning" scheme="https://mhuig.github.io/tags/machine-learning/"/>
+    <category term="Machine Learning" scheme="https://blog.mhuig.top/tags/machine-learning/"/>
     
   </entry>
   
   <entry>
     <title>R语言初步</title>
-    <link href="https://mhuig.github.io/posts/fe073ab3.html"/>
-    <id>https://mhuig.github.io/posts/fe073ab3.html</id>
+    <link href="https://blog.mhuig.top/posts/fe073ab3.html"/>
+    <id>https://blog.mhuig.top/posts/fe073ab3.html</id>
     <published>2020-10-10T12:30:27.000Z</published>
     <updated>2020-10-10T12:30:27.000Z</updated>
     
@@ -297,19 +297,19 @@
     
     
     
-    <category term="Data mining" scheme="https://mhuig.github.io/categories/data-mining/"/>
+    <category term="Data mining" scheme="https://blog.mhuig.top/categories/data-mining/"/>
     
     
-    <category term="Data mining" scheme="https://mhuig.github.io/tags/data-mining/"/>
+    <category term="Data mining" scheme="https://blog.mhuig.top/tags/data-mining/"/>
     
-    <category term="R" scheme="https://mhuig.github.io/tags/r/"/>
+    <category term="R" scheme="https://blog.mhuig.top/tags/r/"/>
     
   </entry>
   
   <entry>
     <title>手把手教你用Python开始第一个机器学习项目</title>
-    <link href="https://mhuig.github.io/posts/110850a.html"/>
-    <id>https://mhuig.github.io/posts/110850a.html</id>
+    <link href="https://blog.mhuig.top/posts/110850a.html"/>
+    <id>https://blog.mhuig.top/posts/110850a.html</id>
     <published>2020-10-10T11:43:22.000Z</published>
     <updated>2020-10-10T11:43:22.000Z</updated>
     
@@ -318,19 +318,19 @@
     
     
     
-    <category term="Data mining" scheme="https://mhuig.github.io/categories/data-mining/"/>
+    <category term="Data mining" scheme="https://blog.mhuig.top/categories/data-mining/"/>
     
     
-    <category term="Data mining" scheme="https://mhuig.github.io/tags/data-mining/"/>
+    <category term="Data mining" scheme="https://blog.mhuig.top/tags/data-mining/"/>
     
-    <category term="Machine Learning" scheme="https://mhuig.github.io/tags/machine-learning/"/>
+    <category term="Machine Learning" scheme="https://blog.mhuig.top/tags/machine-learning/"/>
     
   </entry>
   
   <entry>
     <title>How to Setup Your Python Environment for Machine Learning With Anaconda</title>
-    <link href="https://mhuig.github.io/posts/2f550c8c.html"/>
-    <id>https://mhuig.github.io/posts/2f550c8c.html</id>
+    <link href="https://blog.mhuig.top/posts/2f550c8c.html"/>
+    <id>https://blog.mhuig.top/posts/2f550c8c.html</id>
     <published>2020-09-11T14:30:22.000Z</published>
     <updated>2020-09-11T14:30:22.000Z</updated>
     
@@ -346,19 +346,19 @@
     
     
     
-    <category term="Data mining" scheme="https://mhuig.github.io/categories/data-mining/"/>
+    <category term="Data mining" scheme="https://blog.mhuig.top/categories/data-mining/"/>
     
     
-    <category term="Data mining" scheme="https://mhuig.github.io/tags/data-mining/"/>
+    <category term="Data mining" scheme="https://blog.mhuig.top/tags/data-mining/"/>
     
-    <category term="Machine Learning" scheme="https://mhuig.github.io/tags/machine-learning/"/>
+    <category term="Machine Learning" scheme="https://blog.mhuig.top/tags/machine-learning/"/>
     
   </entry>
   
   <entry>
     <title>Jupyter测试</title>
-    <link href="https://mhuig.github.io/posts/a2eb4e7a.html"/>
-    <id>https://mhuig.github.io/posts/a2eb4e7a.html</id>
+    <link href="https://blog.mhuig.top/posts/a2eb4e7a.html"/>
+    <id>https://blog.mhuig.top/posts/a2eb4e7a.html</id>
     <published>2020-09-10T13:02:43.000Z</published>
     <updated>2020-09-10T13:02:43.000Z</updated>
     
@@ -367,17 +367,17 @@
     
     
     
-    <category term="实验性" scheme="https://mhuig.github.io/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
+    <category term="实验性" scheme="https://blog.mhuig.top/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
     
     
-    <category term="实验性" scheme="https://mhuig.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
+    <category term="实验性" scheme="https://blog.mhuig.top/tags/%E5%AE%9E%E9%AA%8C%E6%80%A7/"/>
     
   </entry>
   
   <entry>
     <title>初探 Cloudflare Workers 边缘计算</title>
-    <link href="https://mhuig.github.io/posts/4a0f523a.html"/>
-    <id>https://mhuig.github.io/posts/4a0f523a.html</id>
+    <link href="https://blog.mhuig.top/posts/4a0f523a.html"/>
+    <id>https://blog.mhuig.top/posts/4a0f523a.html</id>
     <published>2020-08-31T11:53:40.000Z</published>
     <updated>2020-08-31T11:53:40.000Z</updated>
     
@@ -386,17 +386,17 @@
     
     
     
-    <category term="边缘计算" scheme="https://mhuig.github.io/categories/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/"/>
+    <category term="边缘计算" scheme="https://blog.mhuig.top/categories/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/"/>
     
     
-    <category term="边缘计算" scheme="https://mhuig.github.io/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/"/>
+    <category term="边缘计算" scheme="https://blog.mhuig.top/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/"/>
     
   </entry>
   
   <entry>
     <title>基于K均值聚类的网络流量异常检测(pyspark)</title>
-    <link href="https://mhuig.github.io/posts/7b55143e.html"/>
-    <id>https://mhuig.github.io/posts/7b55143e.html</id>
+    <link href="https://blog.mhuig.top/posts/7b55143e.html"/>
+    <id>https://blog.mhuig.top/posts/7b55143e.html</id>
     <published>2020-08-02T10:23:15.000Z</published>
     <updated>2020-08-02T10:23:15.000Z</updated>
     
@@ -405,17 +405,17 @@
     
     
     
-    <category term="spark" scheme="https://mhuig.github.io/categories/spark/"/>
+    <category term="spark" scheme="https://blog.mhuig.top/categories/spark/"/>
     
     
-    <category term="spark" scheme="https://mhuig.github.io/tags/spark/"/>
+    <category term="spark" scheme="https://blog.mhuig.top/tags/spark/"/>
     
   </entry>
   
   <entry>
     <title>基于Audioscrobbler数据集的音乐推荐(pyspark)</title>
-    <link href="https://mhuig.github.io/posts/1e621a56.html"/>
-    <id>https://mhuig.github.io/posts/1e621a56.html</id>
+    <link href="https://blog.mhuig.top/posts/1e621a56.html"/>
+    <id>https://blog.mhuig.top/posts/1e621a56.html</id>
     <published>2020-08-02T07:34:13.000Z</published>
     <updated>2020-08-02T07:34:13.000Z</updated>
     
@@ -424,10 +424,10 @@
     
     
     
-    <category term="spark" scheme="https://mhuig.github.io/categories/spark/"/>
+    <category term="spark" scheme="https://blog.mhuig.top/categories/spark/"/>
     
     
-    <category term="spark" scheme="https://mhuig.github.io/tags/spark/"/>
+    <category term="spark" scheme="https://blog.mhuig.top/tags/spark/"/>
     
   </entry>
   

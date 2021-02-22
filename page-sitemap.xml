@@ -2,63 +2,63 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://MHuiG.github.io</loc>
+        <loc>https://blog.mhuig.top</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/tags/</loc>
-        <lastmod>2021-02-18T10:32:08.858Z</lastmod>
+        <loc>https://blog.mhuig.top/tags/</loc>
+        <lastmod>2021-02-22T03:02:04.106Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/talk/</loc>
-        <lastmod>2021-02-18T10:32:08.858Z</lastmod>
+        <loc>https://blog.mhuig.top/talk/</loc>
+        <lastmod>2021-02-22T03:02:04.106Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/time-machine/</loc>
-        <lastmod>2021-02-18T10:32:08.858Z</lastmod>
+        <loc>https://blog.mhuig.top/time-machine/</loc>
+        <lastmod>2021-02-22T03:02:04.106Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/havefun/site/</loc>
-        <lastmod>2021-02-18T10:32:08.858Z</lastmod>
+        <loc>https://blog.mhuig.top/havefun/site/</loc>
+        <lastmod>2021-02-22T03:02:04.102Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/about/</loc>
-        <lastmod>2021-02-18T10:32:08.854Z</lastmod>
+        <loc>https://blog.mhuig.top/about/</loc>
+        <lastmod>2021-02-22T03:02:04.098Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/categories/</loc>
-        <lastmod>2021-02-18T10:32:08.854Z</lastmod>
+        <loc>https://blog.mhuig.top/categories/</loc>
+        <lastmod>2021-02-22T03:02:04.098Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/friends/</loc>
-        <lastmod>2021-02-18T10:32:08.854Z</lastmod>
+        <loc>https://blog.mhuig.top/friends/</loc>
+        <lastmod>2021-02-22T03:02:04.098Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://mhuig.github.io/404.html</loc>
-        <lastmod>2021-02-18T10:32:08.842Z</lastmod>
+        <loc>https://blog.mhuig.top/404.html</loc>
+        <lastmod>2021-02-22T03:02:04.090Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
