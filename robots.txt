@@ -3,6 +3,8 @@ Allow: /
 Allow: /posts/
 Allow: /about/
 Disallow: /archives/
+Disallow: /categories/
+Disallow: /tags/
 Disallow: /page/
 
 Sitemap: https://blog.mhuig.top/sitemap.xml
