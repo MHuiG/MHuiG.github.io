@@ -6,7 +6,7 @@
   <link href="https://blog.mhuig.top/atom.xml" rel="self"/>
   
   <link href="https://blog.mhuig.top/"/>
-  <updated>2021-02-10T01:50:47.000Z</updated>
+  <updated>2021-04-10T11:24:30.000Z</updated>
   <id>https://blog.mhuig.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次仅在IPv4环境下访问IPv6网络的经历</title>
+    <link href="https://blog.mhuig.top/posts/5e9edb45.html"/>
+    <id>https://blog.mhuig.top/posts/5e9edb45.html</id>
+    <published>2021-04-10T11:24:30.000Z</published>
+    <updated>2021-04-10T11:24:30.000Z</updated>
+    
+    
+    <summary type="html">本页面已阻止来自中国地区和IPv4网络的访问请求</summary>
+    
+    
+    
+    <category term="Web" scheme="https://blog.mhuig.top/categories/web/"/>
+    
+    <category term="IPv6" scheme="https://blog.mhuig.top/categories/web/ipv6/"/>
+    
+    
+    <category term="Web" scheme="https://blog.mhuig.top/tags/web/"/>
+    
+    <category term="IPv6" scheme="https://blog.mhuig.top/tags/ipv6/"/>
+    
+  </entry>
   
   <entry>
     <title>神秘数字4.669</title>
@@ -402,25 +425,6 @@
     
     
     <summary type="html">&lt;p&gt;异常检测常用于检测欺诈、网络攻击、服务器及传感设备故障。在这些应用中，我们要能够找出以前从未见过的新型异常，如新欺诈方式、新入侵方法或新服务器故障模式。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="spark" scheme="https://blog.mhuig.top/categories/spark/"/>
-    
-    
-    <category term="spark" scheme="https://blog.mhuig.top/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Audioscrobbler数据集的音乐推荐(pyspark)</title>
-    <link href="https://blog.mhuig.top/posts/1e621a56.html"/>
-    <id>https://blog.mhuig.top/posts/1e621a56.html</id>
-    <published>2020-08-02T07:34:13.000Z</published>
-    <updated>2020-08-02T07:34:13.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;根据用户播放次数数据使用协同过滤算法完成音乐推荐。&lt;/p&gt;</summary>
     
     
     
