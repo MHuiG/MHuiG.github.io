@@ -3107,10 +3107,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-11T13:53:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-23T16:50:00+08:00">
   <a class="notlink">
     <i class="fad fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年4月11日</p>
+    <p>更新于：2021年4月23日</p>
   </a>
 </div>
 
@@ -3245,7 +3245,107 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
-  volantis.$ = {}; // 页面选择器 将jQuery对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+  /******************** volantis.EventListener ********************************/
+  // 事件监听器 see: /source/js/app.js
+  volantis.EventListener={}
+  // 这里存放pjax切换页面时将被移除的事件监听器
+  volantis.EventListener.list=[]
+  //构造方法
+  function volantisEventListener(type,f,ele){
+    this.type=type
+    this.f=f
+    this.ele=ele
+  }
+  // 移除事件监听器
+  volantis.EventListener.remove=()=>{
+    volantis.EventListener.list.forEach(function (i) {
+        i.ele.removeEventListener(i.type,i.f,false)
+    })
+    volantis.EventListener.list=[]
+  }
+  /******************** volantis.dom.$ ********************************/
+  // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
+  function volantisDom(ele){
+    if(!ele) ele=document.createElement("div")
+    this.ele=ele;
+    // ==============================================================
+    this.ele.find=(c)=>{
+      let q=this.ele.querySelector(c)
+      if(q)
+        return new volantisDom(q)
+    }
+    // ==============================================================
+    this.ele.hasClass=(c)=>{
+      return this.ele.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+    }
+    this.ele.addClass=(c)=>{
+      this.ele.classList.add(c);
+      return this.ele
+    }
+    this.ele.removeClass=(c)=>{
+      this.ele.classList.remove(c);
+      return this.ele
+    }
+    this.ele.toggleClass=(c)=>{
+      if(this.ele.hasClass(c)){
+        this.ele.removeClass(c)
+      }else{
+        this.ele.addClass(c)
+      }
+      return this.ele
+    }
+    // ==============================================================
+    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
+    this.ele.on=(c,f,r=1)=>{
+      this.ele.addEventListener(c,f,false)
+      if(r){
+        volantis.EventListener.list.push(new volantisEventListener(c,f,this.ele))
+      }
+      return this.ele
+    }
+    this.ele.click=(f,r)=>{
+      this.ele.on("click",f,r)
+      return this.ele
+    }
+    this.ele.scroll=(f,r)=>{
+      this.ele.on("scroll",f,r)
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.html=(c)=>{
+      // if(c=== undefined){
+      //   return this.ele.innerHTML
+      // }else{
+        this.ele.innerHTML=c
+        return this.ele
+      // }
+    }
+    // ==============================================================
+    this.ele.hide=(c)=>{
+      this.ele.style.display="none"
+      return this.ele
+    }
+    this.ele.show=(c)=>{
+      this.ele.style.display="block"
+      return this.ele
+    }
+    // ==============================================================
+    return this.ele
+  }
+  volantis.dom.$=(ele)=>{
+    return new volantisDom(ele)
+  }
+  /******************** volantis.dom ********************************/
+  // 页面选择器 将dom对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom.bodyAnchor = volantis.dom.$(document.getElementById("safearea")); // 页面主体
+  volantis.dom.topBtn = volantis.dom.$(document.getElementById('s-top')); // 向上
+  volantis.dom.wrapper = volantis.dom.$(document.getElementById('wrapper')); // 整个导航栏
+  volantis.dom.coverAnchor = volantis.dom.$(document.querySelector('#l_cover .cover-wrapper')); // 1个
+  volantis.dom.switcher = volantis.dom.$(document.querySelector('#l_header .switcher .s-search')); // 搜索按钮   移动端 1个
+  volantis.dom.header = volantis.dom.$(document.getElementById('l_header')); // 移动端导航栏
+  volantis.dom.search = volantis.dom.$(document.querySelector('#l_header .m_search')); // 搜索框 桌面端 移动端 1个
+  volantis.dom.mPhoneList = volantis.dom.$(document.querySelectorAll('#l_header .m-phone .list-v')); //  手机端 子菜单 多个
   /******************** RunItem ********************************/
   function RunItem() {
     this.list = []; // 存放回调函数
@@ -3309,7 +3409,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   // /source/js/app.js
   // volantis.isMobile
   // volantis.isMobileOld
-  /********************脚本懒加载函数********************************/
+  /********************脚本动态加载函数********************************/
   // volantis.js(src, cb)  cb 可以传入onload回调函数 或者 JSON对象 例如: volantis.js("src", ()=>{}) 或 volantis.js("src", {defer:true,onload:()=>{}})
   // volantis.css(src)
 
@@ -3336,6 +3436,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                 }
               }else{
                 script[p]=cb[p]
+                script.onload = resolve
               }
             }
           } else {
@@ -3363,6 +3464,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       });
     });
   }
+  /********************按需加载的插件********************************/
+  // volantis.import.jQuery().then(()=>{})
+  volantis.import={
+    jQuery:()=>{
+      if(typeof jQuery=="undefined"){
+        return volantis.js("https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js")
+      }else{
+        return new Promise(resolve => {resolve()});
+      }
+    }
+  }
+  /*****************************************************************/
 </script>
 
 <script>
@@ -3374,68 +3487,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <!-- required -->
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
-
-<script>
-  function pjax_fancybox() {
-    $(".md .gallery").find("img").each(function () { //渲染 fancybox
-      var element = document.createElement("a"); // a 标签
-      $(element).attr("class", "fancybox");
-      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      $(element).attr("href", $(this).attr("src"));
-      if ($(this).attr("data-original")) {
-        $(element).attr("href", $(this).attr("data-original"));
-      }
-      $(element).attr("data-fancybox", "images");
-      var caption = "";   // 描述信息
-      if ($(this).attr('alt') && $(this).attr('alt') !== 'image') {  // 判断当前页面是否存在描述信息
-        $(element).attr('data-caption', $(this).attr('alt'));
-        caption = $(this).attr('alt');
-      }
-      var div = document.createElement("div");
-      $(div).addClass("fancybox");
-      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
-      var span = document.createElement("span");
-      $(span).addClass("image-caption");
-      $(span).text(caption); // 加描述
-      $(this).after(span);  // 再套一层描述
-      $(this).wrap(element);  // 最后套 a 标签
-    })
-    $(".md .gallery").find("img").fancybox({
-      selector: '[data-fancybox="images"]',
-      hash: false,
-      loop: false,
-      closeClick: true,
-      helpers: {
-        overlay: {closeClick: true}
-      },
-      buttons: [
-        "zoom",
-        "close"
-      ]
-    });
-  };
-  function SCload_fancybox() {
-    if ($(".md .gallery").find("img").length == 0) return;
-    volantis.css("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css");
-    volantis.js('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
-  };
-  $(function () {
-    SCload_fancybox();
-  });
-  function Pjax_SCload_fancybox(){
-	if (typeof $.fancybox == "undefined") {
-	 SCload_fancybox();
-    } else {
-	 pjax_fancybox();
-    }
-  }
-  volantis.pjax.push(Pjax_SCload_fancybox)
-  volantis.pjax.send(()=>{
-      if (typeof $.fancybox != "undefined") {
-        $.fancybox.close();    // 关闭弹窗
-      }
-  },'fancybox')
-</script>
 
 
 <!-- internal -->
@@ -3530,16 +3581,16 @@ volantis.dark.toggle=()=>{
 /**
  * bind event for toggle button
  */
-var btn=$(".toggle-mode-btn","#wrapper,#rightmenu-wrapper");
+
 function bindToggleButton() {
-    btn.on('click',volantis.dark.toggle);
+  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
+  btn.forEach(function (e) {
+    volantis.dom.$(e).on('click',volantis.dark.toggle);
+  })
 }
 applyCustomDarkModeSettings();
 document.addEventListener("DOMContentLoaded", bindToggleButton);
 volantis.pjax.push(bindToggleButton);
-volantis.pjax.send(()=>{
-	btn.unbind('click');
-},'toggle-mode-btn-unbind');
 </script>
 
 
@@ -3565,9 +3616,7 @@ volantis.pjax.send(()=>{
       }
     
   };
-  $(function () {
-    loadIssuesJS();
-  });
+  loadIssuesJS()
   volantis.pjax.push(()=>{
     loadIssuesJS();
   })
@@ -3610,9 +3659,9 @@ volantis.pjax.send(()=>{
 <script>
   window.FPConfig = {
 	delay: 0,
-	ignoreKeywords: [],
-	maxRPS: 5,
-	hoverDelay: 25
+	ignoreKeywords: ["#"],
+	maxRPS: 6,
+	hoverDelay: 0
   };
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mhg@0.0.1/js/flying-pages.min.js"></script>
@@ -3646,17 +3695,20 @@ volantis.pjax.send(()=>{
 
   <script>
   function load_ohhho() {
-    volantis.js("https://cdn.jsdelivr.net/npm/ohhho@0.0.21/dist/ohhho.min.js", pjax_ohhho)
+    volantis.js("https://cdn.jsdelivr.net/npm/ohhho@0.0.22/dist/ohhho.min.js", pjax_ohhho)
   };
     function pjax_ohhho() {
-      if(!document.querySelectorAll("#ohhho_container")[0])return;
+      if(!document.querySelectorAll("#ohhho_container")[0]) return;
+      var runningOnBrowser = typeof window !== "undefined";
+      var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+      if(isBot) return;
       let pagePlaceholder = pdata.commentPlaceholder || "";
       let path = pdata.commentPath;
       if (path.length == 0) {
         let defaultPath = '';
         path = defaultPath || decodeURI(window.location.pathname);
       }
-      new ohhho(Object.assign({"js":"https://cdn.jsdelivr.net/npm/ohhho@0.0.21/dist/ohhho.min.js","serverURL":"https://ohhho.mhuig.top"}, {
+      new ohhho(Object.assign({"js":"https://cdn.jsdelivr.net/npm/ohhho@0.0.22/dist/ohhho.min.js","serverURL":"https://ohhho.mhuig.top"}, {
       el: '#ohhho_container',
       pathname: path,
       placeholder: pagePlaceholder,
@@ -3686,12 +3738,21 @@ volantis.pjax.send(()=>{
 <!-- optional -->
 
   <script>
-const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/logo/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
-$('.input.u-search-input').one('focus',function(){
-  // see: layout/_partial/scripts/cdnCtrl.ejs
-	volantis.js('https://cdn.jsdelivr.net/npm/mhg@0.0.6/js/search.js',setSearchService);
+function loadSearchService(){
+  volantis.import.jQuery().then(()=>{
+    // see: layout/_partial/scripts/cdnCtrl.ejs
+    volantis.js('https://cdn.jsdelivr.net/npm/mhg@0.0.6/js/search.js',setSearchService); // 此处依赖JQ
+  })
+  document.querySelectorAll('.input.u-search-input').forEach((e)=>{
+    e.removeEventListener('focus',loadSearchService,false)
+  })
+}
+
+document.querySelectorAll('.input.u-search-input').forEach((e)=>{
+  e.addEventListener('focus',loadSearchService,false)
 })
 
 function listenSearch(){
@@ -3727,15 +3788,17 @@ function setSearchService() {
 
 
 <script>
-  volantis.message = (title, message, type, autoClose, time = 3000) => {
-    if (typeof $.message == "undefined") {
-      volantis.css('/css/message.css')
-      volantis.js('/js/message.js', () => {
+  volantis.message = (title, message, type, autoClose, time = 3000) => { // 此处依赖JQ
+    volantis.import.jQuery().then(()=>{
+      if (typeof $.message == "undefined") {
+        volantis.css('/css/message.css')
+        volantis.js('/js/message.js', () => {
+          start(title, message, type, autoClose, time);
+        });
+      } else {
         start(title, message, type, autoClose, time);
-      });
-    } else {
-      start(title, message, type, autoClose, time);
-    }
+      }
+    })
     function start(title, message, type, autoClose, time) {
       $.message({
         title: title,
@@ -4165,10 +4228,11 @@ volantis.pjax.push(pjax_screen_container)
         elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
         selectors: [
           "title",
-          "pjax",
           
           "#pjax-container",
-          "#pjax-header-nav-list"
+          "#pjax-header-nav-list",
+          "pjax", // <pjax></pjax> 标签
+          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
         ],
         cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
         timeout: 5000
@@ -4191,30 +4255,11 @@ volantis.pjax.push(pjax_screen_container)
         }
       } catch (error) {}
 
-      // 解绑事件 避免重复监听
-      // ====================================================================================
-      // 这一段代码必须先执行，不可以放到其他位置 【放到app.js中测试，跳转页面时不会关闭二级导航】
-      volantis.$.switcher.removeClass('active'); // 关闭移动端激活的搜索框
-      volantis.$.header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      volantis.$.wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
-      volantis.$.topBtn.unbind('click');
-      $('.menu a','#l_header,#l_cover').unbind('click');
-      $(window).unbind('resize');
-      $(window).unbind('scroll');
-      $(document).unbind('scroll');
-      $(document).unbind('click');
-      $('body').unbind('click');
-      // ====================================================================================
-
       // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
       volantis.pjax.method.send.start();
     });
 
     document.addEventListener('pjax:complete', function () {
-      // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
-      $('script[data-pjax], .pjax-reload script').each(function () {
-        $(this).parent().append($(this).remove());
-      });
       // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
       volantis.pjax.method.complete.start();
     });
