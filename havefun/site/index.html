@@ -1979,8 +1979,9 @@ ul.list-v >li>a:hover {
   :root:not([data-user-color-scheme]) fa,
   :root:not([data-user-color-scheme]) svg.iconfont,
   :root:not([data-user-color-scheme]) img,
-  :root:not([data-user-color-scheme]) .lazyload,
-  :root:not([data-user-color-scheme]) filter: brightness(convert(hexo-config('color_scheme.dark.brightness'))) !important,
+  :root:not([data-user-color-scheme]) .lazyload {
+    filter: brightness(70%) !important;
+  }
   :root:not([data-user-color-scheme]) #wrapper .title {
     color: var(--color-meta);
   }
@@ -2014,12 +2015,8 @@ ul.list-v >li>a:hover {
     border: 1px solid var(--color-site-bg);
     background: var(--color-site-bg);
   }
-  :root:not([data-user-color-scheme]) #u-search .modal {
-    background: var(--color-card) !important;
-  }
-  :root:not([data-user-color-scheme]) #u-search .modal-header {
-    background: var(--color-card) !important;
-  }
+  :root:not([data-user-color-scheme]) #u-search .modal,
+  :root:not([data-user-color-scheme]) #u-search .modal-header,
   :root:not([data-user-color-scheme]) #u-search .modal-body {
     background: var(--color-card) !important;
   }
@@ -2152,8 +2149,9 @@ ul.list-v >li>a:hover {
 [data-user-color-scheme='dark'] fa,
 [data-user-color-scheme='dark'] svg.iconfont,
 [data-user-color-scheme='dark'] img,
-[data-user-color-scheme='dark'] .lazyload,
-[data-user-color-scheme='dark'] filter: brightness(convert(hexo-config('color_scheme.dark.brightness'))) !important,
+[data-user-color-scheme='dark'] .lazyload {
+  filter: brightness(70%) !important;
+}
 [data-user-color-scheme='dark'] #wrapper .title {
   color: var(--color-meta);
 }
@@ -2187,12 +2185,8 @@ ul.list-v >li>a:hover {
   border: 1px solid var(--color-site-bg);
   background: var(--color-site-bg);
 }
-[data-user-color-scheme='dark'] #u-search .modal {
-  background: var(--color-card) !important;
-}
-[data-user-color-scheme='dark'] #u-search .modal-header {
-  background: var(--color-card) !important;
-}
+[data-user-color-scheme='dark'] #u-search .modal,
+[data-user-color-scheme='dark'] #u-search .modal-header,
 [data-user-color-scheme='dark'] #u-search .modal-body {
   background: var(--color-card) !important;
 }
@@ -2334,7 +2328,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		'}'+
 	'</style>'+
     '<div class="kill-ie">'+
-        '<h1><b>抱歉，您的浏览器无法访问本站</b></h1>'+
+        '<h2><b>抱歉，您的浏览器无法访问本站</b></h2>'+
         '<h3>微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>'+
         '继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</h3><br/>'+
         '<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>了解详情 ></strong></a>'+
@@ -2356,11 +2350,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		}
 	</style>
     <div class="kill-noscript">
-        <h1><b>抱歉，您的浏览器无法访问本站</b></h1>
+        <h2><b>抱歉，您的浏览器无法访问本站</b></h2>
         <h3>本页面需要浏览器支持（启用）JavaScript</h3><br>
         <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
     </div>
 </noscript>
+
 
 </head>
 
@@ -2548,7 +2543,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href="https://status.mhuig.top/" id="https:statusmhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://stats.uptimerobot.com/Q5pjEh69Nj" id="https:statsuptimerobotcomQ5pjEh69Nj" rel="external nofollow noopener noreferrer" target="_blank">
                   <i class="fad fa-telescope fa-fw"></i>Monitors
                 </a>
                 
@@ -2858,7 +2853,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href="https://status.mhuig.top/" id="https:statusmhuigtop" rel="external nofollow noopener noreferrer" target="_blank">
+                <a class="menuitem flat-box faa-parent animated-hover" href="https://stats.uptimerobot.com/Q5pjEh69Nj" id="https:statsuptimerobotcomQ5pjEh69Nj" rel="external nofollow noopener noreferrer" target="_blank">
                   <i class="fad fa-telescope fa-fw"></i>Monitors
                 </a>
                 
@@ -3107,10 +3102,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-23T18:20:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-08T20:53:27+08:00">
   <a class="notlink">
     <i class="fad fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年4月23日</p>
+    <p>更新于：2021年5月8日</p>
   </a>
 </div>
 
@@ -3486,7 +3481,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 <!-- required -->
 
+  
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
 
 
 <!-- internal -->
