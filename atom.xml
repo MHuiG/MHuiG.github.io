@@ -6,7 +6,7 @@
   <link href="https://blog.mhuig.top/atom.xml" rel="self"/>
   
   <link href="https://blog.mhuig.top/"/>
-  <updated>2021-04-10T11:24:30.000Z</updated>
+  <updated>2021-06-06T03:51:37.000Z</updated>
   <id>https://blog.mhuig.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我们从哪里来？</title>
+    <link href="https://blog.mhuig.top/posts/dad4292a.html"/>
+    <id>https://blog.mhuig.top/posts/dad4292a.html</id>
+    <published>2021-06-06T03:51:37.000Z</published>
+    <updated>2021-06-06T03:51:37.000Z</updated>
+    
+    
+    <summary type="html">这里探讨的是一个非常简单的问题，我们是怎么来到这里的？</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://blog.mhuig.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="随笔" scheme="https://blog.mhuig.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="chaos" scheme="https://blog.mhuig.top/tags/chaos/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次仅在IPv4环境下访问IPv6网络的经历</title>
@@ -413,25 +434,6 @@
     
     
     <category term="边缘计算" scheme="https://blog.mhuig.top/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于K均值聚类的网络流量异常检测(pyspark)</title>
-    <link href="https://blog.mhuig.top/posts/7b55143e.html"/>
-    <id>https://blog.mhuig.top/posts/7b55143e.html</id>
-    <published>2020-08-02T10:23:15.000Z</published>
-    <updated>2020-08-02T10:23:15.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;异常检测常用于检测欺诈、网络攻击、服务器及传感设备故障。在这些应用中，我们要能够找出以前从未见过的新型异常，如新欺诈方式、新入侵方法或新服务器故障模式。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="spark" scheme="https://blog.mhuig.top/categories/spark/"/>
-    
-    
-    <category term="spark" scheme="https://blog.mhuig.top/tags/spark/"/>
     
   </entry>
   
