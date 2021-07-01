@@ -681,7 +681,7 @@ th {
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 .cover-wrapper .cover-body .subtitle {
-  font-size: 0.875rem;
+  font-size: 20px;
 }
 .cover-wrapper .cover-body .logo {
   max-height: 120px;
@@ -692,7 +692,7 @@ th {
     font-size: 3rem;
   }
   .cover-wrapper .cover-body .subtitle {
-    font-size: 0.875rem;
+    font-size: 1.05rem;
   }
   .cover-wrapper .cover-body .logo {
     max-height: 150px;
@@ -1970,6 +1970,12 @@ ul.list-v >li>a:hover {
     --color-list-hl: #4dabf5;
     --color-meta: #888;
     --color-link: #888;
+    --ohhho-color-p: var(--color-p) !important;
+    --ohhho-color-text: var(--color-text) !important;
+    --ohhho-color-card: var(--color-card) !important;
+    --ohhho-color-block: var(--color-block) !important;
+    --ohhho-expand-before-background: linear-gradient(180deg, rgba(246,246,246,0), rgba(0,0,0,0.9)) !important;
+    --ohhho-expand-after-background: rgba(0,0,0,0.9) !important;
   }
   :root:not([data-user-color-scheme]) #l_body {
     background-color: #000 !important;
@@ -2078,6 +2084,13 @@ ul.list-v >li>a:hover {
     color: var(--color-text);
     background: #6f6f72;
   }
+  :root:not([data-user-color-scheme]) .ohhho pre {
+    background: var(--color-meta);
+    border: 1px solid var(--color-block);
+  }
+  :root:not([data-user-color-scheme]) .ohhho .vlist .vcard .vcomment-body .vhead {
+    filter: brightness(85%);
+  }
   :root:not([data-user-color-scheme]) .aplayer {
     background: var(--color-site-bg);
   }
@@ -2105,19 +2118,6 @@ ul.list-v >li>a:hover {
   :root:not([data-user-color-scheme]) .aplayer.aplayer-withlist .aplayer-info {
     border-bottom: 1px solid var(--color-block);
   }
-  :root:not([data-user-color-scheme]) .ohhho .vlist .vcard .vcomment-body .text-wrapper .vcomment.expand:before {
-    background: linear-gradient(180deg, rgba(246,246,246,0), rgba(0,0,0,0.9));
-  }
-  :root:not([data-user-color-scheme]) .ohhho .vlist .vcard .vcomment-body .text-wrapper .vcomment.expand:after {
-    background: rgba(0,0,0,0.9);
-  }
-  :root:not([data-user-color-scheme]) .ohhho pre {
-    background: var(--color-meta);
-    border: 1px solid var(--color-block);
-  }
-  :root:not([data-user-color-scheme]) .ohhho .vlist .vcard .vcomment-body .vhead {
-    filter: brightness(85%);
-  }
 }
 [data-user-color-scheme='dark'] {
   --color-site-body: #000;
@@ -2140,6 +2140,12 @@ ul.list-v >li>a:hover {
   --color-list-hl: #4dabf5;
   --color-meta: #888;
   --color-link: #888;
+  --ohhho-color-p: var(--color-p) !important;
+  --ohhho-color-text: var(--color-text) !important;
+  --ohhho-color-card: var(--color-card) !important;
+  --ohhho-color-block: var(--color-block) !important;
+  --ohhho-expand-before-background: linear-gradient(180deg, rgba(246,246,246,0), rgba(0,0,0,0.9)) !important;
+  --ohhho-expand-after-background: rgba(0,0,0,0.9) !important;
 }
 [data-user-color-scheme='dark'] #l_body {
   background-color: #000 !important;
@@ -2253,6 +2259,13 @@ ul.list-v >li>a:hover {
   color: var(--color-text);
   background: #6f6f72;
 }
+[data-user-color-scheme='dark'] .ohhho pre {
+  background: var(--color-meta);
+  border: 1px solid var(--color-block);
+}
+[data-user-color-scheme='dark'] .ohhho .vlist .vcard .vcomment-body .vhead {
+  filter: brightness(85%);
+}
 [data-user-color-scheme='dark'] .aplayer {
   background: var(--color-site-bg);
 }
@@ -2280,23 +2293,13 @@ ul.list-v >li>a:hover {
 [data-user-color-scheme='dark'] .aplayer.aplayer-withlist .aplayer-info {
   border-bottom: 1px solid var(--color-block);
 }
-[data-user-color-scheme='dark'] .ohhho .vlist .vcard .vcomment-body .text-wrapper .vcomment.expand:before {
-  background: linear-gradient(180deg, rgba(246,246,246,0), rgba(0,0,0,0.9));
-}
-[data-user-color-scheme='dark'] .ohhho .vlist .vcard .vcomment-body .text-wrapper .vcomment.expand:after {
-  background: rgba(0,0,0,0.9);
-}
-[data-user-color-scheme='dark'] .ohhho pre {
-  background: var(--color-meta);
-  border: 1px solid var(--color-block);
-}
-[data-user-color-scheme='dark'] .ohhho .vlist .vcard .vcomment-body .vhead {
-  filter: brightness(85%);
-}
 @media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
   .l_header .m_search {
     background: var(--color-site-bg) !important;
   }
+}
+.cover-wrapper .cover-body .subtitle {
+  font-size: 0.875rem;
 }
 
   </style>
@@ -2357,6 +2360,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </noscript>
 
 
+  <!-- Custom Files head begin-->
+  <!-- //////////////////////////////// headimg ///////////////////////////////////////// -->
+
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+
+  <!-- Custom Files head end-->
 </head>
 
   <body>
@@ -2974,6 +2986,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           </ul>
         </li>
 			</ul>
+
+      <!-- Custom Files header begin -->
+      
+      <!-- Custom Files header end -->
 		</div>
 	</div>
   </div>
@@ -3102,10 +3118,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-23T16:19:33+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-01T17:34:00+08:00">
   <a class="notlink">
     <i class="fad fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年6月23日</p>
+    <p>更新于：2021年7月1日</p>
   </a>
 </div>
 
@@ -3119,6 +3135,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
       
     </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
   </div>
 
 
@@ -3126,8 +3145,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
   
+  <!-- Custom Files postEnd begin-->
+   
+  <!-- Custom Files postEnd end-->
 </article>
-
 
 
 
@@ -3137,6 +3158,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <aside id="l_side">
   
 
+  <!-- Custom Files side begin -->
+  
+  <!-- Custom Files side end -->
 </aside>
 
 
@@ -3230,6 +3254,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         </div>
       
     
+    <!-- Custom Files footer begin-->
+    
+    <!-- Custom Files footer end-->
   </footer>
 
 
@@ -3481,10 +3508,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 <!-- required -->
 
-  
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
-
-
 
 <!-- internal -->
 
@@ -3690,41 +3713,6 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script>
-  function load_ohhho() {
-    volantis.js("https://cdn.jsdelivr.net/npm/ohhho@0.0.23/dist/ohhho.min.js", pjax_ohhho)
-  };
-    function pjax_ohhho() {
-      if(!document.querySelectorAll("#ohhho_container")[0]) return;
-      var runningOnBrowser = typeof window !== "undefined";
-      var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
-      if(isBot) return;
-      let pagePlaceholder = pdata.commentPlaceholder || "";
-      let path = pdata.commentPath;
-      if (path.length == 0) {
-        let defaultPath = '';
-        path = defaultPath || decodeURI(window.location.pathname);
-      }
-      new ohhho(Object.assign({"js":"https://cdn.jsdelivr.net/npm/ohhho@0.0.23/dist/ohhho.min.js","serverURL":"https://ohhho.mhuig.top"}, {
-      el: '#ohhho_container',
-      pathname: path,
-      placeholder: pagePlaceholder,
-      }));
-    }
-    $(function () {
-      if(!document.querySelectorAll("#ohhho_container")[0])return;
-      load_ohhho();
-    });
-    volantis.pjax.push(()=>{
-      if (typeof ohhho == "undefined") {
-        load_ohhho();
-      } else {
-        pjax_ohhho();
-      }
-    },"ohhho");
-</script>
-
-
 
 
 
@@ -3900,8 +3888,103 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 
 <!-- more -->
 
-  
+
+      
+        <!-- 
+  pjax重载区域接口：
+  1.  <pjax></pjax> 标签
+  2.  script[data-pjax]
+  3.  .pjax-reload script
+-->
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          
+          "#pjax-container",
+          "#pjax-header-nav-list",
+          "pjax", // <pjax></pjax> 标签
+          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.complete.start();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.error.start();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+      
+    </div>
+  <!-- Custom Files bodyEnd begin-->
   <script>
+/////////////////////////////// OHHHO //////////////////////////////////////
+function load_ohhho() {
+  volantis.js("https://cdn.jsdelivr.net/npm/ohhho@0.0.23/dist/ohhho.min.js", pjax_ohhho)
+};
+function pjax_ohhho() {
+  if(!document.querySelectorAll("#ohhho_container")[0]) return;
+  var runningOnBrowser = typeof window !== "undefined";
+  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+  if(isBot) return;
+  let pagePlaceholder = pdata.commentPlaceholder || "";
+  let path = pdata.commentPath;
+  if (path.length == 0) {
+    let defaultPath = '';
+    path = defaultPath || decodeURI(window.location.pathname);
+  }
+  new ohhho(Object.assign({"js":"https://cdn.jsdelivr.net/npm/ohhho@0.0.23/dist/ohhho.min.js","serverURL":"https://ohhho.mhuig.top"}, {
+  el: '#ohhho_container',
+  pathname: path,
+  placeholder: pagePlaceholder,
+  }));
+}
+load_ohhho();
+volantis.pjax.push(()=>{
+  if (typeof ohhho == "undefined") {
+    load_ohhho();
+  } else {
+    pjax_ohhho();
+  }
+},"ohhho");
 /////////////////////////////// ME //////////////////////////////////////
 if((window.location.host!="mhuig.github.io")&&(window.location.host!="localhost:4000")&&(!(/mhuig\.top$/.test(window.location.host)))){
   window.location.host="blog.mhuig.top:443";
@@ -3922,7 +4005,7 @@ if(navigator.userAgent==window.atob("MTIxMzg=")){
     }
   });
   setInterval(function() {
-    if(window.location.pathname=="/about/")return
+    if(window.location.pathname=="/about/") return
     console.debug(element);
   }, 1000)
   function IsPC() {
@@ -3938,21 +4021,20 @@ if(navigator.userAgent==window.atob("MTIxMzg=")){
     return flag
   };
   if(IsPC()){
-    
-  setInterval(function(){
-  if(window.location.pathname=="/about/")return
-  var startTime = performance.now(), check,diff;
-  for (check = 0; check < 1000; check++){
-    console.log(check);
-    console.clear();
-  }
-  diff = performance.now() - startTime;
-  if (diff > 200){
-    document.write(window.atob("WW91IG5lZWQgdG8gdXNlIE1IdWlHIFNlY3VyaXR5IEJyb3dzZXIgdG8gYWNjZXNzIH4="))
-    setTimeout(function(){alert(window.atob("WW91IG5lZWQgdG8gdXNlIE1IdWlHIFNlY3VyaXR5IEJyb3dzZXIgdG8gYWNjZXNzIH4="))},100);
-    setTimeout(function(){window.location.href="about:blank"},300);
-  }
-  },500);
+    setInterval(function(){
+    if(window.location.pathname=="/about/") return
+    var startTime = performance.now(), check,diff;
+    for (check = 0; check < 1000; check++){
+      console.log(check);
+      console.clear();
+    }
+    diff = performance.now() - startTime;
+    if (diff > 200){
+      document.write(window.atob("WW91IG5lZWQgdG8gdXNlIE1IdWlHIFNlY3VyaXR5IEJyb3dzZXIgdG8gYWNjZXNzIH4="))
+      setTimeout(function(){alert(window.atob("WW91IG5lZWQgdG8gdXNlIE1IdWlHIFNlY3VyaXR5IEJyb3dzZXIgdG8gYWNjZXNzIH4="))},100);
+      setTimeout(function(){window.location.href="about:blank"},300);
+    }
+    },500);
   }
   /*禁用右键 F12*/
   function click(e) {
@@ -4091,22 +4173,22 @@ function buildroot(){
     autostart: true,
   });
   var data = "";
-    emulator.add_listener("serial0-output-char", function(char){
-        if(char !== "\r"){
-            data += char;
-        }
-        if(data.endsWith("(none) login: ")){
+  emulator.add_listener("serial0-output-char", function(char){
+    if(char !== "\r"){
+        data += char;
+    }
+    if(data.endsWith("(none) login: ")){
       /*var el=document.getElementById("loading")
       if(el){
         el.style.display = "none";
       }*/
-            emulator.keyboard_send_text("echo Welcome to MHuiG\\'s Blog!");
+      emulator.keyboard_send_text("echo Welcome to MHuiG\\'s Blog!");
       emulator.keyboard_send_keys([13]);
-        }
-    });
+    }
+  });
   emulator.add_listener("serial0-output-line", function(line){
-        //console.log(line)
-    });
+    //console.log(line)
+  });
   emulator.add_listener("download-progress", function(e){
     show_progress(e);
   });
@@ -4133,32 +4215,32 @@ function TinyCore(){
     show_progress(e);
   });
   var checkExistBoot = setInterval(function() {
-    if($("#screen_container > div > div:nth-child(7) > span:nth-child(1)").html()!="boot: ")return
-    clearInterval(checkExistBoot);
-    emulator.keyboard_send_keys([13]);
-  },
-  100);
+    try {
+      if(document.querySelector("#screen_container > div > div:nth-child(7) > span:nth-child(1)").innerHTML!="boot: ") return
+      clearInterval(checkExistBoot);
+      emulator.keyboard_send_keys([13]);
+    } catch (error) {}
+  },100);
   var checkExistStart = setInterval(function() {
-    if($("#screen_container > div > div:nth-child(5) > span:nth-child(1)").html()!="tc@box:~$ ")return
-    clearInterval(checkExistStart);
-    emulator.keyboard_send_text("echo Welcome to MHuiG\\'s Blog!");
-    emulator.keyboard_send_keys([13]);
-  },
-  100);
+    try {
+      if(document.querySelector("#screen_container > div > div:nth-child(5) > span:nth-child(1)").innerHTML!="tc@box:~$ ")return
+      clearInterval(checkExistStart);
+      emulator.keyboard_send_text("echo Welcome to MHuiG\\'s Blog!");
+      emulator.keyboard_send_keys([13]);
+    } catch (error) {}
+  },100);
 }
 function pjax_screen_container(){
-  if($("#screen_container")){
-    $("#aboutme > ul > li:nth-child(4)").on("click",function(){
+  if(document.querySelector("#screen_container")){
+    volantis.dom.$(document.querySelector("#aboutme > ul > li:nth-child(4) > a")).on("click",function(){
       volantis.js("https://cdn.jsdelivr.net/gh/MHuiG/linux/build/libv86.js",screen_container)
-      $("#aboutme > ul > li:nth-child(1),#aboutme > ul > li:nth-child(2),#aboutme > ul > li:nth-child(3),#aboutme > ul > li:nth-child(5)").on("click",function(){
+      volantis.dom.$(document.querySelector("#aboutme > ul > li:nth-child(1),#aboutme > ul > li:nth-child(2),#aboutme > ul > li:nth-child(3),#aboutme > ul > li:nth-child(5) > a")).on("click",function(){
         try{emulator.destroy()}catch(e){}
       });
     }); 
   }
 }
-$(function () {
-  pjax_screen_container();
-});
+pjax_screen_container();
 function chr_repeat(chr, count){
   var result = "";
   while(count-- > 0){
@@ -4199,76 +4281,23 @@ function show_progress(e){
 }
 volantis.pjax.push(pjax_screen_container)
 /////////////////////////////////////////////////////////////////////////
+////////////////////////// hpp_getblogeractive /////////////////////////////
+function hpp_getblogeractive() {
+  let webinfo = document.querySelector("#l_side > section:nth-child(4) > div > div")
+  if (webinfo&&webinfo.className=="webinfo") {
+    let a=document.createElement('span')
+    a.id="bloggeractivetime"
+    webinfo.append(a)
+    volantis.js("https://api.mhuig.top/hpp/api/getblogeractive")
+  }
+}
+hpp_getblogeractive()
+volantis.pjax.push(hpp_getblogeractive)
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 </script>
-
-
-
-
-
-      
-        <!-- 
-  pjax重载区域接口：
-  1.  <pjax></pjax> 标签
-  2.  script[data-pjax]
-  3.  .pjax-reload script
--->
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-
-
-<script>
-    var pjax;
-    document.addEventListener('DOMContentLoaded', function () {
-      pjax = new Pjax({
-        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
-        selectors: [
-          "title",
-          
-          "#pjax-container",
-          "#pjax-header-nav-list",
-          "pjax", // <pjax></pjax> 标签
-          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
-        ],
-        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000
-      });
-    });
-
-    document.addEventListener('pjax:send', function (e) {
-      //window.stop(); // 相当于点击了浏览器的停止按钮
-
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
-
-      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
-      volantis.pjax.method.send.start();
-    });
-
-    document.addEventListener('pjax:complete', function () {
-      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
-      volantis.pjax.method.complete.start();
-    });
-
-    document.addEventListener('pjax:error', function (e) {
-      // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
-      volantis.pjax.method.error.start();
-      window.location.href = e.triggerElement.href;
-    });
-</script>
-
-      
-    </div>
+  <!-- Custom Files bodyEnd end-->
   </body>
 </html>
