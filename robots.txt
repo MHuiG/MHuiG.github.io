@@ -1,10 +1,6 @@
 User-agent: *
-Allow: /
-Allow: /posts/
-Allow: /about/
-Disallow: /archives/
-Disallow: /categories/
-Disallow: /tags/
-Disallow: /page/
-
-Sitemap: https://blog.mhuig.top/sitemap.xml
+Allow: /sitemap.xml
+Disallow: /archive
+Disallow: /categorie
+Disallow: /tag
+Disallow: /page

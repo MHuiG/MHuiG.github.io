@@ -2361,7 +2361,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <!-- Custom Files head begin-->
-  
+  <meta name="generator" content="Hexo 5.4.0">
+<meta name="description" content="数据统计自最近1000次访问      window.BMAP_PROTOCOL &#x3D; &quot;https&quot;; window.BMap_loadScriptTime &#x3D; (new Date).getTime();    Recent visits Recent visits                                                       Title">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MHuiG">
+<meta property="og:url" content="https://blog.mhuig.top/havefun/site/index.html">
+<meta property="og:site_name" content="MHuiG">
+<meta property="og:description" content="数据统计自最近1000次访问      window.BMAP_PROTOCOL &#x3D; &quot;https&quot;; window.BMap_loadScriptTime &#x3D; (new Date).getTime();    Recent visits Recent visits                                                       Title">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon_256.png">
+<meta property="article:published_time" content="2021-07-02T09:27:11.040Z">
+<meta property="article:modified_time" content="2021-07-02T09:27:11.040Z">
+<meta property="article:author" content="MHuiG">
+<meta property="article:tag" content="Blog IT BigData MHuiG @MHuiG 博客 梦幻岛 Neverland 技术博客">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon_256.png">
+<meta name="twitter:creator" content="@iMHuiG">
+<meta name="twitter:site" content="@iMHuiG">
+<link rel="canonical" href="https://blog.mhuig.top/havefun/site/">
+<!-- <link href="/opensearch.xml" rel="search" title="MHuiG's Blog" type="application/opensearchdescription+xml"> -->
+<meta content="MHuiG's Blog" name="application-name">
+<meta content="MHuiG's Blog" name="apple-mobile-web-app-title">
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
   <!-- Custom Files head end-->
 </head>
 
@@ -3112,10 +3134,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-01T20:51:16+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-02T17:27:11+08:00">
   <a class="notlink">
     <i class="fad fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年7月1日</p>
+    <p>更新于：2021年7月2日</p>
   </a>
 </div>
 
@@ -3243,7 +3265,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         <div class="copyright">
-        <p><a href="https://icp.gov.moe" target="_blank" rel="external nofollow noopener noreferrer">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020012138" target="_blank" rel="external nofollow noopener noreferrer"> 2020012138号</a><br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://mhuig.top/">Copyright © 2018-2021 MHuiG</a></p>
+        <p><a href="https://icp.gov.moe" target="_blank" rel="external nofollow noopener noreferrer">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020012138" target="_blank" rel="external nofollow noopener noreferrer"> 2020012138号</a><br><a target="_blank" rel="noopener" href="https://mhuig.top/">Copyright © 2018-2021 MHuiG</a></p>
 
         </div>
       
@@ -3949,7 +3971,15 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       
     </div>
   <!-- Custom Files bodyEnd begin-->
-  <script>
+  <pjax>
+<script>
+/////////////////////////////// OHHHO //////////////////////////////////////
+
+pdata.commentPath="";
+pdata.commentPlaceholder="";
+</script>
+</pjax>
+<script>
 /////////////////////////////// OHHHO //////////////////////////////////////
 function load_ohhho() {
   volantis.js("https://cdn.jsdelivr.net/npm/ohhho@0.0.23/dist/ohhho.min.js", pjax_ohhho)
@@ -3959,13 +3989,13 @@ function pjax_ohhho() {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if(isBot) return;
-  let pagePlaceholder = pdata.commentPlaceholder || "";
+  let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
   let path = pdata.commentPath;
   if (path.length == 0) {
     let defaultPath = '';
     path = defaultPath || decodeURI(window.location.pathname);
   }
-  new ohhho(Object.assign({"js":"https://cdn.jsdelivr.net/npm/ohhho@0.0.23/dist/ohhho.min.js","serverURL":"https://ohhho.mhuig.top"}, {
+  new ohhho(Object.assign({"js":"https://cdn.jsdelivr.net/npm/ohhho@0.0.23/dist/ohhho.min.js","serverURL":"https://ohhho.mhuig.top","placeholder":"快来评论吧~"}, {
   el: '#ohhho_container',
   pathname: path,
   placeholder: pagePlaceholder,
