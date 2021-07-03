@@ -11,7 +11,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/talk/</loc>
-        <lastmod>2021-07-02T09:27:11.040Z</lastmod>
+        <lastmod>2021-07-03T06:33:22.880Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -20,16 +20,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/time-machine/</loc>
-        <lastmod>2021-07-02T09:27:11.040Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/about/</loc>
-        <lastmod>2021-07-02T09:27:11.036Z</lastmod>
+        <lastmod>2021-07-03T06:33:22.880Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -38,7 +29,16 @@
     
     <url>
         <loc>https://blog.mhuig.top/friends/</loc>
-        <lastmod>2021-07-02T09:27:11.036Z</lastmod>
+        <lastmod>2021-07-03T06:33:22.876Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/about/</loc>
+        <lastmod>2021-07-03T06:33:22.872Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
