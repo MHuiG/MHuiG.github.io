@@ -10,8 +10,8 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/talk/</loc>
-        <lastmod>2021-07-16T13:14:55.839Z</lastmod>
+        <loc>https://blog.mhuig.top/time-machine/</loc>
+        <lastmod>2021-09-05T09:02:32.083Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -19,8 +19,8 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/time-machine/</loc>
-        <lastmod>2021-07-16T13:14:55.839Z</lastmod>
+        <loc>https://blog.mhuig.top/talk/</loc>
+        <lastmod>2021-09-05T09:02:32.079Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -29,25 +29,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/access-analysis/</loc>
-        <lastmod>2021-07-16T13:14:55.835Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/about/</loc>
-        <lastmod>2021-07-16T13:14:55.831Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/friends/</loc>
-        <lastmod>2021-07-16T13:14:55.831Z</lastmod>
+        <lastmod>2021-09-05T09:02:31.915Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -56,7 +38,25 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/Coco/</loc>
-        <lastmod>2021-07-16T13:14:55.831Z</lastmod>
+        <lastmod>2021-09-05T09:02:31.907Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/friends/</loc>
+        <lastmod>2021-09-05T09:02:31.903Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/about/</loc>
+        <lastmod>2021-09-05T09:02:31.883Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
