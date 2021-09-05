@@ -10,17 +10,8 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/time-machine/</loc>
-        <lastmod>2021-09-05T12:44:49.906Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/talk/</loc>
-        <lastmod>2021-09-05T12:44:49.902Z</lastmod>
+        <lastmod>2021-09-05T12:45:56.557Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -28,26 +19,8 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/havefun/access-analysis/</loc>
-        <lastmod>2021-09-05T12:44:49.686Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/havefun/Coco/</loc>
-        <lastmod>2021-09-05T12:44:49.678Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/friends/</loc>
-        <lastmod>2021-09-05T12:44:49.674Z</lastmod>
+        <loc>https://blog.mhuig.top/time-machine/</loc>
+        <lastmod>2021-09-05T12:45:56.557Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -56,7 +29,34 @@
     
     <url>
         <loc>https://blog.mhuig.top/about/</loc>
-        <lastmod>2021-09-05T12:44:49.658Z</lastmod>
+        <lastmod>2021-09-05T12:45:56.545Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/friends/</loc>
+        <lastmod>2021-09-05T12:45:56.545Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/havefun/access-analysis/</loc>
+        <lastmod>2021-09-05T12:45:56.545Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/havefun/Coco/</loc>
+        <lastmod>2021-09-05T12:45:56.545Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
