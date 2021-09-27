@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MHuiG</title>
-  <icon>https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon_256.png</icon>
+  <icon>https://cdn.jsdelivr.net/npm/mhg@0.0.22/favicon/favicon.ico</icon>
   <subtitle>宠辱不惊，看庭前花开花落；去留无意，望天上云卷云舒。</subtitle>
   <link href="https://blog.mhuig.top/atom.xml" rel="self"/>
   
