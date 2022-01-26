@@ -2942,16 +2942,16 @@
   </entry>
   
   <entry>
-    <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
-    <link href="https://blog.mhuig.top/posts/ea7b2ec0.html"/>
-    <id>https://blog.mhuig.top/posts/ea7b2ec0.html</id>
+    <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
+    <link href="https://blog.mhuig.top/posts/d178b062.html"/>
+    <id>https://blog.mhuig.top/posts/d178b062.html</id>
     <published>2019-09-19T03:25:25.000Z</published>
     <updated>2019-09-19T03:25:25.000Z</updated>
     
-    <content type="html"><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss-12138.gif"><p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><span id="more"></span><div id="badge-container-MHuiG-BigData-Archive-4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9" class="hexo-github" style="width: 100%"></div>  <script type="text/javascript">    volantis.js("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/badge.js").then(()=>{      loadStyle("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/style.css");      loadStyle("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/octicons/octicons.css");      new Badge("#badge-container-MHuiG-BigData-Archive-4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9", "MHuiG", "BigData-Archive", "4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9", false);    })  </script><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.6/BigData/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
+    <content type="html"><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss-12138.gif"><p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><span id="more"></span><div id="badge-container-MHuiG-BigData-Archive-4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9" class="hexo-github" style="width: 100%"></div>  <script type="text/javascript">    volantis.js("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/badge.js").then(()=>{      loadStyle("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/style.css");      loadStyle("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/octicons/octicons.css");      new Badge("#badge-container-MHuiG-BigData-Archive-4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9", "MHuiG", "BigData-Archive", "4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9", false);    })  </script><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.6/BigData/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
     
     
-    <summary type="html">&lt;p&gt;大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度&lt;/p&gt;</summary>
     
     
     
@@ -2973,16 +2973,16 @@
   </entry>
   
   <entry>
-    <title>大数据处理技术-MapTask运行机制详解以及Map任务的并行度</title>
-    <link href="https://blog.mhuig.top/posts/d178b062.html"/>
-    <id>https://blog.mhuig.top/posts/d178b062.html</id>
+    <title>大数据处理技术-ReduceTask工作机制以及reduceTask的并行度</title>
+    <link href="https://blog.mhuig.top/posts/ea7b2ec0.html"/>
+    <id>https://blog.mhuig.top/posts/ea7b2ec0.html</id>
     <published>2019-09-19T03:25:25.000Z</published>
     <updated>2019-09-19T03:25:25.000Z</updated>
     
-    <content type="html"><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss-12138.gif"><p>大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度</p><span id="more"></span><div id="badge-container-MHuiG-BigData-Archive-4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9" class="hexo-github" style="width: 100%"></div>  <script type="text/javascript">    volantis.js("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/badge.js").then(()=>{      loadStyle("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/style.css");      loadStyle("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/octicons/octicons.css");      new Badge("#badge-container-MHuiG-BigData-Archive-4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9", "MHuiG", "BigData-Archive", "4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9", false);    })  </script><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.6/BigData/day06MapReduce的运行机制/2.MapTask运行机制详解以及Map任务的并行度.pdf" height="500px"></div>]]></content>
+    <content type="html"><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss-12138.gif"><p>大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度</p><span id="more"></span><div id="badge-container-MHuiG-BigData-Archive-4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9" class="hexo-github" style="width: 100%"></div>  <script type="text/javascript">    volantis.js("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/badge.js").then(()=>{      loadStyle("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/style.css");      loadStyle("https://cdn.jsdelivr.net/npm/mhg@0.0.24/static/github/octicons/octicons.css");      new Badge("#badge-container-MHuiG-BigData-Archive-4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9", "MHuiG", "BigData-Archive", "4bf68d5a9dfa76e95fd97bd641f84806e5e0bcb9", false);    })  </script><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.6/BigData/day06MapReduce的运行机制/3.ReduceTask工作机制以及reduceTask的并行度.pdf" height="500px"></div>]]></content>
     
     
-    <summary type="html">&lt;p&gt;大数据处理技术 PDF MapTask运行机制详解以及Map任务的并行度&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;大数据处理技术 PDF ReduceTask工作机制以及reduceTask的并行度&lt;/p&gt;</summary>
     
     
     
@@ -3998,33 +3998,6 @@
   </entry>
   
   <entry>
-    <title>数据挖掘PDF资料</title>
-    <link href="https://blog.mhuig.top/posts/b59b6a41.html"/>
-    <id>https://blog.mhuig.top/posts/b59b6a41.html</id>
-    <published>2019-09-17T01:02:02.000Z</published>
-    <updated>2019-09-17T01:02:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss-12138.gif"><p>汇总数据挖掘PDF资料</p><span id="more"></span><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div></div>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;汇总数据挖掘PDF资料&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="大数据" scheme="https://blog.mhuig.top/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-    <category term="数据挖掘" scheme="https://blog.mhuig.top/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
-    
-    
-    <category term="大数据" scheme="https://blog.mhuig.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-    <category term="PDF" scheme="https://blog.mhuig.top/tags/pdf/"/>
-    
-    <category term="数据挖掘" scheme="https://blog.mhuig.top/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
-    
-  </entry>
-  
-  <entry>
     <title>数据可视化PDF资料</title>
     <link href="https://blog.mhuig.top/posts/98579906.html"/>
     <id>https://blog.mhuig.top/posts/98579906.html</id>
@@ -4048,6 +4021,33 @@
     <category term="PDF" scheme="https://blog.mhuig.top/tags/pdf/"/>
     
     <category term="数据可视化" scheme="https://blog.mhuig.top/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据挖掘PDF资料</title>
+    <link href="https://blog.mhuig.top/posts/b59b6a41.html"/>
+    <id>https://blog.mhuig.top/posts/b59b6a41.html</id>
+    <published>2019-09-17T01:02:02.000Z</published>
+    <updated>2019-09-17T01:02:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss-12138.gif"><p>汇总数据挖掘PDF资料</p><span id="more"></span><h2 id="数据挖掘概念与特性"><a href="#数据挖掘概念与特性" class="headerlink" title="数据挖掘概念与特性"></a>数据挖掘概念与特性</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/数据挖掘概念与特性.pdf" height="500px"></div></div><h2 id="常用分类算法及原理"><a href="#常用分类算法及原理" class="headerlink" title="常用分类算法及原理"></a>常用分类算法及原理</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/常用分类算法及原理.pdf" height="500px"></div></div><h2 id="常用降维算法及原理"><a href="#常用降维算法及原理" class="headerlink" title="常用降维算法及原理"></a>常用降维算法及原理</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/常用降维算法及原理.pdf" height="500px"></div></div><h2 id="常用聚类算法及原理"><a href="#常用聚类算法及原理" class="headerlink" title="常用聚类算法及原理"></a>常用聚类算法及原理</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/常用聚类算法及原理.pdf" height="500px"></div></div><h2 id="关联分析及常用算法"><a href="#关联分析及常用算法" class="headerlink" title="关联分析及常用算法"></a>关联分析及常用算法</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/关联分析及常用算法.pdf" height="500px"></div></div><h2 id="常用推荐算法及原理"><a href="#常用推荐算法及原理" class="headerlink" title="常用推荐算法及原理"></a>常用推荐算法及原理</h2><div class="story post-story"><div class="pdf" target="https://cdn.jsdelivr.net/npm/imbox@0.0.1/PDF/dtb/常用推荐算法及原理.pdf" height="500px"></div></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;汇总数据挖掘PDF资料&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="大数据" scheme="https://blog.mhuig.top/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    <category term="数据挖掘" scheme="https://blog.mhuig.top/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
+    
+    
+    <category term="大数据" scheme="https://blog.mhuig.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    <category term="PDF" scheme="https://blog.mhuig.top/tags/pdf/"/>
+    
+    <category term="数据挖掘" scheme="https://blog.mhuig.top/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
     
   </entry>
   
