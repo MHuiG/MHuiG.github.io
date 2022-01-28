@@ -51,5 +51,5 @@
     "theme_color": "#87ceeb",
     "background_color": "#87ceeb",
     "display": "standalone",
-    "start_url": "./index.html"
+    "start_url": "/index.html"
 }
