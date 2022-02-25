@@ -3,4 +3,4 @@ Allow: /sitemap.xml
 Disallow: /archive
 Disallow: /categorie
 Disallow: /tag
-Disallow: /page
+Disallow: /page/
