@@ -4,3 +4,15 @@ Disallow: /archives/
 Disallow: /categories/
 Disallow: /tags/
 Disallow: /pagination/
+
+
+Disallow: /NoteBook/
+Disallow: /posts/
+Disallow: /about/
+Disallow: /beer/
+Disallow: /friends/
+Disallow: /rss/
+Disallow: /talk/
+Disallow: /timeline/
+Disallow: /time-machine/
+Disallow: /page/
