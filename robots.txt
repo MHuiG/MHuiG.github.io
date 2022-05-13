@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /sitemap.xml
-Disallow: /archive
-Disallow: /categorie
-Disallow: /tag
-Disallow: /page/
+Disallow: /archives/
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /pagination/
