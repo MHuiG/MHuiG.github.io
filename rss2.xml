@@ -15,8 +15,31 @@
     <atom:link href="https://blog.mhuig.top/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>MHuiG&amp;amp;#39;s Blog (MHuiG的博客) MHuiG&amp;amp;#39;s Neverland（MHuiG的梦幻岛） —— MHuiG(@MHuiG) 随便写写画画的地方 - 技术博客</description>
-    <pubDate>Fri, 16 Sep 2022 02:48:00 GMT</pubDate>
+    <pubDate>Thu, 22 Sep 2022 08:14:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>辛普森悖论 | 你还相信数据吗</title>
+      <link>https://blog.mhuig.top/p/2f345bb/</link>
+      <guid>https://blog.mhuig.top/p/2f345bb/</guid>
+      <pubDate>Thu, 22 Sep 2022 08:14:00 GMT</pubDate>
+      
+      <description>数据是一个有力的武器，它既能被用来澄清现实，也能被用来混淆是非</description>
+      
+      
+      
+      <content:encoded><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss2-12138.gif"><blockquote><p>数据是一个有力的武器，它既能被用来澄清现实，也能被用来混淆是非</p></blockquote><p>你知不知道，数据也会说谎？</p><div class="story post-story"><h2 id="一个栗子"><a href="#一个栗子" class="headerlink" title="一个栗子"></a>一个栗子</h2><p>假设您患有肾结石并去看医生。医生告诉你有两种治疗方法，治疗 A（开放手术 open surgery）和治疗 B（体外冲击波碎石术 ESWL）。</p><p>你问哪种治疗效果更好，医生说：“一项研究发现治疗 A 的成功概率高于治疗 B。”</p><p>你说：“我会接受治疗 A，谢谢！”</p><p>这时医生打断你，“但同样的研究还研究了哪种治疗效果更好，这取决于患者是大肾结石还是小肾结石。”</p><p>你说：“好吧，我有大肾结石还是小肾结石？”</p><p>你说话的时候，医生又打断了你，看起来很害羞，说：“其实没关系。你看，他们发现治疗 B 比治疗 A 成功的概率更高，不管你的肾结石是大还是小。”</p><p>你可能想知道你是否没看错。听起来不可能。但这是真的：在<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1339981/">一项实际研究</a>中，发现治疗 B 比治疗 A 对大肾结石和小肾结石起作用的概率更高，尽管事实上治疗 A 的总体 概率高于治疗 B。这是数字从研究：</p><table><thead><tr><th align="center"></th><th align="center">治疗 A 有帮助</th><th align="center">治疗 B 有帮助</th></tr></thead><tbody><tr><td align="center">大肾结石</td><td align="center"> 69% (55 / 80)</td><td align="center">73% (192 / 263)</td></tr><tr><td align="center"> 小肾结石</td><td align="center"> 87% (234 / 270)</td><td align="center">93% (81 / 87)</td></tr><tr><td align="center"> 所有患者</td><td align="center"> 83% (289 / 350)</td><td align="center">78% (273 / 350)</td></tr></tbody></table><p>表中的第一项显示，80 名大肾结石患者接受了 A 治疗，治疗帮助了其中 55 人，成功率为 69%。这不如治疗 B 好，它帮助了 263 名大肾结石患者中的 192 人，成功率为 73%。以类似的方式，第二行显示治疗 B 比治疗 A 对患有小肾结石的人更有效。</p><p>但是当你把每一列的数字加起来时，你会发现治疗 A 确实比治疗 B 整体效果更好。</p><p>值得花时间检查所有数字是否加起来，并说服自己我没有欺骗你.</p><p>刚刚展示的这种现象被称为辛普森悖论。如果你和包括我在内的大多数人一样，那么辛普森悖论在你第一次见到它时就会令人震惊。因为它违反了我们对世界推理的本能方式。而且，正如我们看到的那样，辛普森悖论不仅是一种稀少或怪异的现象，它经常出现，而且在具有重要决策后果的地方。</p></div><div class="story post-story"><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>我们抽离出符号表达：</p><table><thead><tr><th align="center"></th><th align="center">统计对象 1</th><th align="center"> 统计对象 2</th></tr></thead><tbody><tr><td align="center"> 分项指标 1</td><td align="center">q1/p1</td><td align="center">q2/p2</td></tr><tr><td align="center"> 分项指标 2</td><td align="center">q3/p3</td><td align="center">q4/p4</td></tr><tr><td align="center"> 总计</td><td align="center"> (q1+q3)/(p1+p3)</td><td align="center">(q2+q4)/(p2+p4)</td></tr></tbody></table><p>如果</p><p>$$<br>\frac{q_1}{p_1}&gt;\frac{q_2}{p_2},\frac{q_3}{p_3}&gt;\frac{q_4}{p_4}<br>$$</p><p>那么，推不出</p><p>$$<br>\frac{q_1+q_3}{p_1+p_3}&gt;\frac{q_2+q_4}{p_2+p_4}<br>$$</p><p>以上就是辛普森悖论比较通俗易懂的表达式了。</p></div><div class="story post-story"><h2 id="我们忽略了什么"><a href="#我们忽略了什么" class="headerlink" title="我们忽略了什么"></a>我们忽略了什么</h2><p>从数据生成过程（因果模型）来看.</p><p>事实证明，小肾结石被认为是不严重的病例，治疗 B（体外冲击波碎石术 ESWL）比治疗 A（开放手术 open surgery）更加激进。</p><p>对于小肾结石，医生更有可能推荐保守疗法 A，因为病情不太严重，患者最有可能首先成功恢复。</p><p>对于严重的大肾结石，医生往往选择更激进的疗法 B。即使疗法 B 在这些病例中表现更好，由于是更严重的病例，疗法 B 的总体恢复率低于疗法 A.</p><p>在这个现实世界的例子中，肾结石的大小（病例的严重性）是一个混合变量，它会同时影响自变量（疗法）和因变量（恢复率）.</p><p>$$<br>疗法 = g (病例的严重性)<br>$$</p><p>$$<br>恢复率 = f (疗法，病例的严重性)<br>$$</p><p>为了确定哪种治疗方法确实更好，我们需要通过对两组数据进行分离并比较组内的恢复率而不是按组聚合来控制混合变量。</p><p>$$<br>小肾结石恢复率 = h (疗法)<br>$$</p><p>$$<br>大肾结石恢复率 = i (疗法)<br>$$</p><p>这样看来激进的治疗 B（体外冲击波碎石术 ESWL）效果更好.</p><p>如果有潜在变量（特别是混合变量）存在，牢记：整体数据未必可靠，要通过科学合理的分组来查看具体细致的数据。</p></div><div class="story post-story"><h2 id="启示"><a href="#启示" class="headerlink" title="启示"></a>启示</h2><ul><li>数据从来都不是完全客观的。我们必须对这些数字持怀疑态度.</li><li> 辛普森悖论的出现是因为人们忽略了研究的因果关系，一旦我们理解了数据生成的机制，我们就可以寻找影响结果的其他因素，而图表不会告诉你这些.</li><li> 充分考察事件的潜在影响因素和维度，系数消除分组数据基数差异造成的影响.</li><li> 要求我们具备科学辩证思维，客观看待关联现象。很多时候，我们选择相信直觉，因为我们的直觉往往很准。但是，在信息不全或者信息非对称的情况下，直觉常常是是值得怀疑的。</li></ul></div>]]></content:encoded>
+      
+      
+      <category domain="https://blog.mhuig.top/categories/%E9%9A%8F%E7%AC%94/">随笔</category>
+      
+      
+      <category domain="https://blog.mhuig.top/tags/%E9%9A%8F%E7%AC%94/">随笔</category>
+      
+      
+      <comments>https://blog.mhuig.top/p/2f345bb/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>尝试在博客中添加简易文章推荐功能</title>
@@ -118,6 +141,29 @@
       
       
       <comments>https://blog.mhuig.top/p/6a03238d/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>一组粗略的类比</title>
+      <link>https://blog.mhuig.top/p/6dc844b7/</link>
+      <guid>https://blog.mhuig.top/p/6dc844b7/</guid>
+      <pubDate>Sat, 02 Oct 2021 03:00:00 GMT</pubDate>
+      
+      <description>生物学与深度学习的粗略类比</description>
+      
+      
+      
+      <content:encoded><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss2-12138.gif"><p>这是一个关于生物学与深度学习的粗略类比的笔记，这些类比中的大多数都是非常推测性和探索性的，但我发现它们很有趣并且值得思考.</p><table><thead><tr><th align="center">生物学</th><th align="center">深度学习</th></tr></thead><tbody><tr><td align="center">外界环境</td><td align="center">输入数据</td></tr><tr><td align="center">认知过程</td><td align="center">特征提取</td></tr><tr><td align="center">基因</td><td align="center">神经网络权重结构 (特征)</td></tr><tr><td align="center"> 基因突变</td><td align="center">神经网络权重结构改变</td></tr><tr><td align="center">性状</td><td align="center">神经网络功能</td></tr><tr><td align="center">细胞</td><td align="center">神经元</td></tr><tr><td align="center">组织 (细胞分化)</td><td align="center"> 神经网络在后面的层</td></tr><tr><td align="center">器官</td><td align="center">神经网络专门处理特定任务的组件</td></tr><tr><td align="center">个体</td><td align="center">模型</td></tr><tr><td align="center">繁殖</td><td align="center">迭代</td></tr><tr><td align="center">反馈调节</td><td align="center">优化器 (eg: 梯度下降) 更新网络的机制</td></tr><tr><td align="center">自然选择</td><td align="center">损失函数定向衡量性能</td></tr><tr><td align="center">进化</td><td align="center">学习</td></tr><tr><td align="center">进化 = 基因突变 + 自然选择 (定向)</td><td align="center"> 学习 = 神经网络权重结构改变 + 损失函数定向衡量性能</td></tr><tr><td align="center">基因决定性状</td><td align="center">神经网络权重结构可以决定神经网络功能</td></tr><tr><td align="center">个体繁殖</td><td align="center">模型迭代</td></tr></tbody></table>]]></content:encoded>
+      
+      
+      <category domain="https://blog.mhuig.top/categories/%E9%9A%8F%E7%AC%94/">随笔</category>
+      
+      
+      <category domain="https://blog.mhuig.top/tags/%E9%9A%8F%E7%AC%94/">随笔</category>
+      
+      
+      <comments>https://blog.mhuig.top/p/6dc844b7/#disqus_thread</comments>
       
     </item>
     
