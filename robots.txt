@@ -4,6 +4,7 @@ Disallow: /archives/
 Disallow: /categories/
 Disallow: /tags/
 Disallow: /pagination/
+Disallow: /travellings/
 
 
 Disallow: /NoteBook/
