@@ -10,17 +10,8 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/pages/talk/</loc>
-        <lastmod>2023-12-04T03:16:08.141Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/pages/time-machine/</loc>
-        <lastmod>2023-12-04T03:16:08.141Z</lastmod>
+        <lastmod>2023-12-04T03:40:40.115Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -29,7 +20,16 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/rss/</loc>
-        <lastmod>2023-12-04T03:16:08.137Z</lastmod>
+        <lastmod>2023-12-04T03:40:40.111Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/pages/talk/</loc>
+        <lastmod>2023-12-04T03:40:40.111Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -38,7 +38,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/friends/</loc>
-        <lastmod>2023-12-04T03:16:08.133Z</lastmod>
+        <lastmod>2023-12-04T03:40:40.107Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -47,7 +47,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/beer/</loc>
-        <lastmod>2023-12-04T03:16:08.129Z</lastmod>
+        <lastmod>2023-12-04T03:40:40.103Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -56,7 +56,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/about/</loc>
-        <lastmod>2023-12-04T03:16:08.125Z</lastmod>
+        <lastmod>2023-12-04T03:40:40.099Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -65,7 +65,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/</loc>
-        <lastmod>2023-12-04T03:16:08.093Z</lastmod>
+        <lastmod>2023-12-04T03:40:40.067Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -74,7 +74,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/access-analysis/</loc>
-        <lastmod>2023-12-04T03:16:07.341Z</lastmod>
+        <lastmod>2023-12-04T03:40:39.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -83,7 +83,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/Coco/</loc>
-        <lastmod>2023-12-04T03:16:07.337Z</lastmod>
+        <lastmod>2023-12-04T03:40:39.303Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
