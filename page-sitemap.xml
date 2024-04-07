@@ -10,8 +10,8 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/pages/talk/</loc>
-        <lastmod>2024-03-19T10:17:03.587Z</lastmod>
+        <loc>https://blog.mhuig.top/pages/time-machine/</loc>
+        <lastmod>2024-04-07T10:15:14.630Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -19,8 +19,8 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/pages/time-machine/</loc>
-        <lastmod>2024-03-19T10:17:03.587Z</lastmod>
+        <loc>https://blog.mhuig.top/pages/talk/</loc>
+        <lastmod>2024-04-07T10:15:14.626Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -29,7 +29,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/rss/</loc>
-        <lastmod>2024-03-19T10:17:03.583Z</lastmod>
+        <lastmod>2024-04-07T10:15:14.622Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -38,16 +38,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/friends/</loc>
-        <lastmod>2024-03-19T10:17:03.579Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/pages/beer/</loc>
-        <lastmod>2024-03-19T10:17:03.575Z</lastmod>
+        <lastmod>2024-04-07T10:15:14.618Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -56,7 +47,16 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/about/</loc>
-        <lastmod>2024-03-19T10:17:03.571Z</lastmod>
+        <lastmod>2024-04-07T10:15:14.614Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/pages/beer/</loc>
+        <lastmod>2024-04-07T10:15:14.614Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -65,7 +65,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/</loc>
-        <lastmod>2024-03-19T10:17:03.539Z</lastmod>
+        <lastmod>2024-04-07T10:15:14.578Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -74,7 +74,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/access-analysis/</loc>
-        <lastmod>2024-03-19T10:17:02.715Z</lastmod>
+        <lastmod>2024-04-07T10:15:13.730Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -83,7 +83,16 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/Coco/</loc>
-        <lastmod>2024-03-19T10:17:02.707Z</lastmod>
+        <lastmod>2024-04-07T10:15:13.726Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/datacom/29</loc>
+        <lastmod>2024-04-07T03:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
