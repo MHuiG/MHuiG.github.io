@@ -60,3 +60,4 @@ Disallow: /talk/
 Disallow: /timeline/
 Disallow: /time-machine/
 Disallow: /page/
+Disallow: /Test/

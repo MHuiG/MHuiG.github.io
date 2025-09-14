@@ -26,18 +26,18 @@
       
         
         
-      <description>&lt;p&gt;&lt;svg style=&quot;width: 50px; margin: 0 auto; display: block;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot;&gt;&lt;defs&gt;&lt;style&gt;.fa-secon</description>
+      <description>&lt;p&gt;&lt;svg style=&quot;width: 50px; margin: 0 auto; display: block;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 384 512&quot;&gt;&lt;path d=&quot;M0 64C0 46.3 </description>
         
       
       
       
-      <content:encoded><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss2-12138.gif"><p><svg style="width: 50px; margin: 0 auto; display: block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M32 160v288a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32V160zm288 84a12 12 0 0 1-12 12H204a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h104a12 12 0 0 1 12 12z" class="fa-secondary"></path><path d="M512 64v48a16 16 0 0 1-16 16H16a16 16 0 0 1-16-16V64a32 32 0 0 1 32-32h448a32 32 0 0 1 32 32z" class="fa-primary"></path></svg></p><p><span class="p logo center large">Archive</span></p><br><h1 hidden="">Archive</h1><br><span class="btn solid large center"><a class="button" href="/notes/Archive/" title="开始阅读"><i class="fa-duotone fa-box-archive"></i>开始阅读</a></span><br>]]></content:encoded>
+      <content:encoded><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss2-12138.gif"><p><svg style="width: 50px; margin: 0 auto; display: block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M0 64C0 46.3 14.3 32 32 32l320 0c12.4 0 23.7 7.2 29 18.4s3.6 24.5-4.4 34.1L100.3 416 352 416c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 480c-12.4 0-23.7-7.2-29-18.4s-3.6-24.5 4.4-34.1L283.7 96 32 96C14.3 96 0 81.7 0 64z"></path></svg></p><p><span class="p logo center large">Zeta Archive</span></p><br><h1 hidden="">Zeta Archive</h1><br><span class="btn solid large center"><a class="button" href="/notes/Zeta/" title="开始阅读"><i class="fa-duotone fa-square-z"></i>开始阅读</a></span><br>]]></content:encoded>
       
       
-      <category domain="https://blog.mhuig.top/categories/Archive/">Archive</category>
+      <category domain="https://blog.mhuig.top/categories/Zeta/">Zeta</category>
       
       
-      <category domain="https://blog.mhuig.top/tags/Archive/">Archive</category>
+      <category domain="https://blog.mhuig.top/tags/Zeta/">Zeta</category>
       
       
     </item>
