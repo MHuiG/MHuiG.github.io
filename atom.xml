@@ -6,7 +6,7 @@
   <link href="https://blog.mhuig.top/atom.xml" rel="self"/>
   
   <link href="https://blog.mhuig.top/"/>
-  <updated>2023-12-03T06:48:00.000Z</updated>
+  <updated>2025-09-14T06:50:00.000Z</updated>
   <id>https://blog.mhuig.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://blog.mhuig.top/p/zeta-archive/"/>
+    <id>https://blog.mhuig.top/p/zeta-archive/</id>
+    <published>2025-09-14T06:59:00.000Z</published>
+    <updated>2025-09-14T06:50:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-atom-12138.gif"><p><svg style="width: 50px; margin: 0 auto; display: block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M32 160v288a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32V160zm288 84a12 12 0 0 1-12 12H204a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h104a12 12 0 0 1 12 12z" class="fa-secondary"></path><path d="M512 64v48a16 16 0 0 1-16 16H16a16 16 0 0 1-16-16V64a32 32 0 0 1 32-32h448a32 32 0 0 1 32 32z" class="fa-primary"></path></svg></p><p><span class="p logo center large">Archive</span></p><br><h1 hidden="">Archive</h1><br><span class="btn solid large center"><a class="button" href="/notes/Archive/" title="开始阅读"><i class="fa-duotone fa-box-archive"></i>开始阅读</a></span><br>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;svg style=&quot;width: 50px; margin: 0 auto; display: block;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot;&gt;&lt;defs&gt;&lt;style&gt;.fa-secon</summary>
+      
+    
+    
+    
+    <category term="Archive" scheme="https://blog.mhuig.top/categories/Archive/"/>
+    
+    
+    <category term="Archive" scheme="https://blog.mhuig.top/tags/Archive/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
