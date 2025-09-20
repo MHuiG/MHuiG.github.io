@@ -118,3 +118,5 @@ Disallow: /time-machine/
 Disallow: /page/
 Disallow: /Test/
 Disallow: /test/
+Disallow: /*.pdf$
+Disallow: /*.md$
