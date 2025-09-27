@@ -11,7 +11,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/time-machine/</loc>
-        <lastmod>2025-09-27T07:00:39.126Z</lastmod>
+        <lastmod>2025-09-27T07:34:24.714Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -20,7 +20,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/talk/</loc>
-        <lastmod>2025-09-27T07:00:39.122Z</lastmod>
+        <lastmod>2025-09-27T07:34:24.711Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -29,7 +29,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/rss/</loc>
-        <lastmod>2025-09-27T07:00:39.119Z</lastmod>
+        <lastmod>2025-09-27T07:34:24.708Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -38,7 +38,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/friends/</loc>
-        <lastmod>2025-09-27T07:00:39.116Z</lastmod>
+        <lastmod>2025-09-27T07:34:24.705Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -47,7 +47,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/beer/</loc>
-        <lastmod>2025-09-27T07:00:39.114Z</lastmod>
+        <lastmod>2025-09-27T07:34:24.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -56,7 +56,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/about/</loc>
-        <lastmod>2025-09-27T07:00:39.111Z</lastmod>
+        <lastmod>2025-09-27T07:34:24.700Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -65,7 +65,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/</loc>
-        <lastmod>2025-09-27T07:00:39.081Z</lastmod>
+        <lastmod>2025-09-27T07:34:24.671Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -74,7 +74,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/access-analysis/</loc>
-        <lastmod>2025-09-27T07:00:38.224Z</lastmod>
+        <lastmod>2025-09-27T07:34:23.852Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -83,7 +83,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/Coco/</loc>
-        <lastmod>2025-09-27T07:00:38.216Z</lastmod>
+        <lastmod>2025-09-27T07:34:23.844Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -568,7 +568,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/wiki/CoPoKo/qa</loc>
+        <loc>https://blog.mhuig.top/wiki/CoPoKo/tree-hollow</loc>
         <lastmod>2022-09-03T01:42:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -577,7 +577,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/wiki/CoPoKo/tree-hollow</loc>
+        <loc>https://blog.mhuig.top/wiki/CoPoKo/qa</loc>
         <lastmod>2022-09-03T01:42:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -910,7 +910,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/OS/introduction</loc>
+        <loc>https://blog.mhuig.top/notes/OS/process</loc>
         <lastmod>2022-05-12T09:14:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -919,7 +919,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/OS/process</loc>
+        <loc>https://blog.mhuig.top/notes/OS/introduction</loc>
         <lastmod>2022-05-12T09:14:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -1162,7 +1162,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Hadoop/mapreduce</loc>
+        <loc>https://blog.mhuig.top/notes/Hadoop/mapreduce-mechanism</loc>
         <lastmod>2022-05-11T12:46:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -1171,7 +1171,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Hadoop/mapreduce-mechanism</loc>
+        <loc>https://blog.mhuig.top/notes/Hadoop/mapreduce</loc>
         <lastmod>2022-05-11T12:46:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
