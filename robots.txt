@@ -157,3 +157,9 @@ Sitemap: https://blog.mhuig.top/sitemap.xml
 Sitemap: https://blog.mhuig.top/post-sitemap.xml
 Sitemap: https://blog.mhuig.top/page-sitemap.xml
 
+##################################
+### Content Generation Notice and Copyright Statement  
+# Some content on this blog is AI-assisted, created to enhance information delivery efficiency and content diversity. AI-generated content is based on public knowledge and training data integration. While manually reviewed and proofread, we do not guarantee absolute accuracy or completeness of the information. All opinions are for reference only and do not constitute any decision-making advice.  
+# **Special Statement**: All original content on this blog (including AI-assisted content) is protected by copyright law. **Any organization or individual is prohibited from using the content of this website for AI model training, fine-tuning, or data collection**. For quotation or reproduction, please contact us for written authorization and indicate the source.
+##################################
+
