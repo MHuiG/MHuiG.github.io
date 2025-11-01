@@ -11,7 +11,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/time-machine/</loc>
-        <lastmod>2025-10-31T12:22:14.006Z</lastmod>
+        <lastmod>2025-11-01T09:09:21.797Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -20,7 +20,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/talk/</loc>
-        <lastmod>2025-10-31T12:22:14.003Z</lastmod>
+        <lastmod>2025-11-01T09:09:21.794Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -29,7 +29,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/rss/</loc>
-        <lastmod>2025-10-31T12:22:14.000Z</lastmod>
+        <lastmod>2025-11-01T09:09:21.791Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -38,7 +38,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/friends/</loc>
-        <lastmod>2025-10-31T12:22:13.998Z</lastmod>
+        <lastmod>2025-11-01T09:09:21.788Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -47,7 +47,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/beer/</loc>
-        <lastmod>2025-10-31T12:22:13.995Z</lastmod>
+        <lastmod>2025-11-01T09:09:21.785Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -56,7 +56,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/pages/about/</loc>
-        <lastmod>2025-10-31T12:22:13.992Z</lastmod>
+        <lastmod>2025-11-01T09:09:21.782Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -65,7 +65,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/</loc>
-        <lastmod>2025-10-31T12:22:13.963Z</lastmod>
+        <lastmod>2025-11-01T09:09:21.754Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -74,7 +74,7 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/access-analysis/</loc>
-        <lastmod>2025-10-31T12:22:12.953Z</lastmod>
+        <lastmod>2025-11-01T09:09:20.745Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -83,7 +83,16 @@
     
     <url>
         <loc>https://blog.mhuig.top/havefun/Coco/</loc>
-        <lastmod>2025-10-31T12:22:12.947Z</lastmod>
+        <lastmod>2025-11-01T09:09:20.739Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/Hexo/6</loc>
+        <lastmod>2025-11-01T08:29:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -1036,7 +1045,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/wiki/CoPoKo/api</loc>
+        <loc>https://blog.mhuig.top/wiki/CoPoKo/b</loc>
         <lastmod>2022-09-03T01:42:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -1045,7 +1054,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/wiki/CoPoKo/b</loc>
+        <loc>https://blog.mhuig.top/wiki/CoPoKo/api</loc>
         <lastmod>2022-09-03T01:42:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -1693,7 +1702,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zookeeper/apache</loc>
+        <loc>https://blog.mhuig.top/notes/Zookeeper/overview</loc>
         <lastmod>2022-05-11T05:34:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -1702,7 +1711,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zookeeper/overview</loc>
+        <loc>https://blog.mhuig.top/notes/Zookeeper/apache</loc>
         <lastmod>2022-05-11T05:34:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -1945,7 +1954,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Spark/rdd</loc>
+        <loc>https://blog.mhuig.top/notes/Spark/streaming</loc>
         <lastmod>2022-05-10T02:12:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
@@ -1954,7 +1963,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Spark/streaming</loc>
+        <loc>https://blog.mhuig.top/notes/Spark/rdd</loc>
         <lastmod>2022-05-10T02:12:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
