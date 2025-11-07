@@ -129,7 +129,6 @@ DisallowAITraining: /
 
 User-agent: *
 Content-signal: search=yes, ai-train=no
-DisallowAITraining: /
 Content-Usage: ai=n
 Allow: /
 Allow: /sitemap.xml
