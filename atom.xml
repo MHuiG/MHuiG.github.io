@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>MHuiG</title>
+  <title>Magicland</title>
   <icon>https://blog.mhuig.top/favicon.ico</icon>
   <subtitle>宠辱不惊，看庭前花开花落；去留无意，望天上云卷云舒。</subtitle>
   <link href="https://blog.mhuig.top/atom.xml" rel="self"/>
@@ -1670,9 +1670,9 @@
     <category term="反编译" scheme="https://blog.mhuig.top/categories/Python/%E5%8F%8D%E7%BC%96%E8%AF%91/"/>
     
     
-    <category term="反编译" scheme="https://blog.mhuig.top/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/"/>
-    
     <category term="Python" scheme="https://blog.mhuig.top/tags/Python/"/>
+    
+    <category term="反编译" scheme="https://blog.mhuig.top/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/"/>
     
   </entry>
   

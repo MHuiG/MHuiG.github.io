@@ -3,18 +3,18 @@
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>MHuiG</title>
+    <title>Magicland</title>
     <link>https://blog.mhuig.top/</link>
     
     <image>
       <url>https://blog.mhuig.top/favicon.ico</url>
-      <title>MHuiG</title>
+      <title>Magicland</title>
       <link>https://blog.mhuig.top/</link>
     </image>
     
     <atom:link href="https://blog.mhuig.top/rss2.xml" rel="self" type="application/rss+xml"/>
     
-    <description>MHuiG&amp;amp;#39;s Blog (MHuiG的博客) MHuiG&amp;amp;#39;s Neverland（MHuiG的梦幻岛） —— MHuiG(@MHuiG) 随便写写画画的地方 - 技术博客</description>
+    <description>MHuiG Blog (MHuiG的博客) Magicland（MHuiG的魔法世界） —— MHuiG(@MHuiG) 随便写写画画的地方 - Magic Island</description>
     <pubDate>Sun, 14 Sep 2025 06:50:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
@@ -1763,9 +1763,9 @@
       <category domain="https://blog.mhuig.top/categories/Python/%E5%8F%8D%E7%BC%96%E8%AF%91/">反编译</category>
       
       
-      <category domain="https://blog.mhuig.top/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/">反编译</category>
-      
       <category domain="https://blog.mhuig.top/tags/Python/">Python</category>
+      
+      <category domain="https://blog.mhuig.top/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/">反编译</category>
       
       
       <comments>https://blog.mhuig.top/p/14fa5bba/#disqus_thread</comments>
