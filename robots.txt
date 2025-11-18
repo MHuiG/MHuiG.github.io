@@ -23,8 +23,8 @@
 # RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT
 # AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
 
-User-agent: baidu
-crawl-delay: 1
+# User-agent: baidu
+# crawl-delay: 1
 
 User-agent: AddSearchBot
 User-agent: AI2Bot
@@ -135,11 +135,11 @@ User-agent: YandexAdditional
 User-agent: YandexAdditionalBot
 User-agent: YouBot
 Disallow: /
-DisallowAITraining: /
+# DisallowAITraining: /
 
 User-agent: *
-Content-signal: search=yes, ai-train=no
-Content-Usage: ai=n
+# Content-signal: search=yes, ai-train=no
+# Content-Usage: ai=n
 Allow: /
 Allow: /sitemap.xml
 
