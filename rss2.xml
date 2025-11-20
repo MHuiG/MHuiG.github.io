@@ -24,7 +24,7 @@
       <guid>https://blog.mhuig.top/p/zeta-archive/</guid>
       <pubDate>Sun, 14 Sep 2025 06:59:00 GMT</pubDate>
       
-      <description>黎曼Zeta函数是数论核心函数，定义为$&#92;zeta(s)=&#92;sum_{n=1}^&#92;infty n^{-s}$（$&#92;text{Re}(s)&gt;1$），通过解析延拓覆盖全复平面（除$s=1$极点）。其非平凡零点位于临界带$0&lt;&#92;text{Re}(s)&lt;1$，黎曼猜想推测均在临界线$&#92;text{Re}(s)=&#92;frac{1}{2}$上。该函数通过欧拉乘积公式$&#92;zeta(s)=&#92;prod_p(1-p^{-s})^{-1}$连接素数分布，零点位置直接影响素数定理误差项，如猜想成立可将误差优化为$O(&#92;sqrt{x}&#92;log x)$。历史上经黎曼-西格尔公式计算超千亿零点均符合猜想，但严格证明仍是数学界重大难题。</description>
+      <description>黎曼Zeta函数是解析数论核心工具，通过级数展开式定义于复平面，经解析延拓覆盖全平面，非平凡零点位于实部0到1的临界带内。函数具对称性，其整函数变换形式满足自变量s与1-s对应值相等，与素数分布紧密关联。Riemann猜想提出所有非平凡零点实部均为1/2。</description>
       
       
       
@@ -757,9 +757,9 @@
       <title>Mac Code Test</title>
       <link>https://blog.mhuig.top/p/91953e39/</link>
       <guid>https://blog.mhuig.top/p/91953e39/</guid>
-      <pubDate>Thu, 30 Apr 2020 06:06:43 GMT</pubDate>
+      <pubDate>Thu, 30 Apr 2020 06:06:00 GMT</pubDate>
       
-      <description>code block fullscreen test</description>
+      <description>代码块全屏功能通过监听用户点击事件触发样式切换，利用JavaScript动态修改DOM元素尺寸与层级，配合CSS过渡效果实现平滑显示。需处理滚动条适配、背景遮罩及快捷键操作，常见于在线代码编辑器与技术文档平台，提升代码阅读与编辑体验。</description>
       
       
       
@@ -780,13 +780,13 @@
       <title>图片墙</title>
       <link>https://blog.mhuig.top/p/e9fadccb/</link>
       <guid>https://blog.mhuig.top/p/e9fadccb/</guid>
-      <pubDate>Tue, 28 Apr 2020 04:05:43 GMT</pubDate>
+      <pubDate>Tue, 28 Apr 2020 04:05:00 GMT</pubDate>
       
-      <description>流量警告&lt;br&gt;Flow warning</description>
+      <description>图片墙通过网格布局、动态加载与响应式设计，整合多尺寸图像实现视觉叙事。采用瀑布流或 masonry 布局优化空间利用，支持点击放大、分类筛选及懒加载功能，广泛应用于摄影作品集、社交媒体相册及电商商品展示，平衡美学呈现与用户交互体验。</description>
       
       
       
-      <content:encoded><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss2-12138.gif"><style>* { margin: 0; padding: 0;}.list { width: 100%; margin: 0 auto; overflow: hidden; zoom: 1;}.list .ul { float: left; width: calc((100% - 100px)/4); margin: 0 10px;}.list .li { margin-bottom: 20px;}.list img { width: 100%; border-radius: 5px; vertical-align: top;}</style><div class="list"></div><script>function URL(d){  d+=new Date().getTime()  var s = "https://picsum.photos/seed/"+d+"/200/300"  return s}var i=0;function WriteHtml(){document.getElementsByClassName('list')[0].innerHTML+=`<div class="ul"><div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div></div><div class="ul"><div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div></div><div class="ul"><div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div></div><div class="ul"><div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div></div>`}WriteHtml();WriteHtml();WriteHtml();WriteHtml();function getScrollTop() {var scrollPos;if (window.pageYOffset) {scrollPos = window.pageYOffset;} else if (document.compatMode && document.compatMode != 'BackCompat') {scrollPos = document.documentElement.scrollTop;} else if (document.body) {scrollPos = document.body.scrollTop;}return scrollPos;   }function WriteHtmlListener(){　　var scrollTop = getScrollTop();　　var scrollHeight = document.documentElement.scrollHeight　　var windowHeight = window.innerHeight;　　if(scrollTop + windowHeight > scrollHeight - 2000){        WriteHtml()　　}}window.addEventListener("scroll",WriteHtmlListener,false)volantis.EventListener.list.push(new volantisEventListener("scroll",WriteHtmlListener,window))// $(window).scroll(function(){// 　　var scrollTop = $(this).scrollTop();// 　　var scrollHeight = $(document).height();// 　　var windowHeight = $(this).height();// 　　if(scrollTop + windowHeight > scrollHeight - 2000){//         WriteHtml()// 　　}// });</script>]]></content:encoded>
+      <content:encoded><![CDATA[<img style="display: none;" no-lazy src="https://api.mhuig.top/pixel-blog-rss2-12138.gif"><p>流量警告<br>Flow warning</p><span id="more"></span><style>* { margin: 0; padding: 0;}.list { width: 100%; margin: 0 auto; overflow: hidden; zoom: 1;}.list .ul { float: left; width: calc((100% - 100px)/4); margin: 0 10px;}.list .li { margin-bottom: 20px;}.list img { width: 100%; border-radius: 5px; vertical-align: top;}</style><div class="list"></div><script>function URL(d){  d+=new Date().getTime()  var s = "https://picsum.photos/seed/"+d+"/200/300"  return s}var i=0;function WriteHtml(){document.getElementsByClassName('list')[0].innerHTML+=`<div class="ul"><div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div></div><div class="ul"><div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div></div><div class="ul"><div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div></div><div class="ul"><div class="li"><img no-lazy src="`+URL(i++)+`" alt=""></div></div>`}WriteHtml();WriteHtml();WriteHtml();WriteHtml();function getScrollTop() {var scrollPos;if (window.pageYOffset) {scrollPos = window.pageYOffset;} else if (document.compatMode && document.compatMode != 'BackCompat') {scrollPos = document.documentElement.scrollTop;} else if (document.body) {scrollPos = document.body.scrollTop;}return scrollPos;   }function WriteHtmlListener(){　　var scrollTop = getScrollTop();　　var scrollHeight = document.documentElement.scrollHeight　　var windowHeight = window.innerHeight;　　if(scrollTop + windowHeight > scrollHeight - 2000){        WriteHtml()　　}}window.addEventListener("scroll",WriteHtmlListener,false)volantis.EventListener.list.push(new volantisEventListener("scroll",WriteHtmlListener,window))// $(window).scroll(function(){// 　　var scrollTop = $(this).scrollTop();// 　　var scrollHeight = $(document).height();// 　　var windowHeight = $(this).height();// 　　if(scrollTop + windowHeight > scrollHeight - 2000){//         WriteHtml()// 　　}// });</script>]]></content:encoded>
       
       
       <category domain="https://blog.mhuig.top/categories/%E5%AE%9E%E9%AA%8C%E6%80%A7/">实验性</category>
