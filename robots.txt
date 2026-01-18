@@ -148,6 +148,7 @@ Disallow: /*.md$
 Disallow: /*keyword=*
 Disallow: /*s=*
 Disallow: /*u=*
+Disallow: /*v=*
 
 
 Sitemap: https://blog.mhuig.top/sitemap.xml
