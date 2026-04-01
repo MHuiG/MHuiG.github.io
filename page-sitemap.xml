@@ -10,6 +10,33 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/person/6</loc>
+        <lastmod>2026-04-01T05:10:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/person/5</loc>
+        <lastmod>2026-04-01T03:10:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/person/4</loc>
+        <lastmod>2026-04-01T01:10:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/person/3</loc>
         <lastmod>2026-03-31T09:10:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -712,15 +739,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/51/ultrasonic-ranging</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/Azkaban/deploy</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -739,7 +757,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/CentOS/anaconda3</loc>
+        <loc>https://blog.mhuig.top/notes/CentOS/centosx3</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -748,7 +766,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/CentOS/centosx3</loc>
+        <loc>https://blog.mhuig.top/notes/CentOS/anaconda3</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -775,6 +793,15 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/51/ultrasonic-ranging</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/CentOS/frp</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -793,15 +820,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/CentOS/kodexplorer</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/CentOS/jupyter</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -811,7 +829,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/CentOS/network-error</loc>
+        <loc>https://blog.mhuig.top/notes/CentOS/kodexplorer</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -901,7 +919,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Cryptography/BinaryConversion</loc>
+        <loc>https://blog.mhuig.top/notes/Cryptography/Base</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -910,7 +928,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Cryptography/Base</loc>
+        <loc>https://blog.mhuig.top/notes/Cryptography/BinaryConversion</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -991,7 +1009,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Django/mysql</loc>
+        <loc>https://blog.mhuig.top/notes/CentOS/network-error</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1000,7 +1018,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Django/pymysql</loc>
+        <loc>https://blog.mhuig.top/notes/Django/mysql</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1027,6 +1045,15 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/Django/pymysql</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/Django/urlpatterns</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1037,6 +1064,15 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/Echarts/Overview</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/Flink/operator</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1063,15 +1099,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Flink/operator</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/Flink/socket</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1090,15 +1117,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Flink/window</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/Flume/avro</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1108,7 +1126,16 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Flume/balancer</loc>
+        <loc>https://blog.mhuig.top/notes/Flume/failover</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/Flink/window</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1118,15 +1145,6 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/Flume/deploy</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/notes/Flume/failover</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1207,6 +1225,15 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/Flume/balancer</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/Hadoop/hdfs-shell</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1270,15 +1297,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Hadoop/stand-alone</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/Hadoop/wordcount</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1306,6 +1324,15 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/Hadoop/stand-alone</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/Hexo/2</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1324,16 +1351,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Hexo/4</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/notes/Hexo/5</loc>
+        <loc>https://blog.mhuig.top/notes/Hexo/7</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1351,7 +1369,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Hexo/7</loc>
+        <loc>https://blog.mhuig.top/notes/Hexo/5</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1396,7 +1414,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Kafka/manager</loc>
+        <loc>https://blog.mhuig.top/notes/Kafka/overview</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1405,7 +1423,16 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Kafka/overview</loc>
+        <loc>https://blog.mhuig.top/notes/Hexo/4</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/Kafka/manager</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1504,15 +1531,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/OS/introduction</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/OS/process</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1594,7 +1612,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Spark/streaming</loc>
+        <loc>https://blog.mhuig.top/notes/Spark/rdd</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1612,7 +1630,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Spark/rdd</loc>
+        <loc>https://blog.mhuig.top/notes/Spark/streaming</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1630,6 +1648,15 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/Sqoop/uses</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/Ubuntu/20.04</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1639,7 +1666,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Sqoop/uses</loc>
+        <loc>https://blog.mhuig.top/notes/OS/introduction</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1666,7 +1693,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Windows/kali</loc>
+        <loc>https://blog.mhuig.top/notes/Windows/netcat</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1675,7 +1702,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Windows/netcat</loc>
+        <loc>https://blog.mhuig.top/notes/Windows/kali</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1747,15 +1774,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/16</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/Zeta/17</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1765,7 +1783,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/18</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/16</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1774,7 +1792,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/19</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/18</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1801,7 +1819,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/21</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/19</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1945,7 +1963,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/37</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/21</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -1954,7 +1972,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/38</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/37</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2053,24 +2071,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/48</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/49</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/Zeta/5</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2107,6 +2107,24 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/Zeta/48</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/Zeta/49</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/Zeta/53</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2134,16 +2152,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/56</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/57</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/38</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2179,7 +2188,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/60</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/57</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2206,7 +2215,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/63</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/60</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2224,15 +2233,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/65</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/Zeta/66</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2242,7 +2242,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/67</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/65</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2251,7 +2251,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/68</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/63</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2278,7 +2278,43 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/Zeta/68</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/Zeta/70</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/Zeta/67</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/Zeta/56</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/Zeta/71</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2297,15 +2333,6 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/Zeta/73</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/71</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2341,15 +2368,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/79</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/Zeta/78</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2359,7 +2377,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/80</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/79</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2369,6 +2387,15 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/Zeta/8</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/Zeta/80</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2395,7 +2422,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/83</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/84</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2404,7 +2431,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/Zeta/84</loc>
+        <loc>https://blog.mhuig.top/notes/Zeta/83</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2503,24 +2530,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/datacom/12</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/notes/datacom/13</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/datacom/14</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2548,6 +2557,15 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/datacom/12</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/datacom/17</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2557,7 +2575,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/datacom/18</loc>
+        <loc>https://blog.mhuig.top/notes/datacom/13</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2576,15 +2594,6 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/datacom/2</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/notes/datacom/21</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2620,15 +2629,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/datacom/24</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/notes/datacom/25</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2639,6 +2639,15 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/datacom/26</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/datacom/21</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2674,7 +2683,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/datacom/4</loc>
+        <loc>https://blog.mhuig.top/notes/datacom/3</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2683,7 +2692,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/datacom/3</loc>
+        <loc>https://blog.mhuig.top/notes/datacom/4</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2701,25 +2710,25 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/datacom/24</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/datacom/18</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/datacom/7</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/notes/datacom/6</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.mhuig.top/notes/datacom/8</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2746,7 +2755,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/notes/pdf/bigdata</loc>
+        <loc>https://blog.mhuig.top/notes/datacom/6</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2764,7 +2773,25 @@
     
     
     <url>
+        <loc>https://blog.mhuig.top/notes/pdf/bigdata</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.mhuig.top/notes/pdf/cumcm</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/notes/datacom/8</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2800,15 +2827,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/pages/talk/</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/pages/rss/</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2818,7 +2836,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/pages/time-machine/</loc>
+        <loc>https://blog.mhuig.top/pages/talk/</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2827,7 +2845,7 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/wiki/CoPoKo/a</loc>
+        <loc>https://blog.mhuig.top/pages/time-machine/</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2846,6 +2864,15 @@
     
     <url>
         <loc>https://blog.mhuig.top/wiki/CoPoKo/b</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/wiki/CoPoKo/a</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -2926,15 +2953,6 @@
     
     
     <url>
-        <loc>https://blog.mhuig.top/wiki/CoPoKo/search</loc>
-        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://blog.mhuig.top/wiki/CoPoKo/tree-hollow</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -2963,6 +2981,15 @@
     
     <url>
         <loc>https://blog.mhuig.top/notes/c/k/ukali</loc>
+        <lastmod>2025-11-20T10:18:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.mhuig.top/wiki/CoPoKo/search</loc>
         <lastmod>2025-11-20T10:18:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
